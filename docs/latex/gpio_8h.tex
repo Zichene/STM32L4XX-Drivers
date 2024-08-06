@@ -1,0 +1,384 @@
+\doxysection{C\+:/\+Users/\+Administrator/\+Desktop/\+STM32\+L4\+XX-\/\+Drivers/inc/gpio.h File Reference}
+\hypertarget{gpio_8h}{}\label{gpio_8h}\index{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/gpio.h@{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/gpio.h}}
+{\ttfamily \#include "{}stm32l4xx.\+h"{}}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} \{ \newline
+\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda42a4ade1acd55a49164099104990e09f}{A}} = 0
+, \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda3f2a77ecd272aa6d6b5902faa5e5fc68}{B}} = 1
+, \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda739ce3f516592d245d16fd8a3893472c}{C}} = 2
+, \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda77a6b11f9898c052926f1d49765861e8}{D}} = 3
+, \newline
+\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341addab199e021998d49b1f09338d8b9b18ecb}{E}} = 4
+, \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341addaf382a63cc3d6491bf26b59e66f46826d}{F}} = 5
+, \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda2fe993340f6abb2234e543cd427df70b}{G}} = 6
+, \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda5008b1179f399a2273fd3f6a7fc3b292}{H}} = 7
+, \newline
+\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341addad091b8e376f7cf432dc367e1eda65e85}{I}} = 8
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the port of a GPIO pin. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{Pin\+State}} \{ \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdca6a226f4143ca3b18999551694cdb72a8}{LOW}} = 0
+, \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdca0c3a1dacf94061154b3ee354359c5893}{HIGH}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the state of a pin. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\+\_\+\+State}} \{ \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763a5350baea3ce4b40baacb296ee76473ff}{PUPD\+\_\+\+NO\+\_\+\+PULL\+\_\+\+UP\+\_\+\+PULL\+\_\+\+DOWN}} = 0
+, \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763a972793e0fe4ee2ae9be54f5d6918ec12}{PUPD\+\_\+\+PULL\+\_\+\+UP}} = 1
+, \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763a4a5e51955037d02c5de68c8681668282}{PUPD\+\_\+\+PULL\+\_\+\+DOWN}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing different PUPD states which are accepted by the GPIOx\+\_\+\+PUPDR register. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\+\_\+\+State}} \{ \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa38ede0326c63ff7cdc527ea3fb771a03}{SPEED\+\_\+\+LOW}} = 0
+, \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa51f8ead8afe0763894e52050a22c8fe4}{SPEED\+\_\+\+MEDIUM}} = 1
+, \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fab4be0aa6f7b3712c84e992507498c3aa}{SPEED\+\_\+\+HIGH}} = 2
+, \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa16494c1eea9ac8a51928dfb4559fb628}{SPEED\+\_\+\+VERY\+\_\+\+HIGH}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the speed of a GPIO pin which are accepted by the GPIOx\+\_\+\+SPEEDR register. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\+\_\+\+TYPE\+\_\+\+State}} \{ \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8bae09d3850455bcbe93ce8b2aa6b77c7bc}{OUTPUT\+\_\+\+PUSH\+\_\+\+PULL}} = 0
+, \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8ba013c1c19e286015bf493f5dc6bdd246b}{OUTPUT\+\_\+\+OPEN\+\_\+\+DRAIN}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the type of GPIO output driver which are accepted by the GPIOx\+\_\+\+OTYPER register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{gpio_8h_a1ccd13b8e1d7040ebe9b9ca23d3a7426}{GPIO\+\_\+set\+Pin\+Output}} (\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} port, char pin)
+\begin{DoxyCompactList}\small\item\em Sets a pin to output mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a2771955e18fc0804c56e2731fa17f0a5}{GPIO\+\_\+set\+Pin\+Output\+\_\+\+FC}} (\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} port, char pin, \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\+\_\+\+State}} pupd, \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\+\_\+\+State}} speed, \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\+\_\+\+TYPE\+\_\+\+State}} output\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a7d39a89946aac8a536ce6a0e1f0d065e}{GPIO\+\_\+set\+Pin\+Input}} (\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} port, char pin, \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\+\_\+\+State}} pupd)
+\begin{DoxyCompactList}\small\item\em Sets pin to input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a7a789dd059580a37018003f2ac73524f}{GPIO\+\_\+set\+Pin\+Input\+\_\+\+FC}} (\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} port, char pin, \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\+\_\+\+State}} pupd, \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\+\_\+\+State}} speed, \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\+\_\+\+TYPE\+\_\+\+State}} output\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_ac07642be6a857c2997550d8cf342ed3c}{GPIO\+\_\+write\+Pin}} (\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} port, char pin, \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{Pin\+State}} state)
+\begin{DoxyCompactList}\small\item\em Write a value to a specificed GPIO pin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{Pin\+State}} \mbox{\hyperlink{gpio_8h_a4a1dab6b3b9cdf159d5b3dde9da0abab}{GPIO\+\_\+read\+Pin}} (\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} port, char pin)
+\begin{DoxyCompactList}\small\item\em Read a value from a specificed GPIO pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a4ba3774f6f665e6915173328391ac0e9}{GPIO\+\_\+toggle\+Pin}} (\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} port, char pin)
+\begin{DoxyCompactList}\small\item\em Toggles the state of a GPIO pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a259faa377d6561b7837076f841248fe2}{GPIO\+\_\+set\+Pin\+Interrupt}} (\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}} port, char pin)
+\begin{DoxyCompactList}\small\item\em Sets a pin to input-\/interrupt mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gpio_8h_a39d2c9fd276025c7b96d6b48f52690a4}{GPIO\+\_\+reset\+Pin\+Interrupt}} (char pin)
+\begin{DoxyCompactList}\small\item\em Reset the flag corresponding to the pin in the EXTI Pending Register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}\index{gpio.h@{gpio.h}!OUTPUT\_TYPE\_State@{OUTPUT\_TYPE\_State}}
+\index{OUTPUT\_TYPE\_State@{OUTPUT\_TYPE\_State}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_TYPE\_State}{OUTPUT\_TYPE\_State}}
+{\footnotesize\ttfamily \label{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b} 
+enum \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}
+
+
+
+Enum representing the type of GPIO output driver which are accepted by the GPIOx\+\_\+\+OTYPER register. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OUTPUT\_PUSH\_PULL@{OUTPUT\_PUSH\_PULL}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!OUTPUT\_PUSH\_PULL@{OUTPUT\_PUSH\_PULL}}}\Hypertarget{gpio_8h_aa92b582f8b5d087ab491f92d39202f8bae09d3850455bcbe93ce8b2aa6b77c7bc}\label{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b} 
+OUTPUT\+\_\+\+PUSH\+\_\+\+PULL&Push pull mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OUTPUT\_OPEN\_DRAIN@{OUTPUT\_OPEN\_DRAIN}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!OUTPUT\_OPEN\_DRAIN@{OUTPUT\_OPEN\_DRAIN}}}\Hypertarget{gpio_8h_aa92b582f8b5d087ab491f92d39202f8ba013c1c19e286015bf493f5dc6bdd246b}\label{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b} 
+OUTPUT\+\_\+\+OPEN\+\_\+\+DRAIN&Open drain mode. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}\index{gpio.h@{gpio.h}!PinState@{PinState}}
+\index{PinState@{PinState}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{PinState}{PinState}}
+{\footnotesize\ttfamily \label{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc} 
+enum \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{Pin\+State}}}
+
+
+
+Enum representing the state of a pin. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LOW@{LOW}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!LOW@{LOW}}}\Hypertarget{gpio_8h_a481bba4ee500a381c7ae5b767e641bdca6a226f4143ca3b18999551694cdb72a8}\label{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc} 
+LOW&The state of the pin is low. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HIGH@{HIGH}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!HIGH@{HIGH}}}\Hypertarget{gpio_8h_a481bba4ee500a381c7ae5b767e641bdca0c3a1dacf94061154b3ee354359c5893}\label{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc} 
+HIGH&The state of the pin is high. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}\index{gpio.h@{gpio.h}!Port@{Port}}
+\index{Port@{Port}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{Port}{Port}}
+{\footnotesize\ttfamily \label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+enum \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}
+
+
+
+Enum representing the port of a GPIO pin. 
+
+For this family of devices, ports A-\/I inclusive are supported. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A@{A}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!A@{A}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda42a4ade1acd55a49164099104990e09f}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+A&GPIO port A. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B@{B}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!B@{B}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda3f2a77ecd272aa6d6b5902faa5e5fc68}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+B&GPIO port B. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C@{C}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!C@{C}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda739ce3f516592d245d16fd8a3893472c}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+C&GPIO port C. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D@{D}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!D@{D}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda77a6b11f9898c052926f1d49765861e8}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+D&GPIO port D. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E@{E}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!E@{E}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341addab199e021998d49b1f09338d8b9b18ecb}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+E&GPIO port E. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F@{F}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!F@{F}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341addaf382a63cc3d6491bf26b59e66f46826d}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+F&GPIO port F. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G@{G}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!G@{G}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda2fe993340f6abb2234e543cd427df70b}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+G&GPIO port G. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H@{H}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!H@{H}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda5008b1179f399a2273fd3f6a7fc3b292}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+H&GPIO port H. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I@{I}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!I@{I}}}\Hypertarget{gpio_8h_a8e5b842171165ea1cf5175c2c8341addad091b8e376f7cf432dc367e1eda65e85}\label{gpio_8h_a8e5b842171165ea1cf5175c2c8341add} 
+I&GPIO port I. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gpio_8h_adf053039691eb516e944062206cd1763}\index{gpio.h@{gpio.h}!PUPD\_State@{PUPD\_State}}
+\index{PUPD\_State@{PUPD\_State}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{PUPD\_State}{PUPD\_State}}
+{\footnotesize\ttfamily \label{gpio_8h_adf053039691eb516e944062206cd1763} 
+enum \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\+\_\+\+State}}}
+
+
+
+Enum representing different PUPD states which are accepted by the GPIOx\+\_\+\+PUPDR register. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PUPD\_NO\_PULL\_UP\_PULL\_DOWN@{PUPD\_NO\_PULL\_UP\_PULL\_DOWN}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!PUPD\_NO\_PULL\_UP\_PULL\_DOWN@{PUPD\_NO\_PULL\_UP\_PULL\_DOWN}}}\Hypertarget{gpio_8h_adf053039691eb516e944062206cd1763a5350baea3ce4b40baacb296ee76473ff}\label{gpio_8h_adf053039691eb516e944062206cd1763} 
+PUPD\+\_\+\+NO\+\_\+\+PULL\+\_\+\+UP\+\_\+\+PULL\+\_\+\+DOWN&No pull up or pull down chosen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PUPD\_PULL\_UP@{PUPD\_PULL\_UP}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!PUPD\_PULL\_UP@{PUPD\_PULL\_UP}}}\Hypertarget{gpio_8h_adf053039691eb516e944062206cd1763a972793e0fe4ee2ae9be54f5d6918ec12}\label{gpio_8h_adf053039691eb516e944062206cd1763} 
+PUPD\+\_\+\+PULL\+\_\+\+UP&Pull up resistor chosen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PUPD\_PULL\_DOWN@{PUPD\_PULL\_DOWN}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!PUPD\_PULL\_DOWN@{PUPD\_PULL\_DOWN}}}\Hypertarget{gpio_8h_adf053039691eb516e944062206cd1763a4a5e51955037d02c5de68c8681668282}\label{gpio_8h_adf053039691eb516e944062206cd1763} 
+PUPD\+\_\+\+PULL\+\_\+\+DOWN&Pull down resistor chosen. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}\index{gpio.h@{gpio.h}!SPEED\_State@{SPEED\_State}}
+\index{SPEED\_State@{SPEED\_State}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{SPEED\_State}{SPEED\_State}}
+{\footnotesize\ttfamily \label{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f} 
+enum \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\+\_\+\+State}}}
+
+
+
+Enum representing the speed of a GPIO pin which are accepted by the GPIOx\+\_\+\+SPEEDR register. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_LOW@{SPEED\_LOW}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!SPEED\_LOW@{SPEED\_LOW}}}\Hypertarget{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa38ede0326c63ff7cdc527ea3fb771a03}\label{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f} 
+SPEED\+\_\+\+LOW&Low speed chosen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_MEDIUM@{SPEED\_MEDIUM}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!SPEED\_MEDIUM@{SPEED\_MEDIUM}}}\Hypertarget{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa51f8ead8afe0763894e52050a22c8fe4}\label{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f} 
+SPEED\+\_\+\+MEDIUM&Medium speed chosen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_HIGH@{SPEED\_HIGH}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!SPEED\_HIGH@{SPEED\_HIGH}}}\Hypertarget{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fab4be0aa6f7b3712c84e992507498c3aa}\label{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f} 
+SPEED\+\_\+\+HIGH&High speed chosen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPEED\_VERY\_HIGH@{SPEED\_VERY\_HIGH}!gpio.h@{gpio.h}}\index{gpio.h@{gpio.h}!SPEED\_VERY\_HIGH@{SPEED\_VERY\_HIGH}}}\Hypertarget{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa16494c1eea9ac8a51928dfb4559fb628}\label{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f} 
+SPEED\+\_\+\+VERY\+\_\+\+HIGH&Very high speed chosen. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gpio_8h_a4a1dab6b3b9cdf159d5b3dde9da0abab}\index{gpio.h@{gpio.h}!GPIO\_readPin@{GPIO\_readPin}}
+\index{GPIO\_readPin@{GPIO\_readPin}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_readPin()}{GPIO\_readPin()}}
+{\footnotesize\ttfamily \label{gpio_8h_a4a1dab6b3b9cdf159d5b3dde9da0abab} 
+\mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{Pin\+State}} GPIO\+\_\+read\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}]{port}{, }\item[{char}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Read a value from a specificed GPIO pin. 
+
+This function should only be called if the pin has been correctly set with either set\+Pin\+Input, set\+Pin\+Output, set\+Pin\+Input\+\_\+\+FC or set\+Pin\+Output\+\_\+\+FC. The pin state returned can either be HIGH or LOW.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & port for the associated pin \\
+\hline
+{\em pin} & pin number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+state of the pin 
+\end{DoxyReturn}
+\Hypertarget{gpio_8h_a39d2c9fd276025c7b96d6b48f52690a4}\index{gpio.h@{gpio.h}!GPIO\_resetPinInterrupt@{GPIO\_resetPinInterrupt}}
+\index{GPIO\_resetPinInterrupt@{GPIO\_resetPinInterrupt}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_resetPinInterrupt()}{GPIO\_resetPinInterrupt()}}
+{\footnotesize\ttfamily \label{gpio_8h_a39d2c9fd276025c7b96d6b48f52690a4} 
+void GPIO\+\_\+reset\+Pin\+Interrupt (\begin{DoxyParamCaption}\item[{char}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Reset the flag corresponding to the pin in the EXTI Pending Register. 
+
+This function should be called in the EXTI\+\_\+\+IRQ\+\_\+\+Handler in order to allow repeated interrupts. 
+\begin{DoxyParams}{Parameters}
+{\em pin} & pin number \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a7d39a89946aac8a536ce6a0e1f0d065e}\index{gpio.h@{gpio.h}!GPIO\_setPinInput@{GPIO\_setPinInput}}
+\index{GPIO\_setPinInput@{GPIO\_setPinInput}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_setPinInput()}{GPIO\_setPinInput()}}
+{\footnotesize\ttfamily \label{gpio_8h_a7d39a89946aac8a536ce6a0e1f0d065e} 
+void GPIO\+\_\+set\+Pin\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\+\_\+\+State}}}]{pupd}{}\end{DoxyParamCaption})}
+
+
+
+Sets pin to input. 
+
+By default, output mode is set to PP and speed to very high.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & port for the associated pin \\
+\hline
+{\em pin} & pin number \\
+\hline
+{\em pupd} & pull up or pull down resistor state \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a7a789dd059580a37018003f2ac73524f}\index{gpio.h@{gpio.h}!GPIO\_setPinInput\_FC@{GPIO\_setPinInput\_FC}}
+\index{GPIO\_setPinInput\_FC@{GPIO\_setPinInput\_FC}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_setPinInput\_FC()}{GPIO\_setPinInput\_FC()}}
+{\footnotesize\ttfamily \label{gpio_8h_a7a789dd059580a37018003f2ac73524f} 
+void GPIO\+\_\+set\+Pin\+Input\+\_\+\+FC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\+\_\+\+State}}}]{pupd}{, }\item[{\mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\+\_\+\+State}}}]{speed}{, }\item[{\mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}]{output\+\_\+t}{}\end{DoxyParamCaption})}
+
+
+
+Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & port for the associated pin \\
+\hline
+{\em pin} & pin number \\
+\hline
+{\em pupd} & pull up or pull down resistor state \\
+\hline
+{\em speed} & desired speed \\
+\hline
+{\em output\+\_\+t} & output type \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a259faa377d6561b7837076f841248fe2}\index{gpio.h@{gpio.h}!GPIO\_setPinInterrupt@{GPIO\_setPinInterrupt}}
+\index{GPIO\_setPinInterrupt@{GPIO\_setPinInterrupt}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_setPinInterrupt()}{GPIO\_setPinInterrupt()}}
+{\footnotesize\ttfamily \label{gpio_8h_a259faa377d6561b7837076f841248fe2} 
+void GPIO\+\_\+set\+Pin\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}]{port}{, }\item[{char}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Sets a pin to input-\/interrupt mode. 
+
+By default, the interrupt trigger is set to rising trigger. 
+\begin{DoxyParams}{Parameters}
+{\em port} & port for the associated pin \\
+\hline
+{\em pin} & pin number \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a1ccd13b8e1d7040ebe9b9ca23d3a7426}\index{gpio.h@{gpio.h}!GPIO\_setPinOutput@{GPIO\_setPinOutput}}
+\index{GPIO\_setPinOutput@{GPIO\_setPinOutput}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_setPinOutput()}{GPIO\_setPinOutput()}}
+{\footnotesize\ttfamily \label{gpio_8h_a1ccd13b8e1d7040ebe9b9ca23d3a7426} 
+void GPIO\+\_\+set\+Pin\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}]{port}{, }\item[{char}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Sets a pin to output mode. 
+
+By default, output mode is set to PP, speed to very high and no pull up, pull down.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & port for the associated pin \\
+\hline
+{\em pin} & pin number \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a2771955e18fc0804c56e2731fa17f0a5}\index{gpio.h@{gpio.h}!GPIO\_setPinOutput\_FC@{GPIO\_setPinOutput\_FC}}
+\index{GPIO\_setPinOutput\_FC@{GPIO\_setPinOutput\_FC}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_setPinOutput\_FC()}{GPIO\_setPinOutput\_FC()}}
+{\footnotesize\ttfamily \label{gpio_8h_a2771955e18fc0804c56e2731fa17f0a5} 
+void GPIO\+\_\+set\+Pin\+Output\+\_\+\+FC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\+\_\+\+State}}}]{pupd}{, }\item[{\mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\+\_\+\+State}}}]{speed}{, }\item[{\mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}]{output\+\_\+t}{}\end{DoxyParamCaption})}
+
+
+
+Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & port for the associated pin \\
+\hline
+{\em pin} & pin number \\
+\hline
+{\em pupd} & pull up or pull down resistor state \\
+\hline
+{\em speed} & desired speed \\
+\hline
+{\em output\+\_\+t} & output type \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_a4ba3774f6f665e6915173328391ac0e9}\index{gpio.h@{gpio.h}!GPIO\_togglePin@{GPIO\_togglePin}}
+\index{GPIO\_togglePin@{GPIO\_togglePin}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_togglePin()}{GPIO\_togglePin()}}
+{\footnotesize\ttfamily \label{gpio_8h_a4ba3774f6f665e6915173328391ac0e9} 
+void GPIO\+\_\+toggle\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}]{port}{, }\item[{char}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Toggles the state of a GPIO pin. 
+
+This function should only be called if the pin has been correctly set with either set\+Pin\+Input, set\+Pin\+Output, set\+Pin\+Input\+\_\+\+FC or set\+Pin\+Output\+\_\+\+FC. 
+\begin{DoxyParams}{Parameters}
+{\em port} & port for the associated pin \\
+\hline
+{\em pin} & pin number \\
+\hline
+\end{DoxyParams}
+\Hypertarget{gpio_8h_ac07642be6a857c2997550d8cf342ed3c}\index{gpio.h@{gpio.h}!GPIO\_writePin@{GPIO\_writePin}}
+\index{GPIO\_writePin@{GPIO\_writePin}!gpio.h@{gpio.h}}
+\doxysubsubsection{\texorpdfstring{GPIO\_writePin()}{GPIO\_writePin()}}
+{\footnotesize\ttfamily \label{gpio_8h_ac07642be6a857c2997550d8cf342ed3c} 
+void GPIO\+\_\+write\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{Pin\+State}}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Write a value to a specificed GPIO pin. 
+
+This function should only be called if the pin has been correctly set with set\+Pin\+Input, set\+Pin\+Output, set\+Pin\+Input\+\_\+\+FC or set\+Pin\+Output\+\_\+\+FC. The pin state to be set can either be HIGH or LOW.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & port for the associated pin \\
+\hline
+{\em pin} & pin number \\
+\hline
+{\em state} & desired state of the pin \\
+\hline
+\end{DoxyParams}
