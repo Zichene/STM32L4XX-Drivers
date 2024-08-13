@@ -8,31 +8,36 @@
 *
 ***/
 
-static GPIO_TypeDef* getGPIO(Port port);
+static GPIO_TypeDef* getGPIO(GPIO_Port port);
 static int getEXTI_IRQn(char pin);
+static void setOutput_Speed_PUPD(GPIO_TypeDef* GPIOX, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t);
+
+/****************************************************************************************************/
+/*			              PRIVATE FUNCTIONS                                             */
+/****************************************************************************************************/
 
 /**
  * Returns the pointer to the GPIO_TypeDef object corresponding with the given port.
  */
-static GPIO_TypeDef* getGPIO(Port port) {
+static GPIO_TypeDef* getGPIO(GPIO_Port port) {
 	switch(port){
-		case A:
+		case GPIO_PORT_A:
 			return GPIOA;
-		case B:
+		case GPIO_PORT_B:
 			return GPIOB;
-		case C:
+		case GPIO_PORT_C:
 			return GPIOC;
-		case D:
+		case GPIO_PORT_D:
 			return GPIOD;
-		case E:
+		case GPIO_PORT_E:
 			return GPIOE;
-		case F:
+		case GPIO_PORT_F:
 			return GPIOF;
-		case G:
+		case GPIO_PORT_G:
 			return GPIOG;
-		case H:
+		case GPIO_PORT_H:
 			return GPIOH;
-		case I:
+		case GPIO_PORT_I:
 			return GPIOI;
 	}
 }
@@ -57,21 +62,12 @@ static int getEXTI_IRQn(char pin) {
 	else return EXTI15_10_IRQn;
 }
 
-
-void GPIO_setPinOutput(Port port, char pin) {
-	GPIO_setPinOutput_FC(port, pin, PUPD_NO_PULL_UP_PULL_DOWN, SPEED_VERY_HIGH, OUTPUT_PUSH_PULL);
-}
-
-void GPIO_setPinOutput_FC(Port port, char pin, PUPD_State pupd, SPEED_State speed, OUTPUT_TYPE_State output_t) {
-	RCC->AHB2ENR |= (0b01 << port); // enable port
-	GPIO_TypeDef* GPIOX = getGPIO(port);
-	
-	/* Mode set to output */
-	GPIOX->MODER &= ~(0b11 << 2*pin); 
-	GPIOX->MODER |= (0b01 << 2*pin); 
-	
+/*
+Sets the output type, speed and pupd states for a GPIO pin.
+*/
+static void setOutput_Speed_PUPD(GPIO_TypeDef* GPIOX, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t) {
 	/* Output mode */
-	if (output_t == OUTPUT_PUSH_PULL) GPIOX->OTYPER &= ~(0b1 << pin); 
+	if (output_t == GPIO_OUTPUT_PUSH_PULL) GPIOX->OTYPER &= ~(0b1 << pin); 
 	else GPIOX->OTYPER |= 0b1 << pin;
 	
 	/* Speed */
@@ -83,12 +79,32 @@ void GPIO_setPinOutput_FC(Port port, char pin, PUPD_State pupd, SPEED_State spee
 	GPIOX->PUPDR |= (pupd << 2*pin); 
 }
 
-void GPIO_setPinInput(Port port, char pin, PUPD_State pupd) {
-	GPIO_setPinInput_FC(port, pin, pupd, SPEED_VERY_HIGH, OUTPUT_PUSH_PULL);
+/****************************************************************************************************/
+/*			              EXPORTED FUNCTIONS                                            */
+/****************************************************************************************************/
+
+void GPIO_setPinOutput(GPIO_Port port, char pin) {
+	GPIO_setPinOutput_FC(port, pin, GPIO_PUPD_NO_PULL_UP_PULL_DOWN, GPIO_SPEED_VERY_HIGH, GPIO_OUTPUT_PUSH_PULL);
+}
+
+void GPIO_setPinOutput_FC(GPIO_Port port, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t) {
+	RCC->AHB2ENR |= (0b01 << port); // enable port
+	GPIO_TypeDef* GPIOX = getGPIO(port);
+	
+	/* Mode set to output */
+	GPIOX->MODER &= ~(0b11 << 2*pin); 
+	GPIOX->MODER |= (0b01 << 2*pin); 
+	
+	/* Set remaining parameters */
+	setOutput_Speed_PUPD(GPIOX, pin, pupd, speed, output_t);
+}
+
+void GPIO_setPinInput(GPIO_Port port, char pin, GPIO_PUPD_State pupd) {
+	GPIO_setPinInput_FC(port, pin, pupd, GPIO_SPEED_VERY_HIGH, GPIO_OUTPUT_PUSH_PULL);
 }
 
 
-void GPIO_setPinInput_FC(Port port, char pin,  PUPD_State pupd,  SPEED_State speed,  OUTPUT_TYPE_State output_t) {
+void GPIO_setPinInput_FC(GPIO_Port port, char pin,  GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t) {
 	RCC->AHB2ENR |= (0b01 << port); // enable port
 	GPIO_TypeDef* GPIOX = getGPIO(port);
 	
@@ -96,54 +112,46 @@ void GPIO_setPinInput_FC(Port port, char pin,  PUPD_State pupd,  SPEED_State spe
 	GPIOX->MODER &= ~(0b11 << 2*pin); 
 	GPIOX->MODER |= (0b00 << 2*pin); 
 	
-	/* Output mode */
-  if (output_t == OUTPUT_PUSH_PULL) GPIOX->OTYPER &= ~(0b1 << pin); 
-	else GPIOX->OTYPER |= 0b1 << pin;
-	
-	/* Speed */
-	GPIOX->OSPEEDR &= ~(0b11 << 2*pin); 
-	GPIOX->OSPEEDR |= (speed << 2*pin); 
-	
-	/* Set pupd */
-	GPIOX->PUPDR &= ~(0b11 << 2*pin); 
-	GPIOX->PUPDR |= (pupd << 2*pin); 
+	/* Set remaining parameters */
+	setOutput_Speed_PUPD(GPIOX, pin, pupd, speed, output_t);
 }
 
 
-void GPIO_writePin(Port port, char pin, PinState state) {
+void GPIO_writePin(GPIO_Port port, char pin, GPIO_PinState state) {
 		/* This function should only be called if pin has been correctly set. */
 		GPIO_TypeDef* GPIOX = getGPIO(port);
-	  if (state == HIGH) GPIOX->ODR |=  (0b1 << pin);
+	  if (state == GPIO_HIGH) GPIOX->ODR |=  (0b1 << pin);
 		else GPIOX->ODR &= ~(0b1 << pin);
 }
 
 
-PinState GPIO_readPin(Port port, char pin) {
+GPIO_PinState GPIO_readPin(GPIO_Port port, char pin) {
 	/* This function should only be called if pin has been correctly set. */
 	GPIO_TypeDef* GPIOX = getGPIO(port);
 	// Shift the IDR until our desired bit is at LSB, then bitmask with 1
 	return (GPIOX->IDR >> pin) & 0b1;
 }
 
-void GPIO_togglePin(Port port, char pin) {
+void GPIO_togglePin(GPIO_Port port, char pin) {
 	/* This function should only be called if pin has been correctly set. */
 	GPIO_writePin(port, pin, (GPIO_readPin(port, pin)+1)%2);
 }
 
-void GPIO_setPinInterrupt(Port port, char pin) {
+void GPIO_setPinInterrupt(GPIO_Port port, char pin, GPIO_IT_TRIGGER_State trigger_state) {
 	// Enable IRQ Clock
 	RCC->APB2ENR |= 0b1;
 	
 	// Need to setup pin to external interrupt
-	GPIO_setPinInput(port, pin, PUPD_PULL_UP);
+	GPIO_setPinInput(port, pin, GPIO_PUPD_PULL_UP);
 	SYSCFG->EXTICR[pin/4] &= ~(0b1111 << 4*(pin%4)); 
 	SYSCFG->EXTICR[pin/4] |= (port << 4*(pin%4));
 	
 	// Enable interrupt using interrupt mask register
 	EXTI->IMR1 |= (0b1 << pin);
 	
-	// Select interrupt trigger to rising trigger
-	EXTI->RTSR1 |= (0b1 << pin);
+	// Select interrupt trigger
+	if (trigger_state == GPIO_IT_TRIGGER_FALLING) EXTI->FTSR1 |= (0b1 << pin);
+	else EXTI->RTSR1 |= (0b1 << pin);
 	
 	// Enable the IRQ with NVIC
 	__disable_irq();
@@ -155,4 +163,24 @@ void GPIO_setPinInterrupt(Port port, char pin) {
 void GPIO_resetPinInterrupt(char pin) {
 	// Set flag back to 1 in pending register to clear it and prepare for next interrupt
 	EXTI->PR1 |= (0b1 << pin);
+}
+
+void GPIO_setPinAF_Mode(GPIO_Port port, char pin, GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t) {
+	RCC->AHB2ENR |= (0b01 << port); // enable port
+	GPIO_TypeDef* GPIOX = getGPIO(port);
+	
+	/* Mode set to AF */
+	GPIOX->MODER &= ~(0b11 << 2*pin); 
+	GPIOX->MODER |= (0b10 << 2*pin);
+	
+	/* Set remaining parameters */
+	setOutput_Speed_PUPD(GPIOX, pin, pupd, speed, output_t);
+}
+
+void GPIO_setPinAF_State(GPIO_Port port, char pin, GPIO_AF_State af_state) {
+	GPIO_TypeDef* GPIOX = getGPIO(port);
+	
+	/* Set correct AF state in the AFR register */
+	GPIOX->AFR[pin/8] &= ~(0b1111 << 4*(pin%8));
+	GPIOX->AFR[pin/8] |= (af_state << 4*(pin%8));
 }
