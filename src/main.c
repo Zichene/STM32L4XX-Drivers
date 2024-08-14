@@ -16,7 +16,7 @@ For the B-L4S5I-IOT01A board, the pin PB14 is connected to LED2 and PC13 is conn
 int main(void)
 {
 	/* Enable the PLL clock */
-	CLOCK_configPLL();
+	CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 60, 2);
 	CLOCK_activateClk(CLOCK_PLL);
 	/* Check the Clock output */
 	CLOCK_activateMCO(MCO_Port, MCO_Pin, CLOCK_MCO_SELECT_SYSCLK, CLOCK_MCO_PRE_DIV_1);

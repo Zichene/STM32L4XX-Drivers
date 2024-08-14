@@ -87,6 +87,14 @@ typedef enum {
 	GPIO_IT_TRIGGER_RISING = 1, ///< Interrupts on rising edge
 }GPIO_IT_TRIGGER_State;
 
+/**@brief Enum to indicate the return status of a function.
+*/
+typedef enum {
+	GPIO_OK = 0, ///< Indicates that a function has returned successfully.
+	GPIO_INVALID_ARGS = 1, ///< Indicates that a function has been given invalid (out of range) arguments.
+	GPIO_ERROR = 2, ///< Indicates that a general error has occured.
+}GPIO_Status_State;
+
 /****************************************************************************************************/
 /*																			FUNCTION PROTOTYPES                                         */
 /****************************************************************************************************/
@@ -95,8 +103,10 @@ typedef enum {
 *
 * @param port port for the associated pin 
 * @param pin pin number
+* @return status
 */
-void GPIO_setPinOutput(GPIO_Port port, char pin);
+GPIO_Status_State GPIO_setPinOutput(GPIO_Port port, char pin);
+
 
 
 /**@brief Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type.
@@ -106,16 +116,22 @@ void GPIO_setPinOutput(GPIO_Port port, char pin);
 * @param pupd pull up or pull down resistor state
 * @param speed desired speed
 * @param output_t output type
+* @return status
 */
-void GPIO_setPinOutput_FC(GPIO_Port port, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t);
+GPIO_Status_State GPIO_setPinOutput_FC(GPIO_Port port, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t);
+
+
 
 /**@brief Sets pin to input. By default, output mode is set to PP and speed to very high.
 * 
 * @param port port for the associated pin
 * @param pin pin number
 * @param pupd pull up or pull down resistor state
+* @return status
 */
-void GPIO_setPinInput(GPIO_Port port, char pin,  GPIO_PUPD_State pupd);
+GPIO_Status_State GPIO_setPinInput(GPIO_Port port, char pin,  GPIO_PUPD_State pupd);
+
+
 
 /**@brief Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type.
 *
@@ -124,17 +140,23 @@ void GPIO_setPinInput(GPIO_Port port, char pin,  GPIO_PUPD_State pupd);
 * @param pupd pull up or pull down resistor state
 * @param speed desired speed
 * @param output_t output type
+* @return status
 */
-void GPIO_setPinInput_FC(GPIO_Port port, char pin,  GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t);
+GPIO_Status_State GPIO_setPinInput_FC(GPIO_Port port, char pin,  GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t);
+
+
 
 /**@brief Write a value to a specificed GPIO pin. The pin state to be set can either be HIGH or LOW.
 * 
 * @param port port for the associated pin
 * @param pin pin number
 * @param state desired state of the pin
+* @return status
 * @warning This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. 
 */
-void GPIO_writePin(GPIO_Port port, char pin,  GPIO_PinState state);
+GPIO_Status_State GPIO_writePin(GPIO_Port port, char pin,  GPIO_PinState state);
+
+
 
 /**@brief Read a value from a specificed GPIO pin.  The pin state returned can either be HIGH or LOW.
 * 
@@ -142,26 +164,37 @@ void GPIO_writePin(GPIO_Port port, char pin,  GPIO_PinState state);
 * @param pin pin number
 * @return state of the pin 
 * @warning This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC.
+* @warning This function does not check the arguments. This responsibility is left to the user.
 */
 GPIO_PinState GPIO_readPin(GPIO_Port port, char pin);
+
+
 
 /**@brief Toggles the state of a GPIO pin.
 * @param port port for the associated pin
 * @param pin pin number
 * @warning This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC.
 */
-void GPIO_togglePin(GPIO_Port port, char pin);
+GPIO_Status_State GPIO_togglePin(GPIO_Port port, char pin);
+
+
 
 /**@brief Sets a pin to input-interrupt mode. By default, the interrupt trigger is set to rising trigger.
 * @param port port for the associated pin
 * @param pin pin number
+* @return status
 */
-void GPIO_setPinInterrupt(GPIO_Port port, char pin, GPIO_IT_TRIGGER_State trigger_state);
+GPIO_Status_State GPIO_setPinInterrupt(GPIO_Port port, char pin, GPIO_IT_TRIGGER_State trigger_state);
+
+
 
 /**@brief Reset the flag corresponding to the pin in the EXTI Pending Register. This function should be called in the EXTI_IRQ_Handler in order to allow repeated interrupts. 
 * @param pin pin number
+* @return status
 */
-void GPIO_resetPinInterrupt(char pin);
+GPIO_Status_State GPIO_resetPinInterrupt(char pin);
+
+
 
 /**@brief Sets the pin to the Alternate Function (AF) mode.
 * @param port port for the associated pin
@@ -169,14 +202,18 @@ void GPIO_resetPinInterrupt(char pin);
 * @param pupd pull up or pull down resistor state
 * @param speed desired speed
 * @param output_t output type
+* @return status
 */
-void GPIO_setPinAF_Mode(GPIO_Port port, char pin, GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t);
+GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, char pin, GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t);
+
+
 
 /**@brief Sets a pin in AF mode to the desired AF state. 
 * @param port port for the associated pin
 * @param pin pin number
 * @param af_state the desired AF state
+* @return status
 * @warning This function should only be called if the pin has been set to AF (Alternate Function) mode with setPinAF_Mode.
 */
-void GPIO_setPinAF_State(GPIO_Port port, char pin, GPIO_AF_State af_state);
+GPIO_Status_State GPIO_setPinAF_State(GPIO_Port port, char pin, GPIO_AF_State af_state);
 #endif

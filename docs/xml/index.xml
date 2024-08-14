@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.11.0" xml:lang="en-US">
+  <compound refid="gpio_8h" kind="file"><name>gpio.h</name>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kind="enum"><name>Port</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda42a4ade1acd55a49164099104990e09f" kind="enumvalue"><name>A</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda3f2a77ecd272aa6d6b5902faa5e5fc68" kind="enumvalue"><name>B</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda739ce3f516592d245d16fd8a3893472c" kind="enumvalue"><name>C</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda77a6b11f9898c052926f1d49765861e8" kind="enumvalue"><name>D</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addab199e021998d49b1f09338d8b9b18ecb" kind="enumvalue"><name>E</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addaf382a63cc3d6491bf26b59e66f46826d" kind="enumvalue"><name>F</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda2fe993340f6abb2234e543cd427df70b" kind="enumvalue"><name>G</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda5008b1179f399a2273fd3f6a7fc3b292" kind="enumvalue"><name>H</name></member>
+    <member refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addad091b8e376f7cf432dc367e1eda65e85" kind="enumvalue"><name>I</name></member>
+    <member refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdc" kind="enum"><name>PinState</name></member>
+    <member refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdca6a226f4143ca3b18999551694cdb72a8" kind="enumvalue"><name>LOW</name></member>
+    <member refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdca0c3a1dacf94061154b3ee354359c5893" kind="enumvalue"><name>HIGH</name></member>
+    <member refid="gpio_8h_1adf053039691eb516e944062206cd1763" kind="enum"><name>PUPD_State</name></member>
+    <member refid="gpio_8h_1adf053039691eb516e944062206cd1763a5350baea3ce4b40baacb296ee76473ff" kind="enumvalue"><name>PUPD_NO_PULL_UP_PULL_DOWN</name></member>
+    <member refid="gpio_8h_1adf053039691eb516e944062206cd1763a972793e0fe4ee2ae9be54f5d6918ec12" kind="enumvalue"><name>PUPD_PULL_UP</name></member>
+    <member refid="gpio_8h_1adf053039691eb516e944062206cd1763a4a5e51955037d02c5de68c8681668282" kind="enumvalue"><name>PUPD_PULL_DOWN</name></member>
+    <member refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3f" kind="enum"><name>SPEED_State</name></member>
+    <member refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa38ede0326c63ff7cdc527ea3fb771a03" kind="enumvalue"><name>SPEED_LOW</name></member>
+    <member refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa51f8ead8afe0763894e52050a22c8fe4" kind="enumvalue"><name>SPEED_MEDIUM</name></member>
+    <member refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fab4be0aa6f7b3712c84e992507498c3aa" kind="enumvalue"><name>SPEED_HIGH</name></member>
+    <member refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa16494c1eea9ac8a51928dfb4559fb628" kind="enumvalue"><name>SPEED_VERY_HIGH</name></member>
+    <member refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8b" kind="enum"><name>OUTPUT_TYPE_State</name></member>
+    <member refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8bae09d3850455bcbe93ce8b2aa6b77c7bc" kind="enumvalue"><name>OUTPUT_PUSH_PULL</name></member>
+    <member refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8ba013c1c19e286015bf493f5dc6bdd246b" kind="enumvalue"><name>OUTPUT_OPEN_DRAIN</name></member>
+    <member refid="gpio_8h_1a1ccd13b8e1d7040ebe9b9ca23d3a7426" kind="function"><name>GPIO_setPinOutput</name></member>
+    <member refid="gpio_8h_1a2771955e18fc0804c56e2731fa17f0a5" kind="function"><name>GPIO_setPinOutput_FC</name></member>
+    <member refid="gpio_8h_1a7d39a89946aac8a536ce6a0e1f0d065e" kind="function"><name>GPIO_setPinInput</name></member>
+    <member refid="gpio_8h_1a7a789dd059580a37018003f2ac73524f" kind="function"><name>GPIO_setPinInput_FC</name></member>
+    <member refid="gpio_8h_1ac07642be6a857c2997550d8cf342ed3c" kind="function"><name>GPIO_writePin</name></member>
+    <member refid="gpio_8h_1a4a1dab6b3b9cdf159d5b3dde9da0abab" kind="function"><name>GPIO_readPin</name></member>
+    <member refid="gpio_8h_1a4ba3774f6f665e6915173328391ac0e9" kind="function"><name>GPIO_togglePin</name></member>
+    <member refid="gpio_8h_1a259faa377d6561b7837076f841248fe2" kind="function"><name>GPIO_setPinInterrupt</name></member>
+    <member refid="gpio_8h_1a39d2c9fd276025c7b96d6b48f52690a4" kind="function"><name>GPIO_resetPinInterrupt</name></member>
+  </compound>
+  <compound refid="dir_bfccd401955b95cf8c75461437045ac0" kind="dir"><name>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc</name>
+  </compound>
+</doxygenindex>

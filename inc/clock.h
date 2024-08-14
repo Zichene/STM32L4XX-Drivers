@@ -71,9 +71,9 @@ typedef enum {
 /**@brief Enum representing the status of a function.
 */
 typedef enum {
-	CLOCK_OK = 0,
-	CLOCK_INVALID_ARGS = 1,
-	CLOCK_ERROR = 2,
+	CLOCK_OK = 0, ///< Indicates that a function has returned successfully.
+	CLOCK_INVALID_ARGS = 1, ///< Indicates that a function has been given invalid (out of range) arguments.
+	CLOCK_ERROR = 2, ///< Indicates that a general error has occured.
 }CLOCK_Status_State;
 
 /****************************************************************************************************/
@@ -85,24 +85,27 @@ typedef enum {
 * @param pin pin number of the MCO pin.
 * @param mco_sel_state which clock should be outputed to MCO.
 * @param mco_pre_state prescaler for the MCO (divisions by powers of 2 up to 16 allowed).
+* @return status
 * @warning Untested function due to lack of proper oscilloscope.
 * @warning Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR register before use of this function. By default SYSCLK is already activated.
 */
-void CLOCK_activateMCO(GPIO_Port port, char pin, CLOCK_MCO_SELECT_State mco_sel_state, CLOCK_MCO_PRESCALER_State mco_pre_state);
+CLOCK_Status_State CLOCK_activateMCO(GPIO_Port port, char pin, CLOCK_MCO_SELECT_State mco_sel_state, CLOCK_MCO_PRESCALER_State mco_pre_state);
 
 /**@brief Activates a desired clock. 
 * @param clk clock to be activated
+* @return status
 * @warning Untested function.
 * @warning Blocking function. Will only return once a 'RDY' flag has been raised by the clock hardware (clock stabilized).
 * @warning For the PLL clock, it is necessary to call CLOCK_configPLL() first before calling this function.
 */
-void CLOCK_activateClk(CLOCK_State clk);
+CLOCK_Status_State CLOCK_activateClk(CLOCK_State clk);
 
 /**@brief Desactivates a desired clock. 
 * @param clk clock to be desactivated.
+* @return status
 * @warning Untested function.
 */
-void CLOCK_desactivateClk(CLOCK_State clk);
+CLOCK_Status_State CLOCK_desactivateClk(CLOCK_State clk);
 
 /**@brief Gets the speed (frequency) in Hz of the system clock.
 * @warning Not implemented yet.

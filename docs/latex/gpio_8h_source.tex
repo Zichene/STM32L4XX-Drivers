@@ -2,79 +2,107 @@
 \hypertarget{gpio_8h_source}{}\label{gpio_8h_source}\index{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/gpio.h@{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/gpio.h}}
 \mbox{\hyperlink{gpio_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}stm32l4xx.h"{}}}
-\DoxyCodeLine{00002\ }
-\DoxyCodeLine{00003\ \textcolor{comment}{/***}}
-\DoxyCodeLine{00004\ \textcolor{comment}{*}}
-\DoxyCodeLine{00005\ \textcolor{comment}{*\ GPIO\ drivers\ for\ stm32l4xx\ devices.}}
-\DoxyCodeLine{00006\ \textcolor{comment}{*\ WARNING:\ These\ drivers\ have\ NOT\ been\ tested\ extensively.\ Use\ at\ own\ risk.}}
-\DoxyCodeLine{00007\ \textcolor{comment}{*\ Reference:\ https://www.youtube.com/playlist?list=PLtVUYRe-\/Z-\/mfKO0lg\_-\/MBvwWl6VjWT8Dt}}
-\DoxyCodeLine{00008\ \textcolor{comment}{*}}
-\DoxyCodeLine{00009\ \textcolor{comment}{***/}}
-\DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00012\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TYPEDEFS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GPIO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GPIO\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stm32l4xx.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{/***}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*\ GPIO\ drivers\ for\ stm32l4xx\ devices.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{*\ WARNING:\ These\ drivers\ have\ NOT\ been\ tested\ extensively.\ Use\ at\ own\ risk.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{*\ Reference:\ https://www.youtube.com/playlist?list=PLtVUYRe-\/Z-\/mfKO0lg\_-\/MBvwWl6VjWT8Dt}}
+\DoxyCodeLine{00010\ \textcolor{comment}{*}}
+\DoxyCodeLine{00011\ \textcolor{comment}{***/}}
+\DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
-\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda42a4ade1acd55a49164099104990e09f}{A}}\ =\ 0,\ }
-\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda3f2a77ecd272aa6d6b5902faa5e5fc68}{B}}\ =\ 1,\ }
-\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda739ce3f516592d245d16fd8a3893472c}{C}}\ =\ 2,\ }
-\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda77a6b11f9898c052926f1d49765861e8}{D}}\ =\ 3,\ }
-\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341addab199e021998d49b1f09338d8b9b18ecb}{E}}\ =\ 4,\ }
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341addaf382a63cc3d6491bf26b59e66f46826d}{F}}\ =\ 5,\ }
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda2fe993340f6abb2234e543cd427df70b}{G}}\ =\ 6,\ }
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341adda5008b1179f399a2273fd3f6a7fc3b292}{H}}\ =\ 7,\ }
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341addad091b8e376f7cf432dc367e1eda65e85}{I}}\ =\ 8,\ }
-\DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}};\ }
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdca6a226f4143ca3b18999551694cdb72a8}{LOW}}\ =\ 0,\ }
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdca0c3a1dacf94061154b3ee354359c5893}{HIGH}}\ =\ 1,\ }
-\DoxyCodeLine{00034\ \}\mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{PinState}}\ ;}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00038\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \ \{}
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763a5350baea3ce4b40baacb296ee76473ff}{PUPD\_NO\_PULL\_UP\_PULL\_DOWN}}\ =\ 0,\ }
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763a972793e0fe4ee2ae9be54f5d6918ec12}{PUPD\_PULL\_UP}}\ =\ 1,\ }
-\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763a4a5e51955037d02c5de68c8681668282}{PUPD\_PULL\_DOWN}}\ =\ 2,\ }
-\DoxyCodeLine{00042\ \}\mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\_State}};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa38ede0326c63ff7cdc527ea3fb771a03}{SPEED\_LOW}}\ =\ 0,\ }
-\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa51f8ead8afe0763894e52050a22c8fe4}{SPEED\_MEDIUM}}\ =\ 1,\ }
-\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fab4be0aa6f7b3712c84e992507498c3aa}{SPEED\_HIGH}}\ =\ 2,\ }
-\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3fa16494c1eea9ac8a51928dfb4559fb628}{SPEED\_VERY\_HIGH}}\ =\ 3,\ }
-\DoxyCodeLine{00051\ \}\mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\_State}};}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \ \{}
-\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8bae09d3850455bcbe93ce8b2aa6b77c7bc}{OUTPUT\_PUSH\_PULL}}\ =\ 0,\ }
-\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8ba013c1c19e286015bf493f5dc6bdd246b}{OUTPUT\_OPEN\_DRAIN}}\ =\ 1,\ }
-\DoxyCodeLine{00058\ \}\mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\_TYPE\_State}};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00061\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00062\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a1ccd13b8e1d7040ebe9b9ca23d3a7426}{GPIO\_setPinOutput}}(\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}\ port,\ \textcolor{keywordtype}{char}\ pin);}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a2771955e18fc0804c56e2731fa17f0a5}{GPIO\_setPinOutput\_FC}}(\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\_State}}\ pupd,\ \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\_State}}\ speed,\ \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\_TYPE\_State}}\ output\_t);}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a7d39a89946aac8a536ce6a0e1f0d065e}{GPIO\_setPinInput}}(\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \ \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\_State}}\ pupd);}
+\DoxyCodeLine{00014\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TYPEDEFS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00015\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150a8b07bc36836f09ea3bf685aa40bb2a1c}{GPIO\_PORT\_A}}\ =\ 0,\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150af5a83964a6998f346c504ea8a14aa420}{GPIO\_PORT\_B}}\ =\ 1,\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150aa6d64325a6ea4d520a8f7c2f8d9b82ba}{GPIO\_PORT\_C}}\ =\ 2,\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150a28839778b06b58a1b3ece28f39dade8f}{GPIO\_PORT\_D}}\ =\ 3,\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150a9cdccb3f86f1326ee286709c135995c8}{GPIO\_PORT\_E}}\ =\ 4,\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150a2e0f525fddb580bff30dc9dd84f3fa5b}{GPIO\_PORT\_F}}\ =\ 5,\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150a97e13b5e58f0f2b2fca0e21721be0cf0}{GPIO\_PORT\_G}}\ =\ 6,\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150a160734b9f43544c741c11fb095716646}{GPIO\_PORT\_H}}\ =\ 7,\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150ab8b724b98c20d45094005095306b01fd}{GPIO\_PORT\_I}}\ =\ 8,\ }
+\DoxyCodeLine{00029\ \}\ \mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}};\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa}{GPIO\_LOW}}\ =\ 0,\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d}{GPIO\_HIGH}}\ =\ 1,\ }
+\DoxyCodeLine{00036\ \}\mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\_PinState}}\ ;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167a340a342762fc759e14028a4a48ba1907}{GPIO\_PUPD\_NO\_PULL\_UP\_PULL\_DOWN}}\ =\ 0,\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36}{GPIO\_PUPD\_PULL\_UP}}\ =\ 1,\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167a9b5ad4d5996f33eb251c8a4854479d89}{GPIO\_PUPD\_PULL\_DOWN}}\ =\ 2,\ }
+\DoxyCodeLine{00044\ \}\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\_PUPD\_State}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b}{GPIO\_SPEED\_LOW}}\ =\ 0,\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343}{GPIO\_SPEED\_MEDIUM}}\ =\ 1,\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12}{GPIO\_SPEED\_HIGH}}\ =\ 2,\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746}{GPIO\_SPEED\_VERY\_HIGH}}\ =\ 3,\ }
+\DoxyCodeLine{00053\ \}\mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\_SPEED\_State}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9}{GPIO\_OUTPUT\_PUSH\_PULL}}\ =\ 0,\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b}{GPIO\_OUTPUT\_OPEN\_DRAIN}}\ =\ 1,\ }
+\DoxyCodeLine{00060\ \}\mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\_OUTPUT\_TYPE\_State}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dbaa27f25443e3ae77015a9a3deed4a3ef7}{GPIO\_AF\_0}},\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dbab7284fc4f49b263570f6f66eabc8ae64}{GPIO\_AF\_1}},\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba2f0c81fc78a4f730e29e5373f0c5335e}{GPIO\_AF\_2}},\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba568f8145874b6cdacdb64da890263199}{GPIO\_AF\_3}},\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba6487423a94e798b9c6aecff59d530935}{GPIO\_AF\_4}},\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba607129224edfd66ebc4d62b4a9c1f3df}{GPIO\_AF\_5}},\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dbac9028834e34ba4022d38895dd85ce08c}{GPIO\_AF\_6}},\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba4e8bcdef1a4156c7ed119f7848e78f28}{GPIO\_AF\_7}},\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe}{GPIO\_AF\_8}},\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097}{GPIO\_AF\_9}},\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dbabecf6bda4c604c5037f6e5990f0efca7}{GPIO\_AF\_10}},\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dbafc09543663eaebd7bb076bf5f00587a8}{GPIO\_AF\_11}},\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba95716054846153b5e34cd84367916b6f}{GPIO\_AF\_12}},\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dbaba8c165865eaa7fb2be4bce6e1d90570}{GPIO\_AF\_13}},\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba915de70ded11531cbb2cb164c1e568ba}{GPIO\_AF\_14}},\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827dba8631c9933547084963ccb453e0fa142b}{GPIO\_AF\_15}},\ }
+\DoxyCodeLine{00081\ \}\mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827db}{GPIO\_AF\_State}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{gpio_8h_ace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78}{GPIO\_IT\_TRIGGER\_FALLING}}\ =\ 0,\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{gpio_8h_ace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216}{GPIO\_IT\_TRIGGER\_RISING}}\ =\ 1,\ }
+\DoxyCodeLine{00088\ \}\mbox{\hyperlink{gpio_8h_ace0c7e64d6c4e935151fbb7616fe540a}{GPIO\_IT\_TRIGGER\_State}};}
 \DoxyCodeLine{00089\ }
-\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a7a789dd059580a37018003f2ac73524f}{GPIO\_setPinInput\_FC}}(\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \ \mbox{\hyperlink{gpio_8h_adf053039691eb516e944062206cd1763}{PUPD\_State}}\ pupd,\ \ \mbox{\hyperlink{gpio_8h_a6d6a4a37ab5e028e3360253754289a3f}{SPEED\_State}}\ speed,\ \ \mbox{\hyperlink{gpio_8h_aa92b582f8b5d087ab491f92d39202f8b}{OUTPUT\_TYPE\_State}}\ output\_t);}
-\DoxyCodeLine{00099\ }
-\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_ac07642be6a857c2997550d8cf342ed3c}{GPIO\_writePin}}(\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \ \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{PinState}}\ state);}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00114\ \mbox{\hyperlink{gpio_8h_a481bba4ee500a381c7ae5b767e641bdc}{PinState}}\ \mbox{\hyperlink{gpio_8h_a4a1dab6b3b9cdf159d5b3dde9da0abab}{GPIO\_readPin}}(\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}\ port,\ \textcolor{keywordtype}{char}\ pin);}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00120\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a4ba3774f6f665e6915173328391ac0e9}{GPIO\_togglePin}}(\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}\ port,\ \textcolor{keywordtype}{char}\ pin);}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a259faa377d6561b7837076f841248fe2}{GPIO\_setPinInterrupt}}(\mbox{\hyperlink{gpio_8h_a8e5b842171165ea1cf5175c2c8341add}{Port}}\ port,\ \textcolor{keywordtype}{char}\ pin);}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00131\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a39d2c9fd276025c7b96d6b48f52690a4}{GPIO\_resetPinInterrupt}}(\textcolor{keywordtype}{char}\ pin);}
-\DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ }
-\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00091\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00092\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a6c1ce10a601ddc3275721fe9deeb31dc}{GPIO\_setPinOutput}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_af13b8fa3774c1f1e662cc7465c50a6d2}{GPIO\_setPinOutput\_FC}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\_PUPD\_State}}\ pupd,\ \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\_SPEED\_State}}\ speed,\ \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\_OUTPUT\_TYPE\_State}}\ output\_t);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00118\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a9625dd06b774cd41b7c00d1f24d9fb74}{GPIO\_setPinInput}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \ \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\_PUPD\_State}}\ pupd);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a34674e3d3e22fbec334113d45485e4a3}{GPIO\_setPinInput\_FC}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \ \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\_PUPD\_State}}\ pupd,\ \ \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\_SPEED\_State}}\ speed,\ \ \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\_OUTPUT\_TYPE\_State}}\ output\_t);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a6798cd6816aff78af0f6692514a3edb7}{GPIO\_writePin}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \ \mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\_PinState}}\ state);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00146\ \mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\_PinState}}\ \mbox{\hyperlink{gpio_8h_ae6295773e205127ac27efa76b3a94e17}{GPIO\_readPin}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00153\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a1f262c12b417a80e2d9e5b4af4df51f8}{GPIO\_togglePin}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00159\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a18be2e734f4b3115ed7023f7900a211d}{GPIO\_setPinInterrupt}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \mbox{\hyperlink{gpio_8h_ace0c7e64d6c4e935151fbb7616fe540a}{GPIO\_IT\_TRIGGER\_State}}\ trigger\_state);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00164\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a39d2c9fd276025c7b96d6b48f52690a4}{GPIO\_resetPinInterrupt}}(\textcolor{keywordtype}{char}\ pin);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00173\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a9432faff3034592264b0925b03bdca09}{GPIO\_setPinAF\_Mode}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\_PUPD\_State}}\ pupd,\ \ \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\_SPEED\_State}}\ speed,\ \ \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\_OUTPUT\_TYPE\_State}}\ output\_t);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00181\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{gpio_8h_a18451678f1ea6b416cb88734c2e832bd}{GPIO\_setPinAF\_State}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827db}{GPIO\_AF\_State}}\ af\_state);}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

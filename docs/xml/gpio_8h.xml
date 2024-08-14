@@ -1,0 +1,794 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="gpio_8h" kind="file" language="C++">
+    <compoundname>gpio.h</compoundname>
+    <includes local="yes">stm32l4xx.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stm32l4xx.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" prot="public" static="no" strong="no">
+        <type></type>
+        <name>Port</name>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda42a4ade1acd55a49164099104990e09f" prot="public">
+          <name>A</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>GPIO port A. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda3f2a77ecd272aa6d6b5902faa5e5fc68" prot="public">
+          <name>B</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>GPIO port B. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda739ce3f516592d245d16fd8a3893472c" prot="public">
+          <name>C</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>GPIO port C. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda77a6b11f9898c052926f1d49765861e8" prot="public">
+          <name>D</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>GPIO port D. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addab199e021998d49b1f09338d8b9b18ecb" prot="public">
+          <name>E</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>GPIO port E. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addaf382a63cc3d6491bf26b59e66f46826d" prot="public">
+          <name>F</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>GPIO port F. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda2fe993340f6abb2234e543cd427df70b" prot="public">
+          <name>G</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>GPIO port G. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda5008b1179f399a2273fd3f6a7fc3b292" prot="public">
+          <name>H</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+<para>GPIO port H. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addad091b8e376f7cf432dc367e1eda65e85" prot="public">
+          <name>I</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+<para>GPIO port I. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the port of a GPIO pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For this family of devices, ports A-I inclusive are supported. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="17" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="17" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="enum" id="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdc" prot="public" static="no" strong="no">
+        <type></type>
+        <name>PinState</name>
+        <enumvalue id="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdca6a226f4143ca3b18999551694cdb72a8" prot="public">
+          <name>LOW</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>The state of the pin is low. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdca0c3a1dacf94061154b3ee354359c5893" prot="public">
+          <name>HIGH</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>The state of the pin is high. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the state of a pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="31" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="enum" id="gpio_8h_1adf053039691eb516e944062206cd1763" prot="public" static="no" strong="no">
+        <type></type>
+        <name>PUPD_State</name>
+        <enumvalue id="gpio_8h_1adf053039691eb516e944062206cd1763a5350baea3ce4b40baacb296ee76473ff" prot="public">
+          <name>PUPD_NO_PULL_UP_PULL_DOWN</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No pull up or pull down chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1adf053039691eb516e944062206cd1763a972793e0fe4ee2ae9be54f5d6918ec12" prot="public">
+          <name>PUPD_PULL_UP</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Pull up resistor chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1adf053039691eb516e944062206cd1763a4a5e51955037d02c5de68c8681668282" prot="public">
+          <name>PUPD_PULL_DOWN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Pull down resistor chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing different PUPD states which are accepted by the GPIOx_PUPDR register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="38" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="38" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="enum" id="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>SPEED_State</name>
+        <enumvalue id="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa38ede0326c63ff7cdc527ea3fb771a03" prot="public">
+          <name>SPEED_LOW</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Low speed chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa51f8ead8afe0763894e52050a22c8fe4" prot="public">
+          <name>SPEED_MEDIUM</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Medium speed chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fab4be0aa6f7b3712c84e992507498c3aa" prot="public">
+          <name>SPEED_HIGH</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>High speed chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa16494c1eea9ac8a51928dfb4559fb628" prot="public">
+          <name>SPEED_VERY_HIGH</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Very high speed chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the speed of a GPIO pin which are accepted by the GPIOx_SPEEDR register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="46" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="46" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="enum" id="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>OUTPUT_TYPE_State</name>
+        <enumvalue id="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8bae09d3850455bcbe93ce8b2aa6b77c7bc" prot="public">
+          <name>OUTPUT_PUSH_PULL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Push pull mode. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8ba013c1c19e286015bf493f5dc6bdd246b" prot="public">
+          <name>OUTPUT_OPEN_DRAIN</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Open drain mode. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the type of GPIO output driver which are accepted by the GPIOx_OTYPER register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="55" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="55" bodyend="58"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="gpio_8h_1a1ccd13b8e1d7040ebe9b9ca23d3a7426" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIO_setPinOutput</definition>
+        <argsstring>(Port port, char pin)</argsstring>
+        <name>GPIO_setPinOutput</name>
+        <param>
+          <type><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin to output mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, output mode is set to PP, speed to very high and no pull up, pull down.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="69" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="69" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="gpio_8h_1a2771955e18fc0804c56e2731fa17f0a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIO_setPinOutput_FC</definition>
+        <argsstring>(Port port, char pin, PUPD_State pupd, SPEED_State speed, OUTPUT_TYPE_State output_t)</argsstring>
+        <name>GPIO_setPinOutput_FC</name>
+        <param>
+          <type><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763" kindref="member">PUPD_State</ref></type>
+          <declname>pupd</declname>
+        </param>
+        <param>
+          <type><ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3f" kindref="member">SPEED_State</ref></type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type><ref refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8b" kindref="member">OUTPUT_TYPE_State</ref></type>
+          <declname>output_t</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pupd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pull up or pull down resistor state </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired speed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="80" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="80" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="gpio_8h_1a7d39a89946aac8a536ce6a0e1f0d065e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIO_setPinInput</definition>
+        <argsstring>(Port port, char pin, PUPD_State pupd)</argsstring>
+        <name>GPIO_setPinInput</name>
+        <param>
+          <type><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763" kindref="member">PUPD_State</ref></type>
+          <declname>pupd</declname>
+        </param>
+        <briefdescription>
+<para>Sets pin to input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, output mode is set to PP and speed to very high.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pupd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pull up or pull down resistor state </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="88" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="88" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="gpio_8h_1a7a789dd059580a37018003f2ac73524f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIO_setPinInput_FC</definition>
+        <argsstring>(Port port, char pin, PUPD_State pupd, SPEED_State speed, OUTPUT_TYPE_State output_t)</argsstring>
+        <name>GPIO_setPinInput_FC</name>
+        <param>
+          <type><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763" kindref="member">PUPD_State</ref></type>
+          <declname>pupd</declname>
+        </param>
+        <param>
+          <type><ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3f" kindref="member">SPEED_State</ref></type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type><ref refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8b" kindref="member">OUTPUT_TYPE_State</ref></type>
+          <declname>output_t</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pupd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pull up or pull down resistor state </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired speed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="98" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="98" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="gpio_8h_1ac07642be6a857c2997550d8cf342ed3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIO_writePin</definition>
+        <argsstring>(Port port, char pin, PinState state)</argsstring>
+        <name>GPIO_writePin</name>
+        <param>
+          <type><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdc" kindref="member">PinState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Write a value to a specificed GPIO pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. The pin state to be set can either be HIGH or LOW.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired state of the pin </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="106" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="106" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="gpio_8h_1a4a1dab6b3b9cdf159d5b3dde9da0abab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdc" kindref="member">PinState</ref></type>
+        <definition>PinState GPIO_readPin</definition>
+        <argsstring>(Port port, char pin)</argsstring>
+        <name>GPIO_readPin</name>
+        <param>
+          <type><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Read a value from a specificed GPIO pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function should only be called if the pin has been correctly set with either setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. The pin state returned can either be HIGH or LOW.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>state of the pin </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="114" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="114" declcolumn="10"/>
+      </memberdef>
+      <memberdef kind="function" id="gpio_8h_1a4ba3774f6f665e6915173328391ac0e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIO_togglePin</definition>
+        <argsstring>(Port port, char pin)</argsstring>
+        <name>GPIO_togglePin</name>
+        <param>
+          <type><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Toggles the state of a GPIO pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function should only be called if the pin has been correctly set with either setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="120" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="120" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="gpio_8h_1a259faa377d6561b7837076f841248fe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIO_setPinInterrupt</definition>
+        <argsstring>(Port port, char pin)</argsstring>
+        <name>GPIO_setPinInterrupt</name>
+        <param>
+          <type><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin to input-interrupt mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, the interrupt trigger is set to rising trigger. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="126" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="126" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="gpio_8h_1a39d2c9fd276025c7b96d6b48f52690a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GPIO_resetPinInterrupt</definition>
+        <argsstring>(char pin)</argsstring>
+        <name>GPIO_resetPinInterrupt</name>
+        <param>
+          <type>char</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Reset the flag corresponding to the pin in the EXTI Pending Register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function should be called in the EXTI_IRQ_Handler in order to allow repeated interrupts. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="131" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="131" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;stm32l4xx.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/***</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/>GPIO<sp/>drivers<sp/>for<sp/>stm32l4xx<sp/>devices.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/>WARNING:<sp/>These<sp/>drivers<sp/>have<sp/>NOT<sp/>been<sp/>tested<sp/>extensively.<sp/>Use<sp/>at<sp/>own<sp/>risk.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/>Reference:<sp/>https://www.youtube.com/playlist?list=PLtVUYRe-Z-mfKO0lg_-MBvwWl6VjWT8Dt</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">***/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPEDEFS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda42a4ade1acd55a49164099104990e09f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda42a4ade1acd55a49164099104990e09f" kindref="member">A</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="19" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda3f2a77ecd272aa6d6b5902faa5e5fc68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda3f2a77ecd272aa6d6b5902faa5e5fc68" kindref="member">B</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="20" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda739ce3f516592d245d16fd8a3893472c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda739ce3f516592d245d16fd8a3893472c" kindref="member">C</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="21" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda77a6b11f9898c052926f1d49765861e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda77a6b11f9898c052926f1d49765861e8" kindref="member">D</ref><sp/>=<sp/>3,<sp/></highlight></codeline>
+<codeline lineno="22" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addab199e021998d49b1f09338d8b9b18ecb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addab199e021998d49b1f09338d8b9b18ecb" kindref="member">E</ref><sp/>=<sp/>4,<sp/></highlight></codeline>
+<codeline lineno="23" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addaf382a63cc3d6491bf26b59e66f46826d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addaf382a63cc3d6491bf26b59e66f46826d" kindref="member">F</ref><sp/>=<sp/>5,<sp/></highlight></codeline>
+<codeline lineno="24" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda2fe993340f6abb2234e543cd427df70b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda2fe993340f6abb2234e543cd427df70b" kindref="member">G</ref><sp/>=<sp/>6,<sp/></highlight></codeline>
+<codeline lineno="25" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda5008b1179f399a2273fd3f6a7fc3b292" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341adda5008b1179f399a2273fd3f6a7fc3b292" kindref="member">H</ref><sp/>=<sp/>7,<sp/></highlight></codeline>
+<codeline lineno="26" refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addad091b8e376f7cf432dc367e1eda65e85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341addad091b8e376f7cf432dc367e1eda65e85" kindref="member">I</ref><sp/>=<sp/>8,<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}<sp/><ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref>;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="32" refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdca6a226f4143ca3b18999551694cdb72a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdca6a226f4143ca3b18999551694cdb72a8" kindref="member">LOW</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="33" refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdca0c3a1dacf94061154b3ee354359c5893" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdca0c3a1dacf94061154b3ee354359c5893" kindref="member">HIGH</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}<ref refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdc" kindref="member">PinState</ref><sp/>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="gpio_8h_1adf053039691eb516e944062206cd1763" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39" refid="gpio_8h_1adf053039691eb516e944062206cd1763a5350baea3ce4b40baacb296ee76473ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763a5350baea3ce4b40baacb296ee76473ff" kindref="member">PUPD_NO_PULL_UP_PULL_DOWN</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="40" refid="gpio_8h_1adf053039691eb516e944062206cd1763a972793e0fe4ee2ae9be54f5d6918ec12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763a972793e0fe4ee2ae9be54f5d6918ec12" kindref="member">PUPD_PULL_UP</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="41" refid="gpio_8h_1adf053039691eb516e944062206cd1763a4a5e51955037d02c5de68c8681668282" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763a4a5e51955037d02c5de68c8681668282" kindref="member">PUPD_PULL_DOWN</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}<ref refid="gpio_8h_1adf053039691eb516e944062206cd1763" kindref="member">PUPD_State</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47" refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa38ede0326c63ff7cdc527ea3fb771a03" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa38ede0326c63ff7cdc527ea3fb771a03" kindref="member">SPEED_LOW</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="48" refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa51f8ead8afe0763894e52050a22c8fe4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa51f8ead8afe0763894e52050a22c8fe4" kindref="member">SPEED_MEDIUM</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="49" refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fab4be0aa6f7b3712c84e992507498c3aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fab4be0aa6f7b3712c84e992507498c3aa" kindref="member">SPEED_HIGH</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="50" refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa16494c1eea9ac8a51928dfb4559fb628" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3fa16494c1eea9ac8a51928dfb4559fb628" kindref="member">SPEED_VERY_HIGH</ref><sp/>=<sp/>3,<sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3f" kindref="member">SPEED_State</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56" refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8bae09d3850455bcbe93ce8b2aa6b77c7bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8bae09d3850455bcbe93ce8b2aa6b77c7bc" kindref="member">OUTPUT_PUSH_PULL</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="57" refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8ba013c1c19e286015bf493f5dc6bdd246b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8ba013c1c19e286015bf493f5dc6bdd246b" kindref="member">OUTPUT_OPEN_DRAIN</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<ref refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8b" kindref="member">OUTPUT_TYPE_State</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FUNCTION<sp/>PROTOTYPES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="gpio_8h_1a1ccd13b8e1d7040ebe9b9ca23d3a7426" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpio_8h_1a1ccd13b8e1d7040ebe9b9ca23d3a7426" kindref="member">GPIO_setPinOutput</ref>(<ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="gpio_8h_1a2771955e18fc0804c56e2731fa17f0a5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpio_8h_1a2771955e18fc0804c56e2731fa17f0a5" kindref="member">GPIO_setPinOutput_FC</ref>(<ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin,<sp/><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763" kindref="member">PUPD_State</ref><sp/>pupd,<sp/><ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3f" kindref="member">SPEED_State</ref><sp/>speed,<sp/><ref refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8b" kindref="member">OUTPUT_TYPE_State</ref><sp/>output_t);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="gpio_8h_1a7d39a89946aac8a536ce6a0e1f0d065e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpio_8h_1a7d39a89946aac8a536ce6a0e1f0d065e" kindref="member">GPIO_setPinInput</ref>(<ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin,<sp/><sp/><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763" kindref="member">PUPD_State</ref><sp/>pupd);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="gpio_8h_1a7a789dd059580a37018003f2ac73524f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpio_8h_1a7a789dd059580a37018003f2ac73524f" kindref="member">GPIO_setPinInput_FC</ref>(<ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin,<sp/><sp/><ref refid="gpio_8h_1adf053039691eb516e944062206cd1763" kindref="member">PUPD_State</ref><sp/>pupd,<sp/><sp/><ref refid="gpio_8h_1a6d6a4a37ab5e028e3360253754289a3f" kindref="member">SPEED_State</ref><sp/>speed,<sp/><sp/><ref refid="gpio_8h_1aa92b582f8b5d087ab491f92d39202f8b" kindref="member">OUTPUT_TYPE_State</ref><sp/>output_t);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="gpio_8h_1ac07642be6a857c2997550d8cf342ed3c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpio_8h_1ac07642be6a857c2997550d8cf342ed3c" kindref="member">GPIO_writePin</ref>(<ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin,<sp/><sp/><ref refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdc" kindref="member">PinState</ref><sp/>state);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="gpio_8h_1a4a1dab6b3b9cdf159d5b3dde9da0abab" refkind="member"><highlight class="normal"><ref refid="gpio_8h_1a481bba4ee500a381c7ae5b767e641bdc" kindref="member">PinState</ref><sp/><ref refid="gpio_8h_1a4a1dab6b3b9cdf159d5b3dde9da0abab" kindref="member">GPIO_readPin</ref>(<ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="gpio_8h_1a4ba3774f6f665e6915173328391ac0e9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpio_8h_1a4ba3774f6f665e6915173328391ac0e9" kindref="member">GPIO_togglePin</ref>(<ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="gpio_8h_1a259faa377d6561b7837076f841248fe2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpio_8h_1a259faa377d6561b7837076f841248fe2" kindref="member">GPIO_setPinInterrupt</ref>(<ref refid="gpio_8h_1a8e5b842171165ea1cf5175c2c8341add" kindref="member">Port</ref><sp/>port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="gpio_8h_1a39d2c9fd276025c7b96d6b48f52690a4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpio_8h_1a39d2c9fd276025c7b96d6b48f52690a4" kindref="member">GPIO_resetPinInterrupt</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pin);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h"/>
+  </compounddef>
+</doxygen>
