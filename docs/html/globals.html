@@ -87,11 +87,14 @@ $(function(){ initResizable(false); });
 <div class="textblock">Here is a list of all functions, variables, defines, enums, and typedefs with links to the files they belong to:</div>
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>CLOCK_activateClk()&#160;:&#160;<a class="el" href="clock_8h.html#a22aa6f7c08d56f527f24e599024ba02b">clock.h</a></li>
-<li>CLOCK_activateMCO()&#160;:&#160;<a class="el" href="clock_8h.html#a22959fff77df190fb25aa92e10a7920f">clock.h</a></li>
+<li>CLOCK_activateClk()&#160;:&#160;<a class="el" href="clock_8h.html#a08716e6071c93768a4091dc5947e104f">clock.h</a></li>
+<li>CLOCK_activateMCO()&#160;:&#160;<a class="el" href="clock_8h.html#af32fa2488b07b90331da3c4d208e533b">clock.h</a></li>
 <li>CLOCK_configPLL()&#160;:&#160;<a class="el" href="clock_8h.html#a9637455690355b1be6e1014d939fbe83">clock.h</a></li>
-<li>CLOCK_desactivateClk()&#160;:&#160;<a class="el" href="clock_8h.html#ae631725a9fa06646f7c8e4b925877d25">clock.h</a></li>
+<li>CLOCK_desactivateClk()&#160;:&#160;<a class="el" href="clock_8h.html#a34f1183e02b1e5320ccf45c6e646b918">clock.h</a></li>
 <li>CLOCK_ERROR&#160;:&#160;<a class="el" href="clock_8h.html#a5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06">clock.h</a></li>
+<li>CLOCK_getHSEClockSpeed()&#160;:&#160;<a class="el" href="clock_8h.html#a541195c1a15625335a8432521e33aeeb">clock.h</a></li>
+<li>CLOCK_getMSIClockSpeed()&#160;:&#160;<a class="el" href="clock_8h.html#a5961d39318d181b59c08bdd25e6d0742">clock.h</a></li>
+<li>CLOCK_getPLLClockSpeed()&#160;:&#160;<a class="el" href="clock_8h.html#a9c77fd34e367e2b9fd11046bceeadbd0">clock.h</a></li>
 <li>CLOCK_getSystemClockSpeed()&#160;:&#160;<a class="el" href="clock_8h.html#a576b63236d3aa77e1165456de93f82ed">clock.h</a></li>
 <li>CLOCK_HSE&#160;:&#160;<a class="el" href="clock_8h.html#a63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca">clock.h</a></li>
 <li>CLOCK_HSI&#160;:&#160;<a class="el" href="clock_8h.html#a63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1">clock.h</a></li>
@@ -128,8 +131,15 @@ $(function(){ initResizable(false); });
 <li>CLOCK_PLLR_State&#160;:&#160;<a class="el" href="clock_8h.html#a9b771949ba6bccb42317a3e5e089cded">clock.h</a></li>
 <li>CLOCK_PLLSAI1&#160;:&#160;<a class="el" href="clock_8h.html#a63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01">clock.h</a></li>
 <li>CLOCK_PLLSAI2&#160;:&#160;<a class="el" href="clock_8h.html#a63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540">clock.h</a></li>
+<li>CLOCK_setHSEClockSpeed()&#160;:&#160;<a class="el" href="clock_8h.html#afb218eef31523ec71b30062ef98a0d49">clock.h</a></li>
+<li>CLOCK_setSystemClock()&#160;:&#160;<a class="el" href="clock_8h.html#ad3f9097ce53adfff82cb70ddea07c27d">clock.h</a></li>
 <li>CLOCK_State&#160;:&#160;<a class="el" href="clock_8h.html#a63d31f75868a8d1e3b998ac5df3f6a36">clock.h</a></li>
 <li>CLOCK_Status_State&#160;:&#160;<a class="el" href="clock_8h.html#a5aa3fa30a332173aafcc460104d0a159">clock.h</a></li>
+<li>CLOCK_SYSCLK_HSE&#160;:&#160;<a class="el" href="clock_8h.html#ab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf">clock.h</a></li>
+<li>CLOCK_SYSCLK_HSI16&#160;:&#160;<a class="el" href="clock_8h.html#ab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462">clock.h</a></li>
+<li>CLOCK_SYSCLK_MSI&#160;:&#160;<a class="el" href="clock_8h.html#ab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1">clock.h</a></li>
+<li>CLOCK_SYSCLK_PLL&#160;:&#160;<a class="el" href="clock_8h.html#ab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d">clock.h</a></li>
+<li>CLOCK_SYSCLK_State&#160;:&#160;<a class="el" href="clock_8h.html#ab8ea3cd345873e8a031469d82633ee72">clock.h</a></li>
 </ul>
 
 
@@ -151,11 +161,14 @@ $(function(){ initResizable(false); });
 <li>GPIO_AF_8&#160;:&#160;<a class="el" href="gpio_8h.html#a50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe">gpio.h</a></li>
 <li>GPIO_AF_9&#160;:&#160;<a class="el" href="gpio_8h.html#a50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097">gpio.h</a></li>
 <li>GPIO_AF_State&#160;:&#160;<a class="el" href="gpio_8h.html#a50a2f4df54586ff8414f27fcb3f827db">gpio.h</a></li>
+<li>GPIO_ERROR&#160;:&#160;<a class="el" href="gpio_8h.html#a3fdce057401bc547fc9d8692f2c27764a655a17b7b79de8c0c8e5356f966e506f">gpio.h</a></li>
 <li>GPIO_HIGH&#160;:&#160;<a class="el" href="gpio_8h.html#a5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d">gpio.h</a></li>
+<li>GPIO_INVALID_ARGS&#160;:&#160;<a class="el" href="gpio_8h.html#a3fdce057401bc547fc9d8692f2c27764a3a8415df5bbacde0e5baa2fdac62a8b1">gpio.h</a></li>
 <li>GPIO_IT_TRIGGER_FALLING&#160;:&#160;<a class="el" href="gpio_8h.html#ace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78">gpio.h</a></li>
 <li>GPIO_IT_TRIGGER_RISING&#160;:&#160;<a class="el" href="gpio_8h.html#ace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216">gpio.h</a></li>
 <li>GPIO_IT_TRIGGER_State&#160;:&#160;<a class="el" href="gpio_8h.html#ace0c7e64d6c4e935151fbb7616fe540a">gpio.h</a></li>
 <li>GPIO_LOW&#160;:&#160;<a class="el" href="gpio_8h.html#a5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa">gpio.h</a></li>
+<li>GPIO_OK&#160;:&#160;<a class="el" href="gpio_8h.html#a3fdce057401bc547fc9d8692f2c27764a221c52bb468cb5191edcd5bd3fbd862c">gpio.h</a></li>
 <li>GPIO_OUTPUT_OPEN_DRAIN&#160;:&#160;<a class="el" href="gpio_8h.html#ad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b">gpio.h</a></li>
 <li>GPIO_OUTPUT_PUSH_PULL&#160;:&#160;<a class="el" href="gpio_8h.html#ad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9">gpio.h</a></li>
 <li>GPIO_OUTPUT_TYPE_State&#160;:&#160;<a class="el" href="gpio_8h.html#ad95ee31148019b4ae8d63e5a3e0777ee">gpio.h</a></li>
@@ -175,21 +188,22 @@ $(function(){ initResizable(false); });
 <li>GPIO_PUPD_PULL_UP&#160;:&#160;<a class="el" href="gpio_8h.html#a2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36">gpio.h</a></li>
 <li>GPIO_PUPD_State&#160;:&#160;<a class="el" href="gpio_8h.html#a2266f25d4ba662cd4e40de36a5049167">gpio.h</a></li>
 <li>GPIO_readPin()&#160;:&#160;<a class="el" href="gpio_8h.html#ae6295773e205127ac27efa76b3a94e17">gpio.h</a></li>
-<li>GPIO_resetPinInterrupt()&#160;:&#160;<a class="el" href="gpio_8h.html#a39d2c9fd276025c7b96d6b48f52690a4">gpio.h</a></li>
-<li>GPIO_setPinAF_Mode()&#160;:&#160;<a class="el" href="gpio_8h.html#a9432faff3034592264b0925b03bdca09">gpio.h</a></li>
-<li>GPIO_setPinAF_State()&#160;:&#160;<a class="el" href="gpio_8h.html#a18451678f1ea6b416cb88734c2e832bd">gpio.h</a></li>
-<li>GPIO_setPinInput()&#160;:&#160;<a class="el" href="gpio_8h.html#a9625dd06b774cd41b7c00d1f24d9fb74">gpio.h</a></li>
-<li>GPIO_setPinInput_FC()&#160;:&#160;<a class="el" href="gpio_8h.html#a34674e3d3e22fbec334113d45485e4a3">gpio.h</a></li>
-<li>GPIO_setPinInterrupt()&#160;:&#160;<a class="el" href="gpio_8h.html#a18be2e734f4b3115ed7023f7900a211d">gpio.h</a></li>
-<li>GPIO_setPinOutput()&#160;:&#160;<a class="el" href="gpio_8h.html#a6c1ce10a601ddc3275721fe9deeb31dc">gpio.h</a></li>
-<li>GPIO_setPinOutput_FC()&#160;:&#160;<a class="el" href="gpio_8h.html#af13b8fa3774c1f1e662cc7465c50a6d2">gpio.h</a></li>
+<li>GPIO_resetPinInterrupt()&#160;:&#160;<a class="el" href="gpio_8h.html#aa284a14e9a888b31d195b921aa4ee7b1">gpio.h</a></li>
+<li>GPIO_setPinAF_Mode()&#160;:&#160;<a class="el" href="gpio_8h.html#a4ebab1fbaf9438863036472f90c10a6f">gpio.h</a></li>
+<li>GPIO_setPinAF_State()&#160;:&#160;<a class="el" href="gpio_8h.html#aab97cc3656dd2bfde4eedf72ba1524d9">gpio.h</a></li>
+<li>GPIO_setPinInput()&#160;:&#160;<a class="el" href="gpio_8h.html#a3e1de41304bd292da8b13c1cb7ed19af">gpio.h</a></li>
+<li>GPIO_setPinInput_FC()&#160;:&#160;<a class="el" href="gpio_8h.html#a0d1650a0766603d8ed138433403940ca">gpio.h</a></li>
+<li>GPIO_setPinInterrupt()&#160;:&#160;<a class="el" href="gpio_8h.html#a07805c2a3f4d3eb775892e426efc3bac">gpio.h</a></li>
+<li>GPIO_setPinOutput()&#160;:&#160;<a class="el" href="gpio_8h.html#a8a0f91640c59b17dcf1ee4e002849d17">gpio.h</a></li>
+<li>GPIO_setPinOutput_FC()&#160;:&#160;<a class="el" href="gpio_8h.html#a827460fad3bcd710003baa4709e4f6b4">gpio.h</a></li>
 <li>GPIO_SPEED_HIGH&#160;:&#160;<a class="el" href="gpio_8h.html#aaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12">gpio.h</a></li>
 <li>GPIO_SPEED_LOW&#160;:&#160;<a class="el" href="gpio_8h.html#aaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b">gpio.h</a></li>
 <li>GPIO_SPEED_MEDIUM&#160;:&#160;<a class="el" href="gpio_8h.html#aaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343">gpio.h</a></li>
 <li>GPIO_SPEED_State&#160;:&#160;<a class="el" href="gpio_8h.html#aaf9978d8971c86f33115b493e5d6190f">gpio.h</a></li>
 <li>GPIO_SPEED_VERY_HIGH&#160;:&#160;<a class="el" href="gpio_8h.html#aaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746">gpio.h</a></li>
-<li>GPIO_togglePin()&#160;:&#160;<a class="el" href="gpio_8h.html#a1f262c12b417a80e2d9e5b4af4df51f8">gpio.h</a></li>
-<li>GPIO_writePin()&#160;:&#160;<a class="el" href="gpio_8h.html#a6798cd6816aff78af0f6692514a3edb7">gpio.h</a></li>
+<li>GPIO_Status_State&#160;:&#160;<a class="el" href="gpio_8h.html#a3fdce057401bc547fc9d8692f2c27764">gpio.h</a></li>
+<li>GPIO_togglePin()&#160;:&#160;<a class="el" href="gpio_8h.html#a30357ffcc9792de174de91fd11e9766c">gpio.h</a></li>
+<li>GPIO_writePin()&#160;:&#160;<a class="el" href="gpio_8h.html#ae1ba4d96723bcbf0d5a401f0e892222f">gpio.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

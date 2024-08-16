@@ -54,20 +54,36 @@ enum \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+S
 , \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159a2941fc3f1fa884801d4ffed60c7f29ef}{CLOCK\+\_\+\+INVALID\+\_\+\+ARGS}} = 1
 , \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06}{CLOCK\+\_\+\+ERROR}} = 2
  \}
-\begin{DoxyCompactList}\small\item\em Enum representing the status of a function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enum representing the status of a function. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\+\_\+\+SYSCLK\+\_\+\+State}} \{ \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1}{CLOCK\+\_\+\+SYSCLK\+\_\+\+MSI}} = 0
+, \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462}{CLOCK\+\_\+\+SYSCLK\+\_\+\+HSI16}} = 1
+, \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf}{CLOCK\+\_\+\+SYSCLK\+\_\+\+HSE}} = 2
+, \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d}{CLOCK\+\_\+\+SYSCLK\+\_\+\+PLL}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing clocks which can be chosen as the system clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{clock_8h_a22959fff77df190fb25aa92e10a7920f}{CLOCK\+\_\+activate\+MCO}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{clock_8h_a8fab271b291b83bd742e9099a9f20a59}{CLOCK\+\_\+\+MCO\+\_\+\+SELECT\+\_\+\+State}} mco\+\_\+sel\+\_\+state, \mbox{\hyperlink{clock_8h_aaa0363e0e9775584599d94565f8e0e60}{CLOCK\+\_\+\+MCO\+\_\+\+PRESCALER\+\_\+\+State}} mco\+\_\+pre\+\_\+state)
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_af32fa2488b07b90331da3c4d208e533b}{CLOCK\+\_\+activate\+MCO}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{clock_8h_a8fab271b291b83bd742e9099a9f20a59}{CLOCK\+\_\+\+MCO\+\_\+\+SELECT\+\_\+\+State}} mco\+\_\+sel\+\_\+state, \mbox{\hyperlink{clock_8h_aaa0363e0e9775584599d94565f8e0e60}{CLOCK\+\_\+\+MCO\+\_\+\+PRESCALER\+\_\+\+State}} mco\+\_\+pre\+\_\+state)
 \begin{DoxyCompactList}\small\item\em Activates the Master Clock Output pin to the selected output state. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{clock_8h_a22aa6f7c08d56f527f24e599024ba02b}{CLOCK\+\_\+activate\+Clk}} (\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}} clk)
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a9637455690355b1be6e1014d939fbe83}{CLOCK\+\_\+config\+PLL}} (\mbox{\hyperlink{clock_8h_aceb416b702f94d30e139e49e8e10a76f}{CLOCK\+\_\+\+PLL\+\_\+\+SOURCE\+\_\+\+State}} pll\+\_\+src, char PLL\+\_\+M, char PLL\+\_\+N, \mbox{\hyperlink{clock_8h_a9b771949ba6bccb42317a3e5e089cded}{CLOCK\+\_\+\+PLLR\+\_\+\+State}} PLL\+\_\+R)
+\begin{DoxyCompactList}\small\item\em Configures the PLL clock so that it may be used as the System clock. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a08716e6071c93768a4091dc5947e104f}{CLOCK\+\_\+activate\+Clk}} (\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}} clk)
 \begin{DoxyCompactList}\small\item\em Activates a desired clock. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{clock_8h_ae631725a9fa06646f7c8e4b925877d25}{CLOCK\+\_\+desactivate\+Clk}} (\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}} clk)
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a34f1183e02b1e5320ccf45c6e646b918}{CLOCK\+\_\+desactivate\+Clk}} (\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}} clk)
 \begin{DoxyCompactList}\small\item\em Desactivates a desired clock. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{clock_8h_a9c77fd34e367e2b9fd11046bceeadbd0}{CLOCK\+\_\+get\+PLLClock\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em Gets the speed (frequency) in Hz of the PLL clock, if it is activated. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{clock_8h_a5961d39318d181b59c08bdd25e6d0742}{CLOCK\+\_\+get\+MSIClock\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em Gets the speed (frequency) in Hz of the MSI (Multi-\/\+Speed Internal) clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{clock_8h_afb218eef31523ec71b30062ef98a0d49}{CLOCK\+\_\+set\+HSEClock\+Speed}} (int speed)
+\begin{DoxyCompactList}\small\item\em Set the speed of the external clock oscillator, if one is available. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{clock_8h_a541195c1a15625335a8432521e33aeeb}{CLOCK\+\_\+get\+HSEClock\+Speed}} ()
+\begin{DoxyCompactList}\small\item\em Gets the speed (frequency) in Hz of the HSE (High-\/\+Speed External) clock. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{clock_8h_a576b63236d3aa77e1165456de93f82ed}{CLOCK\+\_\+get\+System\+Clock\+Speed}} ()
 \begin{DoxyCompactList}\small\item\em Gets the speed (frequency) in Hz of the system clock. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a9637455690355b1be6e1014d939fbe83}{CLOCK\+\_\+config\+PLL}} (\mbox{\hyperlink{clock_8h_aceb416b702f94d30e139e49e8e10a76f}{CLOCK\+\_\+\+PLL\+\_\+\+SOURCE\+\_\+\+State}} pll\+\_\+src, char PLL\+\_\+M, char PLL\+\_\+N, \mbox{\hyperlink{clock_8h_a9b771949ba6bccb42317a3e5e089cded}{CLOCK\+\_\+\+PLLR\+\_\+\+State}} PLL\+\_\+R)
-\begin{DoxyCompactList}\small\item\em Configures the PLL clock so that it may be used as the System clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_ad3f9097ce53adfff82cb70ddea07c27d}{CLOCK\+\_\+set\+System\+Clock}} (\mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\+\_\+\+SYSCLK\+\_\+\+State}} sysclk)
+\begin{DoxyCompactList}\small\item\em Sets the system clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -87,19 +103,19 @@ CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+1&MCO is divided by 1. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_MCO\_PRE\_DIV\_2@{CLOCK\_MCO\_PRE\_DIV\_2}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_MCO\_PRE\_DIV\_2@{CLOCK\_MCO\_PRE\_DIV\_2}}}\Hypertarget{clock_8h_aaa0363e0e9775584599d94565f8e0e60a8bb9e7c5629ffd960898254d902d0a01}\label{clock_8h_aaa0363e0e9775584599d94565f8e0e60} 
-CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+2&MCO is divided by 2,. \\
+CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+2&MCO is divided by 2. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_MCO\_PRE\_DIV\_4@{CLOCK\_MCO\_PRE\_DIV\_4}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_MCO\_PRE\_DIV\_4@{CLOCK\_MCO\_PRE\_DIV\_4}}}\Hypertarget{clock_8h_aaa0363e0e9775584599d94565f8e0e60a0210de4b012d4b2b456a01b7f0603bc7}\label{clock_8h_aaa0363e0e9775584599d94565f8e0e60} 
-CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+4&MCO is divided by 4,. \\
+CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+4&MCO is divided by 4. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_MCO\_PRE\_DIV\_8@{CLOCK\_MCO\_PRE\_DIV\_8}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_MCO\_PRE\_DIV\_8@{CLOCK\_MCO\_PRE\_DIV\_8}}}\Hypertarget{clock_8h_aaa0363e0e9775584599d94565f8e0e60a19ec56b9cdffbd690114783b9ec42fe2}\label{clock_8h_aaa0363e0e9775584599d94565f8e0e60} 
-CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+8&MCO is divided by 8,. \\
+CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+8&MCO is divided by 8. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_MCO\_PRE\_DIV\_16@{CLOCK\_MCO\_PRE\_DIV\_16}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_MCO\_PRE\_DIV\_16@{CLOCK\_MCO\_PRE\_DIV\_16}}}\Hypertarget{clock_8h_aaa0363e0e9775584599d94565f8e0e60a1738104963af1cf755a3f48652d69fad}\label{clock_8h_aaa0363e0e9775584599d94565f8e0e60} 
-CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+16&MCO is divided by 16,. \\
+CLOCK\+\_\+\+MCO\+\_\+\+PRE\+\_\+\+DIV\+\_\+16&MCO is divided by 16. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -163,19 +179,19 @@ Enum representing a choice of clock as source for PLL.
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLL\_SRC\_NONE@{CLOCK\_PLL\_SRC\_NONE}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLL\_SRC\_NONE@{CLOCK\_PLL\_SRC\_NONE}}}\Hypertarget{clock_8h_aceb416b702f94d30e139e49e8e10a76fa7dfb30305b992424089765bb86052116}\label{clock_8h_aceb416b702f94d30e139e49e8e10a76f} 
-CLOCK\+\_\+\+PLL\+\_\+\+SRC\+\_\+\+NONE&\\
+CLOCK\+\_\+\+PLL\+\_\+\+SRC\+\_\+\+NONE&The source clock for the PLL is not selected. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLL\_SRC\_MSI@{CLOCK\_PLL\_SRC\_MSI}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLL\_SRC\_MSI@{CLOCK\_PLL\_SRC\_MSI}}}\Hypertarget{clock_8h_aceb416b702f94d30e139e49e8e10a76faa828be71c3aaab5019d54220bb09da5d}\label{clock_8h_aceb416b702f94d30e139e49e8e10a76f} 
-CLOCK\+\_\+\+PLL\+\_\+\+SRC\+\_\+\+MSI&\\
+CLOCK\+\_\+\+PLL\+\_\+\+SRC\+\_\+\+MSI&The source clock for the PLL is MSI. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLL\_SRC\_HSI16@{CLOCK\_PLL\_SRC\_HSI16}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLL\_SRC\_HSI16@{CLOCK\_PLL\_SRC\_HSI16}}}\Hypertarget{clock_8h_aceb416b702f94d30e139e49e8e10a76faf5c7a4f6288463c25804767392272ea2}\label{clock_8h_aceb416b702f94d30e139e49e8e10a76f} 
-CLOCK\+\_\+\+PLL\+\_\+\+SRC\+\_\+\+HSI16&\\
+CLOCK\+\_\+\+PLL\+\_\+\+SRC\+\_\+\+HSI16&The source clock for the PLL is HSI16. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLL\_SRC\_HSE@{CLOCK\_PLL\_SRC\_HSE}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLL\_SRC\_HSE@{CLOCK\_PLL\_SRC\_HSE}}}\Hypertarget{clock_8h_aceb416b702f94d30e139e49e8e10a76fa4d2de9def651b564adbc2f29261d3828}\label{clock_8h_aceb416b702f94d30e139e49e8e10a76f} 
-CLOCK\+\_\+\+PLL\+\_\+\+SRC\+\_\+\+HSE&\\
+CLOCK\+\_\+\+PLL\+\_\+\+SRC\+\_\+\+HSE&The source clock for the PLL is HSE. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -191,19 +207,19 @@ Enum representing choices for the PLL\+\_\+R parameter.
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLLR\_2@{CLOCK\_PLLR\_2}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLLR\_2@{CLOCK\_PLLR\_2}}}\Hypertarget{clock_8h_a9b771949ba6bccb42317a3e5e089cdeda30583baa78fd1ccfaa1277d78915d648}\label{clock_8h_a9b771949ba6bccb42317a3e5e089cded} 
-CLOCK\+\_\+\+PLLR\+\_\+2&\\
+CLOCK\+\_\+\+PLLR\+\_\+2&PLL\+\_\+R is set to 2. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLLR\_4@{CLOCK\_PLLR\_4}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLLR\_4@{CLOCK\_PLLR\_4}}}\Hypertarget{clock_8h_a9b771949ba6bccb42317a3e5e089cdeda6f54e915fefe249957a8e62298970386}\label{clock_8h_a9b771949ba6bccb42317a3e5e089cded} 
-CLOCK\+\_\+\+PLLR\+\_\+4&\\
+CLOCK\+\_\+\+PLLR\+\_\+4&PLL\+\_\+R is set to 4. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLLR\_6@{CLOCK\_PLLR\_6}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLLR\_6@{CLOCK\_PLLR\_6}}}\Hypertarget{clock_8h_a9b771949ba6bccb42317a3e5e089cdeda135545aae67a4cc368f146388860aa57}\label{clock_8h_a9b771949ba6bccb42317a3e5e089cded} 
-CLOCK\+\_\+\+PLLR\+\_\+6&\\
+CLOCK\+\_\+\+PLLR\+\_\+6&PLL\+\_\+R is set to 6. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLLR\_8@{CLOCK\_PLLR\_8}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLLR\_8@{CLOCK\_PLLR\_8}}}\Hypertarget{clock_8h_a9b771949ba6bccb42317a3e5e089cdeda57e44ea397f1766898982b78a9fa3bd8}\label{clock_8h_a9b771949ba6bccb42317a3e5e089cded} 
-CLOCK\+\_\+\+PLLR\+\_\+8&\\
+CLOCK\+\_\+\+PLLR\+\_\+8&PLL\+\_\+R is set to 8. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -219,31 +235,31 @@ Enum representing a choice of clock for activating and desactivating.
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_LSE@{CLOCK\_LSE}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_LSE@{CLOCK\_LSE}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
-CLOCK\+\_\+\+LSE&\\
+CLOCK\+\_\+\+LSE&The LSE clock is to be activated or desactivated. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_MSI@{CLOCK\_MSI}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_MSI@{CLOCK\_MSI}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
-CLOCK\+\_\+\+MSI&\\
+CLOCK\+\_\+\+MSI&The MSI clock is to be activated or desactivated. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_HSI@{CLOCK\_HSI}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_HSI@{CLOCK\_HSI}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
-CLOCK\+\_\+\+HSI&\\
+CLOCK\+\_\+\+HSI&The HSI clock is to be activated or desactivated. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_HSE@{CLOCK\_HSE}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_HSE@{CLOCK\_HSE}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
-CLOCK\+\_\+\+HSE&\\
+CLOCK\+\_\+\+HSE&The HSE clock is to be activated or desactivated. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLL@{CLOCK\_PLL}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLL@{CLOCK\_PLL}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a14eebc7672bdd5c1225faf6d957fcfc8}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
-CLOCK\+\_\+\+PLL&\\
+CLOCK\+\_\+\+PLL&The PLL clock is to be activated or desactivated. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLLSAI1@{CLOCK\_PLLSAI1}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLLSAI1@{CLOCK\_PLLSAI1}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
-CLOCK\+\_\+\+PLLSAI1&\\
+CLOCK\+\_\+\+PLLSAI1&The PLLSAI1 clock is to be activated or desactivated. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_PLLSAI2@{CLOCK\_PLLSAI2}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_PLLSAI2@{CLOCK\_PLLSAI2}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
-CLOCK\+\_\+\+PLLSAI2&\\
+CLOCK\+\_\+\+PLLSAI2&The PLLSAI2 clock is to be activated or desactivated. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -259,26 +275,54 @@ Enum representing the status of a function.
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_OK@{CLOCK\_OK}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_OK@{CLOCK\_OK}}}\Hypertarget{clock_8h_a5aa3fa30a332173aafcc460104d0a159a6a98c64f84a2d901438fd3890e4b6d7f}\label{clock_8h_a5aa3fa30a332173aafcc460104d0a159} 
-CLOCK\+\_\+\+OK&\\
+CLOCK\+\_\+\+OK&Indicates that a function has returned successfully. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_INVALID\_ARGS@{CLOCK\_INVALID\_ARGS}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_INVALID\_ARGS@{CLOCK\_INVALID\_ARGS}}}\Hypertarget{clock_8h_a5aa3fa30a332173aafcc460104d0a159a2941fc3f1fa884801d4ffed60c7f29ef}\label{clock_8h_a5aa3fa30a332173aafcc460104d0a159} 
-CLOCK\+\_\+\+INVALID\+\_\+\+ARGS&\\
+CLOCK\+\_\+\+INVALID\+\_\+\+ARGS&Indicates that a function has been given invalid (out of range) arguments. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_ERROR@{CLOCK\_ERROR}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_ERROR@{CLOCK\_ERROR}}}\Hypertarget{clock_8h_a5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06}\label{clock_8h_a5aa3fa30a332173aafcc460104d0a159} 
-CLOCK\+\_\+\+ERROR&\\
+CLOCK\+\_\+\+ERROR&Indicates that a general error has occured. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{clock_8h_ab8ea3cd345873e8a031469d82633ee72}\index{clock.h@{clock.h}!CLOCK\_SYSCLK\_State@{CLOCK\_SYSCLK\_State}}
+\index{CLOCK\_SYSCLK\_State@{CLOCK\_SYSCLK\_State}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_SYSCLK\_State}{CLOCK\_SYSCLK\_State}}
+{\footnotesize\ttfamily \label{clock_8h_ab8ea3cd345873e8a031469d82633ee72} 
+enum \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\+\_\+\+SYSCLK\+\_\+\+State}}}
+
+
+
+Enum representing clocks which can be chosen as the system clock. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_SYSCLK\_MSI@{CLOCK\_SYSCLK\_MSI}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_SYSCLK\_MSI@{CLOCK\_SYSCLK\_MSI}}}\Hypertarget{clock_8h_ab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1}\label{clock_8h_ab8ea3cd345873e8a031469d82633ee72} 
+CLOCK\+\_\+\+SYSCLK\+\_\+\+MSI&MSI selected as system clock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_SYSCLK\_HSI16@{CLOCK\_SYSCLK\_HSI16}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_SYSCLK\_HSI16@{CLOCK\_SYSCLK\_HSI16}}}\Hypertarget{clock_8h_ab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462}\label{clock_8h_ab8ea3cd345873e8a031469d82633ee72} 
+CLOCK\+\_\+\+SYSCLK\+\_\+\+HSI16&HSI16 selected as system clock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_SYSCLK\_HSE@{CLOCK\_SYSCLK\_HSE}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_SYSCLK\_HSE@{CLOCK\_SYSCLK\_HSE}}}\Hypertarget{clock_8h_ab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf}\label{clock_8h_ab8ea3cd345873e8a031469d82633ee72} 
+CLOCK\+\_\+\+SYSCLK\+\_\+\+HSE&HSE selected as system clock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_SYSCLK\_PLL@{CLOCK\_SYSCLK\_PLL}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_SYSCLK\_PLL@{CLOCK\_SYSCLK\_PLL}}}\Hypertarget{clock_8h_ab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d}\label{clock_8h_ab8ea3cd345873e8a031469d82633ee72} 
+CLOCK\+\_\+\+SYSCLK\+\_\+\+PLL&PLL selected as system clock. \\
 \hline
 
 \end{DoxyEnumFields}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{clock_8h_a22aa6f7c08d56f527f24e599024ba02b}\index{clock.h@{clock.h}!CLOCK\_activateClk@{CLOCK\_activateClk}}
+\Hypertarget{clock_8h_a08716e6071c93768a4091dc5947e104f}\index{clock.h@{clock.h}!CLOCK\_activateClk@{CLOCK\_activateClk}}
 \index{CLOCK\_activateClk@{CLOCK\_activateClk}!clock.h@{clock.h}}
 \doxysubsubsection{\texorpdfstring{CLOCK\_activateClk()}{CLOCK\_activateClk()}}
-{\footnotesize\ttfamily \label{clock_8h_a22aa6f7c08d56f527f24e599024ba02b} 
-void CLOCK\+\_\+activate\+Clk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}}}]{clk}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{clock_8h_a08716e6071c93768a4091dc5947e104f} 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} CLOCK\+\_\+activate\+Clk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}}}]{clk}{}\end{DoxyParamCaption})}
 
 
 
@@ -289,6 +333,9 @@ Activates a desired clock.
 {\em clk} & clock to be activated \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
 \begin{DoxyWarning}{Warning}
 Untested function. 
 
@@ -296,11 +343,11 @@ Blocking function. Will only return once a \textquotesingle{}RDY\textquotesingle
 
 For the PLL clock, it is necessary to call \doxylink{clock_8h_a9637455690355b1be6e1014d939fbe83}{CLOCK\+\_\+config\+PLL()} first before calling this function. 
 \end{DoxyWarning}
-\Hypertarget{clock_8h_a22959fff77df190fb25aa92e10a7920f}\index{clock.h@{clock.h}!CLOCK\_activateMCO@{CLOCK\_activateMCO}}
+\Hypertarget{clock_8h_af32fa2488b07b90331da3c4d208e533b}\index{clock.h@{clock.h}!CLOCK\_activateMCO@{CLOCK\_activateMCO}}
 \index{CLOCK\_activateMCO@{CLOCK\_activateMCO}!clock.h@{clock.h}}
 \doxysubsubsection{\texorpdfstring{CLOCK\_activateMCO()}{CLOCK\_activateMCO()}}
-{\footnotesize\ttfamily \label{clock_8h_a22959fff77df190fb25aa92e10a7920f} 
-void CLOCK\+\_\+activate\+MCO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{clock_8h_a8fab271b291b83bd742e9099a9f20a59}{CLOCK\+\_\+\+MCO\+\_\+\+SELECT\+\_\+\+State}}}]{mco\+\_\+sel\+\_\+state}{, }\item[{\mbox{\hyperlink{clock_8h_aaa0363e0e9775584599d94565f8e0e60}{CLOCK\+\_\+\+MCO\+\_\+\+PRESCALER\+\_\+\+State}}}]{mco\+\_\+pre\+\_\+state}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{clock_8h_af32fa2488b07b90331da3c4d208e533b} 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} CLOCK\+\_\+activate\+MCO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{clock_8h_a8fab271b291b83bd742e9099a9f20a59}{CLOCK\+\_\+\+MCO\+\_\+\+SELECT\+\_\+\+State}}}]{mco\+\_\+sel\+\_\+state}{, }\item[{\mbox{\hyperlink{clock_8h_aaa0363e0e9775584599d94565f8e0e60}{CLOCK\+\_\+\+MCO\+\_\+\+PRESCALER\+\_\+\+State}}}]{mco\+\_\+pre\+\_\+state}{}\end{DoxyParamCaption})}
 
 
 
@@ -317,6 +364,9 @@ Activates the Master Clock Output pin to the selected output state.
 {\em mco\+\_\+pre\+\_\+state} & prescaler for the MCO (divisions by powers of 2 up to 16 allowed). \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
 \begin{DoxyWarning}{Warning}
 Untested function due to lack of proper oscilloscope. 
 
@@ -346,11 +396,11 @@ Configures the PLL clock so that it may be used as the System clock.
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{clock_8h_ae631725a9fa06646f7c8e4b925877d25}\index{clock.h@{clock.h}!CLOCK\_desactivateClk@{CLOCK\_desactivateClk}}
+\Hypertarget{clock_8h_a34f1183e02b1e5320ccf45c6e646b918}\index{clock.h@{clock.h}!CLOCK\_desactivateClk@{CLOCK\_desactivateClk}}
 \index{CLOCK\_desactivateClk@{CLOCK\_desactivateClk}!clock.h@{clock.h}}
 \doxysubsubsection{\texorpdfstring{CLOCK\_desactivateClk()}{CLOCK\_desactivateClk()}}
-{\footnotesize\ttfamily \label{clock_8h_ae631725a9fa06646f7c8e4b925877d25} 
-void CLOCK\+\_\+desactivate\+Clk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}}}]{clk}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{clock_8h_a34f1183e02b1e5320ccf45c6e646b918} 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} CLOCK\+\_\+desactivate\+Clk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}}}]{clk}{}\end{DoxyParamCaption})}
 
 
 
@@ -361,9 +411,51 @@ Desactivates a desired clock.
 {\em clk} & clock to be desactivated. \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
 \begin{DoxyWarning}{Warning}
 Untested function. 
 \end{DoxyWarning}
+\Hypertarget{clock_8h_a541195c1a15625335a8432521e33aeeb}\index{clock.h@{clock.h}!CLOCK\_getHSEClockSpeed@{CLOCK\_getHSEClockSpeed}}
+\index{CLOCK\_getHSEClockSpeed@{CLOCK\_getHSEClockSpeed}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_getHSEClockSpeed()}{CLOCK\_getHSEClockSpeed()}}
+{\footnotesize\ttfamily \label{clock_8h_a541195c1a15625335a8432521e33aeeb} 
+int CLOCK\+\_\+get\+HSEClock\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the speed (frequency) in Hz of the HSE (High-\/\+Speed External) clock. 
+
+\begin{DoxyReturn}{Returns}
+frequency of HSE clock in Hz. 
+\end{DoxyReturn}
+\Hypertarget{clock_8h_a5961d39318d181b59c08bdd25e6d0742}\index{clock.h@{clock.h}!CLOCK\_getMSIClockSpeed@{CLOCK\_getMSIClockSpeed}}
+\index{CLOCK\_getMSIClockSpeed@{CLOCK\_getMSIClockSpeed}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_getMSIClockSpeed()}{CLOCK\_getMSIClockSpeed()}}
+{\footnotesize\ttfamily \label{clock_8h_a5961d39318d181b59c08bdd25e6d0742} 
+int CLOCK\+\_\+get\+MSIClock\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the speed (frequency) in Hz of the MSI (Multi-\/\+Speed Internal) clock. 
+
+\begin{DoxyReturn}{Returns}
+frequency of MSI clock in Hz. 
+\end{DoxyReturn}
+\Hypertarget{clock_8h_a9c77fd34e367e2b9fd11046bceeadbd0}\index{clock.h@{clock.h}!CLOCK\_getPLLClockSpeed@{CLOCK\_getPLLClockSpeed}}
+\index{CLOCK\_getPLLClockSpeed@{CLOCK\_getPLLClockSpeed}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_getPLLClockSpeed()}{CLOCK\_getPLLClockSpeed()}}
+{\footnotesize\ttfamily \label{clock_8h_a9c77fd34e367e2b9fd11046bceeadbd0} 
+int CLOCK\+\_\+get\+PLLClock\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the speed (frequency) in Hz of the PLL clock, if it is activated. 
+
+\begin{DoxyReturn}{Returns}
+frequency of PLL clock in Hz. If return value is 0, then PLL is not activated or has invalid PLL\+\_\+N, PLL\+\_\+M or PLL\+\_\+R constants. 
+\end{DoxyReturn}
 \Hypertarget{clock_8h_a576b63236d3aa77e1165456de93f82ed}\index{clock.h@{clock.h}!CLOCK\_getSystemClockSpeed@{CLOCK\_getSystemClockSpeed}}
 \index{CLOCK\_getSystemClockSpeed@{CLOCK\_getSystemClockSpeed}!clock.h@{clock.h}}
 \doxysubsubsection{\texorpdfstring{CLOCK\_getSystemClockSpeed()}{CLOCK\_getSystemClockSpeed()}}
@@ -374,6 +466,44 @@ int CLOCK\+\_\+get\+System\+Clock\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyP
 
 Gets the speed (frequency) in Hz of the system clock. 
 
+The system clock can either be\+: MSI, HSI16, HSE or PLL. \begin{DoxyReturn}{Returns}
+frequency of the system clock in Hz. 
+\end{DoxyReturn}
+\Hypertarget{clock_8h_afb218eef31523ec71b30062ef98a0d49}\index{clock.h@{clock.h}!CLOCK\_setHSEClockSpeed@{CLOCK\_setHSEClockSpeed}}
+\index{CLOCK\_setHSEClockSpeed@{CLOCK\_setHSEClockSpeed}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_setHSEClockSpeed()}{CLOCK\_setHSEClockSpeed()}}
+{\footnotesize\ttfamily \label{clock_8h_afb218eef31523ec71b30062ef98a0d49} 
+void CLOCK\+\_\+set\+HSEClock\+Speed (\begin{DoxyParamCaption}\item[{int}]{speed}{}\end{DoxyParamCaption})}
+
+
+
+Set the speed of the external clock oscillator, if one is available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em speed} & (in Hz) of the HSE \\
+\hline
+\end{DoxyParams}
+\Hypertarget{clock_8h_ad3f9097ce53adfff82cb70ddea07c27d}\index{clock.h@{clock.h}!CLOCK\_setSystemClock@{CLOCK\_setSystemClock}}
+\index{CLOCK\_setSystemClock@{CLOCK\_setSystemClock}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_setSystemClock()}{CLOCK\_setSystemClock()}}
+{\footnotesize\ttfamily \label{clock_8h_ad3f9097ce53adfff82cb70ddea07c27d} 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} CLOCK\+\_\+set\+System\+Clock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\+\_\+\+SYSCLK\+\_\+\+State}}}]{sysclk}{}\end{DoxyParamCaption})}
+
+
+
+Sets the system clock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sysclk} & The system clock to be selected \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
 \begin{DoxyWarning}{Warning}
-Not implemented yet. 
+This function assumes that the clock has already been activated via \doxylink{clock_8h_a08716e6071c93768a4091dc5947e104f}{CLOCK\+\_\+activate\+Clk()}. 
+
+Blocking function. Will only return once a SWS flag has been set by hardware in the RCC\+\_\+\+CFGR register. 
 \end{DoxyWarning}

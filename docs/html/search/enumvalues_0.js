@@ -31,5 +31,9 @@ var searchData=
   ['clock_5fpllr_5f6_28',['CLOCK_PLLR_6',['../clock_8h.html#a9b771949ba6bccb42317a3e5e089cdeda135545aae67a4cc368f146388860aa57',1,'clock.h']]],
   ['clock_5fpllr_5f8_29',['CLOCK_PLLR_8',['../clock_8h.html#a9b771949ba6bccb42317a3e5e089cdeda57e44ea397f1766898982b78a9fa3bd8',1,'clock.h']]],
   ['clock_5fpllsai1_30',['CLOCK_PLLSAI1',['../clock_8h.html#a63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01',1,'clock.h']]],
-  ['clock_5fpllsai2_31',['CLOCK_PLLSAI2',['../clock_8h.html#a63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540',1,'clock.h']]]
+  ['clock_5fpllsai2_31',['CLOCK_PLLSAI2',['../clock_8h.html#a63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540',1,'clock.h']]],
+  ['clock_5fsysclk_5fhse_32',['CLOCK_SYSCLK_HSE',['../clock_8h.html#ab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf',1,'clock.h']]],
+  ['clock_5fsysclk_5fhsi16_33',['CLOCK_SYSCLK_HSI16',['../clock_8h.html#ab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462',1,'clock.h']]],
+  ['clock_5fsysclk_5fmsi_34',['CLOCK_SYSCLK_MSI',['../clock_8h.html#ab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1',1,'clock.h']]],
+  ['clock_5fsysclk_5fpll_35',['CLOCK_SYSCLK_PLL',['../clock_8h.html#ab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d',1,'clock.h']]]
 ];
