@@ -26,6 +26,9 @@ int main(void)
 	/* Enable the PLL clock */
 	if (CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 60, CLOCK_PLLR_2) != CLOCK_OK) ErrorHandler();
 	CLOCK_activateClk(CLOCK_PLL);
+	char a = CLOCK_isActivated(CLOCK_PLL);
+	char b = CLOCK_isActivated(CLOCK_HSI);
+	char c = CLOCK_isActivated(CLOCK_MSI);
 	int pllSpeed = CLOCK_getPLLClockSpeed();
 	CLOCK_activateClk(CLOCK_HSI);
 	if (CLOCK_setSystemClock(CLOCK_SYSCLK_PLL) != CLOCK_OK) ErrorHandler();
@@ -36,7 +39,7 @@ int main(void)
 	if (CLOCK_setAPB1Prescaler(CLOCK_APB1_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
 	if (CLOCK_setAPB2Prescaler(CLOCK_APB2_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
 	
-	
+
 	GPIO_setPinInterrupt(PB_Port, PB_Pin, GPIO_IT_TRIGGER_RISING);
 	GPIO_setPinOutput(LED2_Port, LED2_Pin);
 	

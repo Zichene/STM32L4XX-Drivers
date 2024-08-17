@@ -64,22 +64,22 @@ CLOCK_Status_State CLOCK_activateMCO(GPIO_Port port, char pin, CLOCK_MCO_SELECT_
 
 char CLOCK_isActivated(CLOCK_State clk) {
 	/* check args*/
-	if (!(clk == 0 || clk == 8 || clk == 16 || clk == 24 || clk == 26 || clk == 28))
+	if (!(clk == 0 || clk == 1 || clk == 8 || clk == 16 || clk == 24 || clk == 26 || clk == 28))
 			return CLOCK_INVALID_ARGS;
 	
 	/* for the LSE the clkON bit is in the BDCR register */
-	if (clk == CLOCK_LSE) return (RCC->BDCR >> clk) & 0b1;
+	if (clk == CLOCK_LSE) return (RCC->BDCR >> (clk-1)) & 0b1;
 	/* otherwise it is in the CR register */
 	return (RCC->CR >> clk) & 0b1;
 }
 
 CLOCK_Status_State CLOCK_activateClk(CLOCK_State clk) {
 	/* check args*/
-	if (!(clk == 0 || clk == 8 || clk == 16 || clk == 24 || clk == 26 || clk == 28))
+	if (!(clk == 0 || clk == 1 || clk == 8 || clk == 16 || clk == 24 || clk == 26 || clk == 28))
 			return CLOCK_INVALID_ARGS;
 	if (clk == CLOCK_LSE) {
 		/* for the LSE the clkON bit is in the BDCR register */
-		RCC->BDCR |= (1 << clk);
+		RCC->BDCR |= (1 << (clk-1));
 		while (!(RCC->BDCR & (1 << (clk+1))));
 		return CLOCK_OK;
 	}
@@ -95,11 +95,11 @@ CLOCK_Status_State CLOCK_activateClk(CLOCK_State clk) {
 
 CLOCK_Status_State CLOCK_desactivateClk(CLOCK_State clk) {
 	/* check args */
-	if (!(clk == 0 || clk == 8 || clk == 16 || clk == 24 || clk == 26 || clk == 28))
+	if (!(clk == 0 || clk == 1 || clk == 8 || clk == 16 || clk == 24 || clk == 26 || clk == 28))
 		return CLOCK_INVALID_ARGS;
 	/* special case for the LSE clock, whose clkON bit is in the BDCR register */
 	if (clk == CLOCK_LSE) {
-		RCC->BDCR |= (1 << clk);
+		RCC->BDCR |= (1 << (clk-1));
 		return CLOCK_OK;
 	}
 	/* set clkON flag to false */

@@ -42,8 +42,8 @@ typedef enum {
 /**@brief Enum representing a choice of clock for activating and desactivating.
 */
 typedef enum {
-	CLOCK_LSE = 0, ///< The LSE clock is to be activated or desactivated
 	CLOCK_MSI = 0, ///< The MSI clock is to be activated or desactivated
+	CLOCK_LSE = 1, ///< The LSE clock is to be activated or desactivated
 	CLOCK_HSI = 8, ///< The HSI clock is to be activated or desactivated
 	CLOCK_HSE = 16, ///< The HSE clock is to be activated or desactivated
 	CLOCK_PLL = 24, ///< The PLL clock is to be activated or desactivated
