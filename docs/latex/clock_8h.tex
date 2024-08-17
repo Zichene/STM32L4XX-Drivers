@@ -60,7 +60,39 @@ enum \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\+\_\+\+S
 , \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf}{CLOCK\+\_\+\+SYSCLK\+\_\+\+HSE}} = 2
 , \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d}{CLOCK\+\_\+\+SYSCLK\+\_\+\+PLL}} = 3
  \}
-\begin{DoxyCompactList}\small\item\em Enum representing clocks which can be chosen as the system clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enum representing clocks which can be chosen as the system clock. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77f}{CLOCK\+\_\+\+AHB\+\_\+\+PRESCALER\+\_\+\+State}} \{ \newline
+\mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa58ad808e45cfbc4336e1dcc45e0f1173}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+1}} = 0
+, \mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa50ad82ac541766a6e12b20bce8ca7acf}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+2}} = 8
+, \mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa602a58ff3e69e4ed36d26ff5adb5d760}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+4}} = 9
+, \mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa0cbc2960e41a8001055299624718cc98}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+8}} = 10
+, \newline
+\mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa0b13314034e5155cb712640d6b542036}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+16}} = 11
+, \mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa0224c57455f9a606b2b61b3923fb0b9d}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+64}} = 12
+, \mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa6a0c238180cd5fee437f5563de5f2fee}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+128}} = 13
+, \mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77faa388856e07f32b445c8c131856c20632}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+256}} = 14
+, \newline
+\mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77fafcf53d310322fdcbef5a5d4a480d1f77}{CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+512}} = 15
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing different values for the AHB prescaler. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\+\_\+\+APB1\+\_\+\+PRESCALER\+\_\+\+State}} \{ \newline
+\mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aae98e6ebb354ed67981f4366c0e549c5f}{CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+1}} = 0
+, \mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aaa662e0f16bdbd7db338a6e1d1b640e6d}{CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+2}} = 4
+, \mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aac7682be55a2f8a3b67eb502b8c4fab40}{CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+4}} = 5
+, \mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aaef86f41b3fc4959331b774e04843fe0b}{CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+8}} = 6
+, \newline
+\mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aaa02ab2e6bffcc030c4846389f7941bb3}{CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+16}} = 7
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing different values for the APB1 prescaler. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517}{CLOCK\+\_\+\+APB2\+\_\+\+PRESCALER\+\_\+\+State}} \{ \newline
+\mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517a9e2931dd9e0ca08f9e4f77b34c10af4e}{CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+1}} = 0
+, \mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517adecf06efe3e2eba743be92ac0cd00129}{CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+2}} = 4
+, \mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517a382a4e5834af901bffce21544ce31f7e}{CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+4}} = 5
+, \mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517adfe2f4ccfe011fa4eb4c128bf532dc94}{CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+8}} = 6
+, \newline
+\mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517a6031959d7feb10ed1f2f66bf25fe3eaf}{CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+16}} = 7
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing different values for the APB1 prescaler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,6 +100,8 @@ enum \mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\+\_\+\+S
 \begin{DoxyCompactList}\small\item\em Activates the Master Clock Output pin to the selected output state. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a9637455690355b1be6e1014d939fbe83}{CLOCK\+\_\+config\+PLL}} (\mbox{\hyperlink{clock_8h_aceb416b702f94d30e139e49e8e10a76f}{CLOCK\+\_\+\+PLL\+\_\+\+SOURCE\+\_\+\+State}} pll\+\_\+src, char PLL\+\_\+M, char PLL\+\_\+N, \mbox{\hyperlink{clock_8h_a9b771949ba6bccb42317a3e5e089cded}{CLOCK\+\_\+\+PLLR\+\_\+\+State}} PLL\+\_\+R)
 \begin{DoxyCompactList}\small\item\em Configures the PLL clock so that it may be used as the System clock. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{clock_8h_a8944a0ca3338276a0cec89f8d9df358a}{CLOCK\+\_\+is\+Activated}} (\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}} clk)
+\begin{DoxyCompactList}\small\item\em Checks if a clock is activated or not by reading from RCC control registers. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a08716e6071c93768a4091dc5947e104f}{CLOCK\+\_\+activate\+Clk}} (\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}} clk)
 \begin{DoxyCompactList}\small\item\em Activates a desired clock. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a34f1183e02b1e5320ccf45c6e646b918}{CLOCK\+\_\+desactivate\+Clk}} (\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}} clk)
@@ -83,10 +117,128 @@ int \mbox{\hyperlink{clock_8h_a541195c1a15625335a8432521e33aeeb}{CLOCK\+\_\+get\
 int \mbox{\hyperlink{clock_8h_a576b63236d3aa77e1165456de93f82ed}{CLOCK\+\_\+get\+System\+Clock\+Speed}} ()
 \begin{DoxyCompactList}\small\item\em Gets the speed (frequency) in Hz of the system clock. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_ad3f9097ce53adfff82cb70ddea07c27d}{CLOCK\+\_\+set\+System\+Clock}} (\mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\+\_\+\+SYSCLK\+\_\+\+State}} sysclk)
-\begin{DoxyCompactList}\small\item\em Sets the system clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the system clock. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a45f0f137fec72ca25a15471c536353ff}{CLOCK\+\_\+set\+AHBPrescaler}} (\mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77f}{CLOCK\+\_\+\+AHB\+\_\+\+PRESCALER\+\_\+\+State}} ahb\+\_\+prescaler)
+\begin{DoxyCompactList}\small\item\em Set the AHB prescaler for the AHB clock (HCLK). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_a7eb6ba8a0c4959ea023982ff86287e5c}{CLOCK\+\_\+set\+APB1\+Prescaler}} (\mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\+\_\+\+APB1\+\_\+\+PRESCALER\+\_\+\+State}} apb1\+\_\+prescaler)
+\begin{DoxyCompactList}\small\item\em Set the APB1 prescaler for the APB1 clock (PCLK1). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{clock_8h_af2d3189cd4e74510c8d2136149148e0c}{CLOCK\+\_\+set\+APB2\+Prescaler}} (\mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517}{CLOCK\+\_\+\+APB2\+\_\+\+PRESCALER\+\_\+\+State}} apb2\+\_\+prescaler)
+\begin{DoxyCompactList}\small\item\em Set the APB2 prescaler for the APB2 clock (PCLK2). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
+\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77f}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRESCALER\_State@{CLOCK\_AHB\_PRESCALER\_State}}
+\index{CLOCK\_AHB\_PRESCALER\_State@{CLOCK\_AHB\_PRESCALER\_State}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_AHB\_PRESCALER\_State}{CLOCK\_AHB\_PRESCALER\_State}}
+{\footnotesize\ttfamily \label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+enum \mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77f}{CLOCK\+\_\+\+AHB\+\_\+\+PRESCALER\+\_\+\+State}}}
+
+
+
+Enum representing different values for the AHB prescaler. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_1@{CLOCK\_AHB\_PRE\_DIV\_1}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_1@{CLOCK\_AHB\_PRE\_DIV\_1}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa58ad808e45cfbc4336e1dcc45e0f1173}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+1&SYSCLK divided by 1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_2@{CLOCK\_AHB\_PRE\_DIV\_2}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_2@{CLOCK\_AHB\_PRE\_DIV\_2}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa50ad82ac541766a6e12b20bce8ca7acf}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+2&SYSCLK divided by 2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_4@{CLOCK\_AHB\_PRE\_DIV\_4}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_4@{CLOCK\_AHB\_PRE\_DIV\_4}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa602a58ff3e69e4ed36d26ff5adb5d760}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+4&SYSCLK divided by 4. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_8@{CLOCK\_AHB\_PRE\_DIV\_8}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_8@{CLOCK\_AHB\_PRE\_DIV\_8}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa0cbc2960e41a8001055299624718cc98}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+8&SYSCLK divided by 8. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_16@{CLOCK\_AHB\_PRE\_DIV\_16}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_16@{CLOCK\_AHB\_PRE\_DIV\_16}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa0b13314034e5155cb712640d6b542036}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+16&SYSCLK divided by 16. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_64@{CLOCK\_AHB\_PRE\_DIV\_64}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_64@{CLOCK\_AHB\_PRE\_DIV\_64}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa0224c57455f9a606b2b61b3923fb0b9d}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+64&SYSCLK divided by 64. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_128@{CLOCK\_AHB\_PRE\_DIV\_128}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_128@{CLOCK\_AHB\_PRE\_DIV\_128}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77fa6a0c238180cd5fee437f5563de5f2fee}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+128&SYSCLK divided by 128. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_256@{CLOCK\_AHB\_PRE\_DIV\_256}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_256@{CLOCK\_AHB\_PRE\_DIV\_256}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77faa388856e07f32b445c8c131856c20632}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+256&SYSCLK divided by 256. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_AHB\_PRE\_DIV\_512@{CLOCK\_AHB\_PRE\_DIV\_512}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_AHB\_PRE\_DIV\_512@{CLOCK\_AHB\_PRE\_DIV\_512}}}\Hypertarget{clock_8h_a8243c8d8e6717062f9949ee373a4a77fafcf53d310322fdcbef5a5d4a480d1f77}\label{clock_8h_a8243c8d8e6717062f9949ee373a4a77f} 
+CLOCK\+\_\+\+AHB\+\_\+\+PRE\+\_\+\+DIV\+\_\+512&SYSCLK divided by 512. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a}\index{clock.h@{clock.h}!CLOCK\_APB1\_PRESCALER\_State@{CLOCK\_APB1\_PRESCALER\_State}}
+\index{CLOCK\_APB1\_PRESCALER\_State@{CLOCK\_APB1\_PRESCALER\_State}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_APB1\_PRESCALER\_State}{CLOCK\_APB1\_PRESCALER\_State}}
+{\footnotesize\ttfamily \label{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a} 
+enum \mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\+\_\+\+APB1\+\_\+\+PRESCALER\+\_\+\+State}}}
+
+
+
+Enum representing different values for the APB1 prescaler. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB1\_PRE\_DIV\_1@{CLOCK\_APB1\_PRE\_DIV\_1}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB1\_PRE\_DIV\_1@{CLOCK\_APB1\_PRE\_DIV\_1}}}\Hypertarget{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aae98e6ebb354ed67981f4366c0e549c5f}\label{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a} 
+CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+1&SYSCLK divided by 1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB1\_PRE\_DIV\_2@{CLOCK\_APB1\_PRE\_DIV\_2}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB1\_PRE\_DIV\_2@{CLOCK\_APB1\_PRE\_DIV\_2}}}\Hypertarget{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aaa662e0f16bdbd7db338a6e1d1b640e6d}\label{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a} 
+CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+2&HCLK divided by 2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB1\_PRE\_DIV\_4@{CLOCK\_APB1\_PRE\_DIV\_4}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB1\_PRE\_DIV\_4@{CLOCK\_APB1\_PRE\_DIV\_4}}}\Hypertarget{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aac7682be55a2f8a3b67eb502b8c4fab40}\label{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a} 
+CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+4&HCLK divided by 4. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB1\_PRE\_DIV\_8@{CLOCK\_APB1\_PRE\_DIV\_8}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB1\_PRE\_DIV\_8@{CLOCK\_APB1\_PRE\_DIV\_8}}}\Hypertarget{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aaef86f41b3fc4959331b774e04843fe0b}\label{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a} 
+CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+8&HCLK divided by 8. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB1\_PRE\_DIV\_16@{CLOCK\_APB1\_PRE\_DIV\_16}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB1\_PRE\_DIV\_16@{CLOCK\_APB1\_PRE\_DIV\_16}}}\Hypertarget{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9aaa02ab2e6bffcc030c4846389f7941bb3}\label{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a} 
+CLOCK\+\_\+\+APB1\+\_\+\+PRE\+\_\+\+DIV\+\_\+16&HCLK divided by 16. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{clock_8h_a95ae2e15b49c96956d53beae3975e517}\index{clock.h@{clock.h}!CLOCK\_APB2\_PRESCALER\_State@{CLOCK\_APB2\_PRESCALER\_State}}
+\index{CLOCK\_APB2\_PRESCALER\_State@{CLOCK\_APB2\_PRESCALER\_State}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_APB2\_PRESCALER\_State}{CLOCK\_APB2\_PRESCALER\_State}}
+{\footnotesize\ttfamily \label{clock_8h_a95ae2e15b49c96956d53beae3975e517} 
+enum \mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517}{CLOCK\+\_\+\+APB2\+\_\+\+PRESCALER\+\_\+\+State}}}
+
+
+
+Enum representing different values for the APB1 prescaler. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB2\_PRE\_DIV\_1@{CLOCK\_APB2\_PRE\_DIV\_1}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB2\_PRE\_DIV\_1@{CLOCK\_APB2\_PRE\_DIV\_1}}}\Hypertarget{clock_8h_a95ae2e15b49c96956d53beae3975e517a9e2931dd9e0ca08f9e4f77b34c10af4e}\label{clock_8h_a95ae2e15b49c96956d53beae3975e517} 
+CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+1&SYSCLK divided by 1. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB2\_PRE\_DIV\_2@{CLOCK\_APB2\_PRE\_DIV\_2}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB2\_PRE\_DIV\_2@{CLOCK\_APB2\_PRE\_DIV\_2}}}\Hypertarget{clock_8h_a95ae2e15b49c96956d53beae3975e517adecf06efe3e2eba743be92ac0cd00129}\label{clock_8h_a95ae2e15b49c96956d53beae3975e517} 
+CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+2&HCLK divided by 2. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB2\_PRE\_DIV\_4@{CLOCK\_APB2\_PRE\_DIV\_4}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB2\_PRE\_DIV\_4@{CLOCK\_APB2\_PRE\_DIV\_4}}}\Hypertarget{clock_8h_a95ae2e15b49c96956d53beae3975e517a382a4e5834af901bffce21544ce31f7e}\label{clock_8h_a95ae2e15b49c96956d53beae3975e517} 
+CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+4&HCLK divided by 4. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB2\_PRE\_DIV\_8@{CLOCK\_APB2\_PRE\_DIV\_8}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB2\_PRE\_DIV\_8@{CLOCK\_APB2\_PRE\_DIV\_8}}}\Hypertarget{clock_8h_a95ae2e15b49c96956d53beae3975e517adfe2f4ccfe011fa4eb4c128bf532dc94}\label{clock_8h_a95ae2e15b49c96956d53beae3975e517} 
+CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+8&HCLK divided by 8. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_APB2\_PRE\_DIV\_16@{CLOCK\_APB2\_PRE\_DIV\_16}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_APB2\_PRE\_DIV\_16@{CLOCK\_APB2\_PRE\_DIV\_16}}}\Hypertarget{clock_8h_a95ae2e15b49c96956d53beae3975e517a6031959d7feb10ed1f2f66bf25fe3eaf}\label{clock_8h_a95ae2e15b49c96956d53beae3975e517} 
+CLOCK\+\_\+\+APB2\+\_\+\+PRE\+\_\+\+DIV\+\_\+16&HCLK divided by 16. \\
+\hline
+
+\end{DoxyEnumFields}
 \Hypertarget{clock_8h_aaa0363e0e9775584599d94565f8e0e60}\index{clock.h@{clock.h}!CLOCK\_MCO\_PRESCALER\_State@{CLOCK\_MCO\_PRESCALER\_State}}
 \index{CLOCK\_MCO\_PRESCALER\_State@{CLOCK\_MCO\_PRESCALER\_State}!clock.h@{clock.h}}
 \doxysubsubsection{\texorpdfstring{CLOCK\_MCO\_PRESCALER\_State}{CLOCK\_MCO\_PRESCALER\_State}}
@@ -396,6 +548,9 @@ Configures the PLL clock so that it may be used as the System clock.
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function can only be called if the PLL clock is disabled. Use \doxylink{clock_8h_a8944a0ca3338276a0cec89f8d9df358a}{CLOCK\+\_\+is\+Activated()} and \doxylink{clock_8h_a34f1183e02b1e5320ccf45c6e646b918}{CLOCK\+\_\+desactivate\+Clk()} before calling this function. 
+\end{DoxyWarning}
 \Hypertarget{clock_8h_a34f1183e02b1e5320ccf45c6e646b918}\index{clock.h@{clock.h}!CLOCK\_desactivateClk@{CLOCK\_desactivateClk}}
 \index{CLOCK\_desactivateClk@{CLOCK\_desactivateClk}!clock.h@{clock.h}}
 \doxysubsubsection{\texorpdfstring{CLOCK\_desactivateClk()}{CLOCK\_desactivateClk()}}
@@ -468,6 +623,82 @@ Gets the speed (frequency) in Hz of the system clock.
 
 The system clock can either be\+: MSI, HSI16, HSE or PLL. \begin{DoxyReturn}{Returns}
 frequency of the system clock in Hz. 
+\end{DoxyReturn}
+\Hypertarget{clock_8h_a8944a0ca3338276a0cec89f8d9df358a}\index{clock.h@{clock.h}!CLOCK\_isActivated@{CLOCK\_isActivated}}
+\index{CLOCK\_isActivated@{CLOCK\_isActivated}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_isActivated()}{CLOCK\_isActivated()}}
+{\footnotesize\ttfamily \label{clock_8h_a8944a0ca3338276a0cec89f8d9df358a} 
+char CLOCK\+\_\+is\+Activated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}}}]{clk}{}\end{DoxyParamCaption})}
+
+
+
+Checks if a clock is activated or not by reading from RCC control registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em clk} & which clock to check \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 0} & the clock is not activated \\
+\hline
+{\em 1} & the clock is activated \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{clock_8h_a45f0f137fec72ca25a15471c536353ff}\index{clock.h@{clock.h}!CLOCK\_setAHBPrescaler@{CLOCK\_setAHBPrescaler}}
+\index{CLOCK\_setAHBPrescaler@{CLOCK\_setAHBPrescaler}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_setAHBPrescaler()}{CLOCK\_setAHBPrescaler()}}
+{\footnotesize\ttfamily \label{clock_8h_a45f0f137fec72ca25a15471c536353ff} 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} CLOCK\+\_\+set\+AHBPrescaler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77f}{CLOCK\+\_\+\+AHB\+\_\+\+PRESCALER\+\_\+\+State}}}]{ahb\+\_\+prescaler}{}\end{DoxyParamCaption})}
+
+
+
+Set the AHB prescaler for the AHB clock (HCLK). 
+
+This clocks feeds the AHB1 and AHB2 buses. 
+\begin{DoxyParams}{Parameters}
+{\em ahb\+\_\+prescaler} & choice for the AHB\+\_\+\+PRE value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{clock_8h_a7eb6ba8a0c4959ea023982ff86287e5c}\index{clock.h@{clock.h}!CLOCK\_setAPB1Prescaler@{CLOCK\_setAPB1Prescaler}}
+\index{CLOCK\_setAPB1Prescaler@{CLOCK\_setAPB1Prescaler}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_setAPB1Prescaler()}{CLOCK\_setAPB1Prescaler()}}
+{\footnotesize\ttfamily \label{clock_8h_a7eb6ba8a0c4959ea023982ff86287e5c} 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} CLOCK\+\_\+set\+APB1\+Prescaler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\+\_\+\+APB1\+\_\+\+PRESCALER\+\_\+\+State}}}]{apb1\+\_\+prescaler}{}\end{DoxyParamCaption})}
+
+
+
+Set the APB1 prescaler for the APB1 clock (PCLK1). 
+
+This clocks feeds the AHB1 and AHB2 buses. 
+\begin{DoxyParams}{Parameters}
+{\em apb1\+\_\+prescaler} & choice for the APB1\+\_\+\+PRE value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{clock_8h_af2d3189cd4e74510c8d2136149148e0c}\index{clock.h@{clock.h}!CLOCK\_setAPB2Prescaler@{CLOCK\_setAPB2Prescaler}}
+\index{CLOCK\_setAPB2Prescaler@{CLOCK\_setAPB2Prescaler}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{CLOCK\_setAPB2Prescaler()}{CLOCK\_setAPB2Prescaler()}}
+{\footnotesize\ttfamily \label{clock_8h_af2d3189cd4e74510c8d2136149148e0c} 
+\mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\+\_\+\+Status\+\_\+\+State}} CLOCK\+\_\+set\+APB2\+Prescaler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517}{CLOCK\+\_\+\+APB2\+\_\+\+PRESCALER\+\_\+\+State}}}]{apb2\+\_\+prescaler}{}\end{DoxyParamCaption})}
+
+
+
+Set the APB2 prescaler for the APB2 clock (PCLK2). 
+
+This clocks feeds the AHB1 and AHB2 buses. 
+\begin{DoxyParams}{Parameters}
+{\em apb2\+\_\+prescaler} & choice for the APB2\+\_\+\+PRE value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
 \end{DoxyReturn}
 \Hypertarget{clock_8h_afb218eef31523ec71b30062ef98a0d49}\index{clock.h@{clock.h}!CLOCK\_setHSEClockSpeed@{CLOCK\_setHSEClockSpeed}}
 \index{CLOCK\_setHSEClockSpeed@{CLOCK\_setHSEClockSpeed}!clock.h@{clock.h}}

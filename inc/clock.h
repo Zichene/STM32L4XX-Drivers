@@ -7,6 +7,7 @@
 * Clock drivers for stm32l4xx devices.
 * WARNING: These drivers have NOT been tested extensively. Use at own risk.
 * Reference: https://www.youtube.com/playlist?list=PLtVUYRe-Z-mfKO0lg_-MBvwWl6VjWT8Dt
+* STM32 Reference Manual: RM0432
 *
 ***/
 
@@ -85,6 +86,39 @@ typedef enum {
   CLOCK_SYSCLK_PLL = 3, ///< PLL selected as system clock
 }CLOCK_SYSCLK_State;
 
+/**@brief Enum representing different values for the AHB prescaler.
+*/
+typedef enum {
+	CLOCK_AHB_PRE_DIV_1 = 0, ///<SYSCLK divided by 1
+	CLOCK_AHB_PRE_DIV_2 = 8, ///<SYSCLK divided by 2
+	CLOCK_AHB_PRE_DIV_4 = 9, ///<SYSCLK divided by 4
+	CLOCK_AHB_PRE_DIV_8 = 10, ///<SYSCLK divided by 8
+	CLOCK_AHB_PRE_DIV_16 = 11, ///<SYSCLK divided by 16
+	CLOCK_AHB_PRE_DIV_64 = 12, ///<SYSCLK divided by 64
+	CLOCK_AHB_PRE_DIV_128 = 13, ///<SYSCLK divided by 128
+	CLOCK_AHB_PRE_DIV_256 = 14, ///<SYSCLK divided by 256
+	CLOCK_AHB_PRE_DIV_512 = 15, ///<SYSCLK divided by 512
+}CLOCK_AHB_PRESCALER_State;
+
+/**@brief Enum representing different values for the APB1 prescaler.
+*/
+typedef enum {
+	CLOCK_APB1_PRE_DIV_1 = 0, ///<SYSCLK divided by 1
+	CLOCK_APB1_PRE_DIV_2 = 4, ///<HCLK divided by 2
+	CLOCK_APB1_PRE_DIV_4 = 5, ///<HCLK divided by 4
+	CLOCK_APB1_PRE_DIV_8 = 6, ///<HCLK divided by 8
+	CLOCK_APB1_PRE_DIV_16 = 7, ///<HCLK divided by 16
+}CLOCK_APB1_PRESCALER_State;
+
+/**@brief Enum representing different values for the APB1 prescaler.
+*/
+typedef enum {
+	CLOCK_APB2_PRE_DIV_1 = 0, ///<SYSCLK divided by 1
+	CLOCK_APB2_PRE_DIV_2 = 4, ///<HCLK divided by 2
+	CLOCK_APB2_PRE_DIV_4 = 5, ///<HCLK divided by 4
+	CLOCK_APB2_PRE_DIV_8 = 6, ///<HCLK divided by 8
+	CLOCK_APB2_PRE_DIV_16 = 7, ///<HCLK divided by 16
+}CLOCK_APB2_PRESCALER_State;
 
 /****************************************************************************************************/
 /*				        FUNCTION PROTOTYPES                                         */
@@ -109,8 +143,18 @@ CLOCK_Status_State CLOCK_activateMCO(GPIO_Port port, char pin, CLOCK_MCO_SELECT_
 * @param PLL_N main PLL multiplication factor. 8 <= PLLN <= 127.
 * @param PLL_R divsion factor for the main PLL clock. PLLR = {2, 4, 6, 8}.
 * @return status 
+* @warning This function can only be called if the PLL clock is disabled. Use CLOCK_isActivated() and CLOCK_desactivateClk() before calling this function.
 */
 CLOCK_Status_State CLOCK_configPLL(CLOCK_PLL_SOURCE_State pll_src, char PLL_M, char PLL_N, CLOCK_PLLR_State PLL_R);
+
+
+
+/**@brief Checks if a clock is activated or not by reading from RCC control registers.
+* @param clk which clock to check
+* @retval 0 the clock is not activated
+* @retval 1 the clock is activated
+*/
+char CLOCK_isActivated(CLOCK_State clk);
 
 
 
@@ -176,4 +220,26 @@ int CLOCK_getSystemClockSpeed();
 CLOCK_Status_State CLOCK_setSystemClock(CLOCK_SYSCLK_State sysclk);
 
 
+
+/**@brief Set the AHB prescaler for the AHB clock (HCLK). This clocks feeds the AHB1 and AHB2 buses.
+* @param ahb_prescaler choice for the AHB_PRE value.
+* @return status
+*/
+CLOCK_Status_State CLOCK_setAHBPrescaler(CLOCK_AHB_PRESCALER_State ahb_prescaler);
+
+
+
+/**@brief Set the APB1 prescaler for the APB1 clock (PCLK1). This clocks feeds the AHB1 and AHB2 buses.
+* @param apb1_prescaler choice for the APB1_PRE value.
+* @return status
+*/
+CLOCK_Status_State CLOCK_setAPB1Prescaler(CLOCK_APB1_PRESCALER_State apb1_prescaler);
+
+
+
+/**@brief Set the APB2 prescaler for the APB2 clock (PCLK2). This clocks feeds the AHB1 and AHB2 buses.
+* @param apb2_prescaler choice for the APB2_PRE value.
+* @return status
+*/
+CLOCK_Status_State CLOCK_setAPB2Prescaler(CLOCK_APB2_PRESCALER_State apb2_prescaler);
 #endif

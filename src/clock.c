@@ -5,6 +5,7 @@
 * Clock drivers for stm32l4xx devices.
 * WARNING: These drivers have NOT been tested extensively. Use at own risk.
 * Reference: https://www.youtube.com/playlist?list=PLtVUYRe-Z-mfKO0lg_-MBvwWl6VjWT8Dt
+* STM32 Reference Manual: RM0432
 *
 ***/
 
@@ -59,6 +60,17 @@ CLOCK_Status_State CLOCK_activateMCO(GPIO_Port port, char pin, CLOCK_MCO_SELECT_
 	RCC->CFGR &= ~(0b111 << 28);
 	RCC->CFGR |= (mco_pre_state << 28);
 	return CLOCK_OK;
+}
+
+char CLOCK_isActivated(CLOCK_State clk) {
+	/* check args*/
+	if (!(clk == 0 || clk == 8 || clk == 16 || clk == 24 || clk == 26 || clk == 28))
+			return CLOCK_INVALID_ARGS;
+	
+	/* for the LSE the clkON bit is in the BDCR register */
+	if (clk == CLOCK_LSE) return (RCC->BDCR >> clk) & 0b1;
+	/* otherwise it is in the CR register */
+	return (RCC->CR >> clk) & 0b1;
 }
 
 CLOCK_Status_State CLOCK_activateClk(CLOCK_State clk) {
@@ -227,5 +239,49 @@ CLOCK_Status_State CLOCK_setSystemClock(CLOCK_SYSCLK_State sysclk) {
 	
 	/* poll for SWS to change */
 	while(!((RCC->CFGR >> 2 & 0b11) == sysclk));
+	return CLOCK_OK;
+}
+
+CLOCK_Status_State CLOCK_setAHBPrescaler(CLOCK_AHB_PRESCALER_State ahb_prescaler) {
+	/* check args */
+	if (!(ahb_prescaler >= 0 && ahb_prescaler <= 15))
+		return CLOCK_INVALID_ARGS;
+	
+	/* set HPRE bits in RCC_CFGR register */
+	RCC->CFGR &= ~(0b1111 << 4);
+	RCC->CFGR |= (ahb_prescaler << 4);
+	
+	/* wait for value to be taken into account */
+	while(!((RCC->CFGR >> 4 & 0b1111) == ahb_prescaler));
+	return CLOCK_OK;
+}
+
+
+CLOCK_Status_State CLOCK_setAPB1Prescaler(CLOCK_APB1_PRESCALER_State apb1_prescaler) {
+	/* check args */
+	if (!(apb1_prescaler >= 0 && apb1_prescaler <= 7))
+		return CLOCK_INVALID_ARGS;
+	
+	/* set PPRE1 bits in RCC_CFGR register */
+	RCC->CFGR &= ~(0b111 << 8);
+	RCC->CFGR |= (apb1_prescaler << 8);
+	
+	/* wait for value to be taken into account */
+	while(!((RCC->CFGR >> 8 & 0b111) == apb1_prescaler));
+	return CLOCK_OK;
+}
+
+
+CLOCK_Status_State CLOCK_setAPB2Prescaler(CLOCK_APB2_PRESCALER_State apb2_prescaler) {
+	/* check args */
+	if (!(apb2_prescaler >= 0 && apb2_prescaler <= 7))
+		return CLOCK_INVALID_ARGS;
+	
+	/* set PPRE2 bits in RCC_CFGR register */
+	RCC->CFGR &= ~(0b111 << 11);
+	RCC->CFGR |= (apb2_prescaler << 11);
+	
+	/* wait for value to be taken into account */
+	while(!((RCC->CFGR >> 11 & 0b111) == apb2_prescaler));
 	return CLOCK_OK;
 }

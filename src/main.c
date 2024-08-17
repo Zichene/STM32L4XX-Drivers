@@ -24,13 +24,18 @@ int main(void)
 	GPIO_setPinOutput(LED_WIFI_Port, LED_WIFI_Pin);
 	
 	/* Enable the PLL clock */
-	if (CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 61, CLOCK_PLLR_2) != CLOCK_OK) ErrorHandler();
+	if (CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 60, CLOCK_PLLR_2) != CLOCK_OK) ErrorHandler();
 	CLOCK_activateClk(CLOCK_PLL);
 	int pllSpeed = CLOCK_getPLLClockSpeed();
 	CLOCK_activateClk(CLOCK_HSI);
 	if (CLOCK_setSystemClock(CLOCK_SYSCLK_PLL) != CLOCK_OK) ErrorHandler();
 	/* Check the system clock speed */
 	int sysSpeed = CLOCK_getSystemClockSpeed();
+	
+	if (CLOCK_setAHBPrescaler(CLOCK_AHB_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
+	if (CLOCK_setAPB1Prescaler(CLOCK_APB1_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
+	if (CLOCK_setAPB2Prescaler(CLOCK_APB2_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
+	
 	
 	GPIO_setPinInterrupt(PB_Port, PB_Pin, GPIO_IT_TRIGGER_RISING);
 	GPIO_setPinOutput(LED2_Port, LED2_Pin);

@@ -5,6 +5,7 @@
 * GPIO drivers for stm32l4xx devices.
 * WARNING: These drivers have NOT been tested extensively. Use at own risk.
 * Reference: https://www.youtube.com/playlist?list=PLtVUYRe-Z-mfKO0lg_-MBvwWl6VjWT8Dt
+* STM32 Reference Manual: RM0432
 *
 ***/
 
