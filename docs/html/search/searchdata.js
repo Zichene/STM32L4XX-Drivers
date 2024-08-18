@@ -1,10 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "cg",
-  1: "cg",
-  2: "cg",
-  3: "cg",
-  4: "cg"
+  0: "cgt",
+  1: "cgt",
+  2: "cgt",
+  3: "cgt",
+  4: "cgt"
 };
 
 var indexSectionNames =

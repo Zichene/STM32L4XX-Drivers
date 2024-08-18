@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['speed_5fstate_0',['SPEED_State',['../gpio_8h.html#a6d6a4a37ab5e028e3360253754289a3f',1,'gpio.h']]]
+  ['tim_5fstatus_5fstate_0',['TIM_Status_State',['../tim_8h.html#aa7bb33976f8d2b8535cb20917287e529',1,'tim.h']]],
+  ['tim_5ftimer_5fstate_1',['TIM_TIMER_State',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629',1,'tim.h']]]
 ];

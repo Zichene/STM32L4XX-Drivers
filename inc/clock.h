@@ -1,5 +1,6 @@
 #ifndef CLOCK_H
 #define CLOCK_H
+#include "stm32l4xx.h"
 #include "gpio.h"
 
 /***

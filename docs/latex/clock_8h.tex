@@ -1,5 +1,6 @@
 \doxysection{C\+:/\+Users/\+Administrator/\+Desktop/\+STM32\+L4\+XX-\/\+Drivers/inc/clock.h File Reference}
 \hypertarget{clock_8h}{}\label{clock_8h}\index{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/clock.h@{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/clock.h}}
+{\ttfamily \#include "{}stm32l4xx.\+h"{}}\newline
 {\ttfamily \#include "{}gpio.\+h"{}}\newline
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -28,8 +29,8 @@ enum \mbox{\hyperlink{clock_8h_aaa0363e0e9775584599d94565f8e0e60}{CLOCK\+\_\+\+M
  \}
 \begin{DoxyCompactList}\small\item\em Enum representing a prescaler choice for the MCO output. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+State}} \{ \newline
-\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15}{CLOCK\+\_\+\+LSE}} = 0
-, \mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896}{CLOCK\+\_\+\+MSI}} = 0
+\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896}{CLOCK\+\_\+\+MSI}} = 0
+, \mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15}{CLOCK\+\_\+\+LSE}} = 1
 , \mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1}{CLOCK\+\_\+\+HSI}} = 8
 , \mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca}{CLOCK\+\_\+\+HSE}} = 16
 , \newline
@@ -386,12 +387,12 @@ enum \mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\+\_\+\+S
 Enum representing a choice of clock for activating and desactivating. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_LSE@{CLOCK\_LSE}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_LSE@{CLOCK\_LSE}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
-CLOCK\+\_\+\+LSE&The LSE clock is to be activated or desactivated. \\
-\hline
-
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_MSI@{CLOCK\_MSI}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_MSI@{CLOCK\_MSI}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
 CLOCK\+\_\+\+MSI&The MSI clock is to be activated or desactivated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_LSE@{CLOCK\_LSE}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_LSE@{CLOCK\_LSE}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 
+CLOCK\+\_\+\+LSE&The LSE clock is to be activated or desactivated. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CLOCK\_HSI@{CLOCK\_HSI}!clock.h@{clock.h}}\index{clock.h@{clock.h}!CLOCK\_HSI@{CLOCK\_HSI}}}\Hypertarget{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1}\label{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36} 

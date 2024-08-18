@@ -1,5 +1,6 @@
 #include "clock.h"
 #include "gpio.h"
+#include "tim.h"
 
 /*
 For the B-L4S5I-IOT01A board, the pin PB14 is connected to LED2 and PC13 is connected to user button.
@@ -26,9 +27,6 @@ int main(void)
 	/* Enable the PLL clock */
 	if (CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 60, CLOCK_PLLR_2) != CLOCK_OK) ErrorHandler();
 	CLOCK_activateClk(CLOCK_PLL);
-	char a = CLOCK_isActivated(CLOCK_PLL);
-	char b = CLOCK_isActivated(CLOCK_HSI);
-	char c = CLOCK_isActivated(CLOCK_MSI);
 	int pllSpeed = CLOCK_getPLLClockSpeed();
 	CLOCK_activateClk(CLOCK_HSI);
 	if (CLOCK_setSystemClock(CLOCK_SYSCLK_PLL) != CLOCK_OK) ErrorHandler();
@@ -39,7 +37,8 @@ int main(void)
 	if (CLOCK_setAPB1Prescaler(CLOCK_APB1_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
 	if (CLOCK_setAPB2Prescaler(CLOCK_APB2_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
 	
-
+	TIM_enableTimer(TIM_TIM2);
+	TIM_disableTimer(TIM_TIM2);
 	GPIO_setPinInterrupt(PB_Port, PB_Pin, GPIO_IT_TRIGGER_RISING);
 	GPIO_setPinOutput(LED2_Port, LED2_Pin);
 	

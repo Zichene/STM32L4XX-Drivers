@@ -29,9 +29,11 @@ var menudata={children:[
 {text:"Globals",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
 {text:"c",url:"globals.html#index_c"},
-{text:"g",url:"globals.html#index_g"}]},
+{text:"g",url:"globals.html#index_g"},
+{text:"t",url:"globals.html#index_t"}]},
 {text:"Functions",url:"globals_func.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html",children:[
 {text:"c",url:"globals_eval.html#index_c"},
-{text:"g",url:"globals_eval.html#index_g"}]}]}]}]}
+{text:"g",url:"globals_eval.html#index_g"},
+{text:"t",url:"globals_eval.html#index_t"}]}]}]}]}
