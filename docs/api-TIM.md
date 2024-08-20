@@ -1,4 +1,4 @@
-# group `TIM` {#group___t_i_m}
+# group `TIM`
 
 ## Summary
 
@@ -17,7 +17,7 @@
 
 ## Members
 
-#### `enum `[`TIM_TIMER_State`](#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629) {#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629}
+#### `enum `[`TIM_TIMER_State`](#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629) 
 
  Values                         | Descriptions                                
 --------------------------------|---------------------------------------------
@@ -37,7 +37,7 @@ Enum representing different timers on the chip.
 
 Timers 2-8 inclusive are connected to APB1 bus. Timers 1 and 15-17 inclusive are connected to the APB2 bus.
 
-#### `enum `[`TIM_Status_State`](#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529) {#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529}
+#### `enum `[`TIM_Status_State`](#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529) 
 
  Values                         | Descriptions                                
 --------------------------------|---------------------------------------------
@@ -47,7 +47,7 @@ TIM_ERROR            | Indicates that a general error has occured.
 
 Enum representing different function return statuses.
 
-#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_enablePeripheralClk`](#group___t_i_m_1ga7e436dcd8d1f9df35649297fc25de9c9)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` {#group___t_i_m_1ga7e436dcd8d1f9df35649297fc25de9c9}
+#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_enablePeripheralClk`](#group___t_i_m_1ga7e436dcd8d1f9df35649297fc25de9c9)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` 
 
 Enable the peripheral clock for a timer by changing the bit on the APB1ENR or APB2ENR registers.
 
@@ -57,7 +57,7 @@ Enable the peripheral clock for a timer by changing the bit on the APB1ENR or AP
 #### Returns
 status
 
-#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_disablePeripheralClk`](#group___t_i_m_1ga51fa45a8ad8271045073f95c61a75574)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` {#group___t_i_m_1ga51fa45a8ad8271045073f95c61a75574}
+#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_disablePeripheralClk`](#group___t_i_m_1ga51fa45a8ad8271045073f95c61a75574)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` 
 
 Disable the peripheral clock for a timer by changing the bit on the APB1ENR or APB2ENR registers.
 
@@ -67,7 +67,7 @@ Disable the peripheral clock for a timer by changing the bit on the APB1ENR or A
 #### Returns
 status
 
-#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_config`](#group___t_i_m_1ga3ecfed8e3ce677c6f663d0dbec8219c4)`(`[`TIM_Config_Typedef`](api-TIM.md#struct_t_i_m___config___typedef)` * config)` {#group___t_i_m_1ga3ecfed8e3ce677c6f663d0dbec8219c4}
+#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_config`](#group___t_i_m_1ga3ecfed8e3ce677c6f663d0dbec8219c4)`(`[`TIM_Config_Typedef`](api-TIM.md#struct_t_i_m___config___typedef)` * config)` 
 
 Configure a timer with desired config parameters.
 
@@ -78,7 +78,7 @@ See [TIM_Config_Typedef](api-TIM.md#struct_t_i_m___config___typedef) for specifi
 #### Returns
 status
 
-#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_startTimer`](#group___t_i_m_1ga9b79b449a6bad1fdcd3553cb8ad1787c)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` {#group___t_i_m_1ga9b79b449a6bad1fdcd3553cb8ad1787c}
+#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_startTimer`](#group___t_i_m_1ga9b79b449a6bad1fdcd3553cb8ad1787c)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` 
 
 Starts the timer by setting the CEN bit in the TIMx_CR1 register.
 
@@ -88,7 +88,7 @@ Starts the timer by setting the CEN bit in the TIMx_CR1 register.
 #### Returns
 status
 
-#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_stopTimer`](#group___t_i_m_1ga469e7c7abf13151452b4280eed1c7f24)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` {#group___t_i_m_1ga469e7c7abf13151452b4280eed1c7f24}
+#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_stopTimer`](#group___t_i_m_1ga469e7c7abf13151452b4280eed1c7f24)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` 
 
 Stops the timer by setting the CEN bit in the TIMx_CR1 register.
 
@@ -98,7 +98,7 @@ Stops the timer by setting the CEN bit in the TIMx_CR1 register.
 #### Returns
 status
 
-#### `public uint8_t `[`TIM_hasUpdated`](#group___t_i_m_1ga9aefba36c49823c04220ebffd9426f81)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer,uint8_t reset_flag)` {#group___t_i_m_1ga9aefba36c49823c04220ebffd9426f81}
+#### `public uint8_t `[`TIM_hasUpdated`](#group___t_i_m_1ga9aefba36c49823c04220ebffd9426f81)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer,uint8_t reset_flag)` 
 
 Checks the update interrupt flag (UIF) in the TIMx_SR register.
 
@@ -113,7 +113,7 @@ value of the UIF flag.
 
 This function does not check correctness of arguments. This responsibility is given to the caller.
 
-#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_resetEventFlag`](#group___t_i_m_1ga678b5813bb7929232e9346038a6c756d)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` {#group___t_i_m_1ga678b5813bb7929232e9346038a6c756d}
+#### `public `[`TIM_Status_State`](api-undefined.md#group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529)` `[`TIM_resetEventFlag`](#group___t_i_m_1ga678b5813bb7929232e9346038a6c756d)`(`[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` timer)` 
 
 Resets the UIF flag in the TIMx_SR register.
 
@@ -123,7 +123,7 @@ Resets the UIF flag in the TIMx_SR register.
 #### Returns
 status
 
-# struct `TIM_Config_Typedef` {#struct_t_i_m___config___typedef}
+# struct `TIM_Config_Typedef` 
 
 ## Summary
 
@@ -136,19 +136,19 @@ status
 
 ## Members
 
-#### `public `[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` `[`timer`](#struct_t_i_m___config___typedef_1ad9c393e32df95af2f6d18030bf82df98) {#struct_t_i_m___config___typedef_1ad9c393e32df95af2f6d18030bf82df98}
+#### `public `[`TIM_TIMER_State`](api-undefined.md#group___t_i_m_1ga5b31ce769abb7de5285cb952034a6629)` `[`timer`](#struct_t_i_m___config___typedef_1ad9c393e32df95af2f6d18030bf82df98) 
 
 Timer. Which timer will be configured.
 
-#### `public uint16_t `[`PSC`](#struct_t_i_m___config___typedef_1a85534f33328d4a0d1c9ef82558e33f78) {#struct_t_i_m___config___typedef_1a85534f33328d4a0d1c9ef82558e33f78}
+#### `public uint16_t `[`PSC`](#struct_t_i_m___config___typedef_1a85534f33328d4a0d1c9ef82558e33f78) 
 
 Prescaler. The counter clock frequency CK_CNT is equal to fCK_PSC / (PSC[15:0] + 1).
 
-#### `public uint16_t `[`ARR`](#struct_t_i_m___config___typedef_1a0cffa5dda75b6b5e4a71f4fa6915203f) {#struct_t_i_m___config___typedef_1a0cffa5dda75b6b5e4a71f4fa6915203f}
+#### `public uint16_t `[`ARR`](#struct_t_i_m___config___typedef_1a0cffa5dda75b6b5e4a71f4fa6915203f) 
 
 Auto-Reload register. Defines the maximum number that the timer will count up to (or down from).
 
-#### `public uint8_t `[`enableInterrupt`](#struct_t_i_m___config___typedef_1a000fcbd6dead41212e3191fc83830019) {#struct_t_i_m___config___typedef_1a000fcbd6dead41212e3191fc83830019}
+#### `public uint8_t `[`enableInterrupt`](#struct_t_i_m___config___typedef_1a000fcbd6dead41212e3191fc83830019) 
 
 Boolean that controls whether or not the clock should generate interrupts.
 
