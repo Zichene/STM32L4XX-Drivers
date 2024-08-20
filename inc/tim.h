@@ -67,11 +67,27 @@ TIM_Status_State TIM_disablePeripheralClk(TIM_TIMER_State timer);
 
 
 
-/**@brief Enables and configure a timer with desired config parameters. See TIM_Config_Typedef for specific parameters.
+/**@brief Configure a timer with desired config parameters. See TIM_Config_Typedef for specific parameters.
 * @param config pointer to a TIM_Config_Typedef object that contains the parameter configuration
 * @return status
 */
 TIM_Status_State TIM_config(TIM_Config_Typedef* config);
+
+
+
+/**@brief Starts the timer by setting the CEN bit in the TIMx_CR1 register.
+* @param timer timer.
+* @return status
+*/
+TIM_Status_State TIM_startTimer(TIM_TIMER_State timer);
+
+
+
+/**@brief Stops the timer by setting the CEN bit in the TIMx_CR1 register.
+* @param timer timer.
+* @return status
+*/
+TIM_Status_State TIM_stopTimer(TIM_TIMER_State timer);
 
 
 

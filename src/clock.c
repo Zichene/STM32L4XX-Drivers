@@ -7,6 +7,8 @@
 * Reference: https://www.youtube.com/playlist?list=PLtVUYRe-Z-mfKO0lg_-MBvwWl6VjWT8Dt
 * STM32 Reference Manual: RM0432
 *
+* FOR DETAILED DOCUMENTATION OF THIS FILE, SEE CORRESPONDING .h SOURCE CODE OR GENERATE DOCS WITH DOXYGEN.
+*
 ***/
 
 /****************************************************************************************************/

@@ -8,6 +8,8 @@
 * Reference: https://www.youtube.com/playlist?list=PLtVUYRe-Z-mfKO0lg_-MBvwWl6VjWT8Dt
 * STM32 Reference Manual: RM0432
 *
+* FOR DETAILED DOCUMENTATION OF THIS FILE, SEE CORRESPONDING .h SOURCE CODE OR GENERATE DOCS WITH DOXYGEN.
+*
 ***/
 
 /****************************************************************************************************/
@@ -165,9 +167,29 @@ TIM_Status_State TIM_config(TIM_Config_Typedef* config) {
 		NVIC_EnableIRQ(getTIM_IRQn(timer));
 		__enable_irq();
 	}
-	
-	/* enable counter */
+	return TIM_OK;
+}
+
+
+TIM_Status_State TIM_startTimer(TIM_TIMER_State timer) {
+	if (!( (timer <= 5 && timer >= 0) || (timer <= 18 && timer >= 16) || timer == 11 || timer == 13))
+		return TIM_INVALID_ARGS;
+		/* enable counter */
+	TIM_TypeDef* TIM_X = getTIM(timer);
 	TIM_X->CR1 |= 0b1;
+	return TIM_OK;
+}
+
+
+TIM_Status_State TIM_stopTimer(TIM_TIMER_State timer) {
+	if (!( (timer <= 5 && timer >= 0) || (timer <= 18 && timer >= 16) || timer == 11 || timer == 13))
+		return TIM_INVALID_ARGS;
+	/* disable counter */
+	TIM_TypeDef* TIM_X = getTIM(timer);
+	TIM_X->CR1 &= ~(0b1);
+	
+	/* clear the 'pending update interrupt' flag, just in case. */
+  TIM_X->SR  &= ~(0b1);
 	return TIM_OK;
 }
 
