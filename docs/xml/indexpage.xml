@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>STM32L4XX Drivers Documentation</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1intro_sec">
+<title>Introduction</title><para>Bare-metal implementation of some drivers for the STM32L4 family of devices. See example projects showcasing these drivers at <ulink url="https://github.com/Zichene/STM32L4XX-Drivers/tree/main/projects-bl4s5i-iot01a">https://github.com/Zichene/STM32L4XX-Drivers/tree/main/projects-bl4s5i-iot01a</ulink>. These drivers were mostly tested using the B-L4S5I-IOT01A development board from ST.</para>
+<para>WARNING: These drivers were written for educational purposes. These have not been tested thoroughly, use at own risk. These drivers should only use on STM32L4XX devices.</para>
+</sect1>
+<sect1 id="index_1install_sec">
+<title>Installation</title><para><itemizedlist>
+<listitem><para>Clone the repo or download desired files.</para>
+</listitem><listitem><para>In your embedded project environment, simply add the desired <computeroutput>.h</computeroutput> and <computeroutput>.c</computeroutput> files. Make sure that you set up the include paths correctly!</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1gpio_sec">
+<title>GPIO Drivers</title><para>See \group GPIO. etc... </para>
+</sect1>
+    </detaileddescription>
+    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h"/>
+  </compounddef>
+</doxygen>

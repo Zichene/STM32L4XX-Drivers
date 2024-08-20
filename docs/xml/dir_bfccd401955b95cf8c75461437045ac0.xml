@@ -2,7 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
   <compounddef id="dir_bfccd401955b95cf8c75461437045ac0" kind="dir">
     <compoundname>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc</compoundname>
+    <innerfile refid="clock_8h">clock.h</innerfile>
+    <innerfile refid="common_8h">common.h</innerfile>
     <innerfile refid="gpio_8h">gpio.h</innerfile>
+    <innerfile refid="tim_8h">tim.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

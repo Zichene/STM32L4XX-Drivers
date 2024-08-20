@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['enableinterrupt_0',['enableInterrupt',['../struct_t_i_m___config___typedef.html#a000fcbd6dead41212e3191fc83830019',1,'TIM_Config_Typedef']]]
+  ['documentation_0',['STM32L4XX Drivers Documentation',['../index.html',1,'']]],
+  ['drivers_1',['GPIO Drivers',['../index.html#gpio_sec',1,'']]],
+  ['drivers_20documentation_2',['STM32L4XX Drivers Documentation',['../index.html',1,'']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GPIO_Drivers: TIM_Config_Typedef Struct Reference</title>
+<title>STM32L4XX_Drivers: TIM_Config_Typedef Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GPIO_Drivers<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">STM32L4XX_Drivers<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">Bare-metal implementation of some drivers for the STML4 family of devices.</div>
   </td>
  </tr>
  </tbody>
@@ -86,92 +87,29 @@ $(function(){ initResizable(false); });
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">TIM_Config_Typedef Struct Reference</div></div>
+  <div class="headertitle"><div class="title">TIM_Config_Typedef Struct Reference<div class="ingroups"><a class="el" href="group___t_i_m.html">TIM</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="tim_8h_source.html">tim.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ad9c393e32df95af2f6d18030bf82df98" id="r_ad9c393e32df95af2f6d18030bf82df98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tim_8h.html#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9c393e32df95af2f6d18030bf82df98">timer</a></td></tr>
-<tr class="memdesc:ad9c393e32df95af2f6d18030bf82df98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer. Which timer will be configured.  <br /></td></tr>
+<tr class="memitem:ad9c393e32df95af2f6d18030bf82df98" id="r_ad9c393e32df95af2f6d18030bf82df98"><td class="memItemLeft" align="right" valign="top"><a id="ad9c393e32df95af2f6d18030bf82df98" name="ad9c393e32df95af2f6d18030bf82df98"></a>
+<a class="el" href="group___t_i_m.html#ga5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a>&#160;</td><td class="memItemRight" valign="bottom"><b>timer</b></td></tr>
+<tr class="memdesc:ad9c393e32df95af2f6d18030bf82df98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer. Which timer will be configured. <br /></td></tr>
 <tr class="separator:ad9c393e32df95af2f6d18030bf82df98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85534f33328d4a0d1c9ef82558e33f78" id="r_a85534f33328d4a0d1c9ef82558e33f78"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85534f33328d4a0d1c9ef82558e33f78">PSC</a></td></tr>
-<tr class="memdesc:a85534f33328d4a0d1c9ef82558e33f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prescaler. The counter clock frequency CK_CNT is equal to fCK_PSC / (PSC[15:0] + 1).  <br /></td></tr>
+<tr class="memitem:a85534f33328d4a0d1c9ef82558e33f78" id="r_a85534f33328d4a0d1c9ef82558e33f78"><td class="memItemLeft" align="right" valign="top"><a id="a85534f33328d4a0d1c9ef82558e33f78" name="a85534f33328d4a0d1c9ef82558e33f78"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>PSC</b></td></tr>
+<tr class="memdesc:a85534f33328d4a0d1c9ef82558e33f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prescaler. The counter clock frequency CK_CNT is equal to fCK_PSC / (PSC[15:0] + 1). <br /></td></tr>
 <tr class="separator:a85534f33328d4a0d1c9ef82558e33f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cffa5dda75b6b5e4a71f4fa6915203f" id="r_a0cffa5dda75b6b5e4a71f4fa6915203f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cffa5dda75b6b5e4a71f4fa6915203f">ARR</a></td></tr>
-<tr class="memdesc:a0cffa5dda75b6b5e4a71f4fa6915203f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auto-Reload register. Defines the maximum number that the timer will count up to (or down from).  <br /></td></tr>
+<tr class="memitem:a0cffa5dda75b6b5e4a71f4fa6915203f" id="r_a0cffa5dda75b6b5e4a71f4fa6915203f"><td class="memItemLeft" align="right" valign="top"><a id="a0cffa5dda75b6b5e4a71f4fa6915203f" name="a0cffa5dda75b6b5e4a71f4fa6915203f"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>ARR</b></td></tr>
+<tr class="memdesc:a0cffa5dda75b6b5e4a71f4fa6915203f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auto-Reload register. Defines the maximum number that the timer will count up to (or down from). <br /></td></tr>
 <tr class="separator:a0cffa5dda75b6b5e4a71f4fa6915203f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a000fcbd6dead41212e3191fc83830019" id="r_a000fcbd6dead41212e3191fc83830019"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a000fcbd6dead41212e3191fc83830019">enableInterrupt</a></td></tr>
-<tr class="memdesc:a000fcbd6dead41212e3191fc83830019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean that controls whether or not the clock should generate interrupts.  <br /></td></tr>
+<tr class="memitem:a000fcbd6dead41212e3191fc83830019" id="r_a000fcbd6dead41212e3191fc83830019"><td class="memItemLeft" align="right" valign="top"><a id="a000fcbd6dead41212e3191fc83830019" name="a000fcbd6dead41212e3191fc83830019"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>enableInterrupt</b></td></tr>
+<tr class="memdesc:a000fcbd6dead41212e3191fc83830019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean that controls whether or not the clock should generate interrupts. <br /></td></tr>
 <tr class="separator:a000fcbd6dead41212e3191fc83830019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
-<a id="a0cffa5dda75b6b5e4a71f4fa6915203f" name="a0cffa5dda75b6b5e4a71f4fa6915203f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0cffa5dda75b6b5e4a71f4fa6915203f">&#9670;&#160;</a></span>ARR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t ARR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Auto-Reload register. Defines the maximum number that the timer will count up to (or down from). </p>
-
-</div>
-</div>
-<a id="a000fcbd6dead41212e3191fc83830019" name="a000fcbd6dead41212e3191fc83830019"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a000fcbd6dead41212e3191fc83830019">&#9670;&#160;</a></span>enableInterrupt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t enableInterrupt</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Boolean that controls whether or not the clock should generate interrupts. </p>
-
-</div>
-</div>
-<a id="a85534f33328d4a0d1c9ef82558e33f78" name="a85534f33328d4a0d1c9ef82558e33f78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85534f33328d4a0d1c9ef82558e33f78">&#9670;&#160;</a></span>PSC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint16_t PSC</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Prescaler. The counter clock frequency CK_CNT is equal to fCK_PSC / (PSC[15:0] + 1). </p>
-
-</div>
-</div>
-<a id="ad9c393e32df95af2f6d18030bf82df98" name="ad9c393e32df95af2f6d18030bf82df98"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9c393e32df95af2f6d18030bf82df98">&#9670;&#160;</a></span>timer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="tim_8h.html#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Timer. Which timer will be configured. </p>
-
-</div>
-</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/<a class="el" href="tim_8h_source.html">tim.h</a></li>
 </ul>

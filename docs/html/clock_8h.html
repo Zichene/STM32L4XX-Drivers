@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GPIO_Drivers: C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h File Reference</title>
+<title>STM32L4XX_Drivers: C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GPIO_Drivers<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">STM32L4XX_Drivers<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">Bare-metal implementation of some drivers for the STML4 family of devices.</div>
   </td>
  </tr>
  </tbody>
@@ -101,842 +102,157 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a8fab271b291b83bd742e9099a9f20a59" id="r_a8fab271b291b83bd742e9099a9f20a59"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fab271b291b83bd742e9099a9f20a59">CLOCK_MCO_SELECT_State</a> { <br />
-&#160;&#160;<a class="el" href="#a8fab271b291b83bd742e9099a9f20a59abb691cd8ed76e2fc2feee940b9d4469f">CLOCK_MCO_SELECT_NONE</a> = 0
-, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59a6db979a2b14fbff8a460b22a4609d547">CLOCK_MCO_SELECT_SYSCLK</a> = 1
-, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59afba7110e8b401e1cb1f7505ec4ccef9b">CLOCK_MCO_SELECT_MSI</a> = 2
-, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59a754c4991d840d4f445b759dbc05af0e4">CLOCK_MCO_SELECT_HSI16</a> = 3
+<tr class="memitem:ga8fab271b291b83bd742e9099a9f20a59" id="r_ga8fab271b291b83bd742e9099a9f20a59"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga8fab271b291b83bd742e9099a9f20a59">CLOCK_MCO_SELECT_State</a> { <br />
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59abb691cd8ed76e2fc2feee940b9d4469f">CLOCK_MCO_SELECT_NONE</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59a6db979a2b14fbff8a460b22a4609d547">CLOCK_MCO_SELECT_SYSCLK</a> = 1
+, <a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59afba7110e8b401e1cb1f7505ec4ccef9b">CLOCK_MCO_SELECT_MSI</a> = 2
+, <a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59a754c4991d840d4f445b759dbc05af0e4">CLOCK_MCO_SELECT_HSI16</a> = 3
 , <br />
-&#160;&#160;<a class="el" href="#a8fab271b291b83bd742e9099a9f20a59aa3215872772feb32efec07698249f863">CLOCK_MCO_SELECT_HSE</a> = 4
-, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59a5e26efa03f5b33e0c1e30914543faacb">CLOCK_MCO_SELECT_PLL</a> = 5
-, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59a089bb074feb5756821a02f5bddfe9cd7">CLOCK_MCO_SELECT_LSI</a> = 6
-, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59a3cf05f9e87a205b19ed391387c71360e">CLOCK_MCO_SELECT_LSE</a> = 7
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59aa3215872772feb32efec07698249f863">CLOCK_MCO_SELECT_HSE</a> = 4
+, <a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59a5e26efa03f5b33e0c1e30914543faacb">CLOCK_MCO_SELECT_PLL</a> = 5
+, <a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59a089bb074feb5756821a02f5bddfe9cd7">CLOCK_MCO_SELECT_LSI</a> = 6
+, <a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59a3cf05f9e87a205b19ed391387c71360e">CLOCK_MCO_SELECT_LSE</a> = 7
 , <br />
-&#160;&#160;<a class="el" href="#a8fab271b291b83bd742e9099a9f20a59a850735cd656cc91ad63442e0d0f695a5">CLOCK_MCO_SELECT_HSI48</a> = 8
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga8fab271b291b83bd742e9099a9f20a59a850735cd656cc91ad63442e0d0f695a5">CLOCK_MCO_SELECT_HSI48</a> = 8
 <br />
  }</td></tr>
-<tr class="memdesc:a8fab271b291b83bd742e9099a9f20a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing which clock is to be outputted to the Master Clock Output (MCO) pin.  <a href="#a8fab271b291b83bd742e9099a9f20a59">More...</a><br /></td></tr>
-<tr class="separator:a8fab271b291b83bd742e9099a9f20a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa0363e0e9775584599d94565f8e0e60" id="r_aaa0363e0e9775584599d94565f8e0e60"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa0363e0e9775584599d94565f8e0e60">CLOCK_MCO_PRESCALER_State</a> { <br />
-&#160;&#160;<a class="el" href="#aaa0363e0e9775584599d94565f8e0e60ad4ef6fde7814d2944a88652d46a6793b">CLOCK_MCO_PRE_DIV_1</a> = 0
-, <a class="el" href="#aaa0363e0e9775584599d94565f8e0e60a8bb9e7c5629ffd960898254d902d0a01">CLOCK_MCO_PRE_DIV_2</a> = 1
-, <a class="el" href="#aaa0363e0e9775584599d94565f8e0e60a0210de4b012d4b2b456a01b7f0603bc7">CLOCK_MCO_PRE_DIV_4</a> = 2
-, <a class="el" href="#aaa0363e0e9775584599d94565f8e0e60a19ec56b9cdffbd690114783b9ec42fe2">CLOCK_MCO_PRE_DIV_8</a> = 3
+<tr class="memdesc:ga8fab271b291b83bd742e9099a9f20a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing which clock is to be outputted to the Master Clock Output (MCO) pin.  <a href="group___c_l_o_c_k.html#ga8fab271b291b83bd742e9099a9f20a59">More...</a><br /></td></tr>
+<tr class="separator:ga8fab271b291b83bd742e9099a9f20a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa0363e0e9775584599d94565f8e0e60" id="r_gaaa0363e0e9775584599d94565f8e0e60"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gaaa0363e0e9775584599d94565f8e0e60">CLOCK_MCO_PRESCALER_State</a> { <br />
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#ggaaa0363e0e9775584599d94565f8e0e60ad4ef6fde7814d2944a88652d46a6793b">CLOCK_MCO_PRE_DIV_1</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#ggaaa0363e0e9775584599d94565f8e0e60a8bb9e7c5629ffd960898254d902d0a01">CLOCK_MCO_PRE_DIV_2</a> = 1
+, <a class="el" href="group___c_l_o_c_k.html#ggaaa0363e0e9775584599d94565f8e0e60a0210de4b012d4b2b456a01b7f0603bc7">CLOCK_MCO_PRE_DIV_4</a> = 2
+, <a class="el" href="group___c_l_o_c_k.html#ggaaa0363e0e9775584599d94565f8e0e60a19ec56b9cdffbd690114783b9ec42fe2">CLOCK_MCO_PRE_DIV_8</a> = 3
 , <br />
-&#160;&#160;<a class="el" href="#aaa0363e0e9775584599d94565f8e0e60a1738104963af1cf755a3f48652d69fad">CLOCK_MCO_PRE_DIV_16</a> = 4
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#ggaaa0363e0e9775584599d94565f8e0e60a1738104963af1cf755a3f48652d69fad">CLOCK_MCO_PRE_DIV_16</a> = 4
 <br />
  }</td></tr>
-<tr class="memdesc:aaa0363e0e9775584599d94565f8e0e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing a prescaler choice for the MCO output.  <a href="#aaa0363e0e9775584599d94565f8e0e60">More...</a><br /></td></tr>
-<tr class="separator:aaa0363e0e9775584599d94565f8e0e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63d31f75868a8d1e3b998ac5df3f6a36" id="r_a63d31f75868a8d1e3b998ac5df3f6a36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> { <br />
-&#160;&#160;<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896">CLOCK_MSI</a> = 0
-, <a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15">CLOCK_LSE</a> = 1
-, <a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1">CLOCK_HSI</a> = 8
-, <a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca">CLOCK_HSE</a> = 16
+<tr class="memdesc:gaaa0363e0e9775584599d94565f8e0e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing a prescaler choice for the MCO output.  <a href="group___c_l_o_c_k.html#gaaa0363e0e9775584599d94565f8e0e60">More...</a><br /></td></tr>
+<tr class="separator:gaaa0363e0e9775584599d94565f8e0e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63d31f75868a8d1e3b998ac5df3f6a36" id="r_ga63d31f75868a8d1e3b998ac5df3f6a36"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> { <br />
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896">CLOCK_MSI</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#gga63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15">CLOCK_LSE</a> = 1
+, <a class="el" href="group___c_l_o_c_k.html#gga63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1">CLOCK_HSI</a> = 8
+, <a class="el" href="group___c_l_o_c_k.html#gga63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca">CLOCK_HSE</a> = 16
 , <br />
-&#160;&#160;<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36a14eebc7672bdd5c1225faf6d957fcfc8">CLOCK_PLL</a> = 24
-, <a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01">CLOCK_PLLSAI1</a> = 26
-, <a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540">CLOCK_PLLSAI2</a> = 28
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga63d31f75868a8d1e3b998ac5df3f6a36a14eebc7672bdd5c1225faf6d957fcfc8">CLOCK_PLL</a> = 24
+, <a class="el" href="group___c_l_o_c_k.html#gga63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01">CLOCK_PLLSAI1</a> = 26
+, <a class="el" href="group___c_l_o_c_k.html#gga63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540">CLOCK_PLLSAI2</a> = 28
 <br />
  }</td></tr>
-<tr class="memdesc:a63d31f75868a8d1e3b998ac5df3f6a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing a choice of clock for activating and desactivating.  <a href="#a63d31f75868a8d1e3b998ac5df3f6a36">More...</a><br /></td></tr>
-<tr class="separator:a63d31f75868a8d1e3b998ac5df3f6a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceb416b702f94d30e139e49e8e10a76f" id="r_aceb416b702f94d30e139e49e8e10a76f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aceb416b702f94d30e139e49e8e10a76f">CLOCK_PLL_SOURCE_State</a> { <a class="el" href="#aceb416b702f94d30e139e49e8e10a76fa7dfb30305b992424089765bb86052116">CLOCK_PLL_SRC_NONE</a> = 0
-, <a class="el" href="#aceb416b702f94d30e139e49e8e10a76faa828be71c3aaab5019d54220bb09da5d">CLOCK_PLL_SRC_MSI</a> = 1
-, <a class="el" href="#aceb416b702f94d30e139e49e8e10a76faf5c7a4f6288463c25804767392272ea2">CLOCK_PLL_SRC_HSI16</a> = 2
-, <a class="el" href="#aceb416b702f94d30e139e49e8e10a76fa4d2de9def651b564adbc2f29261d3828">CLOCK_PLL_SRC_HSE</a> = 3
+<tr class="memdesc:ga63d31f75868a8d1e3b998ac5df3f6a36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing a choice of clock for activating and desactivating.  <a href="group___c_l_o_c_k.html#ga63d31f75868a8d1e3b998ac5df3f6a36">More...</a><br /></td></tr>
+<tr class="separator:ga63d31f75868a8d1e3b998ac5df3f6a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaceb416b702f94d30e139e49e8e10a76f" id="r_gaceb416b702f94d30e139e49e8e10a76f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gaceb416b702f94d30e139e49e8e10a76f">CLOCK_PLL_SOURCE_State</a> { <a class="el" href="group___c_l_o_c_k.html#ggaceb416b702f94d30e139e49e8e10a76fa7dfb30305b992424089765bb86052116">CLOCK_PLL_SRC_NONE</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#ggaceb416b702f94d30e139e49e8e10a76faa828be71c3aaab5019d54220bb09da5d">CLOCK_PLL_SRC_MSI</a> = 1
+, <a class="el" href="group___c_l_o_c_k.html#ggaceb416b702f94d30e139e49e8e10a76faf5c7a4f6288463c25804767392272ea2">CLOCK_PLL_SRC_HSI16</a> = 2
+, <a class="el" href="group___c_l_o_c_k.html#ggaceb416b702f94d30e139e49e8e10a76fa4d2de9def651b564adbc2f29261d3828">CLOCK_PLL_SRC_HSE</a> = 3
  }</td></tr>
-<tr class="memdesc:aceb416b702f94d30e139e49e8e10a76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing a choice of clock as source for PLL.  <a href="#aceb416b702f94d30e139e49e8e10a76f">More...</a><br /></td></tr>
-<tr class="separator:aceb416b702f94d30e139e49e8e10a76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b771949ba6bccb42317a3e5e089cded" id="r_a9b771949ba6bccb42317a3e5e089cded"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b771949ba6bccb42317a3e5e089cded">CLOCK_PLLR_State</a> { <a class="el" href="#a9b771949ba6bccb42317a3e5e089cdeda30583baa78fd1ccfaa1277d78915d648">CLOCK_PLLR_2</a> = 0
-, <a class="el" href="#a9b771949ba6bccb42317a3e5e089cdeda6f54e915fefe249957a8e62298970386">CLOCK_PLLR_4</a> = 1
-, <a class="el" href="#a9b771949ba6bccb42317a3e5e089cdeda135545aae67a4cc368f146388860aa57">CLOCK_PLLR_6</a> = 2
-, <a class="el" href="#a9b771949ba6bccb42317a3e5e089cdeda57e44ea397f1766898982b78a9fa3bd8">CLOCK_PLLR_8</a> = 3
+<tr class="memdesc:gaceb416b702f94d30e139e49e8e10a76f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing a choice of clock as source for PLL.  <a href="group___c_l_o_c_k.html#gaceb416b702f94d30e139e49e8e10a76f">More...</a><br /></td></tr>
+<tr class="separator:gaceb416b702f94d30e139e49e8e10a76f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b771949ba6bccb42317a3e5e089cded" id="r_ga9b771949ba6bccb42317a3e5e089cded"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga9b771949ba6bccb42317a3e5e089cded">CLOCK_PLLR_State</a> { <a class="el" href="group___c_l_o_c_k.html#gga9b771949ba6bccb42317a3e5e089cdeda30583baa78fd1ccfaa1277d78915d648">CLOCK_PLLR_2</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#gga9b771949ba6bccb42317a3e5e089cdeda6f54e915fefe249957a8e62298970386">CLOCK_PLLR_4</a> = 1
+, <a class="el" href="group___c_l_o_c_k.html#gga9b771949ba6bccb42317a3e5e089cdeda135545aae67a4cc368f146388860aa57">CLOCK_PLLR_6</a> = 2
+, <a class="el" href="group___c_l_o_c_k.html#gga9b771949ba6bccb42317a3e5e089cdeda57e44ea397f1766898982b78a9fa3bd8">CLOCK_PLLR_8</a> = 3
  }</td></tr>
-<tr class="memdesc:a9b771949ba6bccb42317a3e5e089cded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing choices for the PLL_R parameter.  <a href="#a9b771949ba6bccb42317a3e5e089cded">More...</a><br /></td></tr>
-<tr class="separator:a9b771949ba6bccb42317a3e5e089cded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5aa3fa30a332173aafcc460104d0a159" id="r_a5aa3fa30a332173aafcc460104d0a159"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> { <a class="el" href="#a5aa3fa30a332173aafcc460104d0a159a6a98c64f84a2d901438fd3890e4b6d7f">CLOCK_OK</a> = 0
-, <a class="el" href="#a5aa3fa30a332173aafcc460104d0a159a2941fc3f1fa884801d4ffed60c7f29ef">CLOCK_INVALID_ARGS</a> = 1
-, <a class="el" href="#a5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06">CLOCK_ERROR</a> = 2
+<tr class="memdesc:ga9b771949ba6bccb42317a3e5e089cded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing choices for the PLL_R parameter.  <a href="group___c_l_o_c_k.html#ga9b771949ba6bccb42317a3e5e089cded">More...</a><br /></td></tr>
+<tr class="separator:ga9b771949ba6bccb42317a3e5e089cded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5aa3fa30a332173aafcc460104d0a159" id="r_ga5aa3fa30a332173aafcc460104d0a159"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> { <a class="el" href="group___c_l_o_c_k.html#gga5aa3fa30a332173aafcc460104d0a159a6a98c64f84a2d901438fd3890e4b6d7f">CLOCK_OK</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#gga5aa3fa30a332173aafcc460104d0a159a2941fc3f1fa884801d4ffed60c7f29ef">CLOCK_INVALID_ARGS</a> = 1
+, <a class="el" href="group___c_l_o_c_k.html#gga5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06">CLOCK_ERROR</a> = 2
  }</td></tr>
-<tr class="memdesc:a5aa3fa30a332173aafcc460104d0a159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the status of a function.  <a href="#a5aa3fa30a332173aafcc460104d0a159">More...</a><br /></td></tr>
-<tr class="separator:a5aa3fa30a332173aafcc460104d0a159"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ea3cd345873e8a031469d82633ee72" id="r_ab8ea3cd345873e8a031469d82633ee72"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8ea3cd345873e8a031469d82633ee72">CLOCK_SYSCLK_State</a> { <a class="el" href="#ab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1">CLOCK_SYSCLK_MSI</a> = 0
-, <a class="el" href="#ab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462">CLOCK_SYSCLK_HSI16</a> = 1
-, <a class="el" href="#ab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf">CLOCK_SYSCLK_HSE</a> = 2
-, <a class="el" href="#ab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d">CLOCK_SYSCLK_PLL</a> = 3
+<tr class="memdesc:ga5aa3fa30a332173aafcc460104d0a159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the status of a function.  <a href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">More...</a><br /></td></tr>
+<tr class="separator:ga5aa3fa30a332173aafcc460104d0a159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8ea3cd345873e8a031469d82633ee72" id="r_gab8ea3cd345873e8a031469d82633ee72"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gab8ea3cd345873e8a031469d82633ee72">CLOCK_SYSCLK_State</a> { <a class="el" href="group___c_l_o_c_k.html#ggab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1">CLOCK_SYSCLK_MSI</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#ggab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462">CLOCK_SYSCLK_HSI16</a> = 1
+, <a class="el" href="group___c_l_o_c_k.html#ggab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf">CLOCK_SYSCLK_HSE</a> = 2
+, <a class="el" href="group___c_l_o_c_k.html#ggab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d">CLOCK_SYSCLK_PLL</a> = 3
  }</td></tr>
-<tr class="memdesc:ab8ea3cd345873e8a031469d82633ee72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing clocks which can be chosen as the system clock.  <a href="#ab8ea3cd345873e8a031469d82633ee72">More...</a><br /></td></tr>
-<tr class="separator:ab8ea3cd345873e8a031469d82633ee72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8243c8d8e6717062f9949ee373a4a77f" id="r_a8243c8d8e6717062f9949ee373a4a77f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8243c8d8e6717062f9949ee373a4a77f">CLOCK_AHB_PRESCALER_State</a> { <br />
-&#160;&#160;<a class="el" href="#a8243c8d8e6717062f9949ee373a4a77fa58ad808e45cfbc4336e1dcc45e0f1173">CLOCK_AHB_PRE_DIV_1</a> = 0
-, <a class="el" href="#a8243c8d8e6717062f9949ee373a4a77fa50ad82ac541766a6e12b20bce8ca7acf">CLOCK_AHB_PRE_DIV_2</a> = 8
-, <a class="el" href="#a8243c8d8e6717062f9949ee373a4a77fa602a58ff3e69e4ed36d26ff5adb5d760">CLOCK_AHB_PRE_DIV_4</a> = 9
-, <a class="el" href="#a8243c8d8e6717062f9949ee373a4a77fa0cbc2960e41a8001055299624718cc98">CLOCK_AHB_PRE_DIV_8</a> = 10
+<tr class="memdesc:gab8ea3cd345873e8a031469d82633ee72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing clocks which can be chosen as the system clock.  <a href="group___c_l_o_c_k.html#gab8ea3cd345873e8a031469d82633ee72">More...</a><br /></td></tr>
+<tr class="separator:gab8ea3cd345873e8a031469d82633ee72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8243c8d8e6717062f9949ee373a4a77f" id="r_ga8243c8d8e6717062f9949ee373a4a77f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga8243c8d8e6717062f9949ee373a4a77f">CLOCK_AHB_PRESCALER_State</a> { <br />
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77fa58ad808e45cfbc4336e1dcc45e0f1173">CLOCK_AHB_PRE_DIV_1</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77fa50ad82ac541766a6e12b20bce8ca7acf">CLOCK_AHB_PRE_DIV_2</a> = 8
+, <a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77fa602a58ff3e69e4ed36d26ff5adb5d760">CLOCK_AHB_PRE_DIV_4</a> = 9
+, <a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77fa0cbc2960e41a8001055299624718cc98">CLOCK_AHB_PRE_DIV_8</a> = 10
 , <br />
-&#160;&#160;<a class="el" href="#a8243c8d8e6717062f9949ee373a4a77fa0b13314034e5155cb712640d6b542036">CLOCK_AHB_PRE_DIV_16</a> = 11
-, <a class="el" href="#a8243c8d8e6717062f9949ee373a4a77fa0224c57455f9a606b2b61b3923fb0b9d">CLOCK_AHB_PRE_DIV_64</a> = 12
-, <a class="el" href="#a8243c8d8e6717062f9949ee373a4a77fa6a0c238180cd5fee437f5563de5f2fee">CLOCK_AHB_PRE_DIV_128</a> = 13
-, <a class="el" href="#a8243c8d8e6717062f9949ee373a4a77faa388856e07f32b445c8c131856c20632">CLOCK_AHB_PRE_DIV_256</a> = 14
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77fa0b13314034e5155cb712640d6b542036">CLOCK_AHB_PRE_DIV_16</a> = 11
+, <a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77fa0224c57455f9a606b2b61b3923fb0b9d">CLOCK_AHB_PRE_DIV_64</a> = 12
+, <a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77fa6a0c238180cd5fee437f5563de5f2fee">CLOCK_AHB_PRE_DIV_128</a> = 13
+, <a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77faa388856e07f32b445c8c131856c20632">CLOCK_AHB_PRE_DIV_256</a> = 14
 , <br />
-&#160;&#160;<a class="el" href="#a8243c8d8e6717062f9949ee373a4a77fafcf53d310322fdcbef5a5d4a480d1f77">CLOCK_AHB_PRE_DIV_512</a> = 15
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga8243c8d8e6717062f9949ee373a4a77fafcf53d310322fdcbef5a5d4a480d1f77">CLOCK_AHB_PRE_DIV_512</a> = 15
 <br />
  }</td></tr>
-<tr class="memdesc:a8243c8d8e6717062f9949ee373a4a77f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different values for the AHB prescaler.  <a href="#a8243c8d8e6717062f9949ee373a4a77f">More...</a><br /></td></tr>
-<tr class="separator:a8243c8d8e6717062f9949ee373a4a77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65e4b024aee4244fb32f8c5c4ff05f9a" id="r_a65e4b024aee4244fb32f8c5c4ff05f9a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9a">CLOCK_APB1_PRESCALER_State</a> { <br />
-&#160;&#160;<a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9aae98e6ebb354ed67981f4366c0e549c5f">CLOCK_APB1_PRE_DIV_1</a> = 0
-, <a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9aaa662e0f16bdbd7db338a6e1d1b640e6d">CLOCK_APB1_PRE_DIV_2</a> = 4
-, <a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9aac7682be55a2f8a3b67eb502b8c4fab40">CLOCK_APB1_PRE_DIV_4</a> = 5
-, <a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9aaef86f41b3fc4959331b774e04843fe0b">CLOCK_APB1_PRE_DIV_8</a> = 6
+<tr class="memdesc:ga8243c8d8e6717062f9949ee373a4a77f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different values for the AHB prescaler.  <a href="group___c_l_o_c_k.html#ga8243c8d8e6717062f9949ee373a4a77f">More...</a><br /></td></tr>
+<tr class="separator:ga8243c8d8e6717062f9949ee373a4a77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65e4b024aee4244fb32f8c5c4ff05f9a" id="r_ga65e4b024aee4244fb32f8c5c4ff05f9a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga65e4b024aee4244fb32f8c5c4ff05f9a">CLOCK_APB1_PRESCALER_State</a> { <br />
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga65e4b024aee4244fb32f8c5c4ff05f9aae98e6ebb354ed67981f4366c0e549c5f">CLOCK_APB1_PRE_DIV_1</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#gga65e4b024aee4244fb32f8c5c4ff05f9aaa662e0f16bdbd7db338a6e1d1b640e6d">CLOCK_APB1_PRE_DIV_2</a> = 4
+, <a class="el" href="group___c_l_o_c_k.html#gga65e4b024aee4244fb32f8c5c4ff05f9aac7682be55a2f8a3b67eb502b8c4fab40">CLOCK_APB1_PRE_DIV_4</a> = 5
+, <a class="el" href="group___c_l_o_c_k.html#gga65e4b024aee4244fb32f8c5c4ff05f9aaef86f41b3fc4959331b774e04843fe0b">CLOCK_APB1_PRE_DIV_8</a> = 6
 , <br />
-&#160;&#160;<a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9aaa02ab2e6bffcc030c4846389f7941bb3">CLOCK_APB1_PRE_DIV_16</a> = 7
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga65e4b024aee4244fb32f8c5c4ff05f9aaa02ab2e6bffcc030c4846389f7941bb3">CLOCK_APB1_PRE_DIV_16</a> = 7
 <br />
  }</td></tr>
-<tr class="memdesc:a65e4b024aee4244fb32f8c5c4ff05f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different values for the APB1 prescaler.  <a href="#a65e4b024aee4244fb32f8c5c4ff05f9a">More...</a><br /></td></tr>
-<tr class="separator:a65e4b024aee4244fb32f8c5c4ff05f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95ae2e15b49c96956d53beae3975e517" id="r_a95ae2e15b49c96956d53beae3975e517"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95ae2e15b49c96956d53beae3975e517">CLOCK_APB2_PRESCALER_State</a> { <br />
-&#160;&#160;<a class="el" href="#a95ae2e15b49c96956d53beae3975e517a9e2931dd9e0ca08f9e4f77b34c10af4e">CLOCK_APB2_PRE_DIV_1</a> = 0
-, <a class="el" href="#a95ae2e15b49c96956d53beae3975e517adecf06efe3e2eba743be92ac0cd00129">CLOCK_APB2_PRE_DIV_2</a> = 4
-, <a class="el" href="#a95ae2e15b49c96956d53beae3975e517a382a4e5834af901bffce21544ce31f7e">CLOCK_APB2_PRE_DIV_4</a> = 5
-, <a class="el" href="#a95ae2e15b49c96956d53beae3975e517adfe2f4ccfe011fa4eb4c128bf532dc94">CLOCK_APB2_PRE_DIV_8</a> = 6
+<tr class="memdesc:ga65e4b024aee4244fb32f8c5c4ff05f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different values for the APB1 prescaler.  <a href="group___c_l_o_c_k.html#ga65e4b024aee4244fb32f8c5c4ff05f9a">More...</a><br /></td></tr>
+<tr class="separator:ga65e4b024aee4244fb32f8c5c4ff05f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga95ae2e15b49c96956d53beae3975e517" id="r_ga95ae2e15b49c96956d53beae3975e517"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga95ae2e15b49c96956d53beae3975e517">CLOCK_APB2_PRESCALER_State</a> { <br />
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga95ae2e15b49c96956d53beae3975e517a9e2931dd9e0ca08f9e4f77b34c10af4e">CLOCK_APB2_PRE_DIV_1</a> = 0
+, <a class="el" href="group___c_l_o_c_k.html#gga95ae2e15b49c96956d53beae3975e517adecf06efe3e2eba743be92ac0cd00129">CLOCK_APB2_PRE_DIV_2</a> = 4
+, <a class="el" href="group___c_l_o_c_k.html#gga95ae2e15b49c96956d53beae3975e517a382a4e5834af901bffce21544ce31f7e">CLOCK_APB2_PRE_DIV_4</a> = 5
+, <a class="el" href="group___c_l_o_c_k.html#gga95ae2e15b49c96956d53beae3975e517adfe2f4ccfe011fa4eb4c128bf532dc94">CLOCK_APB2_PRE_DIV_8</a> = 6
 , <br />
-&#160;&#160;<a class="el" href="#a95ae2e15b49c96956d53beae3975e517a6031959d7feb10ed1f2f66bf25fe3eaf">CLOCK_APB2_PRE_DIV_16</a> = 7
+&#160;&#160;<a class="el" href="group___c_l_o_c_k.html#gga95ae2e15b49c96956d53beae3975e517a6031959d7feb10ed1f2f66bf25fe3eaf">CLOCK_APB2_PRE_DIV_16</a> = 7
 <br />
  }</td></tr>
-<tr class="memdesc:a95ae2e15b49c96956d53beae3975e517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different values for the APB1 prescaler.  <a href="#a95ae2e15b49c96956d53beae3975e517">More...</a><br /></td></tr>
-<tr class="separator:a95ae2e15b49c96956d53beae3975e517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ga95ae2e15b49c96956d53beae3975e517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different values for the APB1 prescaler.  <a href="group___c_l_o_c_k.html#ga95ae2e15b49c96956d53beae3975e517">More...</a><br /></td></tr>
+<tr class="separator:ga95ae2e15b49c96956d53beae3975e517"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a625103ea87a9510c347baaf2126d27e3" id="r_a625103ea87a9510c347baaf2126d27e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a625103ea87a9510c347baaf2126d27e3">CLOCK_activateMCO</a> (<a class="el" href="gpio_8h.html#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59">CLOCK_MCO_SELECT_State</a> mco_sel_state, <a class="el" href="#aaa0363e0e9775584599d94565f8e0e60">CLOCK_MCO_PRESCALER_State</a> mco_pre_state)</td></tr>
-<tr class="memdesc:a625103ea87a9510c347baaf2126d27e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the Master Clock Output pin to the selected output state.  <br /></td></tr>
-<tr class="separator:a625103ea87a9510c347baaf2126d27e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa11ce7252db60000e142bc3ff6aff0be" id="r_aa11ce7252db60000e142bc3ff6aff0be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa11ce7252db60000e142bc3ff6aff0be">CLOCK_configPLL</a> (<a class="el" href="#aceb416b702f94d30e139e49e8e10a76f">CLOCK_PLL_SOURCE_State</a> pll_src, uint8_t PLL_M, uint8_t PLL_N, <a class="el" href="#a9b771949ba6bccb42317a3e5e089cded">CLOCK_PLLR_State</a> PLL_R)</td></tr>
-<tr class="memdesc:aa11ce7252db60000e142bc3ff6aff0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the PLL clock so that it may be used as the System clock.  <br /></td></tr>
-<tr class="separator:aa11ce7252db60000e142bc3ff6aff0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9cd115f3011d6546563628b1da16eb4" id="r_ae9cd115f3011d6546563628b1da16eb4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9cd115f3011d6546563628b1da16eb4">CLOCK_isActivated</a> (<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
-<tr class="memdesc:ae9cd115f3011d6546563628b1da16eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a clock is activated or not by reading from RCC control registers.  <br /></td></tr>
-<tr class="separator:ae9cd115f3011d6546563628b1da16eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08716e6071c93768a4091dc5947e104f" id="r_a08716e6071c93768a4091dc5947e104f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08716e6071c93768a4091dc5947e104f">CLOCK_activateClk</a> (<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
-<tr class="memdesc:a08716e6071c93768a4091dc5947e104f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates a desired clock.  <br /></td></tr>
-<tr class="separator:a08716e6071c93768a4091dc5947e104f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f1183e02b1e5320ccf45c6e646b918" id="r_a34f1183e02b1e5320ccf45c6e646b918"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34f1183e02b1e5320ccf45c6e646b918">CLOCK_desactivateClk</a> (<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
-<tr class="memdesc:a34f1183e02b1e5320ccf45c6e646b918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desactivates a desired clock.  <br /></td></tr>
-<tr class="separator:a34f1183e02b1e5320ccf45c6e646b918"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50f2307ce6d6b1285d62ba0fc709f680" id="r_a50f2307ce6d6b1285d62ba0fc709f680"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50f2307ce6d6b1285d62ba0fc709f680">CLOCK_getPLLClockSpeed</a> ()</td></tr>
-<tr class="memdesc:a50f2307ce6d6b1285d62ba0fc709f680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the PLL clock, if it is activated.  <br /></td></tr>
-<tr class="separator:a50f2307ce6d6b1285d62ba0fc709f680"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a353083c3916c8933c43eb0a1c5c94052" id="r_a353083c3916c8933c43eb0a1c5c94052"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353083c3916c8933c43eb0a1c5c94052">CLOCK_getMSIClockSpeed</a> ()</td></tr>
-<tr class="memdesc:a353083c3916c8933c43eb0a1c5c94052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the MSI (Multi-Speed Internal) clock.  <br /></td></tr>
-<tr class="separator:a353083c3916c8933c43eb0a1c5c94052"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6da82f8e33ab80367bf38ea54592f240" id="r_a6da82f8e33ab80367bf38ea54592f240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6da82f8e33ab80367bf38ea54592f240">CLOCK_setHSEClockSpeed</a> (uint32_t speed)</td></tr>
-<tr class="memdesc:a6da82f8e33ab80367bf38ea54592f240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the speed of the external clock oscillator, if one is available.  <br /></td></tr>
-<tr class="separator:a6da82f8e33ab80367bf38ea54592f240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7188c2da80700782ba6b028486e269c" id="r_ab7188c2da80700782ba6b028486e269c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7188c2da80700782ba6b028486e269c">CLOCK_getHSEClockSpeed</a> ()</td></tr>
-<tr class="memdesc:ab7188c2da80700782ba6b028486e269c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the HSE (High-Speed External) clock.  <br /></td></tr>
-<tr class="separator:ab7188c2da80700782ba6b028486e269c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada0674018763aa72b723804b8d8183eb" id="r_ada0674018763aa72b723804b8d8183eb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada0674018763aa72b723804b8d8183eb">CLOCK_getSystemClockSpeed</a> ()</td></tr>
-<tr class="memdesc:ada0674018763aa72b723804b8d8183eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the system clock.  <br /></td></tr>
-<tr class="separator:ada0674018763aa72b723804b8d8183eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3f9097ce53adfff82cb70ddea07c27d" id="r_ad3f9097ce53adfff82cb70ddea07c27d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3f9097ce53adfff82cb70ddea07c27d">CLOCK_setSystemClock</a> (<a class="el" href="#ab8ea3cd345873e8a031469d82633ee72">CLOCK_SYSCLK_State</a> sysclk)</td></tr>
-<tr class="memdesc:ad3f9097ce53adfff82cb70ddea07c27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the system clock.  <br /></td></tr>
-<tr class="separator:ad3f9097ce53adfff82cb70ddea07c27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45f0f137fec72ca25a15471c536353ff" id="r_a45f0f137fec72ca25a15471c536353ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45f0f137fec72ca25a15471c536353ff">CLOCK_setAHBPrescaler</a> (<a class="el" href="#a8243c8d8e6717062f9949ee373a4a77f">CLOCK_AHB_PRESCALER_State</a> ahb_prescaler)</td></tr>
-<tr class="memdesc:a45f0f137fec72ca25a15471c536353ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the AHB prescaler for the AHB clock (HCLK).  <br /></td></tr>
-<tr class="separator:a45f0f137fec72ca25a15471c536353ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7eb6ba8a0c4959ea023982ff86287e5c" id="r_a7eb6ba8a0c4959ea023982ff86287e5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb6ba8a0c4959ea023982ff86287e5c">CLOCK_setAPB1Prescaler</a> (<a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9a">CLOCK_APB1_PRESCALER_State</a> apb1_prescaler)</td></tr>
-<tr class="memdesc:a7eb6ba8a0c4959ea023982ff86287e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the APB1 prescaler for the APB1 clock (PCLK1).  <br /></td></tr>
-<tr class="separator:a7eb6ba8a0c4959ea023982ff86287e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2d3189cd4e74510c8d2136149148e0c" id="r_af2d3189cd4e74510c8d2136149148e0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2d3189cd4e74510c8d2136149148e0c">CLOCK_setAPB2Prescaler</a> (<a class="el" href="#a95ae2e15b49c96956d53beae3975e517">CLOCK_APB2_PRESCALER_State</a> apb2_prescaler)</td></tr>
-<tr class="memdesc:af2d3189cd4e74510c8d2136149148e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the APB2 prescaler for the APB2 clock (PCLK2).  <br /></td></tr>
-<tr class="separator:af2d3189cd4e74510c8d2136149148e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga625103ea87a9510c347baaf2126d27e3" id="r_ga625103ea87a9510c347baaf2126d27e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga625103ea87a9510c347baaf2126d27e3">CLOCK_activateMCO</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="group___c_l_o_c_k.html#ga8fab271b291b83bd742e9099a9f20a59">CLOCK_MCO_SELECT_State</a> mco_sel_state, <a class="el" href="group___c_l_o_c_k.html#gaaa0363e0e9775584599d94565f8e0e60">CLOCK_MCO_PRESCALER_State</a> mco_pre_state)</td></tr>
+<tr class="memdesc:ga625103ea87a9510c347baaf2126d27e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the Master Clock Output pin to the selected output state.  <br /></td></tr>
+<tr class="separator:ga625103ea87a9510c347baaf2126d27e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa11ce7252db60000e142bc3ff6aff0be" id="r_gaa11ce7252db60000e142bc3ff6aff0be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gaa11ce7252db60000e142bc3ff6aff0be">CLOCK_configPLL</a> (<a class="el" href="group___c_l_o_c_k.html#gaceb416b702f94d30e139e49e8e10a76f">CLOCK_PLL_SOURCE_State</a> pll_src, uint8_t PLL_M, uint8_t PLL_N, <a class="el" href="group___c_l_o_c_k.html#ga9b771949ba6bccb42317a3e5e089cded">CLOCK_PLLR_State</a> PLL_R)</td></tr>
+<tr class="memdesc:gaa11ce7252db60000e142bc3ff6aff0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the PLL clock so that it may be used as the System clock.  <br /></td></tr>
+<tr class="separator:gaa11ce7252db60000e142bc3ff6aff0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9cd115f3011d6546563628b1da16eb4" id="r_gae9cd115f3011d6546563628b1da16eb4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gae9cd115f3011d6546563628b1da16eb4">CLOCK_isActivated</a> (<a class="el" href="group___c_l_o_c_k.html#ga63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
+<tr class="memdesc:gae9cd115f3011d6546563628b1da16eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a clock is activated or not by reading from RCC control registers.  <br /></td></tr>
+<tr class="separator:gae9cd115f3011d6546563628b1da16eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08716e6071c93768a4091dc5947e104f" id="r_ga08716e6071c93768a4091dc5947e104f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga08716e6071c93768a4091dc5947e104f">CLOCK_activateClk</a> (<a class="el" href="group___c_l_o_c_k.html#ga63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
+<tr class="memdesc:ga08716e6071c93768a4091dc5947e104f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates a desired clock.  <br /></td></tr>
+<tr class="separator:ga08716e6071c93768a4091dc5947e104f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34f1183e02b1e5320ccf45c6e646b918" id="r_ga34f1183e02b1e5320ccf45c6e646b918"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga34f1183e02b1e5320ccf45c6e646b918">CLOCK_desactivateClk</a> (<a class="el" href="group___c_l_o_c_k.html#ga63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
+<tr class="memdesc:ga34f1183e02b1e5320ccf45c6e646b918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desactivates a desired clock.  <br /></td></tr>
+<tr class="separator:ga34f1183e02b1e5320ccf45c6e646b918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50f2307ce6d6b1285d62ba0fc709f680" id="r_ga50f2307ce6d6b1285d62ba0fc709f680"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga50f2307ce6d6b1285d62ba0fc709f680">CLOCK_getPLLClockSpeed</a> ()</td></tr>
+<tr class="memdesc:ga50f2307ce6d6b1285d62ba0fc709f680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the PLL clock, if it is activated.  <br /></td></tr>
+<tr class="separator:ga50f2307ce6d6b1285d62ba0fc709f680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga353083c3916c8933c43eb0a1c5c94052" id="r_ga353083c3916c8933c43eb0a1c5c94052"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga353083c3916c8933c43eb0a1c5c94052">CLOCK_getMSIClockSpeed</a> ()</td></tr>
+<tr class="memdesc:ga353083c3916c8933c43eb0a1c5c94052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the MSI (Multi-Speed Internal) clock.  <br /></td></tr>
+<tr class="separator:ga353083c3916c8933c43eb0a1c5c94052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6da82f8e33ab80367bf38ea54592f240" id="r_ga6da82f8e33ab80367bf38ea54592f240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga6da82f8e33ab80367bf38ea54592f240">CLOCK_setHSEClockSpeed</a> (uint32_t speed)</td></tr>
+<tr class="memdesc:ga6da82f8e33ab80367bf38ea54592f240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the speed of the external clock oscillator, if one is available.  <br /></td></tr>
+<tr class="separator:ga6da82f8e33ab80367bf38ea54592f240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7188c2da80700782ba6b028486e269c" id="r_gab7188c2da80700782ba6b028486e269c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gab7188c2da80700782ba6b028486e269c">CLOCK_getHSEClockSpeed</a> ()</td></tr>
+<tr class="memdesc:gab7188c2da80700782ba6b028486e269c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the HSE (High-Speed External) clock.  <br /></td></tr>
+<tr class="separator:gab7188c2da80700782ba6b028486e269c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada0674018763aa72b723804b8d8183eb" id="r_gada0674018763aa72b723804b8d8183eb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gada0674018763aa72b723804b8d8183eb">CLOCK_getSystemClockSpeed</a> ()</td></tr>
+<tr class="memdesc:gada0674018763aa72b723804b8d8183eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the system clock.  <br /></td></tr>
+<tr class="separator:gada0674018763aa72b723804b8d8183eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3f9097ce53adfff82cb70ddea07c27d" id="r_gad3f9097ce53adfff82cb70ddea07c27d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gad3f9097ce53adfff82cb70ddea07c27d">CLOCK_setSystemClock</a> (<a class="el" href="group___c_l_o_c_k.html#gab8ea3cd345873e8a031469d82633ee72">CLOCK_SYSCLK_State</a> sysclk)</td></tr>
+<tr class="memdesc:gad3f9097ce53adfff82cb70ddea07c27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the system clock.  <br /></td></tr>
+<tr class="separator:gad3f9097ce53adfff82cb70ddea07c27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga45f0f137fec72ca25a15471c536353ff" id="r_ga45f0f137fec72ca25a15471c536353ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga45f0f137fec72ca25a15471c536353ff">CLOCK_setAHBPrescaler</a> (<a class="el" href="group___c_l_o_c_k.html#ga8243c8d8e6717062f9949ee373a4a77f">CLOCK_AHB_PRESCALER_State</a> ahb_prescaler)</td></tr>
+<tr class="memdesc:ga45f0f137fec72ca25a15471c536353ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the AHB prescaler for the AHB clock (HCLK).  <br /></td></tr>
+<tr class="separator:ga45f0f137fec72ca25a15471c536353ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7eb6ba8a0c4959ea023982ff86287e5c" id="r_ga7eb6ba8a0c4959ea023982ff86287e5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#ga7eb6ba8a0c4959ea023982ff86287e5c">CLOCK_setAPB1Prescaler</a> (<a class="el" href="group___c_l_o_c_k.html#ga65e4b024aee4244fb32f8c5c4ff05f9a">CLOCK_APB1_PRESCALER_State</a> apb1_prescaler)</td></tr>
+<tr class="memdesc:ga7eb6ba8a0c4959ea023982ff86287e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the APB1 prescaler for the APB1 clock (PCLK1).  <br /></td></tr>
+<tr class="separator:ga7eb6ba8a0c4959ea023982ff86287e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2d3189cd4e74510c8d2136149148e0c" id="r_gaf2d3189cd4e74510c8d2136149148e0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_l_o_c_k.html#ga5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_l_o_c_k.html#gaf2d3189cd4e74510c8d2136149148e0c">CLOCK_setAPB2Prescaler</a> (<a class="el" href="group___c_l_o_c_k.html#ga95ae2e15b49c96956d53beae3975e517">CLOCK_APB2_PRESCALER_State</a> apb2_prescaler)</td></tr>
+<tr class="memdesc:gaf2d3189cd4e74510c8d2136149148e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the APB2 prescaler for the APB2 clock (PCLK2).  <br /></td></tr>
+<tr class="separator:gaf2d3189cd4e74510c8d2136149148e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a8243c8d8e6717062f9949ee373a4a77f" name="a8243c8d8e6717062f9949ee373a4a77f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8243c8d8e6717062f9949ee373a4a77f">&#9670;&#160;</a></span>CLOCK_AHB_PRESCALER_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a8243c8d8e6717062f9949ee373a4a77f">CLOCK_AHB_PRESCALER_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing different values for the AHB prescaler. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77fa58ad808e45cfbc4336e1dcc45e0f1173" name="a8243c8d8e6717062f9949ee373a4a77fa58ad808e45cfbc4336e1dcc45e0f1173"></a>CLOCK_AHB_PRE_DIV_1&#160;</td><td class="fielddoc"><p>SYSCLK divided by 1. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77fa50ad82ac541766a6e12b20bce8ca7acf" name="a8243c8d8e6717062f9949ee373a4a77fa50ad82ac541766a6e12b20bce8ca7acf"></a>CLOCK_AHB_PRE_DIV_2&#160;</td><td class="fielddoc"><p>SYSCLK divided by 2. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77fa602a58ff3e69e4ed36d26ff5adb5d760" name="a8243c8d8e6717062f9949ee373a4a77fa602a58ff3e69e4ed36d26ff5adb5d760"></a>CLOCK_AHB_PRE_DIV_4&#160;</td><td class="fielddoc"><p>SYSCLK divided by 4. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77fa0cbc2960e41a8001055299624718cc98" name="a8243c8d8e6717062f9949ee373a4a77fa0cbc2960e41a8001055299624718cc98"></a>CLOCK_AHB_PRE_DIV_8&#160;</td><td class="fielddoc"><p>SYSCLK divided by 8. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77fa0b13314034e5155cb712640d6b542036" name="a8243c8d8e6717062f9949ee373a4a77fa0b13314034e5155cb712640d6b542036"></a>CLOCK_AHB_PRE_DIV_16&#160;</td><td class="fielddoc"><p>SYSCLK divided by 16. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77fa0224c57455f9a606b2b61b3923fb0b9d" name="a8243c8d8e6717062f9949ee373a4a77fa0224c57455f9a606b2b61b3923fb0b9d"></a>CLOCK_AHB_PRE_DIV_64&#160;</td><td class="fielddoc"><p>SYSCLK divided by 64. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77fa6a0c238180cd5fee437f5563de5f2fee" name="a8243c8d8e6717062f9949ee373a4a77fa6a0c238180cd5fee437f5563de5f2fee"></a>CLOCK_AHB_PRE_DIV_128&#160;</td><td class="fielddoc"><p>SYSCLK divided by 128. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77faa388856e07f32b445c8c131856c20632" name="a8243c8d8e6717062f9949ee373a4a77faa388856e07f32b445c8c131856c20632"></a>CLOCK_AHB_PRE_DIV_256&#160;</td><td class="fielddoc"><p>SYSCLK divided by 256. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8243c8d8e6717062f9949ee373a4a77fafcf53d310322fdcbef5a5d4a480d1f77" name="a8243c8d8e6717062f9949ee373a4a77fafcf53d310322fdcbef5a5d4a480d1f77"></a>CLOCK_AHB_PRE_DIV_512&#160;</td><td class="fielddoc"><p>SYSCLK divided by 512. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a65e4b024aee4244fb32f8c5c4ff05f9a" name="a65e4b024aee4244fb32f8c5c4ff05f9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65e4b024aee4244fb32f8c5c4ff05f9a">&#9670;&#160;</a></span>CLOCK_APB1_PRESCALER_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9a">CLOCK_APB1_PRESCALER_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing different values for the APB1 prescaler. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a65e4b024aee4244fb32f8c5c4ff05f9aae98e6ebb354ed67981f4366c0e549c5f" name="a65e4b024aee4244fb32f8c5c4ff05f9aae98e6ebb354ed67981f4366c0e549c5f"></a>CLOCK_APB1_PRE_DIV_1&#160;</td><td class="fielddoc"><p>SYSCLK divided by 1. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a65e4b024aee4244fb32f8c5c4ff05f9aaa662e0f16bdbd7db338a6e1d1b640e6d" name="a65e4b024aee4244fb32f8c5c4ff05f9aaa662e0f16bdbd7db338a6e1d1b640e6d"></a>CLOCK_APB1_PRE_DIV_2&#160;</td><td class="fielddoc"><p>HCLK divided by 2. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a65e4b024aee4244fb32f8c5c4ff05f9aac7682be55a2f8a3b67eb502b8c4fab40" name="a65e4b024aee4244fb32f8c5c4ff05f9aac7682be55a2f8a3b67eb502b8c4fab40"></a>CLOCK_APB1_PRE_DIV_4&#160;</td><td class="fielddoc"><p>HCLK divided by 4. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a65e4b024aee4244fb32f8c5c4ff05f9aaef86f41b3fc4959331b774e04843fe0b" name="a65e4b024aee4244fb32f8c5c4ff05f9aaef86f41b3fc4959331b774e04843fe0b"></a>CLOCK_APB1_PRE_DIV_8&#160;</td><td class="fielddoc"><p>HCLK divided by 8. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a65e4b024aee4244fb32f8c5c4ff05f9aaa02ab2e6bffcc030c4846389f7941bb3" name="a65e4b024aee4244fb32f8c5c4ff05f9aaa02ab2e6bffcc030c4846389f7941bb3"></a>CLOCK_APB1_PRE_DIV_16&#160;</td><td class="fielddoc"><p>HCLK divided by 16. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a95ae2e15b49c96956d53beae3975e517" name="a95ae2e15b49c96956d53beae3975e517"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95ae2e15b49c96956d53beae3975e517">&#9670;&#160;</a></span>CLOCK_APB2_PRESCALER_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a95ae2e15b49c96956d53beae3975e517">CLOCK_APB2_PRESCALER_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing different values for the APB1 prescaler. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a95ae2e15b49c96956d53beae3975e517a9e2931dd9e0ca08f9e4f77b34c10af4e" name="a95ae2e15b49c96956d53beae3975e517a9e2931dd9e0ca08f9e4f77b34c10af4e"></a>CLOCK_APB2_PRE_DIV_1&#160;</td><td class="fielddoc"><p>SYSCLK divided by 1. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a95ae2e15b49c96956d53beae3975e517adecf06efe3e2eba743be92ac0cd00129" name="a95ae2e15b49c96956d53beae3975e517adecf06efe3e2eba743be92ac0cd00129"></a>CLOCK_APB2_PRE_DIV_2&#160;</td><td class="fielddoc"><p>HCLK divided by 2. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a95ae2e15b49c96956d53beae3975e517a382a4e5834af901bffce21544ce31f7e" name="a95ae2e15b49c96956d53beae3975e517a382a4e5834af901bffce21544ce31f7e"></a>CLOCK_APB2_PRE_DIV_4&#160;</td><td class="fielddoc"><p>HCLK divided by 4. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a95ae2e15b49c96956d53beae3975e517adfe2f4ccfe011fa4eb4c128bf532dc94" name="a95ae2e15b49c96956d53beae3975e517adfe2f4ccfe011fa4eb4c128bf532dc94"></a>CLOCK_APB2_PRE_DIV_8&#160;</td><td class="fielddoc"><p>HCLK divided by 8. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a95ae2e15b49c96956d53beae3975e517a6031959d7feb10ed1f2f66bf25fe3eaf" name="a95ae2e15b49c96956d53beae3975e517a6031959d7feb10ed1f2f66bf25fe3eaf"></a>CLOCK_APB2_PRE_DIV_16&#160;</td><td class="fielddoc"><p>HCLK divided by 16. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="aaa0363e0e9775584599d94565f8e0e60" name="aaa0363e0e9775584599d94565f8e0e60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa0363e0e9775584599d94565f8e0e60">&#9670;&#160;</a></span>CLOCK_MCO_PRESCALER_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#aaa0363e0e9775584599d94565f8e0e60">CLOCK_MCO_PRESCALER_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing a prescaler choice for the MCO output. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaa0363e0e9775584599d94565f8e0e60ad4ef6fde7814d2944a88652d46a6793b" name="aaa0363e0e9775584599d94565f8e0e60ad4ef6fde7814d2944a88652d46a6793b"></a>CLOCK_MCO_PRE_DIV_1&#160;</td><td class="fielddoc"><p>MCO is divided by 1. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aaa0363e0e9775584599d94565f8e0e60a8bb9e7c5629ffd960898254d902d0a01" name="aaa0363e0e9775584599d94565f8e0e60a8bb9e7c5629ffd960898254d902d0a01"></a>CLOCK_MCO_PRE_DIV_2&#160;</td><td class="fielddoc"><p>MCO is divided by 2. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aaa0363e0e9775584599d94565f8e0e60a0210de4b012d4b2b456a01b7f0603bc7" name="aaa0363e0e9775584599d94565f8e0e60a0210de4b012d4b2b456a01b7f0603bc7"></a>CLOCK_MCO_PRE_DIV_4&#160;</td><td class="fielddoc"><p>MCO is divided by 4. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aaa0363e0e9775584599d94565f8e0e60a19ec56b9cdffbd690114783b9ec42fe2" name="aaa0363e0e9775584599d94565f8e0e60a19ec56b9cdffbd690114783b9ec42fe2"></a>CLOCK_MCO_PRE_DIV_8&#160;</td><td class="fielddoc"><p>MCO is divided by 8. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aaa0363e0e9775584599d94565f8e0e60a1738104963af1cf755a3f48652d69fad" name="aaa0363e0e9775584599d94565f8e0e60a1738104963af1cf755a3f48652d69fad"></a>CLOCK_MCO_PRE_DIV_16&#160;</td><td class="fielddoc"><p>MCO is divided by 16. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a8fab271b291b83bd742e9099a9f20a59" name="a8fab271b291b83bd742e9099a9f20a59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fab271b291b83bd742e9099a9f20a59">&#9670;&#160;</a></span>CLOCK_MCO_SELECT_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59">CLOCK_MCO_SELECT_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing which clock is to be outputted to the Master Clock Output (MCO) pin. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59abb691cd8ed76e2fc2feee940b9d4469f" name="a8fab271b291b83bd742e9099a9f20a59abb691cd8ed76e2fc2feee940b9d4469f"></a>CLOCK_MCO_SELECT_NONE&#160;</td><td class="fielddoc"><p>MCO output disabled, no clock on MCO. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59a6db979a2b14fbff8a460b22a4609d547" name="a8fab271b291b83bd742e9099a9f20a59a6db979a2b14fbff8a460b22a4609d547"></a>CLOCK_MCO_SELECT_SYSCLK&#160;</td><td class="fielddoc"><p>SYSCLK system clock selected. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59afba7110e8b401e1cb1f7505ec4ccef9b" name="a8fab271b291b83bd742e9099a9f20a59afba7110e8b401e1cb1f7505ec4ccef9b"></a>CLOCK_MCO_SELECT_MSI&#160;</td><td class="fielddoc"><p>MSI clock selected. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59a754c4991d840d4f445b759dbc05af0e4" name="a8fab271b291b83bd742e9099a9f20a59a754c4991d840d4f445b759dbc05af0e4"></a>CLOCK_MCO_SELECT_HSI16&#160;</td><td class="fielddoc"><p>HSI16 clock selected. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59aa3215872772feb32efec07698249f863" name="a8fab271b291b83bd742e9099a9f20a59aa3215872772feb32efec07698249f863"></a>CLOCK_MCO_SELECT_HSE&#160;</td><td class="fielddoc"><p>HSE clock selected. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59a5e26efa03f5b33e0c1e30914543faacb" name="a8fab271b291b83bd742e9099a9f20a59a5e26efa03f5b33e0c1e30914543faacb"></a>CLOCK_MCO_SELECT_PLL&#160;</td><td class="fielddoc"><p>Main PLL clock selected. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59a089bb074feb5756821a02f5bddfe9cd7" name="a8fab271b291b83bd742e9099a9f20a59a089bb074feb5756821a02f5bddfe9cd7"></a>CLOCK_MCO_SELECT_LSI&#160;</td><td class="fielddoc"><p>LSI clock selected. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59a3cf05f9e87a205b19ed391387c71360e" name="a8fab271b291b83bd742e9099a9f20a59a3cf05f9e87a205b19ed391387c71360e"></a>CLOCK_MCO_SELECT_LSE&#160;</td><td class="fielddoc"><p>LSE clock selected. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a8fab271b291b83bd742e9099a9f20a59a850735cd656cc91ad63442e0d0f695a5" name="a8fab271b291b83bd742e9099a9f20a59a850735cd656cc91ad63442e0d0f695a5"></a>CLOCK_MCO_SELECT_HSI48&#160;</td><td class="fielddoc"><p>Internal HSI48 clock selected. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="aceb416b702f94d30e139e49e8e10a76f" name="aceb416b702f94d30e139e49e8e10a76f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceb416b702f94d30e139e49e8e10a76f">&#9670;&#160;</a></span>CLOCK_PLL_SOURCE_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#aceb416b702f94d30e139e49e8e10a76f">CLOCK_PLL_SOURCE_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing a choice of clock as source for PLL. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aceb416b702f94d30e139e49e8e10a76fa7dfb30305b992424089765bb86052116" name="aceb416b702f94d30e139e49e8e10a76fa7dfb30305b992424089765bb86052116"></a>CLOCK_PLL_SRC_NONE&#160;</td><td class="fielddoc"><p>The source clock for the PLL is not selected. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aceb416b702f94d30e139e49e8e10a76faa828be71c3aaab5019d54220bb09da5d" name="aceb416b702f94d30e139e49e8e10a76faa828be71c3aaab5019d54220bb09da5d"></a>CLOCK_PLL_SRC_MSI&#160;</td><td class="fielddoc"><p>The source clock for the PLL is MSI. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aceb416b702f94d30e139e49e8e10a76faf5c7a4f6288463c25804767392272ea2" name="aceb416b702f94d30e139e49e8e10a76faf5c7a4f6288463c25804767392272ea2"></a>CLOCK_PLL_SRC_HSI16&#160;</td><td class="fielddoc"><p>The source clock for the PLL is HSI16. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aceb416b702f94d30e139e49e8e10a76fa4d2de9def651b564adbc2f29261d3828" name="aceb416b702f94d30e139e49e8e10a76fa4d2de9def651b564adbc2f29261d3828"></a>CLOCK_PLL_SRC_HSE&#160;</td><td class="fielddoc"><p>The source clock for the PLL is HSE. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a9b771949ba6bccb42317a3e5e089cded" name="a9b771949ba6bccb42317a3e5e089cded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b771949ba6bccb42317a3e5e089cded">&#9670;&#160;</a></span>CLOCK_PLLR_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a9b771949ba6bccb42317a3e5e089cded">CLOCK_PLLR_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing choices for the PLL_R parameter. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9b771949ba6bccb42317a3e5e089cdeda30583baa78fd1ccfaa1277d78915d648" name="a9b771949ba6bccb42317a3e5e089cdeda30583baa78fd1ccfaa1277d78915d648"></a>CLOCK_PLLR_2&#160;</td><td class="fielddoc"><p>PLL_R is set to 2. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b771949ba6bccb42317a3e5e089cdeda6f54e915fefe249957a8e62298970386" name="a9b771949ba6bccb42317a3e5e089cdeda6f54e915fefe249957a8e62298970386"></a>CLOCK_PLLR_4&#160;</td><td class="fielddoc"><p>PLL_R is set to 4. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b771949ba6bccb42317a3e5e089cdeda135545aae67a4cc368f146388860aa57" name="a9b771949ba6bccb42317a3e5e089cdeda135545aae67a4cc368f146388860aa57"></a>CLOCK_PLLR_6&#160;</td><td class="fielddoc"><p>PLL_R is set to 6. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9b771949ba6bccb42317a3e5e089cdeda57e44ea397f1766898982b78a9fa3bd8" name="a9b771949ba6bccb42317a3e5e089cdeda57e44ea397f1766898982b78a9fa3bd8"></a>CLOCK_PLLR_8&#160;</td><td class="fielddoc"><p>PLL_R is set to 8. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a63d31f75868a8d1e3b998ac5df3f6a36" name="a63d31f75868a8d1e3b998ac5df3f6a36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63d31f75868a8d1e3b998ac5df3f6a36">&#9670;&#160;</a></span>CLOCK_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing a choice of clock for activating and desactivating. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896" name="a63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896"></a>CLOCK_MSI&#160;</td><td class="fielddoc"><p>The MSI clock is to be activated or desactivated. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15" name="a63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15"></a>CLOCK_LSE&#160;</td><td class="fielddoc"><p>The LSE clock is to be activated or desactivated. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1" name="a63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1"></a>CLOCK_HSI&#160;</td><td class="fielddoc"><p>The HSI clock is to be activated or desactivated. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca" name="a63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca"></a>CLOCK_HSE&#160;</td><td class="fielddoc"><p>The HSE clock is to be activated or desactivated. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a63d31f75868a8d1e3b998ac5df3f6a36a14eebc7672bdd5c1225faf6d957fcfc8" name="a63d31f75868a8d1e3b998ac5df3f6a36a14eebc7672bdd5c1225faf6d957fcfc8"></a>CLOCK_PLL&#160;</td><td class="fielddoc"><p>The PLL clock is to be activated or desactivated. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01" name="a63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01"></a>CLOCK_PLLSAI1&#160;</td><td class="fielddoc"><p>The PLLSAI1 clock is to be activated or desactivated. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540" name="a63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540"></a>CLOCK_PLLSAI2&#160;</td><td class="fielddoc"><p>The PLLSAI2 clock is to be activated or desactivated. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a5aa3fa30a332173aafcc460104d0a159" name="a5aa3fa30a332173aafcc460104d0a159"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5aa3fa30a332173aafcc460104d0a159">&#9670;&#160;</a></span>CLOCK_Status_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing the status of a function. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5aa3fa30a332173aafcc460104d0a159a6a98c64f84a2d901438fd3890e4b6d7f" name="a5aa3fa30a332173aafcc460104d0a159a6a98c64f84a2d901438fd3890e4b6d7f"></a>CLOCK_OK&#160;</td><td class="fielddoc"><p>Indicates that a function has returned successfully. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a5aa3fa30a332173aafcc460104d0a159a2941fc3f1fa884801d4ffed60c7f29ef" name="a5aa3fa30a332173aafcc460104d0a159a2941fc3f1fa884801d4ffed60c7f29ef"></a>CLOCK_INVALID_ARGS&#160;</td><td class="fielddoc"><p>Indicates that a function has been given invalid (out of range) arguments. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06" name="a5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06"></a>CLOCK_ERROR&#160;</td><td class="fielddoc"><p>Indicates that a general error has occured. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="ab8ea3cd345873e8a031469d82633ee72" name="ab8ea3cd345873e8a031469d82633ee72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8ea3cd345873e8a031469d82633ee72">&#9670;&#160;</a></span>CLOCK_SYSCLK_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#ab8ea3cd345873e8a031469d82633ee72">CLOCK_SYSCLK_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing clocks which can be chosen as the system clock. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1" name="ab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1"></a>CLOCK_SYSCLK_MSI&#160;</td><td class="fielddoc"><p>MSI selected as system clock. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462" name="ab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462"></a>CLOCK_SYSCLK_HSI16&#160;</td><td class="fielddoc"><p>HSI16 selected as system clock. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf" name="ab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf"></a>CLOCK_SYSCLK_HSE&#160;</td><td class="fielddoc"><p>HSE selected as system clock. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d" name="ab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d"></a>CLOCK_SYSCLK_PLL&#160;</td><td class="fielddoc"><p>PLL selected as system clock. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a08716e6071c93768a4091dc5947e104f" name="a08716e6071c93768a4091dc5947e104f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08716e6071c93768a4091dc5947e104f">&#9670;&#160;</a></span>CLOCK_activateClk()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> CLOCK_activateClk </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a></td>          <td class="paramname"><span class="paramname"><em>clk</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Activates a desired clock. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">clk</td><td>clock to be activated </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Untested function. </dd>
-<dd>
-Blocking function. Will only return once a 'RDY' flag has been raised by the clock hardware (clock stabilized). </dd>
-<dd>
-For the PLL clock, it is necessary to call <a class="el" href="#aa11ce7252db60000e142bc3ff6aff0be" title="Configures the PLL clock so that it may be used as the System clock.">CLOCK_configPLL()</a> first before calling this function. </dd></dl>
-
-</div>
-</div>
-<a id="a625103ea87a9510c347baaf2126d27e3" name="a625103ea87a9510c347baaf2126d27e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a625103ea87a9510c347baaf2126d27e3">&#9670;&#160;</a></span>CLOCK_activateMCO()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> CLOCK_activateMCO </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="gpio_8h.html#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a8fab271b291b83bd742e9099a9f20a59">CLOCK_MCO_SELECT_State</a></td>          <td class="paramname"><span class="paramname"><em>mco_sel_state</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#aaa0363e0e9775584599d94565f8e0e60">CLOCK_MCO_PRESCALER_State</a></td>          <td class="paramname"><span class="paramname"><em>mco_pre_state</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Activates the Master Clock Output pin to the selected output state. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the MCO pin. </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number of the MCO pin. </td></tr>
-    <tr><td class="paramname">mco_sel_state</td><td>which clock should be outputed to MCO. </td></tr>
-    <tr><td class="paramname">mco_pre_state</td><td>prescaler for the MCO (divisions by powers of 2 up to 16 allowed). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Untested function due to lack of proper oscilloscope. </dd>
-<dd>
-Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR register before use of this function. By default SYSCLK is already activated. </dd></dl>
-
-</div>
-</div>
-<a id="aa11ce7252db60000e142bc3ff6aff0be" name="aa11ce7252db60000e142bc3ff6aff0be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa11ce7252db60000e142bc3ff6aff0be">&#9670;&#160;</a></span>CLOCK_configPLL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> CLOCK_configPLL </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#aceb416b702f94d30e139e49e8e10a76f">CLOCK_PLL_SOURCE_State</a></td>          <td class="paramname"><span class="paramname"><em>pll_src</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>PLL_M</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>PLL_N</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a9b771949ba6bccb42317a3e5e089cded">CLOCK_PLLR_State</a></td>          <td class="paramname"><span class="paramname"><em>PLL_R</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Configures the PLL clock so that it may be used as the System clock. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pll_src</td><td>selects which clock will drive the PLL </td></tr>
-    <tr><td class="paramname">PLL_M</td><td>divsion factor for the main PLL clock. 1 &lt;= PLL_M &lt;= 16. </td></tr>
-    <tr><td class="paramname">PLL_N</td><td>main PLL multiplication factor. 8 &lt;= PLLN &lt;= 127. </td></tr>
-    <tr><td class="paramname">PLL_R</td><td>divsion factor for the main PLL clock. PLLR = {2, 4, 6, 8}. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This function can only be called if the PLL clock is disabled. Use <a class="el" href="#ae9cd115f3011d6546563628b1da16eb4" title="Checks if a clock is activated or not by reading from RCC control registers.">CLOCK_isActivated()</a> and <a class="el" href="#a34f1183e02b1e5320ccf45c6e646b918" title="Desactivates a desired clock.">CLOCK_desactivateClk()</a> before calling this function. </dd></dl>
-
-</div>
-</div>
-<a id="a34f1183e02b1e5320ccf45c6e646b918" name="a34f1183e02b1e5320ccf45c6e646b918"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34f1183e02b1e5320ccf45c6e646b918">&#9670;&#160;</a></span>CLOCK_desactivateClk()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> CLOCK_desactivateClk </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a></td>          <td class="paramname"><span class="paramname"><em>clk</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Desactivates a desired clock. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">clk</td><td>clock to be desactivated. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Untested function. </dd></dl>
-
-</div>
-</div>
-<a id="ab7188c2da80700782ba6b028486e269c" name="ab7188c2da80700782ba6b028486e269c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7188c2da80700782ba6b028486e269c">&#9670;&#160;</a></span>CLOCK_getHSEClockSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t CLOCK_getHSEClockSpeed </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the speed (frequency) in Hz of the HSE (High-Speed External) clock. </p>
-<dl class="section return"><dt>Returns</dt><dd>frequency of HSE clock in Hz. </dd></dl>
-
-</div>
-</div>
-<a id="a353083c3916c8933c43eb0a1c5c94052" name="a353083c3916c8933c43eb0a1c5c94052"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a353083c3916c8933c43eb0a1c5c94052">&#9670;&#160;</a></span>CLOCK_getMSIClockSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t CLOCK_getMSIClockSpeed </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the speed (frequency) in Hz of the MSI (Multi-Speed Internal) clock. </p>
-<dl class="section return"><dt>Returns</dt><dd>frequency of MSI clock in Hz. </dd></dl>
-
-</div>
-</div>
-<a id="a50f2307ce6d6b1285d62ba0fc709f680" name="a50f2307ce6d6b1285d62ba0fc709f680"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50f2307ce6d6b1285d62ba0fc709f680">&#9670;&#160;</a></span>CLOCK_getPLLClockSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t CLOCK_getPLLClockSpeed </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the speed (frequency) in Hz of the PLL clock, if it is activated. </p>
-<dl class="section return"><dt>Returns</dt><dd>frequency of PLL clock in Hz. If return value is 0, then PLL is not activated or has invalid PLL_N, PLL_M or PLL_R constants. </dd></dl>
-
-</div>
-</div>
-<a id="ada0674018763aa72b723804b8d8183eb" name="ada0674018763aa72b723804b8d8183eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada0674018763aa72b723804b8d8183eb">&#9670;&#160;</a></span>CLOCK_getSystemClockSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t CLOCK_getSystemClockSpeed </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the speed (frequency) in Hz of the system clock. </p>
-<p>The system clock can either be: MSI, HSI16, HSE or PLL. </p><dl class="section return"><dt>Returns</dt><dd>frequency of the system clock in Hz. </dd></dl>
-
-</div>
-</div>
-<a id="ae9cd115f3011d6546563628b1da16eb4" name="ae9cd115f3011d6546563628b1da16eb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9cd115f3011d6546563628b1da16eb4">&#9670;&#160;</a></span>CLOCK_isActivated()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t CLOCK_isActivated </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a></td>          <td class="paramname"><span class="paramname"><em>clk</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks if a clock is activated or not by reading from RCC control registers. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">clk</td><td>which clock to check </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0</td><td>the clock is not activated </td></tr>
-    <tr><td class="paramname">1</td><td>the clock is activated </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section warning"><dt>Warning</dt><dd>This function does not check correctness of arguments. This responsibility is given to the caller. </dd></dl>
-
-</div>
-</div>
-<a id="a45f0f137fec72ca25a15471c536353ff" name="a45f0f137fec72ca25a15471c536353ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45f0f137fec72ca25a15471c536353ff">&#9670;&#160;</a></span>CLOCK_setAHBPrescaler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> CLOCK_setAHBPrescaler </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a8243c8d8e6717062f9949ee373a4a77f">CLOCK_AHB_PRESCALER_State</a></td>          <td class="paramname"><span class="paramname"><em>ahb_prescaler</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the AHB prescaler for the AHB clock (HCLK). </p>
-<p>This clocks feeds the AHB1 and AHB2 buses. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ahb_prescaler</td><td>choice for the AHB_PRE value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="a7eb6ba8a0c4959ea023982ff86287e5c" name="a7eb6ba8a0c4959ea023982ff86287e5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7eb6ba8a0c4959ea023982ff86287e5c">&#9670;&#160;</a></span>CLOCK_setAPB1Prescaler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> CLOCK_setAPB1Prescaler </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a65e4b024aee4244fb32f8c5c4ff05f9a">CLOCK_APB1_PRESCALER_State</a></td>          <td class="paramname"><span class="paramname"><em>apb1_prescaler</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the APB1 prescaler for the APB1 clock (PCLK1). </p>
-<p>This clocks feeds the AHB1 and AHB2 buses. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">apb1_prescaler</td><td>choice for the APB1_PRE value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="af2d3189cd4e74510c8d2136149148e0c" name="af2d3189cd4e74510c8d2136149148e0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2d3189cd4e74510c8d2136149148e0c">&#9670;&#160;</a></span>CLOCK_setAPB2Prescaler()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> CLOCK_setAPB2Prescaler </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a95ae2e15b49c96956d53beae3975e517">CLOCK_APB2_PRESCALER_State</a></td>          <td class="paramname"><span class="paramname"><em>apb2_prescaler</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the APB2 prescaler for the APB2 clock (PCLK2). </p>
-<p>This clocks feeds the AHB1 and AHB2 buses. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">apb2_prescaler</td><td>choice for the APB2_PRE value. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="a6da82f8e33ab80367bf38ea54592f240" name="a6da82f8e33ab80367bf38ea54592f240"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6da82f8e33ab80367bf38ea54592f240">&#9670;&#160;</a></span>CLOCK_setHSEClockSpeed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CLOCK_setHSEClockSpeed </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set the speed of the external clock oscillator, if one is available. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">speed</td><td>(in Hz) of the HSE </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad3f9097ce53adfff82cb70ddea07c27d" name="ad3f9097ce53adfff82cb70ddea07c27d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3f9097ce53adfff82cb70ddea07c27d">&#9670;&#160;</a></span>CLOCK_setSystemClock()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a> CLOCK_setSystemClock </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#ab8ea3cd345873e8a031469d82633ee72">CLOCK_SYSCLK_State</a></td>          <td class="paramname"><span class="paramname"><em>sysclk</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the system clock. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sysclk</td><td>The system clock to be selected </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This function assumes that the clock has already been activated via <a class="el" href="#a08716e6071c93768a4091dc5947e104f" title="Activates a desired clock.">CLOCK_activateClk()</a>. </dd>
-<dd>
-Blocking function. Will only return once a SWS flag has been set by hardware in the RCC_CFGR register. </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

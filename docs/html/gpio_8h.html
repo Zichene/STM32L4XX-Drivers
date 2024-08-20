@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GPIO_Drivers: C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h File Reference</title>
+<title>STM32L4XX_Drivers: C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">GPIO_Drivers<span id="projectnumber">&#160;1.0.0</span>
+   <div id="projectname">STM32L4XX_Drivers<span id="projectnumber">&#160;1.0.0</span>
    </div>
+   <div id="projectbrief">Bare-metal implementation of some drivers for the STML4 family of devices.</div>
   </td>
  </tr>
  </tbody>
@@ -100,768 +101,117 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:af164c756418dde00ac07fd47d0962150" id="r_af164c756418dde00ac07fd47d0962150"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> { <br />
-&#160;&#160;<a class="el" href="#af164c756418dde00ac07fd47d0962150a8b07bc36836f09ea3bf685aa40bb2a1c">GPIO_PORT_A</a> = 0
-, <a class="el" href="#af164c756418dde00ac07fd47d0962150af5a83964a6998f346c504ea8a14aa420">GPIO_PORT_B</a> = 1
-, <a class="el" href="#af164c756418dde00ac07fd47d0962150aa6d64325a6ea4d520a8f7c2f8d9b82ba">GPIO_PORT_C</a> = 2
-, <a class="el" href="#af164c756418dde00ac07fd47d0962150a28839778b06b58a1b3ece28f39dade8f">GPIO_PORT_D</a> = 3
+<tr class="memitem:gaf164c756418dde00ac07fd47d0962150" id="r_gaf164c756418dde00ac07fd47d0962150"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> { <br />
+&#160;&#160;<a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150a8b07bc36836f09ea3bf685aa40bb2a1c">GPIO_PORT_A</a> = 0
+, <a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150af5a83964a6998f346c504ea8a14aa420">GPIO_PORT_B</a> = 1
+, <a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150aa6d64325a6ea4d520a8f7c2f8d9b82ba">GPIO_PORT_C</a> = 2
+, <a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150a28839778b06b58a1b3ece28f39dade8f">GPIO_PORT_D</a> = 3
 , <br />
-&#160;&#160;<a class="el" href="#af164c756418dde00ac07fd47d0962150a9cdccb3f86f1326ee286709c135995c8">GPIO_PORT_E</a> = 4
-, <a class="el" href="#af164c756418dde00ac07fd47d0962150a2e0f525fddb580bff30dc9dd84f3fa5b">GPIO_PORT_F</a> = 5
-, <a class="el" href="#af164c756418dde00ac07fd47d0962150a97e13b5e58f0f2b2fca0e21721be0cf0">GPIO_PORT_G</a> = 6
-, <a class="el" href="#af164c756418dde00ac07fd47d0962150a160734b9f43544c741c11fb095716646">GPIO_PORT_H</a> = 7
+&#160;&#160;<a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150a9cdccb3f86f1326ee286709c135995c8">GPIO_PORT_E</a> = 4
+, <a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150a2e0f525fddb580bff30dc9dd84f3fa5b">GPIO_PORT_F</a> = 5
+, <a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150a97e13b5e58f0f2b2fca0e21721be0cf0">GPIO_PORT_G</a> = 6
+, <a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150a160734b9f43544c741c11fb095716646">GPIO_PORT_H</a> = 7
 , <br />
-&#160;&#160;<a class="el" href="#af164c756418dde00ac07fd47d0962150ab8b724b98c20d45094005095306b01fd">GPIO_PORT_I</a> = 8
+&#160;&#160;<a class="el" href="group___g_p_i_o.html#ggaf164c756418dde00ac07fd47d0962150ab8b724b98c20d45094005095306b01fd">GPIO_PORT_I</a> = 8
 <br />
  }</td></tr>
-<tr class="memdesc:af164c756418dde00ac07fd47d0962150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the port of a GPIO pin.  <a href="#af164c756418dde00ac07fd47d0962150">More...</a><br /></td></tr>
-<tr class="separator:af164c756418dde00ac07fd47d0962150"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b3ef0486b179415581eb342e0ea6b43" id="r_a5b3ef0486b179415581eb342e0ea6b43"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a> { <a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa">GPIO_LOW</a> = 0
-, <a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d">GPIO_HIGH</a> = 1
+<tr class="memdesc:gaf164c756418dde00ac07fd47d0962150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the port of a GPIO pin.  <a href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">More...</a><br /></td></tr>
+<tr class="separator:gaf164c756418dde00ac07fd47d0962150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b3ef0486b179415581eb342e0ea6b43" id="r_ga5b3ef0486b179415581eb342e0ea6b43"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a> { <a class="el" href="group___g_p_i_o.html#gga5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa">GPIO_LOW</a> = 0
+, <a class="el" href="group___g_p_i_o.html#gga5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d">GPIO_HIGH</a> = 1
  }</td></tr>
-<tr class="memdesc:a5b3ef0486b179415581eb342e0ea6b43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the state of a pin.  <a href="#a5b3ef0486b179415581eb342e0ea6b43">More...</a><br /></td></tr>
-<tr class="separator:a5b3ef0486b179415581eb342e0ea6b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2266f25d4ba662cd4e40de36a5049167" id="r_a2266f25d4ba662cd4e40de36a5049167"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> { <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167a340a342762fc759e14028a4a48ba1907">GPIO_PUPD_NO_PULL_UP_PULL_DOWN</a> = 0
-, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36">GPIO_PUPD_PULL_UP</a> = 1
-, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167a9b5ad4d5996f33eb251c8a4854479d89">GPIO_PUPD_PULL_DOWN</a> = 2
+<tr class="memdesc:ga5b3ef0486b179415581eb342e0ea6b43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the state of a pin.  <a href="group___g_p_i_o.html#ga5b3ef0486b179415581eb342e0ea6b43">More...</a><br /></td></tr>
+<tr class="separator:ga5b3ef0486b179415581eb342e0ea6b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2266f25d4ba662cd4e40de36a5049167" id="r_ga2266f25d4ba662cd4e40de36a5049167"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> { <a class="el" href="group___g_p_i_o.html#gga2266f25d4ba662cd4e40de36a5049167a340a342762fc759e14028a4a48ba1907">GPIO_PUPD_NO_PULL_UP_PULL_DOWN</a> = 0
+, <a class="el" href="group___g_p_i_o.html#gga2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36">GPIO_PUPD_PULL_UP</a> = 1
+, <a class="el" href="group___g_p_i_o.html#gga2266f25d4ba662cd4e40de36a5049167a9b5ad4d5996f33eb251c8a4854479d89">GPIO_PUPD_PULL_DOWN</a> = 2
  }</td></tr>
-<tr class="memdesc:a2266f25d4ba662cd4e40de36a5049167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different PUPD states which are accepted by the GPIOx_PUPDR register.  <a href="#a2266f25d4ba662cd4e40de36a5049167">More...</a><br /></td></tr>
-<tr class="separator:a2266f25d4ba662cd4e40de36a5049167"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf9978d8971c86f33115b493e5d6190f" id="r_aaf9978d8971c86f33115b493e5d6190f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> { <a class="el" href="#aaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b">GPIO_SPEED_LOW</a> = 0
-, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343">GPIO_SPEED_MEDIUM</a> = 1
-, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12">GPIO_SPEED_HIGH</a> = 2
-, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746">GPIO_SPEED_VERY_HIGH</a> = 3
+<tr class="memdesc:ga2266f25d4ba662cd4e40de36a5049167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different PUPD states which are accepted by the GPIOx_PUPDR register.  <a href="group___g_p_i_o.html#ga2266f25d4ba662cd4e40de36a5049167">More...</a><br /></td></tr>
+<tr class="separator:ga2266f25d4ba662cd4e40de36a5049167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf9978d8971c86f33115b493e5d6190f" id="r_gaaf9978d8971c86f33115b493e5d6190f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#gaaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> { <a class="el" href="group___g_p_i_o.html#ggaaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b">GPIO_SPEED_LOW</a> = 0
+, <a class="el" href="group___g_p_i_o.html#ggaaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343">GPIO_SPEED_MEDIUM</a> = 1
+, <a class="el" href="group___g_p_i_o.html#ggaaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12">GPIO_SPEED_HIGH</a> = 2
+, <a class="el" href="group___g_p_i_o.html#ggaaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746">GPIO_SPEED_VERY_HIGH</a> = 3
  }</td></tr>
-<tr class="memdesc:aaf9978d8971c86f33115b493e5d6190f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the speed of a GPIO pin which are accepted by the GPIOx_SPEEDR register.  <a href="#aaf9978d8971c86f33115b493e5d6190f">More...</a><br /></td></tr>
-<tr class="separator:aaf9978d8971c86f33115b493e5d6190f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad95ee31148019b4ae8d63e5a3e0777ee" id="r_ad95ee31148019b4ae8d63e5a3e0777ee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> { <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9">GPIO_OUTPUT_PUSH_PULL</a> = 0
-, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b">GPIO_OUTPUT_OPEN_DRAIN</a> = 1
+<tr class="memdesc:gaaf9978d8971c86f33115b493e5d6190f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the speed of a GPIO pin which are accepted by the GPIOx_SPEEDR register.  <a href="group___g_p_i_o.html#gaaf9978d8971c86f33115b493e5d6190f">More...</a><br /></td></tr>
+<tr class="separator:gaaf9978d8971c86f33115b493e5d6190f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad95ee31148019b4ae8d63e5a3e0777ee" id="r_gad95ee31148019b4ae8d63e5a3e0777ee"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#gad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> { <a class="el" href="group___g_p_i_o.html#ggad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9">GPIO_OUTPUT_PUSH_PULL</a> = 0
+, <a class="el" href="group___g_p_i_o.html#ggad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b">GPIO_OUTPUT_OPEN_DRAIN</a> = 1
  }</td></tr>
-<tr class="memdesc:ad95ee31148019b4ae8d63e5a3e0777ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the type of GPIO output driver which are accepted by the GPIOx_OTYPER register.  <a href="#ad95ee31148019b4ae8d63e5a3e0777ee">More...</a><br /></td></tr>
-<tr class="separator:ad95ee31148019b4ae8d63e5a3e0777ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a50a2f4df54586ff8414f27fcb3f827db" id="r_a50a2f4df54586ff8414f27fcb3f827db"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50a2f4df54586ff8414f27fcb3f827db">GPIO_AF_State</a> { <br />
-&#160;&#160;<a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dbaa27f25443e3ae77015a9a3deed4a3ef7">GPIO_AF_0</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dbab7284fc4f49b263570f6f66eabc8ae64">GPIO_AF_1</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba2f0c81fc78a4f730e29e5373f0c5335e">GPIO_AF_2</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba568f8145874b6cdacdb64da890263199">GPIO_AF_3</a>
+<tr class="memdesc:gad95ee31148019b4ae8d63e5a3e0777ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the type of GPIO output driver which are accepted by the GPIOx_OTYPER register.  <a href="group___g_p_i_o.html#gad95ee31148019b4ae8d63e5a3e0777ee">More...</a><br /></td></tr>
+<tr class="separator:gad95ee31148019b4ae8d63e5a3e0777ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50a2f4df54586ff8414f27fcb3f827db" id="r_ga50a2f4df54586ff8414f27fcb3f827db"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga50a2f4df54586ff8414f27fcb3f827db">GPIO_AF_State</a> { <br />
+&#160;&#160;<a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dbaa27f25443e3ae77015a9a3deed4a3ef7">GPIO_AF_0</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dbab7284fc4f49b263570f6f66eabc8ae64">GPIO_AF_1</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba2f0c81fc78a4f730e29e5373f0c5335e">GPIO_AF_2</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba568f8145874b6cdacdb64da890263199">GPIO_AF_3</a>
 , <br />
-&#160;&#160;<a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba6487423a94e798b9c6aecff59d530935">GPIO_AF_4</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba607129224edfd66ebc4d62b4a9c1f3df">GPIO_AF_5</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dbac9028834e34ba4022d38895dd85ce08c">GPIO_AF_6</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba4e8bcdef1a4156c7ed119f7848e78f28">GPIO_AF_7</a>
+&#160;&#160;<a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba6487423a94e798b9c6aecff59d530935">GPIO_AF_4</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba607129224edfd66ebc4d62b4a9c1f3df">GPIO_AF_5</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dbac9028834e34ba4022d38895dd85ce08c">GPIO_AF_6</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba4e8bcdef1a4156c7ed119f7848e78f28">GPIO_AF_7</a>
 , <br />
-&#160;&#160;<a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe">GPIO_AF_8</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097">GPIO_AF_9</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dbabecf6bda4c604c5037f6e5990f0efca7">GPIO_AF_10</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dbafc09543663eaebd7bb076bf5f00587a8">GPIO_AF_11</a>
+&#160;&#160;<a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe">GPIO_AF_8</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097">GPIO_AF_9</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dbabecf6bda4c604c5037f6e5990f0efca7">GPIO_AF_10</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dbafc09543663eaebd7bb076bf5f00587a8">GPIO_AF_11</a>
 , <br />
-&#160;&#160;<a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba95716054846153b5e34cd84367916b6f">GPIO_AF_12</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dbaba8c165865eaa7fb2be4bce6e1d90570">GPIO_AF_13</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba915de70ded11531cbb2cb164c1e568ba">GPIO_AF_14</a>
-, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827dba8631c9933547084963ccb453e0fa142b">GPIO_AF_15</a>
+&#160;&#160;<a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba95716054846153b5e34cd84367916b6f">GPIO_AF_12</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dbaba8c165865eaa7fb2be4bce6e1d90570">GPIO_AF_13</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba915de70ded11531cbb2cb164c1e568ba">GPIO_AF_14</a>
+, <a class="el" href="group___g_p_i_o.html#gga50a2f4df54586ff8414f27fcb3f827dba8631c9933547084963ccb453e0fa142b">GPIO_AF_15</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a50a2f4df54586ff8414f27fcb3f827db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing Alternate Function (AF) states for GPIO pins which are accepted by the GPIOx_AFRL and GPIOx_AFRH registers.  <a href="#a50a2f4df54586ff8414f27fcb3f827db">More...</a><br /></td></tr>
-<tr class="separator:a50a2f4df54586ff8414f27fcb3f827db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace0c7e64d6c4e935151fbb7616fe540a" id="r_ace0c7e64d6c4e935151fbb7616fe540a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace0c7e64d6c4e935151fbb7616fe540a">GPIO_IT_TRIGGER_State</a> { <a class="el" href="#ace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78">GPIO_IT_TRIGGER_FALLING</a> = 0
-, <a class="el" href="#ace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216">GPIO_IT_TRIGGER_RISING</a> = 1
+<tr class="memdesc:ga50a2f4df54586ff8414f27fcb3f827db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing Alternate Function (AF) states for GPIO pins which are accepted by the GPIOx_AFRL and GPIOx_AFRH registers.  <a href="group___g_p_i_o.html#ga50a2f4df54586ff8414f27fcb3f827db">More...</a><br /></td></tr>
+<tr class="separator:ga50a2f4df54586ff8414f27fcb3f827db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace0c7e64d6c4e935151fbb7616fe540a" id="r_gace0c7e64d6c4e935151fbb7616fe540a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#gace0c7e64d6c4e935151fbb7616fe540a">GPIO_IT_TRIGGER_State</a> { <a class="el" href="group___g_p_i_o.html#ggace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78">GPIO_IT_TRIGGER_FALLING</a> = 0
+, <a class="el" href="group___g_p_i_o.html#ggace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216">GPIO_IT_TRIGGER_RISING</a> = 1
  }</td></tr>
-<tr class="memdesc:ace0c7e64d6c4e935151fbb7616fe540a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to select interrupt trigger (falling or rising).  <a href="#ace0c7e64d6c4e935151fbb7616fe540a">More...</a><br /></td></tr>
-<tr class="separator:ace0c7e64d6c4e935151fbb7616fe540a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fdce057401bc547fc9d8692f2c27764" id="r_a3fdce057401bc547fc9d8692f2c27764"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> { <a class="el" href="#a3fdce057401bc547fc9d8692f2c27764a221c52bb468cb5191edcd5bd3fbd862c">GPIO_OK</a> = 0
-, <a class="el" href="#a3fdce057401bc547fc9d8692f2c27764a3a8415df5bbacde0e5baa2fdac62a8b1">GPIO_INVALID_ARGS</a> = 1
-, <a class="el" href="#a3fdce057401bc547fc9d8692f2c27764a655a17b7b79de8c0c8e5356f966e506f">GPIO_ERROR</a> = 2
+<tr class="memdesc:gace0c7e64d6c4e935151fbb7616fe540a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to select interrupt trigger (falling or rising).  <a href="group___g_p_i_o.html#gace0c7e64d6c4e935151fbb7616fe540a">More...</a><br /></td></tr>
+<tr class="separator:gace0c7e64d6c4e935151fbb7616fe540a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3fdce057401bc547fc9d8692f2c27764" id="r_ga3fdce057401bc547fc9d8692f2c27764"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> { <a class="el" href="group___g_p_i_o.html#gga3fdce057401bc547fc9d8692f2c27764a221c52bb468cb5191edcd5bd3fbd862c">GPIO_OK</a> = 0
+, <a class="el" href="group___g_p_i_o.html#gga3fdce057401bc547fc9d8692f2c27764a3a8415df5bbacde0e5baa2fdac62a8b1">GPIO_INVALID_ARGS</a> = 1
+, <a class="el" href="group___g_p_i_o.html#gga3fdce057401bc547fc9d8692f2c27764a655a17b7b79de8c0c8e5356f966e506f">GPIO_ERROR</a> = 2
  }</td></tr>
-<tr class="memdesc:a3fdce057401bc547fc9d8692f2c27764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to indicate the return status of a function.  <a href="#a3fdce057401bc547fc9d8692f2c27764">More...</a><br /></td></tr>
-<tr class="separator:a3fdce057401bc547fc9d8692f2c27764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ga3fdce057401bc547fc9d8692f2c27764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum to indicate the return status of a function.  <a href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">More...</a><br /></td></tr>
+<tr class="separator:ga3fdce057401bc547fc9d8692f2c27764"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab595615510195f9a4192c7a189678fab" id="r_ab595615510195f9a4192c7a189678fab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab595615510195f9a4192c7a189678fab">GPIO_setPinOutput</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
-<tr class="memdesc:ab595615510195f9a4192c7a189678fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to output mode.  <br /></td></tr>
-<tr class="separator:ab595615510195f9a4192c7a189678fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a882cc33c981cd7f8dfba88f860272d8a" id="r_a882cc33c981cd7f8dfba88f860272d8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882cc33c981cd7f8dfba88f860272d8a">GPIO_setPinOutput_FC</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
-<tr class="memdesc:a882cc33c981cd7f8dfba88f860272d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type.  <br /></td></tr>
-<tr class="separator:a882cc33c981cd7f8dfba88f860272d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6d9d08aa8ecf6a2f1237373ffe54dea" id="r_ae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6d9d08aa8ecf6a2f1237373ffe54dea">GPIO_setPinInput</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd)</td></tr>
-<tr class="memdesc:ae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets pin to input.  <br /></td></tr>
-<tr class="separator:ae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18ca43b6164db4241faf900a1209013b" id="r_a18ca43b6164db4241faf900a1209013b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18ca43b6164db4241faf900a1209013b">GPIO_setPinInput_FC</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
-<tr class="memdesc:a18ca43b6164db4241faf900a1209013b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type.  <br /></td></tr>
-<tr class="separator:a18ca43b6164db4241faf900a1209013b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f78d205e4179fc73f2515d21660accf" id="r_a6f78d205e4179fc73f2515d21660accf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f78d205e4179fc73f2515d21660accf">GPIO_writePin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a> state)</td></tr>
-<tr class="memdesc:a6f78d205e4179fc73f2515d21660accf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a value to a specificed GPIO pin.  <br /></td></tr>
-<tr class="separator:a6f78d205e4179fc73f2515d21660accf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20f3f4cc40731487424a228070958166" id="r_a20f3f4cc40731487424a228070958166"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20f3f4cc40731487424a228070958166">GPIO_readPin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
-<tr class="memdesc:a20f3f4cc40731487424a228070958166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from a specificed GPIO pin.  <br /></td></tr>
-<tr class="separator:a20f3f4cc40731487424a228070958166"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dbba2abe607108f74710b045b089c72" id="r_a2dbba2abe607108f74710b045b089c72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dbba2abe607108f74710b045b089c72">GPIO_togglePin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
-<tr class="memdesc:a2dbba2abe607108f74710b045b089c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the state of a GPIO pin.  <br /></td></tr>
-<tr class="separator:a2dbba2abe607108f74710b045b089c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a232a16e1fe539abaaf2b4451039acbdd" id="r_a232a16e1fe539abaaf2b4451039acbdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a232a16e1fe539abaaf2b4451039acbdd">GPIO_setPinInterrupt</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#ace0c7e64d6c4e935151fbb7616fe540a">GPIO_IT_TRIGGER_State</a> trigger_state)</td></tr>
-<tr class="memdesc:a232a16e1fe539abaaf2b4451039acbdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to input-interrupt mode.  <br /></td></tr>
-<tr class="separator:a232a16e1fe539abaaf2b4451039acbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93410b92827b20bc14b1ce1f54950f80" id="r_a93410b92827b20bc14b1ce1f54950f80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93410b92827b20bc14b1ce1f54950f80">GPIO_resetPinInterrupt</a> (uint8_t pin)</td></tr>
-<tr class="memdesc:a93410b92827b20bc14b1ce1f54950f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the flag corresponding to the pin in the EXTI Pending Register.  <br /></td></tr>
-<tr class="separator:a93410b92827b20bc14b1ce1f54950f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a328c278fa96a3802882630ad49ee7ae3" id="r_a328c278fa96a3802882630ad49ee7ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a328c278fa96a3802882630ad49ee7ae3">GPIO_setPinAF_Mode</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
-<tr class="memdesc:a328c278fa96a3802882630ad49ee7ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pin to the Alternate Function (AF) mode.  <br /></td></tr>
-<tr class="separator:a328c278fa96a3802882630ad49ee7ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ea71fe1e6545955e83ade36d2d9a053" id="r_a4ea71fe1e6545955e83ade36d2d9a053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ea71fe1e6545955e83ade36d2d9a053">GPIO_setPinAF_State</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827db">GPIO_AF_State</a> af_state)</td></tr>
-<tr class="memdesc:a4ea71fe1e6545955e83ade36d2d9a053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin in AF mode to the desired AF state.  <br /></td></tr>
-<tr class="separator:a4ea71fe1e6545955e83ade36d2d9a053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab595615510195f9a4192c7a189678fab" id="r_gab595615510195f9a4192c7a189678fab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#gab595615510195f9a4192c7a189678fab">GPIO_setPinOutput</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
+<tr class="memdesc:gab595615510195f9a4192c7a189678fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to output mode.  <br /></td></tr>
+<tr class="separator:gab595615510195f9a4192c7a189678fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga882cc33c981cd7f8dfba88f860272d8a" id="r_ga882cc33c981cd7f8dfba88f860272d8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga882cc33c981cd7f8dfba88f860272d8a">GPIO_setPinOutput_FC</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="group___g_p_i_o.html#ga2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="group___g_p_i_o.html#gaaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="group___g_p_i_o.html#gad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
+<tr class="memdesc:ga882cc33c981cd7f8dfba88f860272d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type.  <br /></td></tr>
+<tr class="separator:ga882cc33c981cd7f8dfba88f860272d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae6d9d08aa8ecf6a2f1237373ffe54dea" id="r_gae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#gae6d9d08aa8ecf6a2f1237373ffe54dea">GPIO_setPinInput</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="group___g_p_i_o.html#ga2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd)</td></tr>
+<tr class="memdesc:gae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets pin to input.  <br /></td></tr>
+<tr class="separator:gae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18ca43b6164db4241faf900a1209013b" id="r_ga18ca43b6164db4241faf900a1209013b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga18ca43b6164db4241faf900a1209013b">GPIO_setPinInput_FC</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="group___g_p_i_o.html#ga2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="group___g_p_i_o.html#gaaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="group___g_p_i_o.html#gad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
+<tr class="memdesc:ga18ca43b6164db4241faf900a1209013b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type.  <br /></td></tr>
+<tr class="separator:ga18ca43b6164db4241faf900a1209013b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f78d205e4179fc73f2515d21660accf" id="r_ga6f78d205e4179fc73f2515d21660accf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga6f78d205e4179fc73f2515d21660accf">GPIO_writePin</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="group___g_p_i_o.html#ga5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a> state)</td></tr>
+<tr class="memdesc:ga6f78d205e4179fc73f2515d21660accf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a value to a specificed GPIO pin.  <br /></td></tr>
+<tr class="separator:ga6f78d205e4179fc73f2515d21660accf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga20f3f4cc40731487424a228070958166" id="r_ga20f3f4cc40731487424a228070958166"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga20f3f4cc40731487424a228070958166">GPIO_readPin</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
+<tr class="memdesc:ga20f3f4cc40731487424a228070958166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from a specificed GPIO pin.  <br /></td></tr>
+<tr class="separator:ga20f3f4cc40731487424a228070958166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2dbba2abe607108f74710b045b089c72" id="r_ga2dbba2abe607108f74710b045b089c72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga2dbba2abe607108f74710b045b089c72">GPIO_togglePin</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
+<tr class="memdesc:ga2dbba2abe607108f74710b045b089c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the state of a GPIO pin.  <br /></td></tr>
+<tr class="separator:ga2dbba2abe607108f74710b045b089c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga232a16e1fe539abaaf2b4451039acbdd" id="r_ga232a16e1fe539abaaf2b4451039acbdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga232a16e1fe539abaaf2b4451039acbdd">GPIO_setPinInterrupt</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="group___g_p_i_o.html#gace0c7e64d6c4e935151fbb7616fe540a">GPIO_IT_TRIGGER_State</a> trigger_state)</td></tr>
+<tr class="memdesc:ga232a16e1fe539abaaf2b4451039acbdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to input-interrupt mode.  <br /></td></tr>
+<tr class="separator:ga232a16e1fe539abaaf2b4451039acbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93410b92827b20bc14b1ce1f54950f80" id="r_ga93410b92827b20bc14b1ce1f54950f80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga93410b92827b20bc14b1ce1f54950f80">GPIO_resetPinInterrupt</a> (uint8_t pin)</td></tr>
+<tr class="memdesc:ga93410b92827b20bc14b1ce1f54950f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the flag corresponding to the pin in the EXTI Pending Register.  <br /></td></tr>
+<tr class="separator:ga93410b92827b20bc14b1ce1f54950f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga328c278fa96a3802882630ad49ee7ae3" id="r_ga328c278fa96a3802882630ad49ee7ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga328c278fa96a3802882630ad49ee7ae3">GPIO_setPinAF_Mode</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="group___g_p_i_o.html#ga2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="group___g_p_i_o.html#gaaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="group___g_p_i_o.html#gad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
+<tr class="memdesc:ga328c278fa96a3802882630ad49ee7ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pin to the Alternate Function (AF) mode.  <br /></td></tr>
+<tr class="separator:ga328c278fa96a3802882630ad49ee7ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ea71fe1e6545955e83ade36d2d9a053" id="r_ga4ea71fe1e6545955e83ade36d2d9a053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___g_p_i_o.html#ga3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___g_p_i_o.html#ga4ea71fe1e6545955e83ade36d2d9a053">GPIO_setPinAF_State</a> (<a class="el" href="group___g_p_i_o.html#gaf164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="group___g_p_i_o.html#ga50a2f4df54586ff8414f27fcb3f827db">GPIO_AF_State</a> af_state)</td></tr>
+<tr class="memdesc:ga4ea71fe1e6545955e83ade36d2d9a053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin in AF mode to the desired AF state.  <br /></td></tr>
+<tr class="separator:ga4ea71fe1e6545955e83ade36d2d9a053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a50a2f4df54586ff8414f27fcb3f827db" name="a50a2f4df54586ff8414f27fcb3f827db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50a2f4df54586ff8414f27fcb3f827db">&#9670;&#160;</a></span>GPIO_AF_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827db">GPIO_AF_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing Alternate Function (AF) states for GPIO pins which are accepted by the GPIOx_AFRL and GPIOx_AFRH registers. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dbaa27f25443e3ae77015a9a3deed4a3ef7" name="a50a2f4df54586ff8414f27fcb3f827dbaa27f25443e3ae77015a9a3deed4a3ef7"></a>GPIO_AF_0&#160;</td><td class="fielddoc"><p>Alternate Function 0. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dbab7284fc4f49b263570f6f66eabc8ae64" name="a50a2f4df54586ff8414f27fcb3f827dbab7284fc4f49b263570f6f66eabc8ae64"></a>GPIO_AF_1&#160;</td><td class="fielddoc"><p>Alternate Function 1. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba2f0c81fc78a4f730e29e5373f0c5335e" name="a50a2f4df54586ff8414f27fcb3f827dba2f0c81fc78a4f730e29e5373f0c5335e"></a>GPIO_AF_2&#160;</td><td class="fielddoc"><p>Alternate Function 2. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba568f8145874b6cdacdb64da890263199" name="a50a2f4df54586ff8414f27fcb3f827dba568f8145874b6cdacdb64da890263199"></a>GPIO_AF_3&#160;</td><td class="fielddoc"><p>Alternate Function 3. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba6487423a94e798b9c6aecff59d530935" name="a50a2f4df54586ff8414f27fcb3f827dba6487423a94e798b9c6aecff59d530935"></a>GPIO_AF_4&#160;</td><td class="fielddoc"><p>Alternate Function 4. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba607129224edfd66ebc4d62b4a9c1f3df" name="a50a2f4df54586ff8414f27fcb3f827dba607129224edfd66ebc4d62b4a9c1f3df"></a>GPIO_AF_5&#160;</td><td class="fielddoc"><p>Alternate Function 5. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dbac9028834e34ba4022d38895dd85ce08c" name="a50a2f4df54586ff8414f27fcb3f827dbac9028834e34ba4022d38895dd85ce08c"></a>GPIO_AF_6&#160;</td><td class="fielddoc"><p>Alternate Function 6. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba4e8bcdef1a4156c7ed119f7848e78f28" name="a50a2f4df54586ff8414f27fcb3f827dba4e8bcdef1a4156c7ed119f7848e78f28"></a>GPIO_AF_7&#160;</td><td class="fielddoc"><p>Alternate Function 7. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe" name="a50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe"></a>GPIO_AF_8&#160;</td><td class="fielddoc"><p>Alternate Function 8. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097" name="a50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097"></a>GPIO_AF_9&#160;</td><td class="fielddoc"><p>Alternate Function 9. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dbabecf6bda4c604c5037f6e5990f0efca7" name="a50a2f4df54586ff8414f27fcb3f827dbabecf6bda4c604c5037f6e5990f0efca7"></a>GPIO_AF_10&#160;</td><td class="fielddoc"><p>Alternate Function 10. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dbafc09543663eaebd7bb076bf5f00587a8" name="a50a2f4df54586ff8414f27fcb3f827dbafc09543663eaebd7bb076bf5f00587a8"></a>GPIO_AF_11&#160;</td><td class="fielddoc"><p>Alternate Function 11. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba95716054846153b5e34cd84367916b6f" name="a50a2f4df54586ff8414f27fcb3f827dba95716054846153b5e34cd84367916b6f"></a>GPIO_AF_12&#160;</td><td class="fielddoc"><p>Alternate Function 12. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dbaba8c165865eaa7fb2be4bce6e1d90570" name="a50a2f4df54586ff8414f27fcb3f827dbaba8c165865eaa7fb2be4bce6e1d90570"></a>GPIO_AF_13&#160;</td><td class="fielddoc"><p>Alternate Function 13. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba915de70ded11531cbb2cb164c1e568ba" name="a50a2f4df54586ff8414f27fcb3f827dba915de70ded11531cbb2cb164c1e568ba"></a>GPIO_AF_14&#160;</td><td class="fielddoc"><p>Alternate Function 14. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a50a2f4df54586ff8414f27fcb3f827dba8631c9933547084963ccb453e0fa142b" name="a50a2f4df54586ff8414f27fcb3f827dba8631c9933547084963ccb453e0fa142b"></a>GPIO_AF_15&#160;</td><td class="fielddoc"><p>Alternate Function 15. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="ace0c7e64d6c4e935151fbb7616fe540a" name="ace0c7e64d6c4e935151fbb7616fe540a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ace0c7e64d6c4e935151fbb7616fe540a">&#9670;&#160;</a></span>GPIO_IT_TRIGGER_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#ace0c7e64d6c4e935151fbb7616fe540a">GPIO_IT_TRIGGER_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum to select interrupt trigger (falling or rising). </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78" name="ace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78"></a>GPIO_IT_TRIGGER_FALLING&#160;</td><td class="fielddoc"><p>Interrupts on falling edge. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216" name="ace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216"></a>GPIO_IT_TRIGGER_RISING&#160;</td><td class="fielddoc"><p>Interrupts on rising edge. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="ad95ee31148019b4ae8d63e5a3e0777ee" name="ad95ee31148019b4ae8d63e5a3e0777ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad95ee31148019b4ae8d63e5a3e0777ee">&#9670;&#160;</a></span>GPIO_OUTPUT_TYPE_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing the type of GPIO output driver which are accepted by the GPIOx_OTYPER register. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9" name="ad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9"></a>GPIO_OUTPUT_PUSH_PULL&#160;</td><td class="fielddoc"><p>Push pull mode. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b" name="ad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b"></a>GPIO_OUTPUT_OPEN_DRAIN&#160;</td><td class="fielddoc"><p>Open drain mode. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a5b3ef0486b179415581eb342e0ea6b43" name="a5b3ef0486b179415581eb342e0ea6b43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b3ef0486b179415581eb342e0ea6b43">&#9670;&#160;</a></span>GPIO_PinState</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing the state of a pin. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa" name="a5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa"></a>GPIO_LOW&#160;</td><td class="fielddoc"><p>The state of the pin is low. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d" name="a5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d"></a>GPIO_HIGH&#160;</td><td class="fielddoc"><p>The state of the pin is high. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="af164c756418dde00ac07fd47d0962150" name="af164c756418dde00ac07fd47d0962150"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af164c756418dde00ac07fd47d0962150">&#9670;&#160;</a></span>GPIO_Port</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing the port of a GPIO pin. </p>
-<p>For this family of devices, ports A-I inclusive are supported. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150a8b07bc36836f09ea3bf685aa40bb2a1c" name="af164c756418dde00ac07fd47d0962150a8b07bc36836f09ea3bf685aa40bb2a1c"></a>GPIO_PORT_A&#160;</td><td class="fielddoc"><p>GPIO port A. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150af5a83964a6998f346c504ea8a14aa420" name="af164c756418dde00ac07fd47d0962150af5a83964a6998f346c504ea8a14aa420"></a>GPIO_PORT_B&#160;</td><td class="fielddoc"><p>GPIO port B. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150aa6d64325a6ea4d520a8f7c2f8d9b82ba" name="af164c756418dde00ac07fd47d0962150aa6d64325a6ea4d520a8f7c2f8d9b82ba"></a>GPIO_PORT_C&#160;</td><td class="fielddoc"><p>GPIO port C. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150a28839778b06b58a1b3ece28f39dade8f" name="af164c756418dde00ac07fd47d0962150a28839778b06b58a1b3ece28f39dade8f"></a>GPIO_PORT_D&#160;</td><td class="fielddoc"><p>GPIO port D. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150a9cdccb3f86f1326ee286709c135995c8" name="af164c756418dde00ac07fd47d0962150a9cdccb3f86f1326ee286709c135995c8"></a>GPIO_PORT_E&#160;</td><td class="fielddoc"><p>GPIO port E. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150a2e0f525fddb580bff30dc9dd84f3fa5b" name="af164c756418dde00ac07fd47d0962150a2e0f525fddb580bff30dc9dd84f3fa5b"></a>GPIO_PORT_F&#160;</td><td class="fielddoc"><p>GPIO port F. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150a97e13b5e58f0f2b2fca0e21721be0cf0" name="af164c756418dde00ac07fd47d0962150a97e13b5e58f0f2b2fca0e21721be0cf0"></a>GPIO_PORT_G&#160;</td><td class="fielddoc"><p>GPIO port G. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150a160734b9f43544c741c11fb095716646" name="af164c756418dde00ac07fd47d0962150a160734b9f43544c741c11fb095716646"></a>GPIO_PORT_H&#160;</td><td class="fielddoc"><p>GPIO port H. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="af164c756418dde00ac07fd47d0962150ab8b724b98c20d45094005095306b01fd" name="af164c756418dde00ac07fd47d0962150ab8b724b98c20d45094005095306b01fd"></a>GPIO_PORT_I&#160;</td><td class="fielddoc"><p>GPIO port I. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a2266f25d4ba662cd4e40de36a5049167" name="a2266f25d4ba662cd4e40de36a5049167"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2266f25d4ba662cd4e40de36a5049167">&#9670;&#160;</a></span>GPIO_PUPD_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing different PUPD states which are accepted by the GPIOx_PUPDR register. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2266f25d4ba662cd4e40de36a5049167a340a342762fc759e14028a4a48ba1907" name="a2266f25d4ba662cd4e40de36a5049167a340a342762fc759e14028a4a48ba1907"></a>GPIO_PUPD_NO_PULL_UP_PULL_DOWN&#160;</td><td class="fielddoc"><p>No pull up or pull down chosen. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36" name="a2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36"></a>GPIO_PUPD_PULL_UP&#160;</td><td class="fielddoc"><p>Pull up resistor chosen. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2266f25d4ba662cd4e40de36a5049167a9b5ad4d5996f33eb251c8a4854479d89" name="a2266f25d4ba662cd4e40de36a5049167a9b5ad4d5996f33eb251c8a4854479d89"></a>GPIO_PUPD_PULL_DOWN&#160;</td><td class="fielddoc"><p>Pull down resistor chosen. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="aaf9978d8971c86f33115b493e5d6190f" name="aaf9978d8971c86f33115b493e5d6190f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf9978d8971c86f33115b493e5d6190f">&#9670;&#160;</a></span>GPIO_SPEED_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum representing the speed of a GPIO pin which are accepted by the GPIOx_SPEEDR register. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b" name="aaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b"></a>GPIO_SPEED_LOW&#160;</td><td class="fielddoc"><p>Low speed chosen. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343" name="aaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343"></a>GPIO_SPEED_MEDIUM&#160;</td><td class="fielddoc"><p>Medium speed chosen. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12" name="aaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12"></a>GPIO_SPEED_HIGH&#160;</td><td class="fielddoc"><p>High speed chosen. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="aaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746" name="aaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746"></a>GPIO_SPEED_VERY_HIGH&#160;</td><td class="fielddoc"><p>Very high speed chosen. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<a id="a3fdce057401bc547fc9d8692f2c27764" name="a3fdce057401bc547fc9d8692f2c27764"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3fdce057401bc547fc9d8692f2c27764">&#9670;&#160;</a></span>GPIO_Status_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Enum to indicate the return status of a function. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3fdce057401bc547fc9d8692f2c27764a221c52bb468cb5191edcd5bd3fbd862c" name="a3fdce057401bc547fc9d8692f2c27764a221c52bb468cb5191edcd5bd3fbd862c"></a>GPIO_OK&#160;</td><td class="fielddoc"><p>Indicates that a function has returned successfully. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3fdce057401bc547fc9d8692f2c27764a3a8415df5bbacde0e5baa2fdac62a8b1" name="a3fdce057401bc547fc9d8692f2c27764a3a8415df5bbacde0e5baa2fdac62a8b1"></a>GPIO_INVALID_ARGS&#160;</td><td class="fielddoc"><p>Indicates that a function has been given invalid (out of range) arguments. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3fdce057401bc547fc9d8692f2c27764a655a17b7b79de8c0c8e5356f966e506f" name="a3fdce057401bc547fc9d8692f2c27764a655a17b7b79de8c0c8e5356f966e506f"></a>GPIO_ERROR&#160;</td><td class="fielddoc"><p>Indicates that a general error has occured. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a20f3f4cc40731487424a228070958166" name="a20f3f4cc40731487424a228070958166"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20f3f4cc40731487424a228070958166">&#9670;&#160;</a></span>GPIO_readPin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a> GPIO_readPin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Read a value from a specificed GPIO pin. </p>
-<p>The pin state returned can either be HIGH or LOW.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>state of the pin </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. </dd>
-<dd>
-This function does not check correctness of arguments. This responsibility is given to the caller. </dd></dl>
-
-</div>
-</div>
-<a id="a93410b92827b20bc14b1ce1f54950f80" name="a93410b92827b20bc14b1ce1f54950f80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93410b92827b20bc14b1ce1f54950f80">&#9670;&#160;</a></span>GPIO_resetPinInterrupt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_resetPinInterrupt </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reset the flag corresponding to the pin in the EXTI Pending Register. </p>
-<p>This function should be called in the EXTI_IRQ_Handler in order to allow repeated interrupts. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="a328c278fa96a3802882630ad49ee7ae3" name="a328c278fa96a3802882630ad49ee7ae3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a328c278fa96a3802882630ad49ee7ae3">&#9670;&#160;</a></span>GPIO_setPinAF_Mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_setPinAF_Mode </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a></td>          <td class="paramname"><span class="paramname"><em>pupd</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a></td>          <td class="paramname"><span class="paramname"><em>speed</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a></td>          <td class="paramname"><span class="paramname"><em>output_t</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the pin to the Alternate Function (AF) mode. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-    <tr><td class="paramname">pupd</td><td>pull up or pull down resistor state </td></tr>
-    <tr><td class="paramname">speed</td><td>desired speed </td></tr>
-    <tr><td class="paramname">output_t</td><td>output type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="a4ea71fe1e6545955e83ade36d2d9a053" name="a4ea71fe1e6545955e83ade36d2d9a053"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ea71fe1e6545955e83ade36d2d9a053">&#9670;&#160;</a></span>GPIO_setPinAF_State()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_setPinAF_State </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a50a2f4df54586ff8414f27fcb3f827db">GPIO_AF_State</a></td>          <td class="paramname"><span class="paramname"><em>af_state</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets a pin in AF mode to the desired AF state. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-    <tr><td class="paramname">af_state</td><td>the desired AF state </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This function should only be called if the pin has been set to AF (Alternate Function) mode with setPinAF_Mode. </dd></dl>
-
-</div>
-</div>
-<a id="ae6d9d08aa8ecf6a2f1237373ffe54dea" name="ae6d9d08aa8ecf6a2f1237373ffe54dea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6d9d08aa8ecf6a2f1237373ffe54dea">&#9670;&#160;</a></span>GPIO_setPinInput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_setPinInput </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a></td>          <td class="paramname"><span class="paramname"><em>pupd</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets pin to input. </p>
-<p>By default, output mode is set to PP and speed to very high.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-    <tr><td class="paramname">pupd</td><td>pull up or pull down resistor state </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="a18ca43b6164db4241faf900a1209013b" name="a18ca43b6164db4241faf900a1209013b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18ca43b6164db4241faf900a1209013b">&#9670;&#160;</a></span>GPIO_setPinInput_FC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_setPinInput_FC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a></td>          <td class="paramname"><span class="paramname"><em>pupd</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a></td>          <td class="paramname"><span class="paramname"><em>speed</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a></td>          <td class="paramname"><span class="paramname"><em>output_t</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-    <tr><td class="paramname">pupd</td><td>pull up or pull down resistor state </td></tr>
-    <tr><td class="paramname">speed</td><td>desired speed </td></tr>
-    <tr><td class="paramname">output_t</td><td>output type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="a232a16e1fe539abaaf2b4451039acbdd" name="a232a16e1fe539abaaf2b4451039acbdd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a232a16e1fe539abaaf2b4451039acbdd">&#9670;&#160;</a></span>GPIO_setPinInterrupt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_setPinInterrupt </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#ace0c7e64d6c4e935151fbb7616fe540a">GPIO_IT_TRIGGER_State</a></td>          <td class="paramname"><span class="paramname"><em>trigger_state</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets a pin to input-interrupt mode. </p>
-<p>By default, the interrupt trigger is set to rising trigger. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="ab595615510195f9a4192c7a189678fab" name="ab595615510195f9a4192c7a189678fab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab595615510195f9a4192c7a189678fab">&#9670;&#160;</a></span>GPIO_setPinOutput()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_setPinOutput </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets a pin to output mode. </p>
-<p>By default, output mode is set to PP, speed to very high and no pull up, pull down.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="a882cc33c981cd7f8dfba88f860272d8a" name="a882cc33c981cd7f8dfba88f860272d8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a882cc33c981cd7f8dfba88f860272d8a">&#9670;&#160;</a></span>GPIO_setPinOutput_FC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_setPinOutput_FC </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a></td>          <td class="paramname"><span class="paramname"><em>pupd</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a></td>          <td class="paramname"><span class="paramname"><em>speed</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a></td>          <td class="paramname"><span class="paramname"><em>output_t</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-    <tr><td class="paramname">pupd</td><td>pull up or pull down resistor state </td></tr>
-    <tr><td class="paramname">speed</td><td>desired speed </td></tr>
-    <tr><td class="paramname">output_t</td><td>output type </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-
-</div>
-</div>
-<a id="a2dbba2abe607108f74710b045b089c72" name="a2dbba2abe607108f74710b045b089c72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dbba2abe607108f74710b045b089c72">&#9670;&#160;</a></span>GPIO_togglePin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_togglePin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Toggles the state of a GPIO pin. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section warning"><dt>Warning</dt><dd>This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. </dd></dl>
-
-</div>
-</div>
-<a id="a6f78d205e4179fc73f2515d21660accf" name="a6f78d205e4179fc73f2515d21660accf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f78d205e4179fc73f2515d21660accf">&#9670;&#160;</a></span>GPIO_writePin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_writePin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a></td>          <td class="paramname"><span class="paramname"><em>state</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Write a value to a specificed GPIO pin. </p>
-<p>The pin state to be set can either be HIGH or LOW.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">port</td><td>port for the associated pin </td></tr>
-    <tr><td class="paramname">pin</td><td>pin number </td></tr>
-    <tr><td class="paramname">state</td><td>desired state of the pin </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. </dd></dl>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

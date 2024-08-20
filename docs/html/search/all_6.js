@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['tim_2eh_0',['tim.h',['../tim_8h.html',1,'']]],
-  ['tim_5fconfig_1',['TIM_config',['../tim_8h.html#a3ecfed8e3ce677c6f663d0dbec8219c4',1,'tim.h']]],
-  ['tim_5fconfig_5ftypedef_2',['TIM_Config_Typedef',['../struct_t_i_m___config___typedef.html',1,'']]],
-  ['tim_5fdisableperipheralclk_3',['TIM_disablePeripheralClk',['../tim_8h.html#a51fa45a8ad8271045073f95c61a75574',1,'tim.h']]],
-  ['tim_5fenableperipheralclk_4',['TIM_enablePeripheralClk',['../tim_8h.html#a7e436dcd8d1f9df35649297fc25de9c9',1,'tim.h']]],
-  ['tim_5ferror_5',['TIM_ERROR',['../tim_8h.html#aa7bb33976f8d2b8535cb20917287e529a102d9931bb3bd470780477491454a9b7',1,'tim.h']]],
-  ['tim_5fhasupdated_6',['TIM_hasUpdated',['../tim_8h.html#a9aefba36c49823c04220ebffd9426f81',1,'tim.h']]],
-  ['tim_5finvalid_5fargs_7',['TIM_INVALID_ARGS',['../tim_8h.html#aa7bb33976f8d2b8535cb20917287e529ac19c9a6545be99db540565b880f5a3b5',1,'tim.h']]],
-  ['tim_5fok_8',['TIM_OK',['../tim_8h.html#aa7bb33976f8d2b8535cb20917287e529aa1b7f249f72c16e5134db3932bbef8cf',1,'tim.h']]],
-  ['tim_5freseteventflag_9',['TIM_resetEventFlag',['../tim_8h.html#a678b5813bb7929232e9346038a6c756d',1,'tim.h']]],
-  ['tim_5fstatus_5fstate_10',['TIM_Status_State',['../tim_8h.html#aa7bb33976f8d2b8535cb20917287e529',1,'tim.h']]],
-  ['tim_5ftim1_11',['TIM_TIM1',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629aa058f5f936744da064a81af7df925c92',1,'tim.h']]],
-  ['tim_5ftim15_12',['TIM_TIM15',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629a2adfbe01b4734afcb0e5f2286a3dada1',1,'tim.h']]],
-  ['tim_5ftim16_13',['TIM_TIM16',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629afc85b8ba2ee6c08f0bb06fb35bc0d0fa',1,'tim.h']]],
-  ['tim_5ftim17_14',['TIM_TIM17',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629a8e199fe85c08a58bd64d2eb221290ba2',1,'tim.h']]],
-  ['tim_5ftim2_15',['TIM_TIM2',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629a5807ac86b40c78f6b47df62191b7abcc',1,'tim.h']]],
-  ['tim_5ftim3_16',['TIM_TIM3',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629a66e8161e3d14c5ed07f702f1dbdb6c8e',1,'tim.h']]],
-  ['tim_5ftim4_17',['TIM_TIM4',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629aeaf4d47a1aa1902c3771b7bca6a76e74',1,'tim.h']]],
-  ['tim_5ftim5_18',['TIM_TIM5',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629ac20fe35b963078bab3648eb2fdab80af',1,'tim.h']]],
-  ['tim_5ftim6_19',['TIM_TIM6',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629a3d45a91bc8a9a86b6fce37cd36bd0f5d',1,'tim.h']]],
-  ['tim_5ftim7_20',['TIM_TIM7',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629ad57c318b3fa8e9fe76bb1d294fe7f661',1,'tim.h']]],
-  ['tim_5ftim8_21',['TIM_TIM8',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629af19e5251b29a2f329b53e0b4fb07b87f',1,'tim.h']]],
-  ['tim_5ftimer_5fstate_22',['TIM_TIMER_State',['../tim_8h.html#a5b31ce769abb7de5285cb952034a6629',1,'tim.h']]],
-  ['timer_23',['timer',['../struct_t_i_m___config___typedef.html#ad9c393e32df95af2f6d18030bf82df98',1,'TIM_Config_Typedef']]],
-  ['true_24',['true',['../common_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7',1,'common.h']]]
+  ['psc_0',['PSC',['../struct_t_i_m___config___typedef.html#a85534f33328d4a0d1c9ef82558e33f78',1,'TIM_Config_Typedef']]]
 ];
