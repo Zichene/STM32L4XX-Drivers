@@ -94,7 +94,7 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">gpio.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;stm32l4xx.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 </div>
 <p><a href="gpio_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -177,39 +177,39 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8a0f91640c59b17dcf1ee4e002849d17" id="r_a8a0f91640c59b17dcf1ee4e002849d17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8a0f91640c59b17dcf1ee4e002849d17">GPIO_setPinOutput</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin)</td></tr>
-<tr class="memdesc:a8a0f91640c59b17dcf1ee4e002849d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to output mode.  <br /></td></tr>
-<tr class="separator:a8a0f91640c59b17dcf1ee4e002849d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a827460fad3bcd710003baa4709e4f6b4" id="r_a827460fad3bcd710003baa4709e4f6b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a827460fad3bcd710003baa4709e4f6b4">GPIO_setPinOutput_FC</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
-<tr class="memdesc:a827460fad3bcd710003baa4709e4f6b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type.  <br /></td></tr>
-<tr class="separator:a827460fad3bcd710003baa4709e4f6b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e1de41304bd292da8b13c1cb7ed19af" id="r_a3e1de41304bd292da8b13c1cb7ed19af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e1de41304bd292da8b13c1cb7ed19af">GPIO_setPinInput</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd)</td></tr>
-<tr class="memdesc:a3e1de41304bd292da8b13c1cb7ed19af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets pin to input.  <br /></td></tr>
-<tr class="separator:a3e1de41304bd292da8b13c1cb7ed19af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d1650a0766603d8ed138433403940ca" id="r_a0d1650a0766603d8ed138433403940ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d1650a0766603d8ed138433403940ca">GPIO_setPinInput_FC</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
-<tr class="memdesc:a0d1650a0766603d8ed138433403940ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type.  <br /></td></tr>
-<tr class="separator:a0d1650a0766603d8ed138433403940ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1ba4d96723bcbf0d5a401f0e892222f" id="r_ae1ba4d96723bcbf0d5a401f0e892222f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1ba4d96723bcbf0d5a401f0e892222f">GPIO_writePin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin, <a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a> state)</td></tr>
-<tr class="memdesc:ae1ba4d96723bcbf0d5a401f0e892222f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a value to a specificed GPIO pin.  <br /></td></tr>
-<tr class="separator:ae1ba4d96723bcbf0d5a401f0e892222f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6295773e205127ac27efa76b3a94e17" id="r_ae6295773e205127ac27efa76b3a94e17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6295773e205127ac27efa76b3a94e17">GPIO_readPin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin)</td></tr>
-<tr class="memdesc:ae6295773e205127ac27efa76b3a94e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from a specificed GPIO pin.  <br /></td></tr>
-<tr class="separator:ae6295773e205127ac27efa76b3a94e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30357ffcc9792de174de91fd11e9766c" id="r_a30357ffcc9792de174de91fd11e9766c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30357ffcc9792de174de91fd11e9766c">GPIO_togglePin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin)</td></tr>
-<tr class="memdesc:a30357ffcc9792de174de91fd11e9766c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the state of a GPIO pin.  <br /></td></tr>
-<tr class="separator:a30357ffcc9792de174de91fd11e9766c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07805c2a3f4d3eb775892e426efc3bac" id="r_a07805c2a3f4d3eb775892e426efc3bac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07805c2a3f4d3eb775892e426efc3bac">GPIO_setPinInterrupt</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin, <a class="el" href="#ace0c7e64d6c4e935151fbb7616fe540a">GPIO_IT_TRIGGER_State</a> trigger_state)</td></tr>
-<tr class="memdesc:a07805c2a3f4d3eb775892e426efc3bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to input-interrupt mode.  <br /></td></tr>
-<tr class="separator:a07805c2a3f4d3eb775892e426efc3bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa284a14e9a888b31d195b921aa4ee7b1" id="r_aa284a14e9a888b31d195b921aa4ee7b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa284a14e9a888b31d195b921aa4ee7b1">GPIO_resetPinInterrupt</a> (char pin)</td></tr>
-<tr class="memdesc:aa284a14e9a888b31d195b921aa4ee7b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the flag corresponding to the pin in the EXTI Pending Register.  <br /></td></tr>
-<tr class="separator:aa284a14e9a888b31d195b921aa4ee7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ebab1fbaf9438863036472f90c10a6f" id="r_a4ebab1fbaf9438863036472f90c10a6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ebab1fbaf9438863036472f90c10a6f">GPIO_setPinAF_Mode</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
-<tr class="memdesc:a4ebab1fbaf9438863036472f90c10a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pin to the Alternate Function (AF) mode.  <br /></td></tr>
-<tr class="separator:a4ebab1fbaf9438863036472f90c10a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab97cc3656dd2bfde4eedf72ba1524d9" id="r_aab97cc3656dd2bfde4eedf72ba1524d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab97cc3656dd2bfde4eedf72ba1524d9">GPIO_setPinAF_State</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827db">GPIO_AF_State</a> af_state)</td></tr>
-<tr class="memdesc:aab97cc3656dd2bfde4eedf72ba1524d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin in AF mode to the desired AF state.  <br /></td></tr>
-<tr class="separator:aab97cc3656dd2bfde4eedf72ba1524d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab595615510195f9a4192c7a189678fab" id="r_ab595615510195f9a4192c7a189678fab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab595615510195f9a4192c7a189678fab">GPIO_setPinOutput</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
+<tr class="memdesc:ab595615510195f9a4192c7a189678fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to output mode.  <br /></td></tr>
+<tr class="separator:ab595615510195f9a4192c7a189678fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882cc33c981cd7f8dfba88f860272d8a" id="r_a882cc33c981cd7f8dfba88f860272d8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882cc33c981cd7f8dfba88f860272d8a">GPIO_setPinOutput_FC</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
+<tr class="memdesc:a882cc33c981cd7f8dfba88f860272d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type.  <br /></td></tr>
+<tr class="separator:a882cc33c981cd7f8dfba88f860272d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6d9d08aa8ecf6a2f1237373ffe54dea" id="r_ae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6d9d08aa8ecf6a2f1237373ffe54dea">GPIO_setPinInput</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd)</td></tr>
+<tr class="memdesc:ae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets pin to input.  <br /></td></tr>
+<tr class="separator:ae6d9d08aa8ecf6a2f1237373ffe54dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ca43b6164db4241faf900a1209013b" id="r_a18ca43b6164db4241faf900a1209013b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18ca43b6164db4241faf900a1209013b">GPIO_setPinInput_FC</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
+<tr class="memdesc:a18ca43b6164db4241faf900a1209013b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type.  <br /></td></tr>
+<tr class="separator:a18ca43b6164db4241faf900a1209013b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f78d205e4179fc73f2515d21660accf" id="r_a6f78d205e4179fc73f2515d21660accf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f78d205e4179fc73f2515d21660accf">GPIO_writePin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a> state)</td></tr>
+<tr class="memdesc:a6f78d205e4179fc73f2515d21660accf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a value to a specificed GPIO pin.  <br /></td></tr>
+<tr class="separator:a6f78d205e4179fc73f2515d21660accf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20f3f4cc40731487424a228070958166" id="r_a20f3f4cc40731487424a228070958166"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5b3ef0486b179415581eb342e0ea6b43">GPIO_PinState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20f3f4cc40731487424a228070958166">GPIO_readPin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
+<tr class="memdesc:a20f3f4cc40731487424a228070958166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from a specificed GPIO pin.  <br /></td></tr>
+<tr class="separator:a20f3f4cc40731487424a228070958166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbba2abe607108f74710b045b089c72" id="r_a2dbba2abe607108f74710b045b089c72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dbba2abe607108f74710b045b089c72">GPIO_togglePin</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin)</td></tr>
+<tr class="memdesc:a2dbba2abe607108f74710b045b089c72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggles the state of a GPIO pin.  <br /></td></tr>
+<tr class="separator:a2dbba2abe607108f74710b045b089c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a232a16e1fe539abaaf2b4451039acbdd" id="r_a232a16e1fe539abaaf2b4451039acbdd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a232a16e1fe539abaaf2b4451039acbdd">GPIO_setPinInterrupt</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#ace0c7e64d6c4e935151fbb7616fe540a">GPIO_IT_TRIGGER_State</a> trigger_state)</td></tr>
+<tr class="memdesc:a232a16e1fe539abaaf2b4451039acbdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin to input-interrupt mode.  <br /></td></tr>
+<tr class="separator:a232a16e1fe539abaaf2b4451039acbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93410b92827b20bc14b1ce1f54950f80" id="r_a93410b92827b20bc14b1ce1f54950f80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93410b92827b20bc14b1ce1f54950f80">GPIO_resetPinInterrupt</a> (uint8_t pin)</td></tr>
+<tr class="memdesc:a93410b92827b20bc14b1ce1f54950f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the flag corresponding to the pin in the EXTI Pending Register.  <br /></td></tr>
+<tr class="separator:a93410b92827b20bc14b1ce1f54950f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328c278fa96a3802882630ad49ee7ae3" id="r_a328c278fa96a3802882630ad49ee7ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a328c278fa96a3802882630ad49ee7ae3">GPIO_setPinAF_Mode</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a2266f25d4ba662cd4e40de36a5049167">GPIO_PUPD_State</a> pupd, <a class="el" href="#aaf9978d8971c86f33115b493e5d6190f">GPIO_SPEED_State</a> speed, <a class="el" href="#ad95ee31148019b4ae8d63e5a3e0777ee">GPIO_OUTPUT_TYPE_State</a> output_t)</td></tr>
+<tr class="memdesc:a328c278fa96a3802882630ad49ee7ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pin to the Alternate Function (AF) mode.  <br /></td></tr>
+<tr class="separator:a328c278fa96a3802882630ad49ee7ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ea71fe1e6545955e83ade36d2d9a053" id="r_a4ea71fe1e6545955e83ade36d2d9a053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ea71fe1e6545955e83ade36d2d9a053">GPIO_setPinAF_State</a> (<a class="el" href="#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a50a2f4df54586ff8414f27fcb3f827db">GPIO_AF_State</a> af_state)</td></tr>
+<tr class="memdesc:a4ea71fe1e6545955e83ade36d2d9a053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a pin in AF mode to the desired AF state.  <br /></td></tr>
+<tr class="separator:a4ea71fe1e6545955e83ade36d2d9a053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a50a2f4df54586ff8414f27fcb3f827db" name="a50a2f4df54586ff8414f27fcb3f827db"></a>
@@ -440,8 +440,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae6295773e205127ac27efa76b3a94e17" name="ae6295773e205127ac27efa76b3a94e17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6295773e205127ac27efa76b3a94e17">&#9670;&#160;</a></span>GPIO_readPin()</h2>
+<a id="a20f3f4cc40731487424a228070958166" name="a20f3f4cc40731487424a228070958166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f3f4cc40731487424a228070958166">&#9670;&#160;</a></span>GPIO_readPin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,7 +454,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -471,12 +471,12 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>state of the pin </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. </dd>
 <dd>
-This function does not check the arguments. This responsibility is left to the user. </dd></dl>
+This function does not check correctness of arguments. This responsibility is given to the caller. </dd></dl>
 
 </div>
 </div>
-<a id="aa284a14e9a888b31d195b921aa4ee7b1" name="aa284a14e9a888b31d195b921aa4ee7b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa284a14e9a888b31d195b921aa4ee7b1">&#9670;&#160;</a></span>GPIO_resetPinInterrupt()</h2>
+<a id="a93410b92827b20bc14b1ce1f54950f80" name="a93410b92827b20bc14b1ce1f54950f80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93410b92827b20bc14b1ce1f54950f80">&#9670;&#160;</a></span>GPIO_resetPinInterrupt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -484,7 +484,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="memname"><a class="el" href="#a3fdce057401bc547fc9d8692f2c27764">GPIO_Status_State</a> GPIO_resetPinInterrupt </td>
           <td>(</td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span></td><td>)</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -501,8 +501,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="a4ebab1fbaf9438863036472f90c10a6f" name="a4ebab1fbaf9438863036472f90c10a6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ebab1fbaf9438863036472f90c10a6f">&#9670;&#160;</a></span>GPIO_setPinAF_Mode()</h2>
+<a id="a328c278fa96a3802882630ad49ee7ae3" name="a328c278fa96a3802882630ad49ee7ae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328c278fa96a3802882630ad49ee7ae3">&#9670;&#160;</a></span>GPIO_setPinAF_Mode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -515,7 +515,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -550,8 +550,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="aab97cc3656dd2bfde4eedf72ba1524d9" name="aab97cc3656dd2bfde4eedf72ba1524d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab97cc3656dd2bfde4eedf72ba1524d9">&#9670;&#160;</a></span>GPIO_setPinAF_State()</h2>
+<a id="a4ea71fe1e6545955e83ade36d2d9a053" name="a4ea71fe1e6545955e83ade36d2d9a053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ea71fe1e6545955e83ade36d2d9a053">&#9670;&#160;</a></span>GPIO_setPinAF_State()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -564,7 +564,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -588,8 +588,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="a3e1de41304bd292da8b13c1cb7ed19af" name="a3e1de41304bd292da8b13c1cb7ed19af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e1de41304bd292da8b13c1cb7ed19af">&#9670;&#160;</a></span>GPIO_setPinInput()</h2>
+<a id="ae6d9d08aa8ecf6a2f1237373ffe54dea" name="ae6d9d08aa8ecf6a2f1237373ffe54dea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6d9d08aa8ecf6a2f1237373ffe54dea">&#9670;&#160;</a></span>GPIO_setPinInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -602,7 +602,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -626,8 +626,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="a0d1650a0766603d8ed138433403940ca" name="a0d1650a0766603d8ed138433403940ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d1650a0766603d8ed138433403940ca">&#9670;&#160;</a></span>GPIO_setPinInput_FC()</h2>
+<a id="a18ca43b6164db4241faf900a1209013b" name="a18ca43b6164db4241faf900a1209013b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ca43b6164db4241faf900a1209013b">&#9670;&#160;</a></span>GPIO_setPinInput_FC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -640,7 +640,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -675,8 +675,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="a07805c2a3f4d3eb775892e426efc3bac" name="a07805c2a3f4d3eb775892e426efc3bac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07805c2a3f4d3eb775892e426efc3bac">&#9670;&#160;</a></span>GPIO_setPinInterrupt()</h2>
+<a id="a232a16e1fe539abaaf2b4451039acbdd" name="a232a16e1fe539abaaf2b4451039acbdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a232a16e1fe539abaaf2b4451039acbdd">&#9670;&#160;</a></span>GPIO_setPinInterrupt()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -689,7 +689,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -711,8 +711,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="a8a0f91640c59b17dcf1ee4e002849d17" name="a8a0f91640c59b17dcf1ee4e002849d17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a0f91640c59b17dcf1ee4e002849d17">&#9670;&#160;</a></span>GPIO_setPinOutput()</h2>
+<a id="ab595615510195f9a4192c7a189678fab" name="ab595615510195f9a4192c7a189678fab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab595615510195f9a4192c7a189678fab">&#9670;&#160;</a></span>GPIO_setPinOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -725,7 +725,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -743,8 +743,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="a827460fad3bcd710003baa4709e4f6b4" name="a827460fad3bcd710003baa4709e4f6b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a827460fad3bcd710003baa4709e4f6b4">&#9670;&#160;</a></span>GPIO_setPinOutput_FC()</h2>
+<a id="a882cc33c981cd7f8dfba88f860272d8a" name="a882cc33c981cd7f8dfba88f860272d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882cc33c981cd7f8dfba88f860272d8a">&#9670;&#160;</a></span>GPIO_setPinOutput_FC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -757,7 +757,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -792,8 +792,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="a30357ffcc9792de174de91fd11e9766c" name="a30357ffcc9792de174de91fd11e9766c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30357ffcc9792de174de91fd11e9766c">&#9670;&#160;</a></span>GPIO_togglePin()</h2>
+<a id="a2dbba2abe607108f74710b045b089c72" name="a2dbba2abe607108f74710b045b089c72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dbba2abe607108f74710b045b089c72">&#9670;&#160;</a></span>GPIO_togglePin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -806,7 +806,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -823,8 +823,8 @@ This function does not check the arguments. This responsibility is left to the u
 
 </div>
 </div>
-<a id="ae1ba4d96723bcbf0d5a401f0e892222f" name="ae1ba4d96723bcbf0d5a401f0e892222f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1ba4d96723bcbf0d5a401f0e892222f">&#9670;&#160;</a></span>GPIO_writePin()</h2>
+<a id="a6f78d205e4179fc73f2515d21660accf" name="a6f78d205e4179fc73f2515d21660accf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f78d205e4179fc73f2515d21660accf">&#9670;&#160;</a></span>GPIO_writePin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -837,7 +837,7 @@ This function does not check the arguments. This responsibility is left to the u
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

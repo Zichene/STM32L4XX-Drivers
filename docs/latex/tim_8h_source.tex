@@ -4,7 +4,7 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TIM\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TIM\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stm32l4xx.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8h}{common.h}}"{}}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{clock_8h}{clock.h}}"{}}}
 \DoxyCodeLine{00005\ }
 \DoxyCodeLine{00006\ \textcolor{comment}{/***}}
@@ -40,17 +40,34 @@
 \DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529a102d9931bb3bd470780477491454a9b7}{TIM\_ERROR}}\ =\ 2,\ }
 \DoxyCodeLine{00041\ \}\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\_Status\_State}};}
 \DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00045\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00046\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00052\ \mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\_Status\_State}}\ \mbox{\hyperlink{tim_8h_a7a3a58de0732b9e01441e37971a9b22c}{TIM\_enableTimer}}(\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\_TIMER\_State}}\ timer);}
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\_TIMER\_State}}\ \mbox{\hyperlink{struct_t_i_m___config___typedef_ad9c393e32df95af2f6d18030bf82df98}{timer}};\ }
+\DoxyCodeLine{00045\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_t_i_m___config___typedef_a85534f33328d4a0d1c9ef82558e33f78}{PSC}};\ }
+\DoxyCodeLine{00046\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_t_i_m___config___typedef_a0cffa5dda75b6b5e4a71f4fa6915203f}{ARR}};\ }
+\DoxyCodeLine{00047\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_t_i_m___config___typedef_a000fcbd6dead41212e3191fc83830019}{enableInterrupt}};\ }
+\DoxyCodeLine{00048\ \}\mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\_Config\_Typedef}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00051\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00052\ \textcolor{comment}{/****************************************************************************************************/}}
 \DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00060\ \mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\_Status\_State}}\ \mbox{\hyperlink{tim_8h_ad4da019622d918baac5ba41af6c80efc}{TIM\_disableTimer}}(\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\_TIMER\_State}}\ timer);}
+\DoxyCodeLine{00058\ \mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\_Status\_State}}\ \mbox{\hyperlink{tim_8h_a7e436dcd8d1f9df35649297fc25de9c9}{TIM\_enablePeripheralClk}}(\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\_TIMER\_State}}\ timer);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
 \DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ \mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\_Status\_State}}\ \mbox{\hyperlink{tim_8h_a51fa45a8ad8271045073f95c61a75574}{TIM\_disablePeripheralClk}}(\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\_TIMER\_State}}\ timer);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\_Status\_State}}\ \mbox{\hyperlink{tim_8h_a3ecfed8e3ce677c6f663d0dbec8219c4}{TIM\_config}}(\mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\_Config\_Typedef}}*\ config);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00084\ uint8\_t\ \mbox{\hyperlink{tim_8h_a9aefba36c49823c04220ebffd9426f81}{TIM\_hasUpdated}}(\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\_TIMER\_State}}\ timer,\ uint8\_t\ reset\_flag);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00092\ \mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\_Status\_State}}\ \mbox{\hyperlink{tim_8h_a678b5813bb7929232e9346038a6c756d}{TIM\_resetEventFlag}}(\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\_TIMER\_State}}\ timer);}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

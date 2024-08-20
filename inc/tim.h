@@ -1,6 +1,6 @@
 #ifndef TIM_H
 #define TIM_H
-#include "stm32l4xx.h"
+#include "common.h"
 #include "clock.h"
 
 /***
@@ -41,7 +41,10 @@ typedef enum {
 }TIM_Status_State;
 
 typedef struct {
-	
+	TIM_TIMER_State timer; ///< Timer. Which timer will be configured.
+	uint16_t PSC; ///< Prescaler. The counter clock frequency CK_CNT is equal to fCK_PSC / (PSC[15:0] + 1).
+	uint16_t ARR; ///< Auto-Reload register. Defines the maximum number that the timer will count up to (or down from).
+	uint8_t enableInterrupt; ///< Boolean that controls whether or not the clock should generate interrupts. 
 }TIM_Config_Typedef;
 
 /****************************************************************************************************/
@@ -62,4 +65,29 @@ TIM_Status_State TIM_enablePeripheralClk(TIM_TIMER_State timer);
 */
 TIM_Status_State TIM_disablePeripheralClk(TIM_TIMER_State timer);
 
+
+
+/**@brief Enables and configure a timer with desired config parameters. See TIM_Config_Typedef for specific parameters.
+* @param config pointer to a TIM_Config_Typedef object that contains the parameter configuration
+* @return status
+*/
+TIM_Status_State TIM_config(TIM_Config_Typedef* config);
+
+
+
+/**@brief Checks the update interrupt flag (UIF) in the TIMx_SR register. Optionally, can choose to reset UIF to '0' if '1' is read.
+* @param timer timer.
+* @param reset_flag boolean to indicate whether we want to automatically reset the UIF flag to '0'.
+* @return value of the UIF flag.
+* @warning This function does not check correctness of arguments. This responsibility is given to the caller.
+*/
+uint8_t TIM_hasUpdated(TIM_TIMER_State timer, uint8_t reset_flag);
+
+
+
+/**@brief Resets the UIF flag in the TIMx_SR register.
+* @param timer timer.
+* @return status 
+*/
+TIM_Status_State TIM_resetEventFlag(TIM_TIMER_State timer);
 #endif

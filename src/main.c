@@ -20,31 +20,54 @@ For the B-L4S5I-IOT01A board, the pin PB14 is connected to LED2 and PC13 is conn
 
 void ErrorHandler();
 
+
+
 int main(void)
 {
+	/* DEBUG led pin */
 	GPIO_setPinOutput(LED_WIFI_Port, LED_WIFI_Pin);
 	
-	/* Enable the PLL clock */
-	if (CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 60, CLOCK_PLLR_2) != CLOCK_OK) ErrorHandler();
+	/* Configure the system clock correctly for the pin */
+	if (CLOCK_isActivated(CLOCK_PLL)) CLOCK_desactivateClk(CLOCK_PLL); // disable PLL if it is enabled
+	if (!CLOCK_isActivated(CLOCK_MSI)) CLOCK_activateClk(CLOCK_MSI); // activate HSI if it is disabled
+	if (CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 60, CLOCK_PLLR_2) != CLOCK_OK)
+		 ErrorHandler();
+	
 	CLOCK_activateClk(CLOCK_PLL);
-	int pllSpeed = CLOCK_getPLLClockSpeed();
-	CLOCK_activateClk(CLOCK_HSI);
-	if (CLOCK_setSystemClock(CLOCK_SYSCLK_PLL) != CLOCK_OK) ErrorHandler();
-	/* Check the system clock speed */
-	int sysSpeed = CLOCK_getSystemClockSpeed();
+	CLOCK_setSystemClock(CLOCK_SYSCLK_PLL); // activate and set system clock to PLL
 	
-	if (CLOCK_setAHBPrescaler(CLOCK_AHB_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
-	if (CLOCK_setAPB1Prescaler(CLOCK_APB1_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
-	if (CLOCK_setAPB2Prescaler(CLOCK_APB2_PRE_DIV_4) != CLOCK_OK) ErrorHandler();
+	/* sysclk should be 120 MHz */
+	if (CLOCK_getSystemClockSpeed() != 120000000)
+		ErrorHandler();
 	
-	TIM_enablePeripheralClk(TIM_TIM2);
-	TIM_disablePeripheralClk(TIM_TIM2);
+	/* make sure that bus prescalers are set to 1 */
+	CLOCK_setAHBPrescaler(CLOCK_AHB_PRE_DIV_1);
+	CLOCK_setAPB1Prescaler(CLOCK_APB1_PRE_DIV_1);
+	
+	/* Setup timer using TIM2 so that LED turns on or off every second */
+	TIM_Config_Typedef tim2_config = {
+	.ARR=3000, // Period of 3000
+	.PSC=40000, // Prescaler of 40000
+	.timer = TIM_TIM2,
+	.enableInterrupt = true,
+	};
+	TIM_config(&tim2_config);
+	
+	/* button interrupt setup */
 	GPIO_setPinInterrupt(PB_Port, PB_Pin, GPIO_IT_TRIGGER_RISING);
 	GPIO_setPinOutput(LED2_Port, LED2_Pin);
 	
 	while (1) {
+//		if (TIM_hasUpdated(TIM_TIM2, true)) {
+//			GPIO_togglePin(LED2_Port, LED2_Pin);
+//		}
 	}
 	
+}
+
+void TIM2_IRQHandler() {
+	TIM_resetEventFlag(TIM_TIM2);
+	GPIO_togglePin(LED2_Port, LED2_Pin);
 }
 
 void EXTI15_10_IRQHandler(){

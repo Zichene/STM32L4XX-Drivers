@@ -94,7 +94,7 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">clock.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;stm32l4xx.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="gpio_8h_source.html">gpio.h</a>&quot;</code><br />
 </div>
 <p><a href="clock_8h_source.html">Go to the source code of this file.</a></p>
@@ -209,36 +209,36 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af32fa2488b07b90331da3c4d208e533b" id="r_af32fa2488b07b90331da3c4d208e533b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af32fa2488b07b90331da3c4d208e533b">CLOCK_activateMCO</a> (<a class="el" href="gpio_8h.html#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, char pin, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59">CLOCK_MCO_SELECT_State</a> mco_sel_state, <a class="el" href="#aaa0363e0e9775584599d94565f8e0e60">CLOCK_MCO_PRESCALER_State</a> mco_pre_state)</td></tr>
-<tr class="memdesc:af32fa2488b07b90331da3c4d208e533b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the Master Clock Output pin to the selected output state.  <br /></td></tr>
-<tr class="separator:af32fa2488b07b90331da3c4d208e533b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9637455690355b1be6e1014d939fbe83" id="r_a9637455690355b1be6e1014d939fbe83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9637455690355b1be6e1014d939fbe83">CLOCK_configPLL</a> (<a class="el" href="#aceb416b702f94d30e139e49e8e10a76f">CLOCK_PLL_SOURCE_State</a> pll_src, char PLL_M, char PLL_N, <a class="el" href="#a9b771949ba6bccb42317a3e5e089cded">CLOCK_PLLR_State</a> PLL_R)</td></tr>
-<tr class="memdesc:a9637455690355b1be6e1014d939fbe83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the PLL clock so that it may be used as the System clock.  <br /></td></tr>
-<tr class="separator:a9637455690355b1be6e1014d939fbe83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8944a0ca3338276a0cec89f8d9df358a" id="r_a8944a0ca3338276a0cec89f8d9df358a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8944a0ca3338276a0cec89f8d9df358a">CLOCK_isActivated</a> (<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
-<tr class="memdesc:a8944a0ca3338276a0cec89f8d9df358a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a clock is activated or not by reading from RCC control registers.  <br /></td></tr>
-<tr class="separator:a8944a0ca3338276a0cec89f8d9df358a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625103ea87a9510c347baaf2126d27e3" id="r_a625103ea87a9510c347baaf2126d27e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a625103ea87a9510c347baaf2126d27e3">CLOCK_activateMCO</a> (<a class="el" href="gpio_8h.html#af164c756418dde00ac07fd47d0962150">GPIO_Port</a> port, uint8_t pin, <a class="el" href="#a8fab271b291b83bd742e9099a9f20a59">CLOCK_MCO_SELECT_State</a> mco_sel_state, <a class="el" href="#aaa0363e0e9775584599d94565f8e0e60">CLOCK_MCO_PRESCALER_State</a> mco_pre_state)</td></tr>
+<tr class="memdesc:a625103ea87a9510c347baaf2126d27e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates the Master Clock Output pin to the selected output state.  <br /></td></tr>
+<tr class="separator:a625103ea87a9510c347baaf2126d27e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa11ce7252db60000e142bc3ff6aff0be" id="r_aa11ce7252db60000e142bc3ff6aff0be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa11ce7252db60000e142bc3ff6aff0be">CLOCK_configPLL</a> (<a class="el" href="#aceb416b702f94d30e139e49e8e10a76f">CLOCK_PLL_SOURCE_State</a> pll_src, uint8_t PLL_M, uint8_t PLL_N, <a class="el" href="#a9b771949ba6bccb42317a3e5e089cded">CLOCK_PLLR_State</a> PLL_R)</td></tr>
+<tr class="memdesc:aa11ce7252db60000e142bc3ff6aff0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the PLL clock so that it may be used as the System clock.  <br /></td></tr>
+<tr class="separator:aa11ce7252db60000e142bc3ff6aff0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9cd115f3011d6546563628b1da16eb4" id="r_ae9cd115f3011d6546563628b1da16eb4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9cd115f3011d6546563628b1da16eb4">CLOCK_isActivated</a> (<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
+<tr class="memdesc:ae9cd115f3011d6546563628b1da16eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a clock is activated or not by reading from RCC control registers.  <br /></td></tr>
+<tr class="separator:ae9cd115f3011d6546563628b1da16eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08716e6071c93768a4091dc5947e104f" id="r_a08716e6071c93768a4091dc5947e104f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08716e6071c93768a4091dc5947e104f">CLOCK_activateClk</a> (<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
 <tr class="memdesc:a08716e6071c93768a4091dc5947e104f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activates a desired clock.  <br /></td></tr>
 <tr class="separator:a08716e6071c93768a4091dc5947e104f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34f1183e02b1e5320ccf45c6e646b918" id="r_a34f1183e02b1e5320ccf45c6e646b918"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34f1183e02b1e5320ccf45c6e646b918">CLOCK_desactivateClk</a> (<a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a> clk)</td></tr>
 <tr class="memdesc:a34f1183e02b1e5320ccf45c6e646b918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desactivates a desired clock.  <br /></td></tr>
 <tr class="separator:a34f1183e02b1e5320ccf45c6e646b918"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c77fd34e367e2b9fd11046bceeadbd0" id="r_a9c77fd34e367e2b9fd11046bceeadbd0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c77fd34e367e2b9fd11046bceeadbd0">CLOCK_getPLLClockSpeed</a> ()</td></tr>
-<tr class="memdesc:a9c77fd34e367e2b9fd11046bceeadbd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the PLL clock, if it is activated.  <br /></td></tr>
-<tr class="separator:a9c77fd34e367e2b9fd11046bceeadbd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5961d39318d181b59c08bdd25e6d0742" id="r_a5961d39318d181b59c08bdd25e6d0742"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5961d39318d181b59c08bdd25e6d0742">CLOCK_getMSIClockSpeed</a> ()</td></tr>
-<tr class="memdesc:a5961d39318d181b59c08bdd25e6d0742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the MSI (Multi-Speed Internal) clock.  <br /></td></tr>
-<tr class="separator:a5961d39318d181b59c08bdd25e6d0742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb218eef31523ec71b30062ef98a0d49" id="r_afb218eef31523ec71b30062ef98a0d49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb218eef31523ec71b30062ef98a0d49">CLOCK_setHSEClockSpeed</a> (int speed)</td></tr>
-<tr class="memdesc:afb218eef31523ec71b30062ef98a0d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the speed of the external clock oscillator, if one is available.  <br /></td></tr>
-<tr class="separator:afb218eef31523ec71b30062ef98a0d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a541195c1a15625335a8432521e33aeeb" id="r_a541195c1a15625335a8432521e33aeeb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a541195c1a15625335a8432521e33aeeb">CLOCK_getHSEClockSpeed</a> ()</td></tr>
-<tr class="memdesc:a541195c1a15625335a8432521e33aeeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the HSE (High-Speed External) clock.  <br /></td></tr>
-<tr class="separator:a541195c1a15625335a8432521e33aeeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a576b63236d3aa77e1165456de93f82ed" id="r_a576b63236d3aa77e1165456de93f82ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a576b63236d3aa77e1165456de93f82ed">CLOCK_getSystemClockSpeed</a> ()</td></tr>
-<tr class="memdesc:a576b63236d3aa77e1165456de93f82ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the system clock.  <br /></td></tr>
-<tr class="separator:a576b63236d3aa77e1165456de93f82ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f2307ce6d6b1285d62ba0fc709f680" id="r_a50f2307ce6d6b1285d62ba0fc709f680"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50f2307ce6d6b1285d62ba0fc709f680">CLOCK_getPLLClockSpeed</a> ()</td></tr>
+<tr class="memdesc:a50f2307ce6d6b1285d62ba0fc709f680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the PLL clock, if it is activated.  <br /></td></tr>
+<tr class="separator:a50f2307ce6d6b1285d62ba0fc709f680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353083c3916c8933c43eb0a1c5c94052" id="r_a353083c3916c8933c43eb0a1c5c94052"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353083c3916c8933c43eb0a1c5c94052">CLOCK_getMSIClockSpeed</a> ()</td></tr>
+<tr class="memdesc:a353083c3916c8933c43eb0a1c5c94052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the MSI (Multi-Speed Internal) clock.  <br /></td></tr>
+<tr class="separator:a353083c3916c8933c43eb0a1c5c94052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6da82f8e33ab80367bf38ea54592f240" id="r_a6da82f8e33ab80367bf38ea54592f240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6da82f8e33ab80367bf38ea54592f240">CLOCK_setHSEClockSpeed</a> (uint32_t speed)</td></tr>
+<tr class="memdesc:a6da82f8e33ab80367bf38ea54592f240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the speed of the external clock oscillator, if one is available.  <br /></td></tr>
+<tr class="separator:a6da82f8e33ab80367bf38ea54592f240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7188c2da80700782ba6b028486e269c" id="r_ab7188c2da80700782ba6b028486e269c"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7188c2da80700782ba6b028486e269c">CLOCK_getHSEClockSpeed</a> ()</td></tr>
+<tr class="memdesc:ab7188c2da80700782ba6b028486e269c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the HSE (High-Speed External) clock.  <br /></td></tr>
+<tr class="separator:ab7188c2da80700782ba6b028486e269c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0674018763aa72b723804b8d8183eb" id="r_ada0674018763aa72b723804b8d8183eb"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada0674018763aa72b723804b8d8183eb">CLOCK_getSystemClockSpeed</a> ()</td></tr>
+<tr class="memdesc:ada0674018763aa72b723804b8d8183eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the speed (frequency) in Hz of the system clock.  <br /></td></tr>
+<tr class="separator:ada0674018763aa72b723804b8d8183eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3f9097ce53adfff82cb70ddea07c27d" id="r_ad3f9097ce53adfff82cb70ddea07c27d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5aa3fa30a332173aafcc460104d0a159">CLOCK_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3f9097ce53adfff82cb70ddea07c27d">CLOCK_setSystemClock</a> (<a class="el" href="#ab8ea3cd345873e8a031469d82633ee72">CLOCK_SYSCLK_State</a> sysclk)</td></tr>
 <tr class="memdesc:ad3f9097ce53adfff82cb70ddea07c27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the system clock.  <br /></td></tr>
 <tr class="separator:ad3f9097ce53adfff82cb70ddea07c27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -571,12 +571,12 @@ Functions</h2></td></tr>
 <dd>
 Blocking function. Will only return once a 'RDY' flag has been raised by the clock hardware (clock stabilized). </dd>
 <dd>
-For the PLL clock, it is necessary to call <a class="el" href="#a9637455690355b1be6e1014d939fbe83" title="Configures the PLL clock so that it may be used as the System clock.">CLOCK_configPLL()</a> first before calling this function. </dd></dl>
+For the PLL clock, it is necessary to call <a class="el" href="#aa11ce7252db60000e142bc3ff6aff0be" title="Configures the PLL clock so that it may be used as the System clock.">CLOCK_configPLL()</a> first before calling this function. </dd></dl>
 
 </div>
 </div>
-<a id="af32fa2488b07b90331da3c4d208e533b" name="af32fa2488b07b90331da3c4d208e533b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af32fa2488b07b90331da3c4d208e533b">&#9670;&#160;</a></span>CLOCK_activateMCO()</h2>
+<a id="a625103ea87a9510c347baaf2126d27e3" name="a625103ea87a9510c347baaf2126d27e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625103ea87a9510c347baaf2126d27e3">&#9670;&#160;</a></span>CLOCK_activateMCO()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -589,7 +589,7 @@ For the PLL clock, it is necessary to call <a class="el" href="#a9637455690355b1
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pin</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -621,8 +621,8 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
 
 </div>
 </div>
-<a id="a9637455690355b1be6e1014d939fbe83" name="a9637455690355b1be6e1014d939fbe83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9637455690355b1be6e1014d939fbe83">&#9670;&#160;</a></span>CLOCK_configPLL()</h2>
+<a id="aa11ce7252db60000e142bc3ff6aff0be" name="aa11ce7252db60000e142bc3ff6aff0be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11ce7252db60000e142bc3ff6aff0be">&#9670;&#160;</a></span>CLOCK_configPLL()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -635,12 +635,12 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>PLL_M</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>PLL_M</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>PLL_N</em></span>, </td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>PLL_N</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -661,7 +661,7 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This function can only be called if the PLL clock is disabled. Use <a class="el" href="#a8944a0ca3338276a0cec89f8d9df358a" title="Checks if a clock is activated or not by reading from RCC control registers.">CLOCK_isActivated()</a> and <a class="el" href="#a34f1183e02b1e5320ccf45c6e646b918" title="Desactivates a desired clock.">CLOCK_desactivateClk()</a> before calling this function. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This function can only be called if the PLL clock is disabled. Use <a class="el" href="#ae9cd115f3011d6546563628b1da16eb4" title="Checks if a clock is activated or not by reading from RCC control registers.">CLOCK_isActivated()</a> and <a class="el" href="#a34f1183e02b1e5320ccf45c6e646b918" title="Desactivates a desired clock.">CLOCK_desactivateClk()</a> before calling this function. </dd></dl>
 
 </div>
 </div>
@@ -692,14 +692,14 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
 
 </div>
 </div>
-<a id="a541195c1a15625335a8432521e33aeeb" name="a541195c1a15625335a8432521e33aeeb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a541195c1a15625335a8432521e33aeeb">&#9670;&#160;</a></span>CLOCK_getHSEClockSpeed()</h2>
+<a id="ab7188c2da80700782ba6b028486e269c" name="ab7188c2da80700782ba6b028486e269c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7188c2da80700782ba6b028486e269c">&#9670;&#160;</a></span>CLOCK_getHSEClockSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int CLOCK_getHSEClockSpeed </td>
+          <td class="memname">uint32_t CLOCK_getHSEClockSpeed </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -712,14 +712,14 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
 
 </div>
 </div>
-<a id="a5961d39318d181b59c08bdd25e6d0742" name="a5961d39318d181b59c08bdd25e6d0742"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5961d39318d181b59c08bdd25e6d0742">&#9670;&#160;</a></span>CLOCK_getMSIClockSpeed()</h2>
+<a id="a353083c3916c8933c43eb0a1c5c94052" name="a353083c3916c8933c43eb0a1c5c94052"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353083c3916c8933c43eb0a1c5c94052">&#9670;&#160;</a></span>CLOCK_getMSIClockSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int CLOCK_getMSIClockSpeed </td>
+          <td class="memname">uint32_t CLOCK_getMSIClockSpeed </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -732,14 +732,14 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
 
 </div>
 </div>
-<a id="a9c77fd34e367e2b9fd11046bceeadbd0" name="a9c77fd34e367e2b9fd11046bceeadbd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c77fd34e367e2b9fd11046bceeadbd0">&#9670;&#160;</a></span>CLOCK_getPLLClockSpeed()</h2>
+<a id="a50f2307ce6d6b1285d62ba0fc709f680" name="a50f2307ce6d6b1285d62ba0fc709f680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f2307ce6d6b1285d62ba0fc709f680">&#9670;&#160;</a></span>CLOCK_getPLLClockSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int CLOCK_getPLLClockSpeed </td>
+          <td class="memname">uint32_t CLOCK_getPLLClockSpeed </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -752,14 +752,14 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
 
 </div>
 </div>
-<a id="a576b63236d3aa77e1165456de93f82ed" name="a576b63236d3aa77e1165456de93f82ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a576b63236d3aa77e1165456de93f82ed">&#9670;&#160;</a></span>CLOCK_getSystemClockSpeed()</h2>
+<a id="ada0674018763aa72b723804b8d8183eb" name="ada0674018763aa72b723804b8d8183eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada0674018763aa72b723804b8d8183eb">&#9670;&#160;</a></span>CLOCK_getSystemClockSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int CLOCK_getSystemClockSpeed </td>
+          <td class="memname">uint32_t CLOCK_getSystemClockSpeed </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -772,14 +772,14 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
 
 </div>
 </div>
-<a id="a8944a0ca3338276a0cec89f8d9df358a" name="a8944a0ca3338276a0cec89f8d9df358a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8944a0ca3338276a0cec89f8d9df358a">&#9670;&#160;</a></span>CLOCK_isActivated()</h2>
+<a id="ae9cd115f3011d6546563628b1da16eb4" name="ae9cd115f3011d6546563628b1da16eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9cd115f3011d6546563628b1da16eb4">&#9670;&#160;</a></span>CLOCK_isActivated()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char CLOCK_isActivated </td>
+          <td class="memname">uint8_t CLOCK_isActivated </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a63d31f75868a8d1e3b998ac5df3f6a36">CLOCK_State</a></td>          <td class="paramname"><span class="paramname"><em>clk</em></span></td><td>)</td>
           <td></td>
@@ -801,6 +801,7 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
   </table>
   </dd>
 </dl>
+<dl class="section warning"><dt>Warning</dt><dd>This function does not check correctness of arguments. This responsibility is given to the caller. </dd></dl>
 
 </div>
 </div>
@@ -882,8 +883,8 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
 
 </div>
 </div>
-<a id="afb218eef31523ec71b30062ef98a0d49" name="afb218eef31523ec71b30062ef98a0d49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb218eef31523ec71b30062ef98a0d49">&#9670;&#160;</a></span>CLOCK_setHSEClockSpeed()</h2>
+<a id="a6da82f8e33ab80367bf38ea54592f240" name="a6da82f8e33ab80367bf38ea54592f240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6da82f8e33ab80367bf38ea54592f240">&#9670;&#160;</a></span>CLOCK_setHSEClockSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -891,7 +892,7 @@ Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR regi
         <tr>
           <td class="memname">void CLOCK_setHSEClockSpeed </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>speed</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>

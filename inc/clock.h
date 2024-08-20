@@ -1,6 +1,6 @@
 #ifndef CLOCK_H
 #define CLOCK_H
-#include "stm32l4xx.h"
+#include "common.h"
 #include "gpio.h"
 
 /***
@@ -154,6 +154,7 @@ CLOCK_Status_State CLOCK_configPLL(CLOCK_PLL_SOURCE_State pll_src, uint8_t PLL_M
 * @param clk which clock to check
 * @retval 0 the clock is not activated
 * @retval 1 the clock is activated
+* @warning This function does not check correctness of arguments. This responsibility is given to the caller.
 */
 uint8_t CLOCK_isActivated(CLOCK_State clk);
 

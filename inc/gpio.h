@@ -1,6 +1,6 @@
 #ifndef GPIO_H
 #define GPIO_H
-#include "stm32l4xx.h"
+#include "common.h"
 
 /***
 *
@@ -165,7 +165,7 @@ GPIO_Status_State GPIO_writePin(GPIO_Port port, uint8_t pin,  GPIO_PinState stat
 * @param pin pin number
 * @return state of the pin 
 * @warning This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC.
-* @warning This function does not check the arguments. This responsibility is left to the user.
+* @warning This function does not check correctness of arguments. This responsibility is given to the caller.
 */
 GPIO_PinState GPIO_readPin(GPIO_Port port, uint8_t pin);
 

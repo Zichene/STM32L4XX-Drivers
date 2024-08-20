@@ -209,6 +209,7 @@ GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, uint8_t pin, GPIO_PUPD_Stat
 	return GPIO_OK;
 }
 
+
 GPIO_Status_State GPIO_setPinAF_State(GPIO_Port port, uint8_t pin, GPIO_AF_State af_state) {
 	/* check args */
 	if (!(port <= 8 && port >= 0 && pin <= 15 && pin >= 0 && af_state <= 15 && af_state >= 0))

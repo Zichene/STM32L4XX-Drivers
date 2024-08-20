@@ -1,7 +1,12 @@
 \doxysection{C\+:/\+Users/\+Administrator/\+Desktop/\+STM32\+L4\+XX-\/\+Drivers/inc/tim.h File Reference}
 \hypertarget{tim_8h}{}\label{tim_8h}\index{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/tim.h@{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/tim.h}}
-{\ttfamily \#include "{}stm32l4xx.\+h"{}}\newline
+{\ttfamily \#include "{}common.\+h"{}}\newline
 {\ttfamily \#include "{}clock.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,10 +34,16 @@ enum \mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Statu
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{tim_8h_a7a3a58de0732b9e01441e37971a9b22c}{TIM\+\_\+enable\+Timer}} (\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
-\begin{DoxyCompactList}\small\item\em Enable a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{tim_8h_ad4da019622d918baac5ba41af6c80efc}{TIM\+\_\+disable\+Timer}} (\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
-\begin{DoxyCompactList}\small\item\em Disable a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{tim_8h_a7e436dcd8d1f9df35649297fc25de9c9}{TIM\+\_\+enable\+Peripheral\+Clk}} (\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
+\begin{DoxyCompactList}\small\item\em Enable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{tim_8h_a51fa45a8ad8271045073f95c61a75574}{TIM\+\_\+disable\+Peripheral\+Clk}} (\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
+\begin{DoxyCompactList}\small\item\em Disable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{tim_8h_a3ecfed8e3ce677c6f663d0dbec8219c4}{TIM\+\_\+config}} (\mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}config)
+\begin{DoxyCompactList}\small\item\em Enables and configure a timer with desired config parameters. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{tim_8h_a9aefba36c49823c04220ebffd9426f81}{TIM\+\_\+has\+Updated}} (\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer, uint8\+\_\+t reset\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Checks the update interrupt flag (UIF) in the TIMx\+\_\+\+SR register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{tim_8h_a678b5813bb7929232e9346038a6c756d}{TIM\+\_\+reset\+Event\+Flag}} (\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
+\begin{DoxyCompactList}\small\item\em Resets the UIF flag in the TIMx\+\_\+\+SR register. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -119,15 +130,33 @@ TIM\+\_\+\+TIM17&\\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{tim_8h_ad4da019622d918baac5ba41af6c80efc}\index{tim.h@{tim.h}!TIM\_disableTimer@{TIM\_disableTimer}}
-\index{TIM\_disableTimer@{TIM\_disableTimer}!tim.h@{tim.h}}
-\doxysubsubsection{\texorpdfstring{TIM\_disableTimer()}{TIM\_disableTimer()}}
-{\footnotesize\ttfamily \label{tim_8h_ad4da019622d918baac5ba41af6c80efc} 
-\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+disable\+Timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+\Hypertarget{tim_8h_a3ecfed8e3ce677c6f663d0dbec8219c4}\index{tim.h@{tim.h}!TIM\_config@{TIM\_config}}
+\index{TIM\_config@{TIM\_config}!tim.h@{tim.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_config()}{TIM\_config()}}
+{\footnotesize\ttfamily \label{tim_8h_a3ecfed8e3ce677c6f663d0dbec8219c4} 
+\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}}]{config}{}\end{DoxyParamCaption})}
 
 
 
-Disable a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. 
+Enables and configure a timer with desired config parameters. 
+
+See \doxylink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef} for specific parameters. 
+\begin{DoxyParams}{Parameters}
+{\em config} & pointer to a \doxylink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef} object that contains the parameter configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{tim_8h_a51fa45a8ad8271045073f95c61a75574}\index{tim.h@{tim.h}!TIM\_disablePeripheralClk@{TIM\_disablePeripheralClk}}
+\index{TIM\_disablePeripheralClk@{TIM\_disablePeripheralClk}!tim.h@{tim.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_disablePeripheralClk()}{TIM\_disablePeripheralClk()}}
+{\footnotesize\ttfamily \label{tim_8h_a51fa45a8ad8271045073f95c61a75574} 
+\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+disable\+Peripheral\+Clk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+
+
+
+Disable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -137,19 +166,60 @@ Disable a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers.
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{tim_8h_a7a3a58de0732b9e01441e37971a9b22c}\index{tim.h@{tim.h}!TIM\_enableTimer@{TIM\_enableTimer}}
-\index{TIM\_enableTimer@{TIM\_enableTimer}!tim.h@{tim.h}}
-\doxysubsubsection{\texorpdfstring{TIM\_enableTimer()}{TIM\_enableTimer()}}
-{\footnotesize\ttfamily \label{tim_8h_a7a3a58de0732b9e01441e37971a9b22c} 
-\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+enable\+Timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+\Hypertarget{tim_8h_a7e436dcd8d1f9df35649297fc25de9c9}\index{tim.h@{tim.h}!TIM\_enablePeripheralClk@{TIM\_enablePeripheralClk}}
+\index{TIM\_enablePeripheralClk@{TIM\_enablePeripheralClk}!tim.h@{tim.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_enablePeripheralClk()}{TIM\_enablePeripheralClk()}}
+{\footnotesize\ttfamily \label{tim_8h_a7e436dcd8d1f9df35649297fc25de9c9} 
+\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+enable\+Peripheral\+Clk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
 
 
 
-Enable a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. 
+Enable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em timer} & which timer to enable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{tim_8h_a9aefba36c49823c04220ebffd9426f81}\index{tim.h@{tim.h}!TIM\_hasUpdated@{TIM\_hasUpdated}}
+\index{TIM\_hasUpdated@{TIM\_hasUpdated}!tim.h@{tim.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_hasUpdated()}{TIM\_hasUpdated()}}
+{\footnotesize\ttfamily \label{tim_8h_a9aefba36c49823c04220ebffd9426f81} 
+uint8\+\_\+t TIM\+\_\+has\+Updated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{, }\item[{uint8\+\_\+t}]{reset\+\_\+flag}{}\end{DoxyParamCaption})}
+
+
+
+Checks the update interrupt flag (UIF) in the TIMx\+\_\+\+SR register. 
+
+Optionally, can choose to reset UIF to \textquotesingle{}0\textquotesingle{} if \textquotesingle{}1\textquotesingle{} is read. 
+\begin{DoxyParams}{Parameters}
+{\em timer} & timer. \\
+\hline
+{\em reset\+\_\+flag} & boolean to indicate whether we want to automatically reset the UIF flag to \textquotesingle{}0\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of the UIF flag. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function does not check correctness of arguments. This responsibility is given to the caller. 
+\end{DoxyWarning}
+\Hypertarget{tim_8h_a678b5813bb7929232e9346038a6c756d}\index{tim.h@{tim.h}!TIM\_resetEventFlag@{TIM\_resetEventFlag}}
+\index{TIM\_resetEventFlag@{TIM\_resetEventFlag}!tim.h@{tim.h}}
+\doxysubsubsection{\texorpdfstring{TIM\_resetEventFlag()}{TIM\_resetEventFlag()}}
+{\footnotesize\ttfamily \label{tim_8h_a678b5813bb7929232e9346038a6c756d} 
+\mbox{\hyperlink{tim_8h_aa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+reset\+Event\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{tim_8h_a5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+
+
+
+Resets the UIF flag in the TIMx\+\_\+\+SR register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & timer. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

@@ -4,7 +4,7 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CLOCK\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CLOCK\_H}}
-\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}stm32l4xx.h"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common_8h}{common.h}}"{}}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpio_8h}{gpio.h}}"{}}}
 \DoxyCodeLine{00005\ }
 \DoxyCodeLine{00006\ \textcolor{comment}{/***}}
@@ -109,57 +109,57 @@
 \DoxyCodeLine{00125\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
 \DoxyCodeLine{00126\ \textcolor{comment}{/****************************************************************************************************/}}
 \DoxyCodeLine{00127\ }
-\DoxyCodeLine{00137\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_af32fa2488b07b90331da3c4d208e533b}{CLOCK\_activateMCO}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ \textcolor{keywordtype}{char}\ pin,\ \mbox{\hyperlink{clock_8h_a8fab271b291b83bd742e9099a9f20a59}{CLOCK\_MCO\_SELECT\_State}}\ mco\_sel\_state,\ \mbox{\hyperlink{clock_8h_aaa0363e0e9775584599d94565f8e0e60}{CLOCK\_MCO\_PRESCALER\_State}}\ mco\_pre\_state);}
+\DoxyCodeLine{00137\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a625103ea87a9510c347baaf2126d27e3}{CLOCK\_activateMCO}}(\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ uint8\_t\ pin,\ \mbox{\hyperlink{clock_8h_a8fab271b291b83bd742e9099a9f20a59}{CLOCK\_MCO\_SELECT\_State}}\ mco\_sel\_state,\ \mbox{\hyperlink{clock_8h_aaa0363e0e9775584599d94565f8e0e60}{CLOCK\_MCO\_PRESCALER\_State}}\ mco\_pre\_state);}
 \DoxyCodeLine{00138\ }
 \DoxyCodeLine{00139\ }
 \DoxyCodeLine{00140\ }
-\DoxyCodeLine{00149\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a9637455690355b1be6e1014d939fbe83}{CLOCK\_configPLL}}(\mbox{\hyperlink{clock_8h_aceb416b702f94d30e139e49e8e10a76f}{CLOCK\_PLL\_SOURCE\_State}}\ pll\_src,\ \textcolor{keywordtype}{char}\ PLL\_M,\ \textcolor{keywordtype}{char}\ PLL\_N,\ \mbox{\hyperlink{clock_8h_a9b771949ba6bccb42317a3e5e089cded}{CLOCK\_PLLR\_State}}\ PLL\_R);}
+\DoxyCodeLine{00149\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_aa11ce7252db60000e142bc3ff6aff0be}{CLOCK\_configPLL}}(\mbox{\hyperlink{clock_8h_aceb416b702f94d30e139e49e8e10a76f}{CLOCK\_PLL\_SOURCE\_State}}\ pll\_src,\ uint8\_t\ PLL\_M,\ uint8\_t\ PLL\_N,\ \mbox{\hyperlink{clock_8h_a9b771949ba6bccb42317a3e5e089cded}{CLOCK\_PLLR\_State}}\ PLL\_R);}
 \DoxyCodeLine{00150\ }
 \DoxyCodeLine{00151\ }
 \DoxyCodeLine{00152\ }
-\DoxyCodeLine{00158\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{clock_8h_a8944a0ca3338276a0cec89f8d9df358a}{CLOCK\_isActivated}}(\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
-\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00159\ uint8\_t\ \mbox{\hyperlink{clock_8h_ae9cd115f3011d6546563628b1da16eb4}{CLOCK\_isActivated}}(\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
 \DoxyCodeLine{00160\ }
 \DoxyCodeLine{00161\ }
-\DoxyCodeLine{00169\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a08716e6071c93768a4091dc5947e104f}{CLOCK\_activateClk}}(\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
-\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00170\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a08716e6071c93768a4091dc5947e104f}{CLOCK\_activateClk}}(\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
 \DoxyCodeLine{00171\ }
 \DoxyCodeLine{00172\ }
-\DoxyCodeLine{00178\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a34f1183e02b1e5320ccf45c6e646b918}{CLOCK\_desactivateClk}}(\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
-\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00179\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a34f1183e02b1e5320ccf45c6e646b918}{CLOCK\_desactivateClk}}(\mbox{\hyperlink{clock_8h_a63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
 \DoxyCodeLine{00180\ }
-\DoxyCodeLine{00184\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{clock_8h_a9c77fd34e367e2b9fd11046bceeadbd0}{CLOCK\_getPLLClockSpeed}}();}
-\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00185\ uint32\_t\ \mbox{\hyperlink{clock_8h_a50f2307ce6d6b1285d62ba0fc709f680}{CLOCK\_getPLLClockSpeed}}();}
 \DoxyCodeLine{00186\ }
 \DoxyCodeLine{00187\ }
-\DoxyCodeLine{00191\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{clock_8h_a5961d39318d181b59c08bdd25e6d0742}{CLOCK\_getMSIClockSpeed}}();}
-\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00192\ uint32\_t\ \mbox{\hyperlink{clock_8h_a353083c3916c8933c43eb0a1c5c94052}{CLOCK\_getMSIClockSpeed}}();}
 \DoxyCodeLine{00193\ }
-\DoxyCodeLine{00197\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{clock_8h_afb218eef31523ec71b30062ef98a0d49}{CLOCK\_setHSEClockSpeed}}(\textcolor{keywordtype}{int}\ speed);}
-\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{clock_8h_a6da82f8e33ab80367bf38ea54592f240}{CLOCK\_setHSEClockSpeed}}(uint32\_t\ speed);}
 \DoxyCodeLine{00199\ }
 \DoxyCodeLine{00200\ }
-\DoxyCodeLine{00204\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{clock_8h_a541195c1a15625335a8432521e33aeeb}{CLOCK\_getHSEClockSpeed}}();}
-\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00205\ uint32\_t\ \mbox{\hyperlink{clock_8h_ab7188c2da80700782ba6b028486e269c}{CLOCK\_getHSEClockSpeed}}();}
 \DoxyCodeLine{00206\ }
 \DoxyCodeLine{00207\ }
-\DoxyCodeLine{00211\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{clock_8h_a576b63236d3aa77e1165456de93f82ed}{CLOCK\_getSystemClockSpeed}}();}
-\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00212\ uint32\_t\ \mbox{\hyperlink{clock_8h_ada0674018763aa72b723804b8d8183eb}{CLOCK\_getSystemClockSpeed}}();}
 \DoxyCodeLine{00213\ }
 \DoxyCodeLine{00214\ }
-\DoxyCodeLine{00221\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_ad3f9097ce53adfff82cb70ddea07c27d}{CLOCK\_setSystemClock}}(\mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\_SYSCLK\_State}}\ sysclk);}
-\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00222\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_ad3f9097ce53adfff82cb70ddea07c27d}{CLOCK\_setSystemClock}}(\mbox{\hyperlink{clock_8h_ab8ea3cd345873e8a031469d82633ee72}{CLOCK\_SYSCLK\_State}}\ sysclk);}
 \DoxyCodeLine{00223\ }
 \DoxyCodeLine{00224\ }
-\DoxyCodeLine{00229\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a45f0f137fec72ca25a15471c536353ff}{CLOCK\_setAHBPrescaler}}(\mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77f}{CLOCK\_AHB\_PRESCALER\_State}}\ ahb\_prescaler);}
-\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00230\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a45f0f137fec72ca25a15471c536353ff}{CLOCK\_setAHBPrescaler}}(\mbox{\hyperlink{clock_8h_a8243c8d8e6717062f9949ee373a4a77f}{CLOCK\_AHB\_PRESCALER\_State}}\ ahb\_prescaler);}
 \DoxyCodeLine{00231\ }
 \DoxyCodeLine{00232\ }
-\DoxyCodeLine{00237\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a7eb6ba8a0c4959ea023982ff86287e5c}{CLOCK\_setAPB1Prescaler}}(\mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\_APB1\_PRESCALER\_State}}\ apb1\_prescaler);}
-\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00238\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_a7eb6ba8a0c4959ea023982ff86287e5c}{CLOCK\_setAPB1Prescaler}}(\mbox{\hyperlink{clock_8h_a65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\_APB1\_PRESCALER\_State}}\ apb1\_prescaler);}
 \DoxyCodeLine{00239\ }
 \DoxyCodeLine{00240\ }
-\DoxyCodeLine{00245\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_af2d3189cd4e74510c8d2136149148e0c}{CLOCK\_setAPB2Prescaler}}(\mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517}{CLOCK\_APB2\_PRESCALER\_State}}\ apb2\_prescaler);}
-\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00246\ \mbox{\hyperlink{clock_8h_a5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{clock_8h_af2d3189cd4e74510c8d2136149148e0c}{CLOCK\_setAPB2Prescaler}}(\mbox{\hyperlink{clock_8h_a95ae2e15b49c96956d53beae3975e517}{CLOCK\_APB2\_PRESCALER\_State}}\ apb2\_prescaler);}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -89,16 +89,22 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">tim.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;stm32l4xx.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="clock_8h_source.html">clock.h</a>&quot;</code><br />
 </div>
 <p><a href="tim_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a5b31ce769abb7de5285cb952034a6629" id="r_a5b31ce769abb7de5285cb952034a6629"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> { <br />
@@ -128,12 +134,21 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7a3a58de0732b9e01441e37971a9b22c" id="r_a7a3a58de0732b9e01441e37971a9b22c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a3a58de0732b9e01441e37971a9b22c">TIM_enableTimer</a> (<a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer)</td></tr>
-<tr class="memdesc:a7a3a58de0732b9e01441e37971a9b22c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable a timer by changing the bit on the APB1ENR or APB2ENR registers.  <br /></td></tr>
-<tr class="separator:a7a3a58de0732b9e01441e37971a9b22c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4da019622d918baac5ba41af6c80efc" id="r_ad4da019622d918baac5ba41af6c80efc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4da019622d918baac5ba41af6c80efc">TIM_disableTimer</a> (<a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer)</td></tr>
-<tr class="memdesc:ad4da019622d918baac5ba41af6c80efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable a timer by changing the bit on the APB1ENR or APB2ENR registers.  <br /></td></tr>
-<tr class="separator:ad4da019622d918baac5ba41af6c80efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e436dcd8d1f9df35649297fc25de9c9" id="r_a7e436dcd8d1f9df35649297fc25de9c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e436dcd8d1f9df35649297fc25de9c9">TIM_enablePeripheralClk</a> (<a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer)</td></tr>
+<tr class="memdesc:a7e436dcd8d1f9df35649297fc25de9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the peripheral clock for a timer by changing the bit on the APB1ENR or APB2ENR registers.  <br /></td></tr>
+<tr class="separator:a7e436dcd8d1f9df35649297fc25de9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51fa45a8ad8271045073f95c61a75574" id="r_a51fa45a8ad8271045073f95c61a75574"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51fa45a8ad8271045073f95c61a75574">TIM_disablePeripheralClk</a> (<a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer)</td></tr>
+<tr class="memdesc:a51fa45a8ad8271045073f95c61a75574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the peripheral clock for a timer by changing the bit on the APB1ENR or APB2ENR registers.  <br /></td></tr>
+<tr class="separator:a51fa45a8ad8271045073f95c61a75574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ecfed8e3ce677c6f663d0dbec8219c4" id="r_a3ecfed8e3ce677c6f663d0dbec8219c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ecfed8e3ce677c6f663d0dbec8219c4">TIM_config</a> (<a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> *config)</td></tr>
+<tr class="memdesc:a3ecfed8e3ce677c6f663d0dbec8219c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables and configure a timer with desired config parameters.  <br /></td></tr>
+<tr class="separator:a3ecfed8e3ce677c6f663d0dbec8219c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aefba36c49823c04220ebffd9426f81" id="r_a9aefba36c49823c04220ebffd9426f81"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9aefba36c49823c04220ebffd9426f81">TIM_hasUpdated</a> (<a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer, uint8_t reset_flag)</td></tr>
+<tr class="memdesc:a9aefba36c49823c04220ebffd9426f81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the update interrupt flag (UIF) in the TIMx_SR register.  <br /></td></tr>
+<tr class="separator:a9aefba36c49823c04220ebffd9426f81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a678b5813bb7929232e9346038a6c756d" id="r_a678b5813bb7929232e9346038a6c756d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a678b5813bb7929232e9346038a6c756d">TIM_resetEventFlag</a> (<a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer)</td></tr>
+<tr class="memdesc:a678b5813bb7929232e9346038a6c756d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the UIF flag in the TIMx_SR register.  <br /></td></tr>
+<tr class="separator:a678b5813bb7929232e9346038a6c756d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="aa7bb33976f8d2b8535cb20917287e529" name="aa7bb33976f8d2b8535cb20917287e529"></a>
@@ -191,14 +206,40 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad4da019622d918baac5ba41af6c80efc" name="ad4da019622d918baac5ba41af6c80efc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4da019622d918baac5ba41af6c80efc">&#9670;&#160;</a></span>TIM_disableTimer()</h2>
+<a id="a3ecfed8e3ce677c6f663d0dbec8219c4" name="a3ecfed8e3ce677c6f663d0dbec8219c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ecfed8e3ce677c6f663d0dbec8219c4">&#9670;&#160;</a></span>TIM_config()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a> TIM_disableTimer </td>
+          <td class="memname"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a> TIM_config </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> *</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables and configure a timer with desired config parameters. </p>
+<p>See <a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> for specific parameters. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>pointer to a <a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> object that contains the parameter configuration </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
+
+</div>
+</div>
+<a id="a51fa45a8ad8271045073f95c61a75574" name="a51fa45a8ad8271045073f95c61a75574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51fa45a8ad8271045073f95c61a75574">&#9670;&#160;</a></span>TIM_disablePeripheralClk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a> TIM_disablePeripheralClk </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a></td>          <td class="paramname"><span class="paramname"><em>timer</em></span></td><td>)</td>
           <td></td>
@@ -206,7 +247,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Disable a timer by changing the bit on the APB1ENR or APB2ENR registers. </p>
+<p>Disable the peripheral clock for a timer by changing the bit on the APB1ENR or APB2ENR registers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timer</td><td>which timer to disable </td></tr>
@@ -217,14 +258,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7a3a58de0732b9e01441e37971a9b22c" name="a7a3a58de0732b9e01441e37971a9b22c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a3a58de0732b9e01441e37971a9b22c">&#9670;&#160;</a></span>TIM_enableTimer()</h2>
+<a id="a7e436dcd8d1f9df35649297fc25de9c9" name="a7e436dcd8d1f9df35649297fc25de9c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e436dcd8d1f9df35649297fc25de9c9">&#9670;&#160;</a></span>TIM_enablePeripheralClk()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a> TIM_enableTimer </td>
+          <td class="memname"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a> TIM_enablePeripheralClk </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a></td>          <td class="paramname"><span class="paramname"><em>timer</em></span></td><td>)</td>
           <td></td>
@@ -232,10 +273,68 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Enable a timer by changing the bit on the APB1ENR or APB2ENR registers. </p>
+<p>Enable the peripheral clock for a timer by changing the bit on the APB1ENR or APB2ENR registers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timer</td><td>which timer to enable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
+
+</div>
+</div>
+<a id="a9aefba36c49823c04220ebffd9426f81" name="a9aefba36c49823c04220ebffd9426f81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aefba36c49823c04220ebffd9426f81">&#9670;&#160;</a></span>TIM_hasUpdated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t TIM_hasUpdated </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a></td>          <td class="paramname"><span class="paramname"><em>timer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reset_flag</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the update interrupt flag (UIF) in the TIMx_SR register. </p>
+<p>Optionally, can choose to reset UIF to '0' if '1' is read. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timer</td><td>timer. </td></tr>
+    <tr><td class="paramname">reset_flag</td><td>boolean to indicate whether we want to automatically reset the UIF flag to '0'. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value of the UIF flag. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This function does not check correctness of arguments. This responsibility is given to the caller. </dd></dl>
+
+</div>
+</div>
+<a id="a678b5813bb7929232e9346038a6c756d" name="a678b5813bb7929232e9346038a6c756d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a678b5813bb7929232e9346038a6c756d">&#9670;&#160;</a></span>TIM_resetEventFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a> TIM_resetEventFlag </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a></td>          <td class="paramname"><span class="paramname"><em>timer</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the UIF flag in the TIMx_SR register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timer</td><td>timer. </td></tr>
   </table>
   </dd>
 </dl>

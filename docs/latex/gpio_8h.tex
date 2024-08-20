@@ -1,6 +1,6 @@
 \doxysection{C\+:/\+Users/\+Administrator/\+Desktop/\+STM32\+L4\+XX-\/\+Drivers/inc/gpio.h File Reference}
 \hypertarget{gpio_8h}{}\label{gpio_8h}\index{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/gpio.h@{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/gpio.h}}
-{\ttfamily \#include "{}stm32l4xx.\+h"{}}\newline
+{\ttfamily \#include "{}common.\+h"{}}\newline
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -71,27 +71,27 @@ enum \mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Sta
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a8a0f91640c59b17dcf1ee4e002849d17}{GPIO\+\_\+set\+Pin\+Output}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_ab595615510195f9a4192c7a189678fab}{GPIO\+\_\+set\+Pin\+Output}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin)
 \begin{DoxyCompactList}\small\item\em Sets a pin to output mode. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a827460fad3bcd710003baa4709e4f6b4}{GPIO\+\_\+set\+Pin\+Output\+\_\+\+FC}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}} pupd, \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}} speed, \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}} output\+\_\+t)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a882cc33c981cd7f8dfba88f860272d8a}{GPIO\+\_\+set\+Pin\+Output\+\_\+\+FC}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin, \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}} pupd, \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}} speed, \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}} output\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a3e1de41304bd292da8b13c1cb7ed19af}{GPIO\+\_\+set\+Pin\+Input}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}} pupd)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_ae6d9d08aa8ecf6a2f1237373ffe54dea}{GPIO\+\_\+set\+Pin\+Input}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin, \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}} pupd)
 \begin{DoxyCompactList}\small\item\em Sets pin to input. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a0d1650a0766603d8ed138433403940ca}{GPIO\+\_\+set\+Pin\+Input\+\_\+\+FC}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}} pupd, \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}} speed, \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}} output\+\_\+t)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a18ca43b6164db4241faf900a1209013b}{GPIO\+\_\+set\+Pin\+Input\+\_\+\+FC}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin, \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}} pupd, \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}} speed, \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}} output\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_ae1ba4d96723bcbf0d5a401f0e892222f}{GPIO\+\_\+write\+Pin}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} state)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a6f78d205e4179fc73f2515d21660accf}{GPIO\+\_\+write\+Pin}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin, \mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} state)
 \begin{DoxyCompactList}\small\item\em Write a value to a specificed GPIO pin. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} \mbox{\hyperlink{gpio_8h_ae6295773e205127ac27efa76b3a94e17}{GPIO\+\_\+read\+Pin}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin)
+\mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} \mbox{\hyperlink{gpio_8h_a20f3f4cc40731487424a228070958166}{GPIO\+\_\+read\+Pin}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin)
 \begin{DoxyCompactList}\small\item\em Read a value from a specificed GPIO pin. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a30357ffcc9792de174de91fd11e9766c}{GPIO\+\_\+toggle\+Pin}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a2dbba2abe607108f74710b045b089c72}{GPIO\+\_\+toggle\+Pin}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin)
 \begin{DoxyCompactList}\small\item\em Toggles the state of a GPIO pin. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a07805c2a3f4d3eb775892e426efc3bac}{GPIO\+\_\+set\+Pin\+Interrupt}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{gpio_8h_ace0c7e64d6c4e935151fbb7616fe540a}{GPIO\+\_\+\+IT\+\_\+\+TRIGGER\+\_\+\+State}} trigger\+\_\+state)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a232a16e1fe539abaaf2b4451039acbdd}{GPIO\+\_\+set\+Pin\+Interrupt}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin, \mbox{\hyperlink{gpio_8h_ace0c7e64d6c4e935151fbb7616fe540a}{GPIO\+\_\+\+IT\+\_\+\+TRIGGER\+\_\+\+State}} trigger\+\_\+state)
 \begin{DoxyCompactList}\small\item\em Sets a pin to input-\/interrupt mode. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_aa284a14e9a888b31d195b921aa4ee7b1}{GPIO\+\_\+reset\+Pin\+Interrupt}} (char pin)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a93410b92827b20bc14b1ce1f54950f80}{GPIO\+\_\+reset\+Pin\+Interrupt}} (uint8\+\_\+t pin)
 \begin{DoxyCompactList}\small\item\em Reset the flag corresponding to the pin in the EXTI Pending Register. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a4ebab1fbaf9438863036472f90c10a6f}{GPIO\+\_\+set\+Pin\+AF\+\_\+\+Mode}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}} pupd, \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}} speed, \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}} output\+\_\+t)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a328c278fa96a3802882630ad49ee7ae3}{GPIO\+\_\+set\+Pin\+AF\+\_\+\+Mode}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin, \mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}} pupd, \mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}} speed, \mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}} output\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Sets the pin to the Alternate Function (AF) mode. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_aab97cc3656dd2bfde4eedf72ba1524d9}{GPIO\+\_\+set\+Pin\+AF\+\_\+\+State}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, char pin, \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827db}{GPIO\+\_\+\+AF\+\_\+\+State}} af\+\_\+state)
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{gpio_8h_a4ea71fe1e6545955e83ade36d2d9a053}{GPIO\+\_\+set\+Pin\+AF\+\_\+\+State}} (\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}} port, uint8\+\_\+t pin, \mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827db}{GPIO\+\_\+\+AF\+\_\+\+State}} af\+\_\+state)
 \begin{DoxyCompactList}\small\item\em Sets a pin in AF mode to the desired AF state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -359,11 +359,11 @@ GPIO\+\_\+\+ERROR&Indicates that a general error has occured. \\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{gpio_8h_ae6295773e205127ac27efa76b3a94e17}\index{gpio.h@{gpio.h}!GPIO\_readPin@{GPIO\_readPin}}
+\Hypertarget{gpio_8h_a20f3f4cc40731487424a228070958166}\index{gpio.h@{gpio.h}!GPIO\_readPin@{GPIO\_readPin}}
 \index{GPIO\_readPin@{GPIO\_readPin}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_readPin()}{GPIO\_readPin()}}
-{\footnotesize\ttfamily \label{gpio_8h_ae6295773e205127ac27efa76b3a94e17} 
-\mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} GPIO\+\_\+read\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a20f3f4cc40731487424a228070958166} 
+\mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}} GPIO\+\_\+read\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
 
 
 
@@ -384,13 +384,13 @@ state of the pin
 \begin{DoxyWarning}{Warning}
 This function should only be called if the pin has been correctly set with set\+Pin\+Input, set\+Pin\+Output, set\+Pin\+Input\+\_\+\+FC or set\+Pin\+Output\+\_\+\+FC. 
 
-This function does not check the arguments. This responsibility is left to the user. 
+This function does not check correctness of arguments. This responsibility is given to the caller. 
 \end{DoxyWarning}
-\Hypertarget{gpio_8h_aa284a14e9a888b31d195b921aa4ee7b1}\index{gpio.h@{gpio.h}!GPIO\_resetPinInterrupt@{GPIO\_resetPinInterrupt}}
+\Hypertarget{gpio_8h_a93410b92827b20bc14b1ce1f54950f80}\index{gpio.h@{gpio.h}!GPIO\_resetPinInterrupt@{GPIO\_resetPinInterrupt}}
 \index{GPIO\_resetPinInterrupt@{GPIO\_resetPinInterrupt}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_resetPinInterrupt()}{GPIO\_resetPinInterrupt()}}
-{\footnotesize\ttfamily \label{gpio_8h_aa284a14e9a888b31d195b921aa4ee7b1} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+reset\+Pin\+Interrupt (\begin{DoxyParamCaption}\item[{char}]{pin}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a93410b92827b20bc14b1ce1f54950f80} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+reset\+Pin\+Interrupt (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
 
 
 
@@ -404,11 +404,11 @@ This function should be called in the EXTI\+\_\+\+IRQ\+\_\+\+Handler in order to
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{gpio_8h_a4ebab1fbaf9438863036472f90c10a6f}\index{gpio.h@{gpio.h}!GPIO\_setPinAF\_Mode@{GPIO\_setPinAF\_Mode}}
+\Hypertarget{gpio_8h_a328c278fa96a3802882630ad49ee7ae3}\index{gpio.h@{gpio.h}!GPIO\_setPinAF\_Mode@{GPIO\_setPinAF\_Mode}}
 \index{GPIO\_setPinAF\_Mode@{GPIO\_setPinAF\_Mode}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_setPinAF\_Mode()}{GPIO\_setPinAF\_Mode()}}
-{\footnotesize\ttfamily \label{gpio_8h_a4ebab1fbaf9438863036472f90c10a6f} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+AF\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}}}]{pupd}{, }\item[{\mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}}}]{speed}{, }\item[{\mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}]{output\+\_\+t}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a328c278fa96a3802882630ad49ee7ae3} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+AF\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}}}]{pupd}{, }\item[{\mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}}}]{speed}{, }\item[{\mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}]{output\+\_\+t}{}\end{DoxyParamCaption})}
 
 
 
@@ -430,11 +430,11 @@ Sets the pin to the Alternate Function (AF) mode.
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{gpio_8h_aab97cc3656dd2bfde4eedf72ba1524d9}\index{gpio.h@{gpio.h}!GPIO\_setPinAF\_State@{GPIO\_setPinAF\_State}}
+\Hypertarget{gpio_8h_a4ea71fe1e6545955e83ade36d2d9a053}\index{gpio.h@{gpio.h}!GPIO\_setPinAF\_State@{GPIO\_setPinAF\_State}}
 \index{GPIO\_setPinAF\_State@{GPIO\_setPinAF\_State}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_setPinAF\_State()}{GPIO\_setPinAF\_State()}}
-{\footnotesize\ttfamily \label{gpio_8h_aab97cc3656dd2bfde4eedf72ba1524d9} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+AF\+\_\+\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827db}{GPIO\+\_\+\+AF\+\_\+\+State}}}]{af\+\_\+state}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a4ea71fe1e6545955e83ade36d2d9a053} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+AF\+\_\+\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a50a2f4df54586ff8414f27fcb3f827db}{GPIO\+\_\+\+AF\+\_\+\+State}}}]{af\+\_\+state}{}\end{DoxyParamCaption})}
 
 
 
@@ -455,11 +455,11 @@ status
 \begin{DoxyWarning}{Warning}
 This function should only be called if the pin has been set to AF (Alternate Function) mode with set\+Pin\+AF\+\_\+\+Mode. 
 \end{DoxyWarning}
-\Hypertarget{gpio_8h_a3e1de41304bd292da8b13c1cb7ed19af}\index{gpio.h@{gpio.h}!GPIO\_setPinInput@{GPIO\_setPinInput}}
+\Hypertarget{gpio_8h_ae6d9d08aa8ecf6a2f1237373ffe54dea}\index{gpio.h@{gpio.h}!GPIO\_setPinInput@{GPIO\_setPinInput}}
 \index{GPIO\_setPinInput@{GPIO\_setPinInput}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_setPinInput()}{GPIO\_setPinInput()}}
-{\footnotesize\ttfamily \label{gpio_8h_a3e1de41304bd292da8b13c1cb7ed19af} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}}}]{pupd}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_ae6d9d08aa8ecf6a2f1237373ffe54dea} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}}}]{pupd}{}\end{DoxyParamCaption})}
 
 
 
@@ -479,11 +479,11 @@ By default, output mode is set to PP and speed to very high.
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{gpio_8h_a0d1650a0766603d8ed138433403940ca}\index{gpio.h@{gpio.h}!GPIO\_setPinInput\_FC@{GPIO\_setPinInput\_FC}}
+\Hypertarget{gpio_8h_a18ca43b6164db4241faf900a1209013b}\index{gpio.h@{gpio.h}!GPIO\_setPinInput\_FC@{GPIO\_setPinInput\_FC}}
 \index{GPIO\_setPinInput\_FC@{GPIO\_setPinInput\_FC}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_setPinInput\_FC()}{GPIO\_setPinInput\_FC()}}
-{\footnotesize\ttfamily \label{gpio_8h_a0d1650a0766603d8ed138433403940ca} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Input\+\_\+\+FC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}}}]{pupd}{, }\item[{\mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}}}]{speed}{, }\item[{\mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}]{output\+\_\+t}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a18ca43b6164db4241faf900a1209013b} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Input\+\_\+\+FC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}}}]{pupd}{, }\item[{\mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}}}]{speed}{, }\item[{\mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}]{output\+\_\+t}{}\end{DoxyParamCaption})}
 
 
 
@@ -505,11 +505,11 @@ Sets a pin to input with Full Control (FC) mode, allowing specification of pupd,
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{gpio_8h_a07805c2a3f4d3eb775892e426efc3bac}\index{gpio.h@{gpio.h}!GPIO\_setPinInterrupt@{GPIO\_setPinInterrupt}}
+\Hypertarget{gpio_8h_a232a16e1fe539abaaf2b4451039acbdd}\index{gpio.h@{gpio.h}!GPIO\_setPinInterrupt@{GPIO\_setPinInterrupt}}
 \index{GPIO\_setPinInterrupt@{GPIO\_setPinInterrupt}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_setPinInterrupt()}{GPIO\_setPinInterrupt()}}
-{\footnotesize\ttfamily \label{gpio_8h_a07805c2a3f4d3eb775892e426efc3bac} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_ace0c7e64d6c4e935151fbb7616fe540a}{GPIO\+\_\+\+IT\+\_\+\+TRIGGER\+\_\+\+State}}}]{trigger\+\_\+state}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a232a16e1fe539abaaf2b4451039acbdd} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_ace0c7e64d6c4e935151fbb7616fe540a}{GPIO\+\_\+\+IT\+\_\+\+TRIGGER\+\_\+\+State}}}]{trigger\+\_\+state}{}\end{DoxyParamCaption})}
 
 
 
@@ -525,11 +525,11 @@ By default, the interrupt trigger is set to rising trigger.
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{gpio_8h_a8a0f91640c59b17dcf1ee4e002849d17}\index{gpio.h@{gpio.h}!GPIO\_setPinOutput@{GPIO\_setPinOutput}}
+\Hypertarget{gpio_8h_ab595615510195f9a4192c7a189678fab}\index{gpio.h@{gpio.h}!GPIO\_setPinOutput@{GPIO\_setPinOutput}}
 \index{GPIO\_setPinOutput@{GPIO\_setPinOutput}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_setPinOutput()}{GPIO\_setPinOutput()}}
-{\footnotesize\ttfamily \label{gpio_8h_a8a0f91640c59b17dcf1ee4e002849d17} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_ab595615510195f9a4192c7a189678fab} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
 
 
 
@@ -547,11 +547,11 @@ By default, output mode is set to PP, speed to very high and no pull up, pull do
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{gpio_8h_a827460fad3bcd710003baa4709e4f6b4}\index{gpio.h@{gpio.h}!GPIO\_setPinOutput\_FC@{GPIO\_setPinOutput\_FC}}
+\Hypertarget{gpio_8h_a882cc33c981cd7f8dfba88f860272d8a}\index{gpio.h@{gpio.h}!GPIO\_setPinOutput\_FC@{GPIO\_setPinOutput\_FC}}
 \index{GPIO\_setPinOutput\_FC@{GPIO\_setPinOutput\_FC}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_setPinOutput\_FC()}{GPIO\_setPinOutput\_FC()}}
-{\footnotesize\ttfamily \label{gpio_8h_a827460fad3bcd710003baa4709e4f6b4} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Output\+\_\+\+FC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}}}]{pupd}{, }\item[{\mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}}}]{speed}{, }\item[{\mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}]{output\+\_\+t}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a882cc33c981cd7f8dfba88f860272d8a} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+set\+Pin\+Output\+\_\+\+FC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a2266f25d4ba662cd4e40de36a5049167}{GPIO\+\_\+\+PUPD\+\_\+\+State}}}]{pupd}{, }\item[{\mbox{\hyperlink{gpio_8h_aaf9978d8971c86f33115b493e5d6190f}{GPIO\+\_\+\+SPEED\+\_\+\+State}}}]{speed}{, }\item[{\mbox{\hyperlink{gpio_8h_ad95ee31148019b4ae8d63e5a3e0777ee}{GPIO\+\_\+\+OUTPUT\+\_\+\+TYPE\+\_\+\+State}}}]{output\+\_\+t}{}\end{DoxyParamCaption})}
 
 
 
@@ -573,11 +573,11 @@ Sets a pin to output with Full Control (FC) mode, allowing specification of pupd
 \begin{DoxyReturn}{Returns}
 status 
 \end{DoxyReturn}
-\Hypertarget{gpio_8h_a30357ffcc9792de174de91fd11e9766c}\index{gpio.h@{gpio.h}!GPIO\_togglePin@{GPIO\_togglePin}}
+\Hypertarget{gpio_8h_a2dbba2abe607108f74710b045b089c72}\index{gpio.h@{gpio.h}!GPIO\_togglePin@{GPIO\_togglePin}}
 \index{GPIO\_togglePin@{GPIO\_togglePin}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_togglePin()}{GPIO\_togglePin()}}
-{\footnotesize\ttfamily \label{gpio_8h_a30357ffcc9792de174de91fd11e9766c} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+toggle\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a2dbba2abe607108f74710b045b089c72} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+toggle\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
 
 
 
@@ -593,11 +593,11 @@ Toggles the state of a GPIO pin.
 \begin{DoxyWarning}{Warning}
 This function should only be called if the pin has been correctly set with set\+Pin\+Input, set\+Pin\+Output, set\+Pin\+Input\+\_\+\+FC or set\+Pin\+Output\+\_\+\+FC. 
 \end{DoxyWarning}
-\Hypertarget{gpio_8h_ae1ba4d96723bcbf0d5a401f0e892222f}\index{gpio.h@{gpio.h}!GPIO\_writePin@{GPIO\_writePin}}
+\Hypertarget{gpio_8h_a6f78d205e4179fc73f2515d21660accf}\index{gpio.h@{gpio.h}!GPIO\_writePin@{GPIO\_writePin}}
 \index{GPIO\_writePin@{GPIO\_writePin}!gpio.h@{gpio.h}}
 \doxysubsubsection{\texorpdfstring{GPIO\_writePin()}{GPIO\_writePin()}}
-{\footnotesize\ttfamily \label{gpio_8h_ae1ba4d96723bcbf0d5a401f0e892222f} 
-\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+write\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{char}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}}}]{state}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{gpio_8h_a6f78d205e4179fc73f2515d21660accf} 
+\mbox{\hyperlink{gpio_8h_a3fdce057401bc547fc9d8692f2c27764}{GPIO\+\_\+\+Status\+\_\+\+State}} GPIO\+\_\+write\+Pin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{gpio_8h_af164c756418dde00ac07fd47d0962150}{GPIO\+\_\+\+Port}}}]{port}{, }\item[{uint8\+\_\+t}]{pin}{, }\item[{\mbox{\hyperlink{gpio_8h_a5b3ef0486b179415581eb342e0ea6b43}{GPIO\+\_\+\+Pin\+State}}}]{state}{}\end{DoxyParamCaption})}
 
 
 
