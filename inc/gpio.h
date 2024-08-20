@@ -106,7 +106,7 @@ typedef enum {
 * @param pin pin number
 * @return status
 */
-GPIO_Status_State GPIO_setPinOutput(GPIO_Port port, char pin);
+GPIO_Status_State GPIO_setPinOutput(GPIO_Port port, uint8_t pin);
 
 
 
@@ -119,7 +119,7 @@ GPIO_Status_State GPIO_setPinOutput(GPIO_Port port, char pin);
 * @param output_t output type
 * @return status
 */
-GPIO_Status_State GPIO_setPinOutput_FC(GPIO_Port port, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t);
+GPIO_Status_State GPIO_setPinOutput_FC(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t);
 
 
 
@@ -130,7 +130,7 @@ GPIO_Status_State GPIO_setPinOutput_FC(GPIO_Port port, char pin, GPIO_PUPD_State
 * @param pupd pull up or pull down resistor state
 * @return status
 */
-GPIO_Status_State GPIO_setPinInput(GPIO_Port port, char pin,  GPIO_PUPD_State pupd);
+GPIO_Status_State GPIO_setPinInput(GPIO_Port port, uint8_t pin,  GPIO_PUPD_State pupd);
 
 
 
@@ -143,7 +143,7 @@ GPIO_Status_State GPIO_setPinInput(GPIO_Port port, char pin,  GPIO_PUPD_State pu
 * @param output_t output type
 * @return status
 */
-GPIO_Status_State GPIO_setPinInput_FC(GPIO_Port port, char pin,  GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t);
+GPIO_Status_State GPIO_setPinInput_FC(GPIO_Port port, uint8_t pin,  GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t);
 
 
 
@@ -155,7 +155,7 @@ GPIO_Status_State GPIO_setPinInput_FC(GPIO_Port port, char pin,  GPIO_PUPD_State
 * @return status
 * @warning This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. 
 */
-GPIO_Status_State GPIO_writePin(GPIO_Port port, char pin,  GPIO_PinState state);
+GPIO_Status_State GPIO_writePin(GPIO_Port port, uint8_t pin,  GPIO_PinState state);
 
 
 
@@ -167,7 +167,7 @@ GPIO_Status_State GPIO_writePin(GPIO_Port port, char pin,  GPIO_PinState state);
 * @warning This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC.
 * @warning This function does not check the arguments. This responsibility is left to the user.
 */
-GPIO_PinState GPIO_readPin(GPIO_Port port, char pin);
+GPIO_PinState GPIO_readPin(GPIO_Port port, uint8_t pin);
 
 
 
@@ -176,7 +176,7 @@ GPIO_PinState GPIO_readPin(GPIO_Port port, char pin);
 * @param pin pin number
 * @warning This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC.
 */
-GPIO_Status_State GPIO_togglePin(GPIO_Port port, char pin);
+GPIO_Status_State GPIO_togglePin(GPIO_Port port, uint8_t pin);
 
 
 
@@ -185,7 +185,7 @@ GPIO_Status_State GPIO_togglePin(GPIO_Port port, char pin);
 * @param pin pin number
 * @return status
 */
-GPIO_Status_State GPIO_setPinInterrupt(GPIO_Port port, char pin, GPIO_IT_TRIGGER_State trigger_state);
+GPIO_Status_State GPIO_setPinInterrupt(GPIO_Port port, uint8_t pin, GPIO_IT_TRIGGER_State trigger_state);
 
 
 
@@ -193,7 +193,7 @@ GPIO_Status_State GPIO_setPinInterrupt(GPIO_Port port, char pin, GPIO_IT_TRIGGER
 * @param pin pin number
 * @return status
 */
-GPIO_Status_State GPIO_resetPinInterrupt(char pin);
+GPIO_Status_State GPIO_resetPinInterrupt(uint8_t pin);
 
 
 
@@ -205,7 +205,7 @@ GPIO_Status_State GPIO_resetPinInterrupt(char pin);
 * @param output_t output type
 * @return status
 */
-GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, char pin, GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t);
+GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t);
 
 
 
@@ -216,5 +216,5 @@ GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, char pin, GPIO_PUPD_State p
 * @return status
 * @warning This function should only be called if the pin has been set to AF (Alternate Function) mode with setPinAF_Mode.
 */
-GPIO_Status_State GPIO_setPinAF_State(GPIO_Port port, char pin, GPIO_AF_State af_state);
+GPIO_Status_State GPIO_setPinAF_State(GPIO_Port port, uint8_t pin, GPIO_AF_State af_state);
 #endif

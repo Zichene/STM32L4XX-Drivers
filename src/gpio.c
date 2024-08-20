@@ -10,8 +10,8 @@
 ***/
 
 static GPIO_TypeDef* getGPIO(GPIO_Port port);
-static int getEXTI_IRQn(char pin);
-static void setOutput_Speed_PUPD(GPIO_TypeDef* GPIOX, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t);
+static int32_t getEXTI_IRQn(uint8_t pin);
+static void setOutput_Speed_PUPD(GPIO_TypeDef* GPIOX, uint8_t pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t);
 
 /****************************************************************************************************/
 /*			              PRIVATE FUNCTIONS                                             */
@@ -46,7 +46,7 @@ static GPIO_TypeDef* getGPIO(GPIO_Port port) {
 /* 
 Returns the EXTIX_IRQn depending on pin X. Note that pins 5-9 inclusive and 10-15 inclusive have a combined EXTI_IRQn,
 */
-static int getEXTI_IRQn(char pin) {
+static int32_t getEXTI_IRQn(uint8_t pin) {
 	switch(pin) {
 		case 0:
 			return EXTI0_IRQn;
@@ -66,7 +66,7 @@ static int getEXTI_IRQn(char pin) {
 /*
 Sets the output type, speed and pupd states for a GPIO pin.
 */
-static void setOutput_Speed_PUPD(GPIO_TypeDef* GPIOX, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t) {
+static void setOutput_Speed_PUPD(GPIO_TypeDef* GPIOX, uint8_t pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t) {
 	/* Output mode */
 	if (output_t == GPIO_OUTPUT_PUSH_PULL) GPIOX->OTYPER &= ~(0b1 << pin); 
 	else GPIOX->OTYPER |= 0b1 << pin;
@@ -86,11 +86,11 @@ static void setOutput_Speed_PUPD(GPIO_TypeDef* GPIOX, char pin, GPIO_PUPD_State 
 /*			              EXPORTED FUNCTIONS                                            */
 /****************************************************************************************************/
 
-GPIO_Status_State GPIO_setPinOutput(GPIO_Port port, char pin) {
+GPIO_Status_State GPIO_setPinOutput(GPIO_Port port, uint8_t pin) {
 	return GPIO_setPinOutput_FC(port, pin, GPIO_PUPD_NO_PULL_UP_PULL_DOWN, GPIO_SPEED_VERY_HIGH, GPIO_OUTPUT_PUSH_PULL);
 }
 
-GPIO_Status_State GPIO_setPinOutput_FC(GPIO_Port port, char pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t) {
+GPIO_Status_State GPIO_setPinOutput_FC(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t) {
 	/* check args */
 	if (!(port <= 8 && port >= 0 && pin <= 15 && pin >= 0 && pupd <= 2 && pupd >= 0 && speed <= 3 && speed >= 0 && output_t <= 1 && output_t >= 0))
 		return GPIO_INVALID_ARGS;
@@ -106,12 +106,12 @@ GPIO_Status_State GPIO_setPinOutput_FC(GPIO_Port port, char pin, GPIO_PUPD_State
 	return GPIO_OK;
 }
 
-GPIO_Status_State GPIO_setPinInput(GPIO_Port port, char pin, GPIO_PUPD_State pupd) {
+GPIO_Status_State GPIO_setPinInput(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd) {
 	return GPIO_setPinInput_FC(port, pin, pupd, GPIO_SPEED_VERY_HIGH, GPIO_OUTPUT_PUSH_PULL);
 }
 
 
-GPIO_Status_State GPIO_setPinInput_FC(GPIO_Port port, char pin,  GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t) {
+GPIO_Status_State GPIO_setPinInput_FC(GPIO_Port port, uint8_t pin,  GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t) {
 	/* check args */
 	if (!(port <= 8 && port >= 0 && pin <= 15 && pin >= 0 && pupd <= 2 && pupd >= 0 && speed <= 3 && speed >= 0 && output_t <= 1 && output_t >= 0))
 		return GPIO_INVALID_ARGS;
@@ -128,7 +128,7 @@ GPIO_Status_State GPIO_setPinInput_FC(GPIO_Port port, char pin,  GPIO_PUPD_State
 }
 
 
-GPIO_Status_State GPIO_writePin(GPIO_Port port, char pin, GPIO_PinState state) {
+GPIO_Status_State GPIO_writePin(GPIO_Port port, uint8_t pin, GPIO_PinState state) {
 		/* check args */
 		if (!(port <= 8 && port >= 0 && pin <= 15 && pin >= 0 && state <= 1 && state >= 0))
 			return GPIO_INVALID_ARGS;
@@ -140,14 +140,14 @@ GPIO_Status_State GPIO_writePin(GPIO_Port port, char pin, GPIO_PinState state) {
 }
 
 
-GPIO_PinState GPIO_readPin(GPIO_Port port, char pin) {
+GPIO_PinState GPIO_readPin(GPIO_Port port, uint8_t pin) {
 	/* This function should only be called if pin has been correctly set. */
 	GPIO_TypeDef* GPIOX = getGPIO(port);
 	// Shift the IDR until our desired bit is at LSB, then bitmask with 1
 	return (GPIOX->IDR >> pin) & 0b1;
 }
 
-GPIO_Status_State GPIO_togglePin(GPIO_Port port, char pin) {
+GPIO_Status_State GPIO_togglePin(GPIO_Port port, uint8_t pin) {
 	/* check args */
 	if (!(port <= 8 && port >= 0 && pin <= 15 && pin >= 0))
 		return GPIO_INVALID_ARGS;
@@ -156,7 +156,7 @@ GPIO_Status_State GPIO_togglePin(GPIO_Port port, char pin) {
 	return GPIO_OK;
 }
 
-GPIO_Status_State GPIO_setPinInterrupt(GPIO_Port port, char pin, GPIO_IT_TRIGGER_State trigger_state) {
+GPIO_Status_State GPIO_setPinInterrupt(GPIO_Port port, uint8_t pin, GPIO_IT_TRIGGER_State trigger_state) {
 	/* check args */
 	if (!(port <= 8 && port >= 0 && pin <= 15 && pin >= 0 && trigger_state <= 1 && trigger_state >= 0))
 		return GPIO_INVALID_ARGS;
@@ -183,7 +183,7 @@ GPIO_Status_State GPIO_setPinInterrupt(GPIO_Port port, char pin, GPIO_IT_TRIGGER
 }
 
 
-GPIO_Status_State GPIO_resetPinInterrupt(char pin) {
+GPIO_Status_State GPIO_resetPinInterrupt(uint8_t pin) {
 	/* check args */
 	if (!(pin <= 15 && pin >= 0))
 		return GPIO_INVALID_ARGS;
@@ -193,7 +193,7 @@ GPIO_Status_State GPIO_resetPinInterrupt(char pin) {
 }
 
 
-GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, char pin, GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t) {
+GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd,  GPIO_SPEED_State speed,  GPIO_OUTPUT_TYPE_State output_t) {
 	/* check args */
 	if (!(port <= 8 && port >= 0 && pin <= 15 && pin >= 0 && pupd <= 2 && pupd >= 0 && speed <= 3 && speed >= 0 && output_t <= 1 && output_t >= 0))
 		return GPIO_INVALID_ARGS;
@@ -209,7 +209,7 @@ GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, char pin, GPIO_PUPD_State p
 	return GPIO_OK;
 }
 
-GPIO_Status_State GPIO_setPinAF_State(GPIO_Port port, char pin, GPIO_AF_State af_state) {
+GPIO_Status_State GPIO_setPinAF_State(GPIO_Port port, uint8_t pin, GPIO_AF_State af_state) {
 	/* check args */
 	if (!(port <= 8 && port >= 0 && pin <= 15 && pin >= 0 && af_state <= 15 && af_state >= 0))
 		return GPIO_INVALID_ARGS;

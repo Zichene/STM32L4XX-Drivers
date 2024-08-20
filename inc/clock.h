@@ -134,7 +134,7 @@ typedef enum {
 * @warning Untested function due to lack of proper oscilloscope.
 * @warning Desired clock (mco_sel_state) needs to be properly activated via the RCC_CR register before use of this function. By default SYSCLK is already activated.
 */
-CLOCK_Status_State CLOCK_activateMCO(GPIO_Port port, char pin, CLOCK_MCO_SELECT_State mco_sel_state, CLOCK_MCO_PRESCALER_State mco_pre_state);
+CLOCK_Status_State CLOCK_activateMCO(GPIO_Port port, uint8_t pin, CLOCK_MCO_SELECT_State mco_sel_state, CLOCK_MCO_PRESCALER_State mco_pre_state);
 
 
 
@@ -146,7 +146,7 @@ CLOCK_Status_State CLOCK_activateMCO(GPIO_Port port, char pin, CLOCK_MCO_SELECT_
 * @return status 
 * @warning This function can only be called if the PLL clock is disabled. Use CLOCK_isActivated() and CLOCK_desactivateClk() before calling this function.
 */
-CLOCK_Status_State CLOCK_configPLL(CLOCK_PLL_SOURCE_State pll_src, char PLL_M, char PLL_N, CLOCK_PLLR_State PLL_R);
+CLOCK_Status_State CLOCK_configPLL(CLOCK_PLL_SOURCE_State pll_src, uint8_t PLL_M, uint8_t PLL_N, CLOCK_PLLR_State PLL_R);
 
 
 
@@ -155,7 +155,7 @@ CLOCK_Status_State CLOCK_configPLL(CLOCK_PLL_SOURCE_State pll_src, char PLL_M, c
 * @retval 0 the clock is not activated
 * @retval 1 the clock is activated
 */
-char CLOCK_isActivated(CLOCK_State clk);
+uint8_t CLOCK_isActivated(CLOCK_State clk);
 
 
 
@@ -181,34 +181,34 @@ CLOCK_Status_State CLOCK_desactivateClk(CLOCK_State clk);
 /**@brief Gets the speed (frequency) in Hz of the PLL clock, if it is activated.
 * @return frequency of PLL clock in Hz. If return value is 0, then PLL is not activated or has invalid PLL_N, PLL_M or PLL_R constants.
 */
-int CLOCK_getPLLClockSpeed();
+uint32_t CLOCK_getPLLClockSpeed();
 
 
 
 /**@brief Gets the speed (frequency) in Hz of the MSI (Multi-Speed Internal) clock.
 * @return frequency of MSI clock in Hz. 
 */
-int CLOCK_getMSIClockSpeed();
+uint32_t CLOCK_getMSIClockSpeed();
 
 
 /**@brief Set the speed of the external clock oscillator, if one is available.
 * @param speed (in Hz) of the HSE 
 */
-void CLOCK_setHSEClockSpeed(int speed);
+void CLOCK_setHSEClockSpeed(uint32_t speed);
 
 
 
 /**@brief Gets the speed (frequency) in Hz of the HSE (High-Speed External) clock.
 * @return frequency of HSE clock in Hz. 
 */
-int CLOCK_getHSEClockSpeed();
+uint32_t CLOCK_getHSEClockSpeed();
 
 
 
 /**@brief Gets the speed (frequency) in Hz of the system clock. The system clock can either be: MSI, HSI16, HSE or PLL.
 * @return frequency of the system clock in Hz.
 */
-int CLOCK_getSystemClockSpeed();
+uint32_t CLOCK_getSystemClockSpeed();
 
 
 
