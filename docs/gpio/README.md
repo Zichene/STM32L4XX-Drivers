@@ -1,4 +1,4 @@
-# group `GPIO` 
+# `GPIO` Drivers
 
 ## Summary
 
