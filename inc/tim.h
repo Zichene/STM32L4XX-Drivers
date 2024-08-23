@@ -23,17 +23,17 @@
 /**@brief Enum representing different timers on the chip. Timers 2-8 inclusive are connected to APB1 bus. Timers 1 and 15-17 inclusive are connected to the APB2 bus.
 */
 typedef enum {
-	TIM_TIM1 = 11,
-	TIM_TIM2 = 0,
-	TIM_TIM3 = 1,
-	TIM_TIM4 = 2,
-	TIM_TIM5 = 3,
-	TIM_TIM6 = 4,
-	TIM_TIM7 = 5,
-	TIM_TIM8 = 13,
-	TIM_TIM15 = 16,
-	TIM_TIM16 = 17,
-	TIM_TIM17 = 18,
+	TIM_TIM1 = 11, ///< TIM1 (advanced-control) timer selected. 
+	TIM_TIM2 = 0, ///< TIM2 (general purpose) timer selected.
+	TIM_TIM3 = 1, ///< TIM3 (general purpose) timer selected.
+	TIM_TIM4 = 2, ///< TIM4 (general purpose) timer selected.
+	TIM_TIM5 = 3, ///< TIM5 (general purpose) timer selected.
+	TIM_TIM6 = 4, ///< TIM6 (basic) timer selected.
+	TIM_TIM7 = 5, ///< TIM7 (basic) timer selected.
+	TIM_TIM8 = 13, ///< TIM7 (advanced-control) timer selected.
+	TIM_TIM15 = 16, ///< TIM15 (general purpose) timer selected.
+	TIM_TIM16 = 17, ///< TIM16 (general purpose) timer selected.
+	TIM_TIM17 = 18, ///< TIM17 (general purpose) timer selected.
 } TIM_TIMER_State;
 
 /**@brief Enum representing different function return statuses.
@@ -44,6 +44,8 @@ typedef enum {
 	TIM_ERROR = 2, ///< Indicates that a general error has occured.
 }TIM_Status_State;
 
+/**@brief Struct representing configuration parameters for a timer. To be used with TIM_config().
+*/
 typedef struct {
 	TIM_TIMER_State timer; ///< Timer. Which timer will be configured.
 	uint16_t PSC; ///< Prescaler. The counter clock frequency CK_CNT is equal to fCK_PSC / (PSC[15:0] + 1).

@@ -49,7 +49,7 @@
 /*                                                                                                 */
 /* ATTENTION: Only uncomment one of the following defines to select which project to run.          */
 /***************************************************************************************************/
- #define PUSH_LED ///< Project 1: Push Led selected. Main driver(s) used: GPIO
+// #define PUSH_LED ///< Project 1: Push Led selected. Main driver(s) used: GPIO
 // #define BLINKY_LED ///< Project 2: Blinky Led selected. Main driver(s) used: GPIO, CLOCK, TIM
-
+#define UART_PRINTF ///< Project 3: Printing to UART. Main drivers(s) used: TODO
 #endif // COMMON_H
