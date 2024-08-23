@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="gpio_8h" kind="file" language="C++">
+    <compoundname>gpio.h</compoundname>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includedby refid="clock_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>common.h</label>
+        <link refid="common_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stm32l4xx.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h</label>
+        <link refid="clock_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/tim.h</label>
+        <link refid="tim_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="enum">
+      <member refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kind="enum"><name>GPIO_Port</name></member>
+      <member refid="group___g_p_i_o_1ga5b3ef0486b179415581eb342e0ea6b43" kind="enum"><name>GPIO_PinState</name></member>
+      <member refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kind="enum"><name>GPIO_PUPD_State</name></member>
+      <member refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" kind="enum"><name>GPIO_SPEED_State</name></member>
+      <member refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" kind="enum"><name>GPIO_OUTPUT_TYPE_State</name></member>
+      <member refid="group___g_p_i_o_1ga50a2f4df54586ff8414f27fcb3f827db" kind="enum"><name>GPIO_AF_State</name></member>
+      <member refid="group___g_p_i_o_1gace0c7e64d6c4e935151fbb7616fe540a" kind="enum"><name>GPIO_IT_TRIGGER_State</name></member>
+      <member refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kind="enum"><name>GPIO_Status_State</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group___g_p_i_o_1gab595615510195f9a4192c7a189678fab" kind="function"><name>GPIO_setPinOutput</name></member>
+      <member refid="group___g_p_i_o_1ga882cc33c981cd7f8dfba88f860272d8a" kind="function"><name>GPIO_setPinOutput_FC</name></member>
+      <member refid="group___g_p_i_o_1gae6d9d08aa8ecf6a2f1237373ffe54dea" kind="function"><name>GPIO_setPinInput</name></member>
+      <member refid="group___g_p_i_o_1ga18ca43b6164db4241faf900a1209013b" kind="function"><name>GPIO_setPinInput_FC</name></member>
+      <member refid="group___g_p_i_o_1ga6f78d205e4179fc73f2515d21660accf" kind="function"><name>GPIO_writePin</name></member>
+      <member refid="group___g_p_i_o_1ga20f3f4cc40731487424a228070958166" kind="function"><name>GPIO_readPin</name></member>
+      <member refid="group___g_p_i_o_1ga2dbba2abe607108f74710b045b089c72" kind="function"><name>GPIO_togglePin</name></member>
+      <member refid="group___g_p_i_o_1ga232a16e1fe539abaaf2b4451039acbdd" kind="function"><name>GPIO_setPinInterrupt</name></member>
+      <member refid="group___g_p_i_o_1ga93410b92827b20bc14b1ce1f54950f80" kind="function"><name>GPIO_resetPinInterrupt</name></member>
+      <member refid="group___g_p_i_o_1ga328c278fa96a3802882630ad49ee7ae3" kind="function"><name>GPIO_setPinAF_Mode</name></member>
+      <member refid="group___g_p_i_o_1ga4ea71fe1e6545955e83ade36d2d9a053" kind="function"><name>GPIO_setPinAF_State</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GPIO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GPIO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/***</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*<sp/>GPIO<sp/>drivers<sp/>for<sp/>stm32l4xx<sp/>devices.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/>WARNING:<sp/>These<sp/>drivers<sp/>have<sp/>NOT<sp/>been<sp/>tested<sp/>extensively.<sp/>Use<sp/>at<sp/>own<sp/>risk.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/>Reference:<sp/>https://www.youtube.com/playlist?list=PLtVUYRe-Z-mfKO0lg_-MBvwWl6VjWT8Dt</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/>STM32<sp/>Reference<sp/>Manual:<sp/>RM0432</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">***/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPEDEFS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a8b07bc36836f09ea3bf685aa40bb2a1c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a8b07bc36836f09ea3bf685aa40bb2a1c" kindref="member">GPIO_PORT_A</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="28" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150af5a83964a6998f346c504ea8a14aa420" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150af5a83964a6998f346c504ea8a14aa420" kindref="member">GPIO_PORT_B</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="29" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150aa6d64325a6ea4d520a8f7c2f8d9b82ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150aa6d64325a6ea4d520a8f7c2f8d9b82ba" kindref="member">GPIO_PORT_C</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="30" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a28839778b06b58a1b3ece28f39dade8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a28839778b06b58a1b3ece28f39dade8f" kindref="member">GPIO_PORT_D</ref><sp/>=<sp/>3,<sp/></highlight></codeline>
+<codeline lineno="31" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a9cdccb3f86f1326ee286709c135995c8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a9cdccb3f86f1326ee286709c135995c8" kindref="member">GPIO_PORT_E</ref><sp/>=<sp/>4,<sp/></highlight></codeline>
+<codeline lineno="32" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a2e0f525fddb580bff30dc9dd84f3fa5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a2e0f525fddb580bff30dc9dd84f3fa5b" kindref="member">GPIO_PORT_F</ref><sp/>=<sp/>5,<sp/></highlight></codeline>
+<codeline lineno="33" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a97e13b5e58f0f2b2fca0e21721be0cf0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a97e13b5e58f0f2b2fca0e21721be0cf0" kindref="member">GPIO_PORT_G</ref><sp/>=<sp/>6,<sp/></highlight></codeline>
+<codeline lineno="34" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a160734b9f43544c741c11fb095716646" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a160734b9f43544c741c11fb095716646" kindref="member">GPIO_PORT_H</ref><sp/>=<sp/>7,<sp/></highlight></codeline>
+<codeline lineno="35" refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150ab8b724b98c20d45094005095306b01fd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150ab8b724b98c20d45094005095306b01fd" kindref="member">GPIO_PORT_I</ref><sp/>=<sp/>8,<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}<sp/><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref>;<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="group___g_p_i_o_1ga5b3ef0486b179415581eb342e0ea6b43" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="41" refid="group___g_p_i_o_1gga5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa" kindref="member">GPIO_LOW</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="42" refid="group___g_p_i_o_1gga5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d" kindref="member">GPIO_HIGH</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}<ref refid="group___g_p_i_o_1ga5b3ef0486b179415581eb342e0ea6b43" kindref="member">GPIO_PinState</ref><sp/>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="48" refid="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a340a342762fc759e14028a4a48ba1907" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a340a342762fc759e14028a4a48ba1907" kindref="member">GPIO_PUPD_NO_PULL_UP_PULL_DOWN</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="49" refid="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36" kindref="member">GPIO_PUPD_PULL_UP</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="50" refid="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a9b5ad4d5996f33eb251c8a4854479d89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a9b5ad4d5996f33eb251c8a4854479d89" kindref="member">GPIO_PUPD_PULL_DOWN</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56" refid="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b" kindref="member">GPIO_SPEED_LOW</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="57" refid="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343" kindref="member">GPIO_SPEED_MEDIUM</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="58" refid="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12" kindref="member">GPIO_SPEED_HIGH</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="59" refid="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746" kindref="member">GPIO_SPEED_VERY_HIGH</ref><sp/>=<sp/>3,<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}<ref refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" kindref="member">GPIO_SPEED_State</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="65" refid="group___g_p_i_o_1ggad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9" kindref="member">GPIO_OUTPUT_PUSH_PULL</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="66" refid="group___g_p_i_o_1ggad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b" kindref="member">GPIO_OUTPUT_OPEN_DRAIN</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}<ref refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" kindref="member">GPIO_OUTPUT_TYPE_State</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="group___g_p_i_o_1ga50a2f4df54586ff8414f27fcb3f827db" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="72" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbaa27f25443e3ae77015a9a3deed4a3ef7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbaa27f25443e3ae77015a9a3deed4a3ef7" kindref="member">GPIO_AF_0</ref>,<sp/></highlight></codeline>
+<codeline lineno="73" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbab7284fc4f49b263570f6f66eabc8ae64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbab7284fc4f49b263570f6f66eabc8ae64" kindref="member">GPIO_AF_1</ref>,<sp/></highlight></codeline>
+<codeline lineno="74" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba2f0c81fc78a4f730e29e5373f0c5335e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba2f0c81fc78a4f730e29e5373f0c5335e" kindref="member">GPIO_AF_2</ref>,<sp/></highlight></codeline>
+<codeline lineno="75" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba568f8145874b6cdacdb64da890263199" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba568f8145874b6cdacdb64da890263199" kindref="member">GPIO_AF_3</ref>,<sp/></highlight></codeline>
+<codeline lineno="76" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba6487423a94e798b9c6aecff59d530935" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba6487423a94e798b9c6aecff59d530935" kindref="member">GPIO_AF_4</ref>,<sp/></highlight></codeline>
+<codeline lineno="77" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba607129224edfd66ebc4d62b4a9c1f3df" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba607129224edfd66ebc4d62b4a9c1f3df" kindref="member">GPIO_AF_5</ref>,<sp/></highlight></codeline>
+<codeline lineno="78" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbac9028834e34ba4022d38895dd85ce08c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbac9028834e34ba4022d38895dd85ce08c" kindref="member">GPIO_AF_6</ref>,<sp/></highlight></codeline>
+<codeline lineno="79" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba4e8bcdef1a4156c7ed119f7848e78f28" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba4e8bcdef1a4156c7ed119f7848e78f28" kindref="member">GPIO_AF_7</ref>,<sp/></highlight></codeline>
+<codeline lineno="80" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe" kindref="member">GPIO_AF_8</ref>,<sp/></highlight></codeline>
+<codeline lineno="81" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097" kindref="member">GPIO_AF_9</ref>,<sp/></highlight></codeline>
+<codeline lineno="82" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbabecf6bda4c604c5037f6e5990f0efca7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbabecf6bda4c604c5037f6e5990f0efca7" kindref="member">GPIO_AF_10</ref>,<sp/></highlight></codeline>
+<codeline lineno="83" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbafc09543663eaebd7bb076bf5f00587a8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbafc09543663eaebd7bb076bf5f00587a8" kindref="member">GPIO_AF_11</ref>,<sp/></highlight></codeline>
+<codeline lineno="84" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba95716054846153b5e34cd84367916b6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba95716054846153b5e34cd84367916b6f" kindref="member">GPIO_AF_12</ref>,<sp/></highlight></codeline>
+<codeline lineno="85" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbaba8c165865eaa7fb2be4bce6e1d90570" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbaba8c165865eaa7fb2be4bce6e1d90570" kindref="member">GPIO_AF_13</ref>,<sp/></highlight></codeline>
+<codeline lineno="86" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba915de70ded11531cbb2cb164c1e568ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba915de70ded11531cbb2cb164c1e568ba" kindref="member">GPIO_AF_14</ref>,<sp/></highlight></codeline>
+<codeline lineno="87" refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba8631c9933547084963ccb453e0fa142b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba8631c9933547084963ccb453e0fa142b" kindref="member">GPIO_AF_15</ref>,<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}<ref refid="group___g_p_i_o_1ga50a2f4df54586ff8414f27fcb3f827db" kindref="member">GPIO_AF_State</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="group___g_p_i_o_1gace0c7e64d6c4e935151fbb7616fe540a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="93" refid="group___g_p_i_o_1ggace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78" kindref="member">GPIO_IT_TRIGGER_FALLING</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="94" refid="group___g_p_i_o_1ggace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1ggace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216" kindref="member">GPIO_IT_TRIGGER_RISING</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}<ref refid="group___g_p_i_o_1gace0c7e64d6c4e935151fbb7616fe540a" kindref="member">GPIO_IT_TRIGGER_State</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="100" refid="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a221c52bb468cb5191edcd5bd3fbd862c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a221c52bb468cb5191edcd5bd3fbd862c" kindref="member">GPIO_OK</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="101" refid="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a3a8415df5bbacde0e5baa2fdac62a8b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a3a8415df5bbacde0e5baa2fdac62a8b1" kindref="member">GPIO_INVALID_ARGS</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="102" refid="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a655a17b7b79de8c0c8e5356f966e506f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a655a17b7b79de8c0c8e5356f966e506f" kindref="member">GPIO_ERROR</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}<ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref>;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FUNCTION<sp/>PROTOTYPES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="group___g_p_i_o_1gab595615510195f9a4192c7a189678fab" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1gab595615510195f9a4192c7a189678fab" kindref="member">GPIO_setPinOutput</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="group___g_p_i_o_1ga882cc33c981cd7f8dfba88f860272d8a" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1ga882cc33c981cd7f8dfba88f860272d8a" kindref="member">GPIO_setPinOutput_FC</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin,<sp/><ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref><sp/>pupd,<sp/><ref refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" kindref="member">GPIO_SPEED_State</ref><sp/>speed,<sp/><ref refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" kindref="member">GPIO_OUTPUT_TYPE_State</ref><sp/>output_t);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="group___g_p_i_o_1gae6d9d08aa8ecf6a2f1237373ffe54dea" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1gae6d9d08aa8ecf6a2f1237373ffe54dea" kindref="member">GPIO_setPinInput</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin,<sp/><sp/><ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref><sp/>pupd);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="group___g_p_i_o_1ga18ca43b6164db4241faf900a1209013b" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1ga18ca43b6164db4241faf900a1209013b" kindref="member">GPIO_setPinInput_FC</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin,<sp/><sp/><ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref><sp/>pupd,<sp/><sp/><ref refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" kindref="member">GPIO_SPEED_State</ref><sp/>speed,<sp/><sp/><ref refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" kindref="member">GPIO_OUTPUT_TYPE_State</ref><sp/>output_t);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="group___g_p_i_o_1ga6f78d205e4179fc73f2515d21660accf" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1ga6f78d205e4179fc73f2515d21660accf" kindref="member">GPIO_writePin</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin,<sp/><sp/><ref refid="group___g_p_i_o_1ga5b3ef0486b179415581eb342e0ea6b43" kindref="member">GPIO_PinState</ref><sp/>state);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176" refid="group___g_p_i_o_1ga20f3f4cc40731487424a228070958166" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga5b3ef0486b179415581eb342e0ea6b43" kindref="member">GPIO_PinState</ref><sp/><ref refid="group___g_p_i_o_1ga20f3f4cc40731487424a228070958166" kindref="member">GPIO_readPin</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185" refid="group___g_p_i_o_1ga2dbba2abe607108f74710b045b089c72" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1ga2dbba2abe607108f74710b045b089c72" kindref="member">GPIO_togglePin</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="group___g_p_i_o_1ga232a16e1fe539abaaf2b4451039acbdd" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1ga232a16e1fe539abaaf2b4451039acbdd" kindref="member">GPIO_setPinInterrupt</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin,<sp/><ref refid="group___g_p_i_o_1gace0c7e64d6c4e935151fbb7616fe540a" kindref="member">GPIO_IT_TRIGGER_State</ref><sp/>trigger_state);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202" refid="group___g_p_i_o_1ga93410b92827b20bc14b1ce1f54950f80" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1ga93410b92827b20bc14b1ce1f54950f80" kindref="member">GPIO_resetPinInterrupt</ref>(uint8_t<sp/>pin);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="group___g_p_i_o_1ga328c278fa96a3802882630ad49ee7ae3" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1ga328c278fa96a3802882630ad49ee7ae3" kindref="member">GPIO_setPinAF_Mode</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin,<sp/><ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref><sp/>pupd,<sp/><sp/><ref refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" kindref="member">GPIO_SPEED_State</ref><sp/>speed,<sp/><sp/><ref refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" kindref="member">GPIO_OUTPUT_TYPE_State</ref><sp/>output_t);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225" refid="group___g_p_i_o_1ga4ea71fe1e6545955e83ade36d2d9a053" refkind="member"><highlight class="normal"><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref><sp/><ref refid="group___g_p_i_o_1ga4ea71fe1e6545955e83ade36d2d9a053" kindref="member">GPIO_setPinAF_State</ref>(<ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref><sp/>port,<sp/>uint8_t<sp/>pin,<sp/><ref refid="group___g_p_i_o_1ga50a2f4df54586ff8414f27fcb3f827db" kindref="member">GPIO_AF_State</ref><sp/>af_state);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h"/>
+  </compounddef>
+</doxygen>

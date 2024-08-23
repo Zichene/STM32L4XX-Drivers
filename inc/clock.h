@@ -1,3 +1,7 @@
+/** \addtogroup CLOCK
+ *  @{
+ */
+
 #ifndef CLOCK_H
 #define CLOCK_H
 #include "common.h"
@@ -245,3 +249,4 @@ CLOCK_Status_State CLOCK_setAPB1Prescaler(CLOCK_APB1_PRESCALER_State apb1_presca
 */
 CLOCK_Status_State CLOCK_setAPB2Prescaler(CLOCK_APB2_PRESCALER_State apb2_prescaler);
 #endif
+/** @}*/

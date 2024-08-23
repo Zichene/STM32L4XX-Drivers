@@ -1,0 +1,224 @@
+\doxysection{TIM}
+\hypertarget{group___t_i_m}{}\label{group___t_i_m}\index{TIM@{TIM}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} \{ \newline
+{\bfseries TIM\+\_\+\+TIM1} = 11
+, {\bfseries TIM\+\_\+\+TIM2} = 0
+, {\bfseries TIM\+\_\+\+TIM3} = 1
+, {\bfseries TIM\+\_\+\+TIM4} = 2
+, \newline
+{\bfseries TIM\+\_\+\+TIM5} = 3
+, {\bfseries TIM\+\_\+\+TIM6} = 4
+, {\bfseries TIM\+\_\+\+TIM7} = 5
+, {\bfseries TIM\+\_\+\+TIM8} = 13
+, \newline
+{\bfseries TIM\+\_\+\+TIM15} = 16
+, {\bfseries TIM\+\_\+\+TIM16} = 17
+, {\bfseries TIM\+\_\+\+TIM17} = 18
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing different timers on the chip. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \{ \mbox{\hyperlink{group___t_i_m_ggaa7bb33976f8d2b8535cb20917287e529aa1b7f249f72c16e5134db3932bbef8cf}{TIM\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{group___t_i_m_ggaa7bb33976f8d2b8535cb20917287e529ac19c9a6545be99db540565b880f5a3b5}{TIM\+\_\+\+INVALID\+\_\+\+ARGS}} = 1
+, \mbox{\hyperlink{group___t_i_m_ggaa7bb33976f8d2b8535cb20917287e529a102d9931bb3bd470780477491454a9b7}{TIM\+\_\+\+ERROR}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing different function return statuses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga7e436dcd8d1f9df35649297fc25de9c9}{TIM\+\_\+enable\+Peripheral\+Clk}} (\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
+\begin{DoxyCompactList}\small\item\em Enable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga51fa45a8ad8271045073f95c61a75574}{TIM\+\_\+disable\+Peripheral\+Clk}} (\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
+\begin{DoxyCompactList}\small\item\em Disable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga3ecfed8e3ce677c6f663d0dbec8219c4}{TIM\+\_\+config}} (\mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}config)
+\begin{DoxyCompactList}\small\item\em Configure a timer with desired config parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga9b79b449a6bad1fdcd3553cb8ad1787c}{TIM\+\_\+start\+Timer}} (\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
+\begin{DoxyCompactList}\small\item\em Starts the timer by setting the CEN bit in the TIMx\+\_\+\+CR1 register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga469e7c7abf13151452b4280eed1c7f24}{TIM\+\_\+stop\+Timer}} (\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
+\begin{DoxyCompactList}\small\item\em Stops the timer by setting the CEN bit in the TIMx\+\_\+\+CR1 register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___t_i_m_ga9aefba36c49823c04220ebffd9426f81}{TIM\+\_\+has\+Updated}} (\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer, uint8\+\_\+t reset\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Checks the update interrupt flag (UIF) in the TIMx\+\_\+\+SR register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga678b5813bb7929232e9346038a6c756d}{TIM\+\_\+reset\+Event\+Flag}} (\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
+\begin{DoxyCompactList}\small\item\em Resets the UIF flag in the TIMx\+\_\+\+SR register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}\index{TIM@{TIM}!TIM\_Status\_State@{TIM\_Status\_State}}
+\index{TIM\_Status\_State@{TIM\_Status\_State}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_Status\_State}{TIM\_Status\_State}}
+{\footnotesize\ttfamily \label{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529} 
+enum \mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}}}
+
+
+
+Enum representing different function return statuses. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_OK@{TIM\_OK}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_OK@{TIM\_OK}}}\Hypertarget{group___t_i_m_ggaa7bb33976f8d2b8535cb20917287e529aa1b7f249f72c16e5134db3932bbef8cf}\label{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529} 
+TIM\+\_\+\+OK&Indicates that a function has returned successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_INVALID\_ARGS@{TIM\_INVALID\_ARGS}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_INVALID\_ARGS@{TIM\_INVALID\_ARGS}}}\Hypertarget{group___t_i_m_ggaa7bb33976f8d2b8535cb20917287e529ac19c9a6545be99db540565b880f5a3b5}\label{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529} 
+TIM\+\_\+\+INVALID\+\_\+\+ARGS&Indicates that a function has been given invalid (out of range) arguments. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_ERROR@{TIM\_ERROR}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_ERROR@{TIM\_ERROR}}}\Hypertarget{group___t_i_m_ggaa7bb33976f8d2b8535cb20917287e529a102d9931bb3bd470780477491454a9b7}\label{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529} 
+TIM\+\_\+\+ERROR&Indicates that a general error has occured. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}\index{TIM@{TIM}!TIM\_TIMER\_State@{TIM\_TIMER\_State}}
+\index{TIM\_TIMER\_State@{TIM\_TIMER\_State}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIMER\_State}{TIM\_TIMER\_State}}
+{\footnotesize\ttfamily \label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+enum \mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}
+
+
+
+Enum representing different timers on the chip. 
+
+Timers 2-\/8 inclusive are connected to APB1 bus. Timers 1 and 15-\/17 inclusive are connected to the APB2 bus. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___t_i_m_ga3ecfed8e3ce677c6f663d0dbec8219c4}\index{TIM@{TIM}!TIM\_config@{TIM\_config}}
+\index{TIM\_config@{TIM\_config}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_config()}{TIM\_config()}}
+{\footnotesize\ttfamily \label{group___t_i_m_ga3ecfed8e3ce677c6f663d0dbec8219c4} 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Configure a timer with desired config parameters. 
+
+See \doxylink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef} for specific parameters. 
+\begin{DoxyParams}{Parameters}
+{\em config} & pointer to a \doxylink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef} object that contains the parameter configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{group___t_i_m_ga51fa45a8ad8271045073f95c61a75574}\index{TIM@{TIM}!TIM\_disablePeripheralClk@{TIM\_disablePeripheralClk}}
+\index{TIM\_disablePeripheralClk@{TIM\_disablePeripheralClk}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_disablePeripheralClk()}{TIM\_disablePeripheralClk()}}
+{\footnotesize\ttfamily \label{group___t_i_m_ga51fa45a8ad8271045073f95c61a75574} 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+disable\+Peripheral\+Clk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+
+
+
+Disable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & which timer to disable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{group___t_i_m_ga7e436dcd8d1f9df35649297fc25de9c9}\index{TIM@{TIM}!TIM\_enablePeripheralClk@{TIM\_enablePeripheralClk}}
+\index{TIM\_enablePeripheralClk@{TIM\_enablePeripheralClk}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_enablePeripheralClk()}{TIM\_enablePeripheralClk()}}
+{\footnotesize\ttfamily \label{group___t_i_m_ga7e436dcd8d1f9df35649297fc25de9c9} 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+enable\+Peripheral\+Clk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+
+
+
+Enable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & which timer to enable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{group___t_i_m_ga9aefba36c49823c04220ebffd9426f81}\index{TIM@{TIM}!TIM\_hasUpdated@{TIM\_hasUpdated}}
+\index{TIM\_hasUpdated@{TIM\_hasUpdated}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_hasUpdated()}{TIM\_hasUpdated()}}
+{\footnotesize\ttfamily \label{group___t_i_m_ga9aefba36c49823c04220ebffd9426f81} 
+uint8\+\_\+t TIM\+\_\+has\+Updated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{, }\item[{uint8\+\_\+t}]{reset\+\_\+flag}{}\end{DoxyParamCaption})}
+
+
+
+Checks the update interrupt flag (UIF) in the TIMx\+\_\+\+SR register. 
+
+Optionally, can choose to reset UIF to \textquotesingle{}0\textquotesingle{} if \textquotesingle{}1\textquotesingle{} is read. 
+\begin{DoxyParams}{Parameters}
+{\em timer} & timer. \\
+\hline
+{\em reset\+\_\+flag} & boolean to indicate whether we want to automatically reset the UIF flag to \textquotesingle{}0\textquotesingle{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of the UIF flag. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This function does not check correctness of arguments. This responsibility is given to the caller. 
+\end{DoxyWarning}
+\Hypertarget{group___t_i_m_ga678b5813bb7929232e9346038a6c756d}\index{TIM@{TIM}!TIM\_resetEventFlag@{TIM\_resetEventFlag}}
+\index{TIM\_resetEventFlag@{TIM\_resetEventFlag}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_resetEventFlag()}{TIM\_resetEventFlag()}}
+{\footnotesize\ttfamily \label{group___t_i_m_ga678b5813bb7929232e9346038a6c756d} 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+reset\+Event\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+
+
+
+Resets the UIF flag in the TIMx\+\_\+\+SR register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & timer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{group___t_i_m_ga9b79b449a6bad1fdcd3553cb8ad1787c}\index{TIM@{TIM}!TIM\_startTimer@{TIM\_startTimer}}
+\index{TIM\_startTimer@{TIM\_startTimer}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_startTimer()}{TIM\_startTimer()}}
+{\footnotesize\ttfamily \label{group___t_i_m_ga9b79b449a6bad1fdcd3553cb8ad1787c} 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+start\+Timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+
+
+
+Starts the timer by setting the CEN bit in the TIMx\+\_\+\+CR1 register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & timer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{group___t_i_m_ga469e7c7abf13151452b4280eed1c7f24}\index{TIM@{TIM}!TIM\_stopTimer@{TIM\_stopTimer}}
+\index{TIM\_stopTimer@{TIM\_stopTimer}!TIM@{TIM}}
+\doxysubsubsection{\texorpdfstring{TIM\_stopTimer()}{TIM\_stopTimer()}}
+{\footnotesize\ttfamily \label{group___t_i_m_ga469e7c7abf13151452b4280eed1c7f24} 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+stop\+Timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}}}]{timer}{}\end{DoxyParamCaption})}
+
+
+
+Stops the timer by setting the CEN bit in the TIMx\+\_\+\+CR1 register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & timer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}

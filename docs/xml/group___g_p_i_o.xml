@@ -1,0 +1,1075 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="group___g_p_i_o" kind="group">
+    <compoundname>GPIO</compoundname>
+    <title>GPIO</title>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GPIO_Port</name>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a8b07bc36836f09ea3bf685aa40bb2a1c" prot="public">
+          <name>GPIO_PORT_A</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>GPIO port A. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150af5a83964a6998f346c504ea8a14aa420" prot="public">
+          <name>GPIO_PORT_B</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>GPIO port B. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150aa6d64325a6ea4d520a8f7c2f8d9b82ba" prot="public">
+          <name>GPIO_PORT_C</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>GPIO port C. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a28839778b06b58a1b3ece28f39dade8f" prot="public">
+          <name>GPIO_PORT_D</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>GPIO port D. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a9cdccb3f86f1326ee286709c135995c8" prot="public">
+          <name>GPIO_PORT_E</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>GPIO port E. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a2e0f525fddb580bff30dc9dd84f3fa5b" prot="public">
+          <name>GPIO_PORT_F</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>GPIO port F. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a97e13b5e58f0f2b2fca0e21721be0cf0" prot="public">
+          <name>GPIO_PORT_G</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>GPIO port G. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150a160734b9f43544c741c11fb095716646" prot="public">
+          <name>GPIO_PORT_H</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+<para>GPIO port H. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaf164c756418dde00ac07fd47d0962150ab8b724b98c20d45094005095306b01fd" prot="public">
+          <name>GPIO_PORT_I</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+<para>GPIO port I. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the port of a GPIO pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For this family of devices, ports A-I inclusive are supported. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="26" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="26" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___g_p_i_o_1ga5b3ef0486b179415581eb342e0ea6b43" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GPIO_PinState</name>
+        <enumvalue id="group___g_p_i_o_1gga5b3ef0486b179415581eb342e0ea6b43ad41cdd897d9b8714ef45ed6e9eba0dfa" prot="public">
+          <name>GPIO_LOW</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>The state of the pin is low. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga5b3ef0486b179415581eb342e0ea6b43ab05c5a854da4602143b6bd6096d86c4d" prot="public">
+          <name>GPIO_HIGH</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>The state of the pin is high. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the state of a pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="40" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GPIO_PUPD_State</name>
+        <enumvalue id="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a340a342762fc759e14028a4a48ba1907" prot="public">
+          <name>GPIO_PUPD_NO_PULL_UP_PULL_DOWN</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No pull up or pull down chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a4c4d8a76ae2f0af1ff22c4faaf4e8a36" prot="public">
+          <name>GPIO_PUPD_PULL_UP</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Pull up resistor chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga2266f25d4ba662cd4e40de36a5049167a9b5ad4d5996f33eb251c8a4854479d89" prot="public">
+          <name>GPIO_PUPD_PULL_DOWN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Pull down resistor chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing different PUPD states which are accepted by the GPIOx_PUPDR register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="47" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="47" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GPIO_SPEED_State</name>
+        <enumvalue id="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fa500a7d8082d9c2145ce0aaafb889103b" prot="public">
+          <name>GPIO_SPEED_LOW</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Low speed chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190faba2b72265754e50d9e030580ebd4f343" prot="public">
+          <name>GPIO_SPEED_MEDIUM</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Medium speed chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fadf918cc24366489024232239a491da12" prot="public">
+          <name>GPIO_SPEED_HIGH</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>High speed chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggaaf9978d8971c86f33115b493e5d6190fa5c95639cc77bd8169fc54dbf72cfe746" prot="public">
+          <name>GPIO_SPEED_VERY_HIGH</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Very high speed chosen. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the speed of a GPIO pin which are accepted by the GPIOx_SPEEDR register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="55" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="55" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GPIO_OUTPUT_TYPE_State</name>
+        <enumvalue id="group___g_p_i_o_1ggad95ee31148019b4ae8d63e5a3e0777eea98ad18441bf40d98b3e21c6b1e4f23a9" prot="public">
+          <name>GPIO_OUTPUT_PUSH_PULL</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Push pull mode. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggad95ee31148019b4ae8d63e5a3e0777eea8d500adc2f6982a9ddc8dcdd66c80c4b" prot="public">
+          <name>GPIO_OUTPUT_OPEN_DRAIN</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Open drain mode. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing the type of GPIO output driver which are accepted by the GPIOx_OTYPER register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="64" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___g_p_i_o_1ga50a2f4df54586ff8414f27fcb3f827db" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GPIO_AF_State</name>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbaa27f25443e3ae77015a9a3deed4a3ef7" prot="public">
+          <name>GPIO_AF_0</name>
+          <briefdescription>
+<para>Alternate Function 0. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbab7284fc4f49b263570f6f66eabc8ae64" prot="public">
+          <name>GPIO_AF_1</name>
+          <briefdescription>
+<para>Alternate Function 1. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba2f0c81fc78a4f730e29e5373f0c5335e" prot="public">
+          <name>GPIO_AF_2</name>
+          <briefdescription>
+<para>Alternate Function 2. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba568f8145874b6cdacdb64da890263199" prot="public">
+          <name>GPIO_AF_3</name>
+          <briefdescription>
+<para>Alternate Function 3. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba6487423a94e798b9c6aecff59d530935" prot="public">
+          <name>GPIO_AF_4</name>
+          <briefdescription>
+<para>Alternate Function 4. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba607129224edfd66ebc4d62b4a9c1f3df" prot="public">
+          <name>GPIO_AF_5</name>
+          <briefdescription>
+<para>Alternate Function 5. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbac9028834e34ba4022d38895dd85ce08c" prot="public">
+          <name>GPIO_AF_6</name>
+          <briefdescription>
+<para>Alternate Function 6. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba4e8bcdef1a4156c7ed119f7848e78f28" prot="public">
+          <name>GPIO_AF_7</name>
+          <briefdescription>
+<para>Alternate Function 7. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba9eb0af57b9bf07706136bc6336d5e1fe" prot="public">
+          <name>GPIO_AF_8</name>
+          <briefdescription>
+<para>Alternate Function 8. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba592d778bf4217d2a780f8bd9893c2097" prot="public">
+          <name>GPIO_AF_9</name>
+          <briefdescription>
+<para>Alternate Function 9. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbabecf6bda4c604c5037f6e5990f0efca7" prot="public">
+          <name>GPIO_AF_10</name>
+          <briefdescription>
+<para>Alternate Function 10. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbafc09543663eaebd7bb076bf5f00587a8" prot="public">
+          <name>GPIO_AF_11</name>
+          <briefdescription>
+<para>Alternate Function 11. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba95716054846153b5e34cd84367916b6f" prot="public">
+          <name>GPIO_AF_12</name>
+          <briefdescription>
+<para>Alternate Function 12. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dbaba8c165865eaa7fb2be4bce6e1d90570" prot="public">
+          <name>GPIO_AF_13</name>
+          <briefdescription>
+<para>Alternate Function 13. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba915de70ded11531cbb2cb164c1e568ba" prot="public">
+          <name>GPIO_AF_14</name>
+          <briefdescription>
+<para>Alternate Function 14. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga50a2f4df54586ff8414f27fcb3f827dba8631c9933547084963ccb453e0fa142b" prot="public">
+          <name>GPIO_AF_15</name>
+          <briefdescription>
+<para>Alternate Function 15. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing Alternate Function (AF) states for GPIO pins which are accepted by the GPIOx_AFRL and GPIOx_AFRH registers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="71" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="71" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___g_p_i_o_1gace0c7e64d6c4e935151fbb7616fe540a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GPIO_IT_TRIGGER_State</name>
+        <enumvalue id="group___g_p_i_o_1ggace0c7e64d6c4e935151fbb7616fe540aaf651e8ebefb592dfa282b4f6a0b2ea78" prot="public">
+          <name>GPIO_IT_TRIGGER_FALLING</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Interrupts on falling edge. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1ggace0c7e64d6c4e935151fbb7616fe540aa3bd4a1bb96a0856bf022e9651a6e4216" prot="public">
+          <name>GPIO_IT_TRIGGER_RISING</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Interrupts on rising edge. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum to select interrupt trigger (falling or rising). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="92" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" prot="public" static="no" strong="no">
+        <type></type>
+        <name>GPIO_Status_State</name>
+        <enumvalue id="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a221c52bb468cb5191edcd5bd3fbd862c" prot="public">
+          <name>GPIO_OK</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Indicates that a function has returned successfully. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a3a8415df5bbacde0e5baa2fdac62a8b1" prot="public">
+          <name>GPIO_INVALID_ARGS</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Indicates that a function has been given invalid (out of range) arguments. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___g_p_i_o_1gga3fdce057401bc547fc9d8692f2c27764a655a17b7b79de8c0c8e5356f966e506f" prot="public">
+          <name>GPIO_ERROR</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Indicates that a general error has occured. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum to indicate the return status of a function. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="99" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" bodystart="99" bodyend="103"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="group___g_p_i_o_1gab595615510195f9a4192c7a189678fab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_setPinOutput</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin)</argsstring>
+        <name>GPIO_setPinOutput</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin to output mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, output mode is set to PP, speed to very high and no pull up, pull down.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="115" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="115" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga882cc33c981cd7f8dfba88f860272d8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_setPinOutput_FC</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t)</argsstring>
+        <name>GPIO_setPinOutput_FC</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref></type>
+          <declname>pupd</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" kindref="member">GPIO_SPEED_State</ref></type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" kindref="member">GPIO_OUTPUT_TYPE_State</ref></type>
+          <declname>output_t</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin to output with Full Control (FC) mode, allowing specification of pupd, speed and output type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pupd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pull up or pull down resistor state </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired speed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="128" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="128" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1gae6d9d08aa8ecf6a2f1237373ffe54dea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_setPinInput</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd)</argsstring>
+        <name>GPIO_setPinInput</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref></type>
+          <declname>pupd</declname>
+        </param>
+        <briefdescription>
+<para>Sets pin to input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, output mode is set to PP and speed to very high.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pupd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pull up or pull down resistor state </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="139" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="139" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga18ca43b6164db4241faf900a1209013b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_setPinInput_FC</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t)</argsstring>
+        <name>GPIO_setPinInput_FC</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref></type>
+          <declname>pupd</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" kindref="member">GPIO_SPEED_State</ref></type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" kindref="member">GPIO_OUTPUT_TYPE_State</ref></type>
+          <declname>output_t</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin to input with Full Control (FC) mode, allowing specification of pupd, speed and output type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pupd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pull up or pull down resistor state </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired speed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="152" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="152" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga6f78d205e4179fc73f2515d21660accf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_writePin</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin, GPIO_PinState state)</argsstring>
+        <name>GPIO_writePin</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1ga5b3ef0486b179415581eb342e0ea6b43" kindref="member">GPIO_PinState</ref></type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Write a value to a specificed GPIO pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The pin state to be set can either be HIGH or LOW.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired state of the pin </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+<simplesect kind="warning"><para>This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="164" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="164" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga20f3f4cc40731487424a228070958166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga5b3ef0486b179415581eb342e0ea6b43" kindref="member">GPIO_PinState</ref></type>
+        <definition>GPIO_PinState GPIO_readPin</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin)</argsstring>
+        <name>GPIO_readPin</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Read a value from a specificed GPIO pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The pin state returned can either be HIGH or LOW.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>state of the pin </para>
+</simplesect>
+<simplesect kind="warning"><para>This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. </para>
+</simplesect>
+<simplesect kind="warning"><para>This function does not check correctness of arguments. This responsibility is given to the caller. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="176" column="15" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="176" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga2dbba2abe607108f74710b045b089c72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_togglePin</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin)</argsstring>
+        <name>GPIO_togglePin</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Toggles the state of a GPIO pin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>This function should only be called if the pin has been correctly set with setPinInput, setPinOutput, setPinInput_FC or setPinOutput_FC. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="185" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="185" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga232a16e1fe539abaaf2b4451039acbdd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_setPinInterrupt</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin, GPIO_IT_TRIGGER_State trigger_state)</argsstring>
+        <name>GPIO_setPinInterrupt</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gace0c7e64d6c4e935151fbb7616fe540a" kindref="member">GPIO_IT_TRIGGER_State</ref></type>
+          <declname>trigger_state</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin to input-interrupt mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>By default, the interrupt trigger is set to rising trigger. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="194" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="194" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga93410b92827b20bc14b1ce1f54950f80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_resetPinInterrupt</definition>
+        <argsstring>(uint8_t pin)</argsstring>
+        <name>GPIO_resetPinInterrupt</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <briefdescription>
+<para>Reset the flag corresponding to the pin in the EXTI Pending Register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function should be called in the EXTI_IRQ_Handler in order to allow repeated interrupts. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="202" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="202" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga328c278fa96a3802882630ad49ee7ae3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_setPinAF_Mode</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin, GPIO_PUPD_State pupd, GPIO_SPEED_State speed, GPIO_OUTPUT_TYPE_State output_t)</argsstring>
+        <name>GPIO_setPinAF_Mode</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1ga2266f25d4ba662cd4e40de36a5049167" kindref="member">GPIO_PUPD_State</ref></type>
+          <declname>pupd</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaaf9978d8971c86f33115b493e5d6190f" kindref="member">GPIO_SPEED_State</ref></type>
+          <declname>speed</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gad95ee31148019b4ae8d63e5a3e0777ee" kindref="member">GPIO_OUTPUT_TYPE_State</ref></type>
+          <declname>output_t</declname>
+        </param>
+        <briefdescription>
+<para>Sets the pin to the Alternate Function (AF) mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pupd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pull up or pull down resistor state </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>desired speed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output_t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="214" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="214" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___g_p_i_o_1ga4ea71fe1e6545955e83ade36d2d9a053" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___g_p_i_o_1ga3fdce057401bc547fc9d8692f2c27764" kindref="member">GPIO_Status_State</ref></type>
+        <definition>GPIO_Status_State GPIO_setPinAF_State</definition>
+        <argsstring>(GPIO_Port port, uint8_t pin, GPIO_AF_State af_state)</argsstring>
+        <name>GPIO_setPinAF_State</name>
+        <param>
+          <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+          <declname>port</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type><ref refid="group___g_p_i_o_1ga50a2f4df54586ff8414f27fcb3f827db" kindref="member">GPIO_AF_State</ref></type>
+          <declname>af_state</declname>
+        </param>
+        <briefdescription>
+<para>Sets a pin in AF mode to the desired AF state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>port for the associated pin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pin number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>af_state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the desired AF state </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+<simplesect kind="warning"><para>This function should only be called if the pin has been set to AF (Alternate Function) mode with setPinAF_Mode. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" line="225" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h" declline="225" declcolumn="19"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,3 +1,7 @@
+/** \addtogroup TIM
+ *  @{
+ */
+
 #ifndef TIM_H
 #define TIM_H
 #include "common.h"
@@ -107,3 +111,4 @@ uint8_t TIM_hasUpdated(TIM_TIMER_State timer, uint8_t reset_flag);
 */
 TIM_Status_State TIM_resetEventFlag(TIM_TIMER_State timer);
 #endif
+/** @}*/

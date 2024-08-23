@@ -1,3 +1,8 @@
+
+/** \addtogroup GPIO 
+ *  @{
+ */
+ 
 #ifndef GPIO_H
 #define GPIO_H
 #include "common.h"
@@ -16,6 +21,7 @@
 /****************************************************************************************************/
 
 /**@brief Enum representing the port of a GPIO pin. For this family of devices, ports A-I inclusive are supported.
+* \ingroup gpio
 */
 typedef enum{
 	GPIO_PORT_A = 0, ///< GPIO port A
@@ -217,4 +223,6 @@ GPIO_Status_State GPIO_setPinAF_Mode(GPIO_Port port, uint8_t pin, GPIO_PUPD_Stat
 * @warning This function should only be called if the pin has been set to AF (Alternate Function) mode with setPinAF_Mode.
 */
 GPIO_Status_State GPIO_setPinAF_State(GPIO_Port port, uint8_t pin, GPIO_AF_State af_state);
+
 #endif
+/** @}*/
