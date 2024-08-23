@@ -1,4 +1,4 @@
-# group `TIM`
+# `TIM` Drivers
 
 ## Summary
 
