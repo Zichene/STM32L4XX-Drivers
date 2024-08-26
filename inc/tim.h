@@ -77,7 +77,7 @@ TIM_Status_State TIM_disablePeripheralClk(TIM_TIMER_State timer);
 * @param config pointer to a TIM_Config_Typedef object that contains the parameter configuration
 * @return status
 */
-TIM_Status_State TIM_config(TIM_Config_Typedef* config);
+TIM_Status_State TIM_config(const TIM_Config_Typedef* config);
 
 
 

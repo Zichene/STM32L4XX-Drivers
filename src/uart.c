@@ -14,14 +14,14 @@
 /****************************************************************************************************/
 /*			              PRIVATE FUNCTIONS                                             */
 /****************************************************************************************************/
-static UART_Status_State configPeripheralClock(UART_Enable_State uart);
+static UART_Status_State configPeripheralClock(UART_DEVICE_State uart);
 static UART_Status_State configGPIO(UART_PinConfig_Typedef* pin_config);
 
 /*
 * Configures the peripheral clock for the selected UART device.
 * Note: USART1 is on the APB2 bus and USART2, USART3, UART4, UART5 are on the APB1 bus.
 */
-static UART_Status_State configPeripheralClock(UART_Enable_State uart) {
+static UART_Status_State configPeripheralClock(UART_DEVICE_State uart) {
 	if (uart >= 17) {
 		/* devices on the APB1 bus */
 		RCC->APB1ENR1 |= (0b1 << uart);
@@ -60,7 +60,7 @@ static UART_Status_State configGPIO(UART_PinConfig_Typedef* pin_config) {
 /*
 * Get the USART_Typedef pointer corresponding to the UART that we want.
 */
-static USART_TypeDef* getUSART(UART_Enable_State uart) {
+static USART_TypeDef* getUSART(UART_DEVICE_State uart) {
 	switch(uart) {
 		case UART_USART1:
 			return USART1;
@@ -78,9 +78,9 @@ static USART_TypeDef* getUSART(UART_Enable_State uart) {
 /*			              EXPORTED FUNCTIONS                                            */
 /****************************************************************************************************/
 
-UART_Status_State UART_config(UART_Config_Typedef* uart_conf) {
+UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
 	/* check args */
-	UART_Enable_State uart = uart_conf->uart;
+	UART_DEVICE_State uart = uart_conf->uart;
 	uint32_t baud_rate = uart_conf->baud_rate;
 	UART_DATABITS_State databits = uart_conf->databits;
 	UART_PARITY_State parity = uart_conf->parity;
@@ -99,7 +99,7 @@ UART_Status_State UART_config(UART_Config_Typedef* uart_conf) {
 	
 	
 	/* enable peripheral clock */
-	if (configPeripheralClock(uart_conf->uart) != UART_OK)
+ 	if (configPeripheralClock(uart_conf->uart) != UART_OK)
 		return UART_INVALID_ARGS;
 	
 	/* setup GPIO pins */
@@ -147,4 +147,40 @@ UART_Status_State UART_config(UART_Config_Typedef* uart_conf) {
 	UARTx->CR1 |= (0b1 << 3); // TE bit
 	
 	return UART_OK;
+}
+
+
+UART_Status_State UART_transmit(UART_DEVICE_State uart, const uint8_t* tx_buf, uint16_t length) {
+	/* check args */
+	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
+		return UART_INVALID_ARGS;
+	
+	USART_TypeDef* UARTx = getUSART(uart);
+	
+	for (int i = 0; i<length; i++) {
+		uint8_t currentByte = tx_buf[i];
+		/* wait until the TXE/TXFNF bit is 1, indicating that TDR is empty */
+		while( !( UARTx->ISR & USART_ISR_TXE_TXFNF));
+		UARTx->TDR = currentByte;
+	}
+	return UART_OK;
+}
+
+uint8_t UART_receiveByte(UART_DEVICE_State uart) {
+	/* check args */
+	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
+		return UART_INVALID_ARGS;
+	
+	USART_TypeDef* UARTx = getUSART(uart);
+	return UARTx->RDR;
+}
+
+uint8_t UART_hasData(UART_DEVICE_State uart) {
+	/* check args */
+	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
+		return UART_INVALID_ARGS;
+	
+	USART_TypeDef* UARTx = getUSART(uart);
+	/* return the RXNE/RXFNE bit in the UARTx->ISR register */
+	return UARTx->ISR & USART_ISR_RXNE_RXFNE;
 }

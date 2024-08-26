@@ -16,7 +16,7 @@
 /****************************************************************************************************/
 static uint32_t HSE_CLOCK_SPEED = 0;
 static uint32_t FLASH_MAX_FREQUENCY = 20000000; ///< Maximum memory accessing frequency for FLASH. See section 3.3.3 of RM0432
-static uint32_t MAX_CLOCK_SPEED = 120000000;
+static uint32_t MAX_CLOCK_SPEED = 120000000; ///< Maximum clock speed allowed by the processor. Note: This is chip specific.
 
 static uint32_t getClkSpeed(CLOCK_SYSCLK_State clk);
 
@@ -241,6 +241,7 @@ CLOCK_Status_State CLOCK_setSystemClock(CLOCK_SYSCLK_State sysclk) {
 	
 	/* poll for SWS to change */
 	while(!((RCC->CFGR >> 2 & 0b11) == sysclk));
+	
 	return CLOCK_OK;
 }
 

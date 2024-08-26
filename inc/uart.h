@@ -33,7 +33,7 @@ typedef enum {
 	UART_ERROR = 2, ///< Indicates that a general error has occured.
 } UART_Status_State;
 
-/**@brief Enum representing which UART/USART device is to be enabled/disabled.
+/**@brief Enum representing which UART/USART device is selected.
 */
 typedef enum {
 	UART_USART1 = 14, ///< USART1 is selected.
@@ -41,9 +41,9 @@ typedef enum {
 	UART_USART3 = 18, ///< USART3 is selected.
 	UART_UART4 = 19, ///< UART4 is selected (note: not synchronous)
 	UART_UART5 = 20, ///< UART5 is selected (note: not synchronous)
-} UART_Enable_State;
+} UART_DEVICE_State;
 
-/**
+/**@brief Enum representing how many databits to be used during communication (default=8).
 */
 typedef enum {
 	UART_DATABITS_7 = 2, ///< 7 databits per word.
@@ -51,15 +51,18 @@ typedef enum {
 	UART_DATABITS_9 = 1, ///< 9 databits per word.
 } UART_DATABITS_State;
 
-
+/**@brief Enum representing type of parity check to be used, if any (default=None).
+*/
 typedef enum {
-	UART_PARITY_NONE = 2, ///< Parity bit is disabled.
+	UART_PARITY_NONE = 2, ///< Parity bit is disabled (default).
 	UART_PARITY_EVEN = 0, ///< Even parity is used.
 	UART_PARITY_ODD = 1, ///< Odd parity is used.
 } UART_PARITY_State;
 
+/**@brief Enum representing number of stopbits to be used during communication (default=1).
+*/
 typedef enum {
-	UART_STOPBITS_1 = 0, ///< 1 stop bit.
+	UART_STOPBITS_1 = 0, ///< 1 stop bit (default).
 	UART_STOPBITS_0_5 = 1, ///< 0.5 stop bits.
 	UART_STOPBITS_2 = 2, ///< 2 stop bits.
 	UART_STOPBITS_1_5 = 3, ///< 1.5 stop bits.
@@ -79,7 +82,7 @@ typedef struct {
 /**@brief Struct representing configuration parameters for the U(S)ART. To be used with UART_config().
 */
 typedef struct {
-	UART_Enable_State uart; ///< Which UART/USART device is to be configured.
+	UART_DEVICE_State uart; ///< Which UART/USART device is to be configured.
 	UART_PinConfig_Typedef* pin_config; ///< Pin configuration object. See UART_PinConfig_State.
 	uint32_t baud_rate; ///< Baud rate for the UART/USART.
 	UART_DATABITS_State databits; ///< Number of databits to be sent every word.
@@ -91,11 +94,40 @@ typedef struct {
 /*				        FUNCTION PROTOTYPES                                         */
 /****************************************************************************************************/
 
-/**@brief
+/**@brief Configures the desired UART/USART peripheral and activates it. See UART_Config_Typedef for parameters.
+* @param uart_conf configuration object
+* @return status
 */
-UART_Status_State UART_config(UART_Config_Typedef* uart_conf);
+UART_Status_State UART_config(const UART_Config_Typedef* uart_conf);
 
-/**
+
+
+/**@brief Transmits data over UART/USART.
+* @param uart UART/USART device.
+* @param tx_buf pointer to the data transmission buffer.
+* @param length length of tx_buf
+* @return status
+* @warning blocking function.
 */
+UART_Status_State UART_transmit(UART_DEVICE_State uart, const uint8_t* tx_buf, uint16_t length);
+
+
+
+/**@brief Reads and returns from the UARTx->RDR register.
+* @param uart UART/USART device.
+* @return value read from the RDR register.
+*/
+uint8_t UART_receiveByte(UART_DEVICE_State uart);
+
+
+
+/**@brief Reads and returns the RXNE/RXFNE bit in the UARTx->ISR register. This determines whether or not data has been received and is ready to be
+* read from the RDR register.
+* @param uart UART/USART device.
+* @retval 1 Data has been received and is ready to be read.
+* @retval 0 Data has not been received.
+*/
+uint8_t UART_hasData(UART_DEVICE_State uart);
+
 #endif
 /** @}*/

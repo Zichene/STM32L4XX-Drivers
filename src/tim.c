@@ -141,7 +141,7 @@ TIM_Status_State TIM_disablePeripheralClk(TIM_TIMER_State timer) {
 }
 
 
-TIM_Status_State TIM_config(TIM_Config_Typedef* config) {
+TIM_Status_State TIM_config(const TIM_Config_Typedef* config) {
 	/* check args */
 	TIM_TIMER_State timer = config->timer;
 	if (!( (timer <= 5 && timer >= 0) || (timer <= 18 && timer >= 16) || timer == 11 || timer == 13))
