@@ -44,9 +44,15 @@ The Clock drivers currently implement functionalities such as:
 See local [documentation](docs/clock).
 
 ## TIMER
-The Timer (TIM) drivers current implement functionalities such as:
+The Timer (TIM) drivers currently implement functionalities such as:
 - Configuring various timers with prescaler and period.
 - Timer interrupt configuration.
 - Starting and stopping interrupts.
 
 See local [documentation](docs/tim).
+
+## UART
+The Universal Asynchronous Receivier Transmitter (UART) drivers currently implement functionalities such as:
+- Sending data (blocking mode)
+- Receiving data (blocking mode)
+- Custom configuration of baud rate, parity bit, stop bits, number of bits per word, etc.
