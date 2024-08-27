@@ -1,0 +1,290 @@
+\doxysection{UART}
+\hypertarget{group___u_a_r_t}{}\label{group___u_a_r_t}\index{UART@{UART}}
+
+
+UART drivers for stm32l4xx devices.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef}{UART\+\_\+\+Pin\+Config\+\_\+\+Typedef}}
+\begin{DoxyCompactList}\small\item\em Struct representing the pin configuration parameters for the U(\+S)ART. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\+\_\+\+Config\+\_\+\+Typedef}}
+\begin{DoxyCompactList}\small\item\em Struct representing configuration parameters for the U(\+S)ART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___u_a_r_t_gae796743d12ed283734a7df1d505fb2c1}\label{group___u_a_r_t_gae796743d12ed283734a7df1d505fb2c1} 
+\#define {\bfseries UART\+\_\+\+MAX\+\_\+\+BAUDRATE}~(120000000/16)
+\begin{DoxyCompactList}\small\item\em Maximum allowed baudrate for USART. TODO\+: temporary fix, max baudrate actually depends on oversampling and system clock system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \{ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07}{UART\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa4859017d795a62459d23227611718e93}{UART\+\_\+\+INVALID\+\_\+\+ARGS}} = 1
+, \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46}{UART\+\_\+\+ERROR}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing different function return statuses. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} \{ \newline
+\mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda1e0fa1b7139a6572f637b5d1aed5d6c1}{UART\+\_\+\+USART1}} = 14
+, \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda48f1b5041ad4267bdf6c8fcea335d238}{UART\+\_\+\+USART2}} = 17
+, \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda0f0abdebd712e8c48e6eaef1b15902fd}{UART\+\_\+\+USART3}} = 18
+, \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda01e59c9a6d3a5d099e1b6f7e2f0e7881}{UART\+\_\+\+UART4}} = 19
+, \newline
+\mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccdad8ea1417ed2bc43b10f5f7fdc5e8339d}{UART\+\_\+\+UART5}} = 20
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing which UART/\+USART device is selected. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f}{UART\+\_\+\+DATABITS\+\_\+\+State}} \{ \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1fa941f53895de35cb17c5b5ae5e57a02b9}{UART\+\_\+\+DATABITS\+\_\+7}} = 2
+, \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1faf080420d870f7b3917bd59107ac4c153}{UART\+\_\+\+DATABITS\+\_\+8}} = 0
+, \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1fad0522fb6d585f1a6b651fd999184b672}{UART\+\_\+\+DATABITS\+\_\+9}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing how many databits to be used during communication (default=8). \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb}{UART\+\_\+\+PARITY\+\_\+\+State}} \{ \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbaa80d2d8ea61454045ebe71d155e85b3d}{UART\+\_\+\+PARITY\+\_\+\+NONE}} = 2
+, \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbad908a637b1dd23f93b149dd2d8bdfdb8}{UART\+\_\+\+PARITY\+\_\+\+EVEN}} = 0
+, \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbad90cc425f5ba447773a44a75be6593e2}{UART\+\_\+\+PARITY\+\_\+\+ODD}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing type of parity check to be used, if any (default=None). \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}{UART\+\_\+\+STOPBITS\+\_\+\+State}} \{ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bdab1c6c3da76951f5a1817859f83ddd9fa}{UART\+\_\+\+STOPBITS\+\_\+1}} = 0
+, \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bda67e7e8ef061d033e8e187f6d49c36a89}{UART\+\_\+\+STOPBITS\+\_\+0\+\_\+5}} = 1
+, \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bdaf4b730b061af3ef2004c360c158ffef8}{UART\+\_\+\+STOPBITS\+\_\+2}} = 2
+, \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bda41e0cb55a333db41b71dcd08b2bf3ef9}{UART\+\_\+\+STOPBITS\+\_\+1\+\_\+5}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing number of stopbits to be used during communication (default=1). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_gae70286f4e3e5f5b94e3075f7b075bcf5}{UART\+\_\+config}} (const \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}uart\+\_\+conf)
+\begin{DoxyCompactList}\small\item\em Configures the desired UART/\+USART peripheral and activates it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_gae176760e197ac5d770d79655f0272988}{UART\+\_\+transmit}} (\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} uart, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}tx\+\_\+buf, uint16\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Transmits data over UART/\+USART. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___u_a_r_t_gabde57d72e032c159438a6000ea7463f5}{UART\+\_\+receive\+Byte}} (\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} uart)
+\begin{DoxyCompactList}\small\item\em Reads and returns from the UARTx-\/\texorpdfstring{$>$}{>}RDR register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___u_a_r_t_ga78064a945132939c843e5aa9f09704e5}{UART\+\_\+has\+Data}} (\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} uart)
+\begin{DoxyCompactList}\small\item\em Reads and returns the RXNE/\+RXFNE bit in the UARTx-\/\texorpdfstring{$>$}{>}ISR register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UART drivers for stm32l4xx devices. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f}\index{UART@{UART}!UART\_DATABITS\_State@{UART\_DATABITS\_State}}
+\index{UART\_DATABITS\_State@{UART\_DATABITS\_State}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_DATABITS\_State}{UART\_DATABITS\_State}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f} 
+enum \mbox{\hyperlink{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f}{UART\+\_\+\+DATABITS\+\_\+\+State}}}
+
+
+
+Enum representing how many databits to be used during communication (default=8). 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_DATABITS\_7@{UART\_DATABITS\_7}!UART@{UART}}\index{UART@{UART}!UART\_DATABITS\_7@{UART\_DATABITS\_7}}}\Hypertarget{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1fa941f53895de35cb17c5b5ae5e57a02b9}\label{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f} 
+UART\+\_\+\+DATABITS\+\_\+7&7 databits per word. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_DATABITS\_8@{UART\_DATABITS\_8}!UART@{UART}}\index{UART@{UART}!UART\_DATABITS\_8@{UART\_DATABITS\_8}}}\Hypertarget{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1faf080420d870f7b3917bd59107ac4c153}\label{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f} 
+UART\+\_\+\+DATABITS\+\_\+8&8 databits per word (default). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_DATABITS\_9@{UART\_DATABITS\_9}!UART@{UART}}\index{UART@{UART}!UART\_DATABITS\_9@{UART\_DATABITS\_9}}}\Hypertarget{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1fad0522fb6d585f1a6b651fd999184b672}\label{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f} 
+UART\+\_\+\+DATABITS\+\_\+9&9 databits per word. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}\index{UART@{UART}!UART\_DEVICE\_State@{UART\_DEVICE\_State}}
+\index{UART\_DEVICE\_State@{UART\_DEVICE\_State}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_DEVICE\_State}{UART\_DEVICE\_State}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd} 
+enum \mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}}}
+
+
+
+Enum representing which UART/\+USART device is selected. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_USART1@{UART\_USART1}!UART@{UART}}\index{UART@{UART}!UART\_USART1@{UART\_USART1}}}\Hypertarget{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda1e0fa1b7139a6572f637b5d1aed5d6c1}\label{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd} 
+UART\+\_\+\+USART1&USART1 is selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_USART2@{UART\_USART2}!UART@{UART}}\index{UART@{UART}!UART\_USART2@{UART\_USART2}}}\Hypertarget{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda48f1b5041ad4267bdf6c8fcea335d238}\label{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd} 
+UART\+\_\+\+USART2&USART2 is selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_USART3@{UART\_USART3}!UART@{UART}}\index{UART@{UART}!UART\_USART3@{UART\_USART3}}}\Hypertarget{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda0f0abdebd712e8c48e6eaef1b15902fd}\label{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd} 
+UART\+\_\+\+USART3&USART3 is selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_UART4@{UART\_UART4}!UART@{UART}}\index{UART@{UART}!UART\_UART4@{UART\_UART4}}}\Hypertarget{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda01e59c9a6d3a5d099e1b6f7e2f0e7881}\label{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd} 
+UART\+\_\+\+UART4&UART4 is selected (note\+: not synchronous) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_UART5@{UART\_UART5}!UART@{UART}}\index{UART@{UART}!UART\_UART5@{UART\_UART5}}}\Hypertarget{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccdad8ea1417ed2bc43b10f5f7fdc5e8339d}\label{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd} 
+UART\+\_\+\+UART5&UART5 is selected (note\+: not synchronous) \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb}\index{UART@{UART}!UART\_PARITY\_State@{UART\_PARITY\_State}}
+\index{UART\_PARITY\_State@{UART\_PARITY\_State}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_PARITY\_State}{UART\_PARITY\_State}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb} 
+enum \mbox{\hyperlink{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb}{UART\+\_\+\+PARITY\+\_\+\+State}}}
+
+
+
+Enum representing type of parity check to be used, if any (default=None). 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_PARITY\_NONE@{UART\_PARITY\_NONE}!UART@{UART}}\index{UART@{UART}!UART\_PARITY\_NONE@{UART\_PARITY\_NONE}}}\Hypertarget{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbaa80d2d8ea61454045ebe71d155e85b3d}\label{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb} 
+UART\+\_\+\+PARITY\+\_\+\+NONE&Parity bit is disabled (default). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_PARITY\_EVEN@{UART\_PARITY\_EVEN}!UART@{UART}}\index{UART@{UART}!UART\_PARITY\_EVEN@{UART\_PARITY\_EVEN}}}\Hypertarget{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbad908a637b1dd23f93b149dd2d8bdfdb8}\label{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb} 
+UART\+\_\+\+PARITY\+\_\+\+EVEN&Even parity is used. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_PARITY\_ODD@{UART\_PARITY\_ODD}!UART@{UART}}\index{UART@{UART}!UART\_PARITY\_ODD@{UART\_PARITY\_ODD}}}\Hypertarget{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbad90cc425f5ba447773a44a75be6593e2}\label{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb} 
+UART\+\_\+\+PARITY\+\_\+\+ODD&Odd parity is used. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}\index{UART@{UART}!UART\_Status\_State@{UART\_Status\_State}}
+\index{UART\_Status\_State@{UART\_Status\_State}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_Status\_State}{UART\_Status\_State}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f} 
+enum \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}}}
+
+
+
+Enum representing different function return statuses. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_OK@{UART\_OK}!UART@{UART}}\index{UART@{UART}!UART\_OK@{UART\_OK}}}\Hypertarget{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07}\label{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f} 
+UART\+\_\+\+OK&Indicates that a function has returned successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_INVALID\_ARGS@{UART\_INVALID\_ARGS}!UART@{UART}}\index{UART@{UART}!UART\_INVALID\_ARGS@{UART\_INVALID\_ARGS}}}\Hypertarget{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa4859017d795a62459d23227611718e93}\label{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f} 
+UART\+\_\+\+INVALID\+\_\+\+ARGS&Indicates that a function has been given invalid (out of range) arguments. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_ERROR@{UART\_ERROR}!UART@{UART}}\index{UART@{UART}!UART\_ERROR@{UART\_ERROR}}}\Hypertarget{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46}\label{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f} 
+UART\+\_\+\+ERROR&Indicates that a general error has occured. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}\index{UART@{UART}!UART\_STOPBITS\_State@{UART\_STOPBITS\_State}}
+\index{UART\_STOPBITS\_State@{UART\_STOPBITS\_State}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_STOPBITS\_State}{UART\_STOPBITS\_State}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd} 
+enum \mbox{\hyperlink{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}{UART\+\_\+\+STOPBITS\+\_\+\+State}}}
+
+
+
+Enum representing number of stopbits to be used during communication (default=1). 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_STOPBITS\_1@{UART\_STOPBITS\_1}!UART@{UART}}\index{UART@{UART}!UART\_STOPBITS\_1@{UART\_STOPBITS\_1}}}\Hypertarget{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bdab1c6c3da76951f5a1817859f83ddd9fa}\label{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd} 
+UART\+\_\+\+STOPBITS\+\_\+1&1 stop bit (default). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_STOPBITS\_0\_5@{UART\_STOPBITS\_0\_5}!UART@{UART}}\index{UART@{UART}!UART\_STOPBITS\_0\_5@{UART\_STOPBITS\_0\_5}}}\Hypertarget{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bda67e7e8ef061d033e8e187f6d49c36a89}\label{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd} 
+UART\+\_\+\+STOPBITS\+\_\+0\+\_\+5&0.\+5 stop bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_STOPBITS\_2@{UART\_STOPBITS\_2}!UART@{UART}}\index{UART@{UART}!UART\_STOPBITS\_2@{UART\_STOPBITS\_2}}}\Hypertarget{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bdaf4b730b061af3ef2004c360c158ffef8}\label{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd} 
+UART\+\_\+\+STOPBITS\+\_\+2&2 stop bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_STOPBITS\_1\_5@{UART\_STOPBITS\_1\_5}!UART@{UART}}\index{UART@{UART}!UART\_STOPBITS\_1\_5@{UART\_STOPBITS\_1\_5}}}\Hypertarget{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bda41e0cb55a333db41b71dcd08b2bf3ef9}\label{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd} 
+UART\+\_\+\+STOPBITS\+\_\+1\+\_\+5&1.\+5 stop bits. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___u_a_r_t_gae70286f4e3e5f5b94e3075f7b075bcf5}\index{UART@{UART}!UART\_config@{UART\_config}}
+\index{UART\_config@{UART\_config}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_config()}{UART\_config()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_gae70286f4e3e5f5b94e3075f7b075bcf5} 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} UART\+\_\+config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}}]{uart\+\_\+conf}{}\end{DoxyParamCaption})}
+
+
+
+Configures the desired UART/\+USART peripheral and activates it. 
+
+See \doxylink{struct_u_a_r_t___config___typedef}{UART\+\_\+\+Config\+\_\+\+Typedef} for parameters. 
+\begin{DoxyParams}{Parameters}
+{\em uart\+\_\+conf} & configuration object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{group___u_a_r_t_ga78064a945132939c843e5aa9f09704e5}\index{UART@{UART}!UART\_hasData@{UART\_hasData}}
+\index{UART\_hasData@{UART\_hasData}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_hasData()}{UART\_hasData()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga78064a945132939c843e5aa9f09704e5} 
+uint8\+\_\+t UART\+\_\+has\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}}}]{uart}{}\end{DoxyParamCaption})}
+
+
+
+Reads and returns the RXNE/\+RXFNE bit in the UARTx-\/\texorpdfstring{$>$}{>}ISR register. 
+
+This determines whether or not data has been received and is ready to be read from the RDR register. 
+\begin{DoxyParams}{Parameters}
+{\em uart} & UART/\+USART device. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & Data has been received and is ready to be read. \\
+\hline
+{\em 0} & Data has not been received. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_a_r_t_gabde57d72e032c159438a6000ea7463f5}\index{UART@{UART}!UART\_receiveByte@{UART\_receiveByte}}
+\index{UART\_receiveByte@{UART\_receiveByte}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_receiveByte()}{UART\_receiveByte()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_gabde57d72e032c159438a6000ea7463f5} 
+uint8\+\_\+t UART\+\_\+receive\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}}}]{uart}{}\end{DoxyParamCaption})}
+
+
+
+Reads and returns from the UARTx-\/\texorpdfstring{$>$}{>}RDR register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uart} & UART/\+USART device. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value read from the RDR register. 
+\end{DoxyReturn}
+\Hypertarget{group___u_a_r_t_gae176760e197ac5d770d79655f0272988}\index{UART@{UART}!UART\_transmit@{UART\_transmit}}
+\index{UART\_transmit@{UART\_transmit}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_transmit()}{UART\_transmit()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_gae176760e197ac5d770d79655f0272988} 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} UART\+\_\+transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}}}]{uart}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{tx\+\_\+buf}{, }\item[{uint16\+\_\+t}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Transmits data over UART/\+USART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uart} & UART/\+USART device. \\
+\hline
+{\em tx\+\_\+buf} & pointer to the data transmission buffer. \\
+\hline
+{\em length} & length of tx\+\_\+buf \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+blocking function. 
+\end{DoxyWarning}

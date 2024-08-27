@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="25" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="25" bodyend="35"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="26" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="26" bodyend="36"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1gaaa0363e0e9775584599d94565f8e0e60" prot="public" static="no" strong="no">
         <type></type>
@@ -152,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="39" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="39" bodyend="45"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="40" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="40" bodyend="46"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1ga63d31f75868a8d1e3b998ac5df3f6a36" prot="public" static="no" strong="no">
         <type></type>
@@ -227,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="49" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="49" bodyend="57"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="50" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="50" bodyend="58"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1gaceb416b702f94d30e139e49e8e10a76f" prot="public" static="no" strong="no">
         <type></type>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="61" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="61" bodyend="66"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="62" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="62" bodyend="67"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1ga9b771949ba6bccb42317a3e5e089cded" prot="public" static="no" strong="no">
         <type></type>
@@ -323,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="70" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="70" bodyend="75"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="71" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="71" bodyend="76"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1ga5aa3fa30a332173aafcc460104d0a159" prot="public" static="no" strong="no">
         <type></type>
@@ -362,7 +362,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="79" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="79" bodyend="83"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="80" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="80" bodyend="84"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1gab8ea3cd345873e8a031469d82633ee72" prot="public" static="no" strong="no">
         <type></type>
@@ -410,7 +410,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="87" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="87" bodyend="92"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="88" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="88" bodyend="93"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1ga8243c8d8e6717062f9949ee373a4a77f" prot="public" static="no" strong="no">
         <type></type>
@@ -503,7 +503,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="96" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="96" bodyend="106"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="97" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="97" bodyend="107"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1ga65e4b024aee4244fb32f8c5c4ff05f9a" prot="public" static="no" strong="no">
         <type></type>
@@ -560,7 +560,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="110" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="110" bodyend="116"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="111" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="111" bodyend="117"/>
       </memberdef>
       <memberdef kind="enum" id="group___c_l_o_c_k_1ga95ae2e15b49c96956d53beae3975e517" prot="public" static="no" strong="no">
         <type></type>
@@ -617,7 +617,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="120" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="120" bodyend="126"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="121" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" bodystart="121" bodyend="127"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
@@ -689,7 +689,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="141" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="141" declcolumn="20"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="142" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="142" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1gaa11ce7252db60000e142bc3ff6aff0be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_l_o_c_k_1ga5aa3fa30a332173aafcc460104d0a159" kindref="member">CLOCK_Status_State</ref></type>
@@ -757,7 +757,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="153" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="153" declcolumn="20"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="154" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="154" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1gae9cd115f3011d6546563628b1da16eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint8_t</type>
@@ -804,7 +804,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="163" column="9" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="163" declcolumn="9"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="164" column="9" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="164" declcolumn="9"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1ga08716e6071c93768a4091dc5947e104f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_l_o_c_k_1ga5aa3fa30a332173aafcc460104d0a159" kindref="member">CLOCK_Status_State</ref></type>
@@ -840,7 +840,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="174" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="174" declcolumn="20"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="175" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="175" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1ga34f1183e02b1e5320ccf45c6e646b918" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_l_o_c_k_1ga5aa3fa30a332173aafcc460104d0a159" kindref="member">CLOCK_Status_State</ref></type>
@@ -872,7 +872,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="183" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="183" declcolumn="20"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="184" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="184" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1ga50f2307ce6d6b1285d62ba0fc709f680" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -889,7 +889,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="189" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="189" declcolumn="10"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="190" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="190" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1ga353083c3916c8933c43eb0a1c5c94052" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -906,7 +906,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="196" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="196" declcolumn="10"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="197" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="197" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1ga6da82f8e33ab80367bf38ea54592f240" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -934,7 +934,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="202" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="202" declcolumn="6"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="203" column="6" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="203" declcolumn="6"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1gab7188c2da80700782ba6b028486e269c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -951,7 +951,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="209" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="209" declcolumn="10"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="210" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="210" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1gada0674018763aa72b723804b8d8183eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint32_t</type>
@@ -968,7 +968,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="216" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="216" declcolumn="10"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="217" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="217" declcolumn="10"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1gad3f9097ce53adfff82cb70ddea07c27d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_l_o_c_k_1ga5aa3fa30a332173aafcc460104d0a159" kindref="member">CLOCK_Status_State</ref></type>
@@ -1002,7 +1002,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="226" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="226" declcolumn="20"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="227" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="227" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1ga45f0f137fec72ca25a15471c536353ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_l_o_c_k_1ga5aa3fa30a332173aafcc460104d0a159" kindref="member">CLOCK_Status_State</ref></type>
@@ -1032,7 +1032,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="234" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="234" declcolumn="20"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="235" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="235" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1ga7eb6ba8a0c4959ea023982ff86287e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_l_o_c_k_1ga5aa3fa30a332173aafcc460104d0a159" kindref="member">CLOCK_Status_State</ref></type>
@@ -1062,7 +1062,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="242" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="242" declcolumn="20"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="243" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="243" declcolumn="20"/>
       </memberdef>
       <memberdef kind="function" id="group___c_l_o_c_k_1gaf2d3189cd4e74510c8d2136149148e0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_l_o_c_k_1ga5aa3fa30a332173aafcc460104d0a159" kindref="member">CLOCK_Status_State</ref></type>
@@ -1092,10 +1092,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="250" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="250" declcolumn="20"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" line="251" column="20" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h" declline="251" declcolumn="20"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Clock drivers for stm32l4xx devices. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

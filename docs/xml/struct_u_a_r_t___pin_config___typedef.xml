@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="struct_u_a_r_t___pin_config___typedef" kind="struct" language="C++" prot="public">
+    <compoundname>UART_PinConfig_Typedef</compoundname>
+    <includes refid="uart_8h" local="no">uart.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_a_r_t___pin_config___typedef_1adb17e776641603651b87dedf99c8e805" prot="public" static="no" mutable="no">
+        <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+        <definition>GPIO_Port rx_port</definition>
+        <argsstring></argsstring>
+        <name>rx_port</name>
+        <qualifiedname>UART_PinConfig_Typedef::rx_port</qualifiedname>
+        <briefdescription>
+<para>The GPIO port for the RX pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="75" column="11" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___pin_config___typedef_1ae2ba88cb5105ffa09eb6cadbc18aa582" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rx_pin</definition>
+        <argsstring></argsstring>
+        <name>rx_pin</name>
+        <qualifiedname>UART_PinConfig_Typedef::rx_pin</qualifiedname>
+        <briefdescription>
+<para>The GPIO pin # for the RX pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="76" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___pin_config___typedef_1af72041a9713daf64187a51d261add70b" prot="public" static="no" mutable="no">
+        <type><ref refid="group___g_p_i_o_1ga50a2f4df54586ff8414f27fcb3f827db" kindref="member">GPIO_AF_State</ref></type>
+        <definition>GPIO_AF_State rx_pin_af</definition>
+        <argsstring></argsstring>
+        <name>rx_pin_af</name>
+        <qualifiedname>UART_PinConfig_Typedef::rx_pin_af</qualifiedname>
+        <briefdescription>
+<para>The Alternate Function (AF) mode number for the RX pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="77" column="15" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___pin_config___typedef_1a6ccaff491344249ebe73de98fc826d61" prot="public" static="no" mutable="no">
+        <type><ref refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kindref="member">GPIO_Port</ref></type>
+        <definition>GPIO_Port tx_port</definition>
+        <argsstring></argsstring>
+        <name>tx_port</name>
+        <qualifiedname>UART_PinConfig_Typedef::tx_port</qualifiedname>
+        <briefdescription>
+<para>The GPIO port for the TX pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="78" column="11" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___pin_config___typedef_1ada3050a6e56b1b15acbb7f22f487a9bc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t tx_pin</definition>
+        <argsstring></argsstring>
+        <name>tx_pin</name>
+        <qualifiedname>UART_PinConfig_Typedef::tx_pin</qualifiedname>
+        <briefdescription>
+<para>The GPIO pin # for the TX pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="79" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___pin_config___typedef_1a5a2c3649a23ac06fa5c06cf01d1e9f66" prot="public" static="no" mutable="no">
+        <type><ref refid="group___g_p_i_o_1ga50a2f4df54586ff8414f27fcb3f827db" kindref="member">GPIO_AF_State</ref></type>
+        <definition>GPIO_AF_State tx_pin_af</definition>
+        <argsstring></argsstring>
+        <name>tx_pin_af</name>
+        <qualifiedname>UART_PinConfig_Typedef::tx_pin_af</qualifiedname>
+        <briefdescription>
+<para>The Alternate Function (AF) mode number for the TX pin. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="80" column="15" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Struct representing the pin configuration parameters for the U(S)ART. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="74" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="74" bodyend="81"/>
+    <listofallmembers>
+      <member refid="struct_u_a_r_t___pin_config___typedef_1ae2ba88cb5105ffa09eb6cadbc18aa582" prot="public" virt="non-virtual"><scope>UART_PinConfig_Typedef</scope><name>rx_pin</name></member>
+      <member refid="struct_u_a_r_t___pin_config___typedef_1af72041a9713daf64187a51d261add70b" prot="public" virt="non-virtual"><scope>UART_PinConfig_Typedef</scope><name>rx_pin_af</name></member>
+      <member refid="struct_u_a_r_t___pin_config___typedef_1adb17e776641603651b87dedf99c8e805" prot="public" virt="non-virtual"><scope>UART_PinConfig_Typedef</scope><name>rx_port</name></member>
+      <member refid="struct_u_a_r_t___pin_config___typedef_1ada3050a6e56b1b15acbb7f22f487a9bc" prot="public" virt="non-virtual"><scope>UART_PinConfig_Typedef</scope><name>tx_pin</name></member>
+      <member refid="struct_u_a_r_t___pin_config___typedef_1a5a2c3649a23ac06fa5c06cf01d1e9f66" prot="public" virt="non-virtual"><scope>UART_PinConfig_Typedef</scope><name>tx_pin_af</name></member>
+      <member refid="struct_u_a_r_t___pin_config___typedef_1a6ccaff491344249ebe73de98fc826d61" prot="public" virt="non-virtual"><scope>UART_PinConfig_Typedef</scope><name>tx_port</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

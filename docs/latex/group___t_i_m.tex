@@ -1,27 +1,32 @@
 \doxysection{TIM}
 \hypertarget{group___t_i_m}{}\label{group___t_i_m}\index{TIM@{TIM}}
+
+
+Timer drivers for stm32l4xx devices.  
+
+
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Struct representing configuration parameters for a timer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} \{ \newline
-{\bfseries TIM\+\_\+\+TIM1} = 11
-, {\bfseries TIM\+\_\+\+TIM2} = 0
-, {\bfseries TIM\+\_\+\+TIM3} = 1
-, {\bfseries TIM\+\_\+\+TIM4} = 2
+\mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629aa058f5f936744da064a81af7df925c92}{TIM\+\_\+\+TIM1}} = 11
+, \mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a5807ac86b40c78f6b47df62191b7abcc}{TIM\+\_\+\+TIM2}} = 0
+, \mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a66e8161e3d14c5ed07f702f1dbdb6c8e}{TIM\+\_\+\+TIM3}} = 1
+, \mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629aeaf4d47a1aa1902c3771b7bca6a76e74}{TIM\+\_\+\+TIM4}} = 2
 , \newline
-{\bfseries TIM\+\_\+\+TIM5} = 3
-, {\bfseries TIM\+\_\+\+TIM6} = 4
-, {\bfseries TIM\+\_\+\+TIM7} = 5
-, {\bfseries TIM\+\_\+\+TIM8} = 13
+\mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629ac20fe35b963078bab3648eb2fdab80af}{TIM\+\_\+\+TIM5}} = 3
+, \mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a3d45a91bc8a9a86b6fce37cd36bd0f5d}{TIM\+\_\+\+TIM6}} = 4
+, \mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629ad57c318b3fa8e9fe76bb1d294fe7f661}{TIM\+\_\+\+TIM7}} = 5
+, \mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629af19e5251b29a2f329b53e0b4fb07b87f}{TIM\+\_\+\+TIM8}} = 13
 , \newline
-{\bfseries TIM\+\_\+\+TIM15} = 16
-, {\bfseries TIM\+\_\+\+TIM16} = 17
-, {\bfseries TIM\+\_\+\+TIM17} = 18
+\mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a2adfbe01b4734afcb0e5f2286a3dada1}{TIM\+\_\+\+TIM15}} = 16
+, \mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629afc85b8ba2ee6c08f0bb06fb35bc0d0fa}{TIM\+\_\+\+TIM16}} = 17
+, \mbox{\hyperlink{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a8e199fe85c08a58bd64d2eb221290ba2}{TIM\+\_\+\+TIM17}} = 18
  \}
 \begin{DoxyCompactList}\small\item\em Enum representing different timers on the chip. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \{ \mbox{\hyperlink{group___t_i_m_ggaa7bb33976f8d2b8535cb20917287e529aa1b7f249f72c16e5134db3932bbef8cf}{TIM\+\_\+\+OK}} = 0
@@ -36,7 +41,7 @@ enum \mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\
 \begin{DoxyCompactList}\small\item\em Enable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga51fa45a8ad8271045073f95c61a75574}{TIM\+\_\+disable\+Peripheral\+Clk}} (\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
 \begin{DoxyCompactList}\small\item\em Disable the peripheral clock for a timer by changing the bit on the APB1\+ENR or APB2\+ENR registers. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga3ecfed8e3ce677c6f663d0dbec8219c4}{TIM\+\_\+config}} (\mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}config)
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_gad5ac01b5462fa3905760ffd8dd9477f5}{TIM\+\_\+config}} (const \mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}config)
 \begin{DoxyCompactList}\small\item\em Configure a timer with desired config parameters. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___t_i_m_ga9b79b449a6bad1fdcd3553cb8ad1787c}{TIM\+\_\+start\+Timer}} (\mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\+\+TIMER\+\_\+\+State}} timer)
 \begin{DoxyCompactList}\small\item\em Starts the timer by setting the CEN bit in the TIMx\+\_\+\+CR1 register. \end{DoxyCompactList}\item 
@@ -49,7 +54,7 @@ uint8\+\_\+t \mbox{\hyperlink{group___t_i_m_ga9aefba36c49823c04220ebffd9426f81}{
 
 
 \doxysubsection{Detailed Description}
-
+Timer drivers for stm32l4xx devices. 
 
 
 
@@ -88,14 +93,60 @@ enum \mbox{\hyperlink{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629}{TIM\+\_\
 
 Enum representing different timers on the chip. 
 
-Timers 2-\/8 inclusive are connected to APB1 bus. Timers 1 and 15-\/17 inclusive are connected to the APB2 bus. 
+Timers 2-\/8 inclusive are connected to APB1 bus. Timers 1 and 15-\/17 inclusive are connected to the APB2 bus. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM1@{TIM\_TIM1}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM1@{TIM\_TIM1}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629aa058f5f936744da064a81af7df925c92}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM1&TIM1 (advanced-\/control) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM2@{TIM\_TIM2}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM2@{TIM\_TIM2}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a5807ac86b40c78f6b47df62191b7abcc}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM2&TIM2 (general purpose) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM3@{TIM\_TIM3}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM3@{TIM\_TIM3}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a66e8161e3d14c5ed07f702f1dbdb6c8e}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM3&TIM3 (general purpose) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM4@{TIM\_TIM4}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM4@{TIM\_TIM4}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629aeaf4d47a1aa1902c3771b7bca6a76e74}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM4&TIM4 (general purpose) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM5@{TIM\_TIM5}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM5@{TIM\_TIM5}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629ac20fe35b963078bab3648eb2fdab80af}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM5&TIM5 (general purpose) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM6@{TIM\_TIM6}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM6@{TIM\_TIM6}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a3d45a91bc8a9a86b6fce37cd36bd0f5d}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM6&TIM6 (basic) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM7@{TIM\_TIM7}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM7@{TIM\_TIM7}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629ad57c318b3fa8e9fe76bb1d294fe7f661}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM7&TIM7 (basic) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM8@{TIM\_TIM8}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM8@{TIM\_TIM8}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629af19e5251b29a2f329b53e0b4fb07b87f}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM8&TIM7 (advanced-\/control) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM15@{TIM\_TIM15}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM15@{TIM\_TIM15}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a2adfbe01b4734afcb0e5f2286a3dada1}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM15&TIM15 (general purpose) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM16@{TIM\_TIM16}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM16@{TIM\_TIM16}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629afc85b8ba2ee6c08f0bb06fb35bc0d0fa}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM16&TIM16 (general purpose) timer selected. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIM\_TIM17@{TIM\_TIM17}!TIM@{TIM}}\index{TIM@{TIM}!TIM\_TIM17@{TIM\_TIM17}}}\Hypertarget{group___t_i_m_gga5b31ce769abb7de5285cb952034a6629a8e199fe85c08a58bd64d2eb221290ba2}\label{group___t_i_m_ga5b31ce769abb7de5285cb952034a6629} 
+TIM\+\_\+\+TIM17&TIM17 (general purpose) timer selected. \\
+\hline
+
+\end{DoxyEnumFields}
+
 
 \doxysubsection{Function Documentation}
-\Hypertarget{group___t_i_m_ga3ecfed8e3ce677c6f663d0dbec8219c4}\index{TIM@{TIM}!TIM\_config@{TIM\_config}}
+\Hypertarget{group___t_i_m_gad5ac01b5462fa3905760ffd8dd9477f5}\index{TIM@{TIM}!TIM\_config@{TIM\_config}}
 \index{TIM\_config@{TIM\_config}!TIM@{TIM}}
 \doxysubsubsection{\texorpdfstring{TIM\_config()}{TIM\_config()}}
-{\footnotesize\ttfamily \label{group___t_i_m_ga3ecfed8e3ce677c6f663d0dbec8219c4} 
-\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}}]{config}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{group___t_i_m_gad5ac01b5462fa3905760ffd8dd9477f5} 
+\mbox{\hyperlink{group___t_i_m_gaa7bb33976f8d2b8535cb20917287e529}{TIM\+\_\+\+Status\+\_\+\+State}} TIM\+\_\+config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_t_i_m___config___typedef}{TIM\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}}]{config}{}\end{DoxyParamCaption})}
 
 
 

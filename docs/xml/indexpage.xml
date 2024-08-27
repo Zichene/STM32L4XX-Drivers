@@ -18,7 +18,14 @@
 </para>
 </sect1>
 <sect1 id="index_1gpio_sec">
-<title>GPIO Drivers</title><para>See \group GPIO. etc... </para>
+<title>GPIO Drivers</title><para>The General Purpose Input Output (GPIO) drivers currently implement functionalities such as:<itemizedlist>
+<listitem><para>Pin output</para>
+</listitem><listitem><para>Pin input</para>
+</listitem><listitem><para>Interrupts</para>
+</listitem><listitem><para>Alternate Function (AF)</para>
+</listitem></itemizedlist>
+</para>
+<para>All GPIO pins can be set up with specific pull-up pull down mode, speed type and output type. See local <ulink url="/group___g_p_i_o.html">documentation</ulink>. </para>
 </sect1>
     </detaileddescription>
     <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h"/>

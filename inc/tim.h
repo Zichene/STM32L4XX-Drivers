@@ -1,4 +1,5 @@
 /** \addtogroup TIM
+* \brief Timer drivers for stm32l4xx devices.
  *  @{
  */
 

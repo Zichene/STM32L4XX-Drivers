@@ -39,6 +39,9 @@ static void configUART();
 static void configureSystemClock120MHz();
 static void print(const char* message);
 
+/* flag to show that we have received something */
+volatile uint8_t rxReceivedFlag = false;
+
 /*
 * Configure the UART peripheral with its usual settings: 
 *		- 115200 baud rate
@@ -48,6 +51,11 @@ static void print(const char* message);
 *		- no flow control
 */
 static void configUART() {
+	/* Interrupts */
+	UART_ITConfig_Typedef it_conf = {
+		.is_enabled = true,
+		.priority = 1,
+	};
 	
 	/* Setup pin configuration as defined above (internal connections) */
 	UART_PinConfig_Typedef pin_conf = {
@@ -63,6 +71,7 @@ static void configUART() {
 	UART_Config_Typedef uart_conf = {
 		.uart = UART_USART1,
 		.pin_config = &pin_conf,
+		.it_config = &it_conf,
 		.baud_rate = 115200,
 		.databits = UART_DATABITS_8,
 		.parity = UART_PARITY_NONE,
@@ -123,9 +132,18 @@ int main(void)
 	
 	while(1) {
 		/* Infinite loop so that we don't exit main */
+		if (rxReceivedFlag) {
+			print("Received a bit \r\n");
+		}
 	}	
 }
 
+
+void USART2_IRQn_handler(void) {
+	if (UART_hasData(UART_USART2)) {
+		rxReceivedFlag = true;
+	}
+}
 
 void ErrorHandler() {
 	while(1) {

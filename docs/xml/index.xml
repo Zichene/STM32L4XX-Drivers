@@ -6,6 +6,22 @@
     <member refid="struct_t_i_m___config___typedef_1a0cffa5dda75b6b5e4a71f4fa6915203f" kind="variable"><name>ARR</name></member>
     <member refid="struct_t_i_m___config___typedef_1a000fcbd6dead41212e3191fc83830019" kind="variable"><name>enableInterrupt</name></member>
   </compound>
+  <compound refid="struct_u_a_r_t___config___typedef" kind="struct"><name>UART_Config_Typedef</name>
+    <member refid="struct_u_a_r_t___config___typedef_1a0b183f651dadb6b3a4072e5cb9c43815" kind="variable"><name>uart</name></member>
+    <member refid="struct_u_a_r_t___config___typedef_1ad85ea381d8e16378f4a02fd18a8ce0c2" kind="variable"><name>pin_config</name></member>
+    <member refid="struct_u_a_r_t___config___typedef_1a148f33bbcda8087a77d8ba30f7e3c502" kind="variable"><name>baud_rate</name></member>
+    <member refid="struct_u_a_r_t___config___typedef_1a315bf3103ecc032b605b373c605b2c4f" kind="variable"><name>databits</name></member>
+    <member refid="struct_u_a_r_t___config___typedef_1a8d480bf0c817b49987861c27891ee634" kind="variable"><name>parity</name></member>
+    <member refid="struct_u_a_r_t___config___typedef_1afc496bd0ade7d4abd9ee2afb75b38536" kind="variable"><name>stopbits</name></member>
+  </compound>
+  <compound refid="struct_u_a_r_t___pin_config___typedef" kind="struct"><name>UART_PinConfig_Typedef</name>
+    <member refid="struct_u_a_r_t___pin_config___typedef_1adb17e776641603651b87dedf99c8e805" kind="variable"><name>rx_port</name></member>
+    <member refid="struct_u_a_r_t___pin_config___typedef_1ae2ba88cb5105ffa09eb6cadbc18aa582" kind="variable"><name>rx_pin</name></member>
+    <member refid="struct_u_a_r_t___pin_config___typedef_1af72041a9713daf64187a51d261add70b" kind="variable"><name>rx_pin_af</name></member>
+    <member refid="struct_u_a_r_t___pin_config___typedef_1a6ccaff491344249ebe73de98fc826d61" kind="variable"><name>tx_port</name></member>
+    <member refid="struct_u_a_r_t___pin_config___typedef_1ada3050a6e56b1b15acbb7f22f487a9bc" kind="variable"><name>tx_pin</name></member>
+    <member refid="struct_u_a_r_t___pin_config___typedef_1a5a2c3649a23ac06fa5c06cf01d1e9f66" kind="variable"><name>tx_pin_af</name></member>
+  </compound>
   <compound refid="clock_8h" kind="file"><name>clock.h</name>
     <member refid="group___c_l_o_c_k_1ga8fab271b291b83bd742e9099a9f20a59" kind="enum"><name>CLOCK_MCO_SELECT_State</name></member>
     <member refid="group___c_l_o_c_k_1gaaa0363e0e9775584599d94565f8e0e60" kind="enum"><name>CLOCK_MCO_PRESCALER_State</name></member>
@@ -35,7 +51,7 @@
   <compound refid="common_8h" kind="file"><name>common.h</name>
     <member refid="common_8h_1a41f9c5fb8b08eb5dc3edce4dcb37fee7" kind="define"><name>true</name></member>
     <member refid="common_8h_1a65e9886d74aaee76545e83dd09011727" kind="define"><name>false</name></member>
-    <member refid="common_8h_1a84689b0b931413a699447229661c779c" kind="define"><name>PUSH_LED</name></member>
+    <member refid="common_8h_1a2c563d8e23d1455d03b749adf86939f3" kind="define"><name>UART_PRINTF</name></member>
   </compound>
   <compound refid="gpio_8h" kind="file"><name>gpio.h</name>
     <member refid="group___g_p_i_o_1gaf164c756418dde00ac07fd47d0962150" kind="enum"><name>GPIO_Port</name></member>
@@ -63,11 +79,23 @@
     <member refid="group___t_i_m_1gaa7bb33976f8d2b8535cb20917287e529" kind="enum"><name>TIM_Status_State</name></member>
     <member refid="group___t_i_m_1ga7e436dcd8d1f9df35649297fc25de9c9" kind="function"><name>TIM_enablePeripheralClk</name></member>
     <member refid="group___t_i_m_1ga51fa45a8ad8271045073f95c61a75574" kind="function"><name>TIM_disablePeripheralClk</name></member>
-    <member refid="group___t_i_m_1ga3ecfed8e3ce677c6f663d0dbec8219c4" kind="function"><name>TIM_config</name></member>
+    <member refid="group___t_i_m_1gad5ac01b5462fa3905760ffd8dd9477f5" kind="function"><name>TIM_config</name></member>
     <member refid="group___t_i_m_1ga9b79b449a6bad1fdcd3553cb8ad1787c" kind="function"><name>TIM_startTimer</name></member>
     <member refid="group___t_i_m_1ga469e7c7abf13151452b4280eed1c7f24" kind="function"><name>TIM_stopTimer</name></member>
     <member refid="group___t_i_m_1ga9aefba36c49823c04220ebffd9426f81" kind="function"><name>TIM_hasUpdated</name></member>
     <member refid="group___t_i_m_1ga678b5813bb7929232e9346038a6c756d" kind="function"><name>TIM_resetEventFlag</name></member>
+  </compound>
+  <compound refid="uart_8h" kind="file"><name>uart.h</name>
+    <member refid="group___u_a_r_t_1gae796743d12ed283734a7df1d505fb2c1" kind="define"><name>UART_MAX_BAUDRATE</name></member>
+    <member refid="group___u_a_r_t_1ga4d81a9babaa8d2b9190e34c1da4eee1f" kind="enum"><name>UART_Status_State</name></member>
+    <member refid="group___u_a_r_t_1ga3c45a624ab1ddfcc7e54110b4142cccd" kind="enum"><name>UART_DEVICE_State</name></member>
+    <member refid="group___u_a_r_t_1ga99c036598920115caa02fec9ae349c1f" kind="enum"><name>UART_DATABITS_State</name></member>
+    <member refid="group___u_a_r_t_1ga7f73ca52a8ffc7da6e5a87e947ad9cbb" kind="enum"><name>UART_PARITY_State</name></member>
+    <member refid="group___u_a_r_t_1ga8edefddeb4a1c18c9b9d5d70bd06c6bd" kind="enum"><name>UART_STOPBITS_State</name></member>
+    <member refid="group___u_a_r_t_1gae70286f4e3e5f5b94e3075f7b075bcf5" kind="function"><name>UART_config</name></member>
+    <member refid="group___u_a_r_t_1gae176760e197ac5d770d79655f0272988" kind="function"><name>UART_transmit</name></member>
+    <member refid="group___u_a_r_t_1gabde57d72e032c159438a6000ea7463f5" kind="function"><name>UART_receiveByte</name></member>
+    <member refid="group___u_a_r_t_1ga78064a945132939c843e5aa9f09704e5" kind="function"><name>UART_hasData</name></member>
   </compound>
   <compound refid="group___c_l_o_c_k" kind="group"><name>CLOCK</name>
     <member refid="group___c_l_o_c_k_1ga8fab271b291b83bd742e9099a9f20a59" kind="enum"><name>CLOCK_MCO_SELECT_State</name></member>
@@ -231,11 +259,41 @@
     <member refid="group___t_i_m_1ggaa7bb33976f8d2b8535cb20917287e529a102d9931bb3bd470780477491454a9b7" kind="enumvalue"><name>TIM_ERROR</name></member>
     <member refid="group___t_i_m_1ga7e436dcd8d1f9df35649297fc25de9c9" kind="function"><name>TIM_enablePeripheralClk</name></member>
     <member refid="group___t_i_m_1ga51fa45a8ad8271045073f95c61a75574" kind="function"><name>TIM_disablePeripheralClk</name></member>
-    <member refid="group___t_i_m_1ga3ecfed8e3ce677c6f663d0dbec8219c4" kind="function"><name>TIM_config</name></member>
+    <member refid="group___t_i_m_1gad5ac01b5462fa3905760ffd8dd9477f5" kind="function"><name>TIM_config</name></member>
     <member refid="group___t_i_m_1ga9b79b449a6bad1fdcd3553cb8ad1787c" kind="function"><name>TIM_startTimer</name></member>
     <member refid="group___t_i_m_1ga469e7c7abf13151452b4280eed1c7f24" kind="function"><name>TIM_stopTimer</name></member>
     <member refid="group___t_i_m_1ga9aefba36c49823c04220ebffd9426f81" kind="function"><name>TIM_hasUpdated</name></member>
     <member refid="group___t_i_m_1ga678b5813bb7929232e9346038a6c756d" kind="function"><name>TIM_resetEventFlag</name></member>
+  </compound>
+  <compound refid="group___u_a_r_t" kind="group"><name>UART</name>
+    <member refid="group___u_a_r_t_1ga4d81a9babaa8d2b9190e34c1da4eee1f" kind="enum"><name>UART_Status_State</name></member>
+    <member refid="group___u_a_r_t_1gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07" kind="enumvalue"><name>UART_OK</name></member>
+    <member refid="group___u_a_r_t_1gga4d81a9babaa8d2b9190e34c1da4eee1fa4859017d795a62459d23227611718e93" kind="enumvalue"><name>UART_INVALID_ARGS</name></member>
+    <member refid="group___u_a_r_t_1gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46" kind="enumvalue"><name>UART_ERROR</name></member>
+    <member refid="group___u_a_r_t_1ga3c45a624ab1ddfcc7e54110b4142cccd" kind="enum"><name>UART_DEVICE_State</name></member>
+    <member refid="group___u_a_r_t_1gga3c45a624ab1ddfcc7e54110b4142cccda1e0fa1b7139a6572f637b5d1aed5d6c1" kind="enumvalue"><name>UART_USART1</name></member>
+    <member refid="group___u_a_r_t_1gga3c45a624ab1ddfcc7e54110b4142cccda48f1b5041ad4267bdf6c8fcea335d238" kind="enumvalue"><name>UART_USART2</name></member>
+    <member refid="group___u_a_r_t_1gga3c45a624ab1ddfcc7e54110b4142cccda0f0abdebd712e8c48e6eaef1b15902fd" kind="enumvalue"><name>UART_USART3</name></member>
+    <member refid="group___u_a_r_t_1gga3c45a624ab1ddfcc7e54110b4142cccda01e59c9a6d3a5d099e1b6f7e2f0e7881" kind="enumvalue"><name>UART_UART4</name></member>
+    <member refid="group___u_a_r_t_1gga3c45a624ab1ddfcc7e54110b4142cccdad8ea1417ed2bc43b10f5f7fdc5e8339d" kind="enumvalue"><name>UART_UART5</name></member>
+    <member refid="group___u_a_r_t_1ga99c036598920115caa02fec9ae349c1f" kind="enum"><name>UART_DATABITS_State</name></member>
+    <member refid="group___u_a_r_t_1gga99c036598920115caa02fec9ae349c1fa941f53895de35cb17c5b5ae5e57a02b9" kind="enumvalue"><name>UART_DATABITS_7</name></member>
+    <member refid="group___u_a_r_t_1gga99c036598920115caa02fec9ae349c1faf080420d870f7b3917bd59107ac4c153" kind="enumvalue"><name>UART_DATABITS_8</name></member>
+    <member refid="group___u_a_r_t_1gga99c036598920115caa02fec9ae349c1fad0522fb6d585f1a6b651fd999184b672" kind="enumvalue"><name>UART_DATABITS_9</name></member>
+    <member refid="group___u_a_r_t_1ga7f73ca52a8ffc7da6e5a87e947ad9cbb" kind="enum"><name>UART_PARITY_State</name></member>
+    <member refid="group___u_a_r_t_1gga7f73ca52a8ffc7da6e5a87e947ad9cbbaa80d2d8ea61454045ebe71d155e85b3d" kind="enumvalue"><name>UART_PARITY_NONE</name></member>
+    <member refid="group___u_a_r_t_1gga7f73ca52a8ffc7da6e5a87e947ad9cbbad908a637b1dd23f93b149dd2d8bdfdb8" kind="enumvalue"><name>UART_PARITY_EVEN</name></member>
+    <member refid="group___u_a_r_t_1gga7f73ca52a8ffc7da6e5a87e947ad9cbbad90cc425f5ba447773a44a75be6593e2" kind="enumvalue"><name>UART_PARITY_ODD</name></member>
+    <member refid="group___u_a_r_t_1ga8edefddeb4a1c18c9b9d5d70bd06c6bd" kind="enum"><name>UART_STOPBITS_State</name></member>
+    <member refid="group___u_a_r_t_1gga8edefddeb4a1c18c9b9d5d70bd06c6bdab1c6c3da76951f5a1817859f83ddd9fa" kind="enumvalue"><name>UART_STOPBITS_1</name></member>
+    <member refid="group___u_a_r_t_1gga8edefddeb4a1c18c9b9d5d70bd06c6bda67e7e8ef061d033e8e187f6d49c36a89" kind="enumvalue"><name>UART_STOPBITS_0_5</name></member>
+    <member refid="group___u_a_r_t_1gga8edefddeb4a1c18c9b9d5d70bd06c6bdaf4b730b061af3ef2004c360c158ffef8" kind="enumvalue"><name>UART_STOPBITS_2</name></member>
+    <member refid="group___u_a_r_t_1gga8edefddeb4a1c18c9b9d5d70bd06c6bda41e0cb55a333db41b71dcd08b2bf3ef9" kind="enumvalue"><name>UART_STOPBITS_1_5</name></member>
+    <member refid="group___u_a_r_t_1gae70286f4e3e5f5b94e3075f7b075bcf5" kind="function"><name>UART_config</name></member>
+    <member refid="group___u_a_r_t_1gae176760e197ac5d770d79655f0272988" kind="function"><name>UART_transmit</name></member>
+    <member refid="group___u_a_r_t_1gabde57d72e032c159438a6000ea7463f5" kind="function"><name>UART_receiveByte</name></member>
+    <member refid="group___u_a_r_t_1ga78064a945132939c843e5aa9f09704e5" kind="function"><name>UART_hasData</name></member>
+    <member refid="group___u_a_r_t_1gae796743d12ed283734a7df1d505fb2c1" kind="define"><name>UART_MAX_BAUDRATE</name></member>
   </compound>
   <compound refid="dir_bfccd401955b95cf8c75461437045ac0" kind="dir"><name>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc</name>
   </compound>

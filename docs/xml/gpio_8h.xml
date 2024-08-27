@@ -4,6 +4,7 @@
     <compoundname>gpio.h</compoundname>
     <includes refid="common_8h" local="yes">common.h</includes>
     <includedby refid="clock_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h</includedby>
+    <includedby refid="uart_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h</includedby>
     <incdepgraph>
       <node id="2">
         <label>common.h</label>
@@ -27,16 +28,24 @@
         <link refid="clock_8h_source"/>
         <childnode refid="3" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h</label>
         <link refid="gpio_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/tim.h</label>
         <link refid="tim_8h_source"/>
+      </node>
+      <node id="4">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h</label>
+        <link refid="uart_8h_source"/>
       </node>
     </invincdepgraph>
     <sectiondef kind="enum">

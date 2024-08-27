@@ -1,5 +1,5 @@
-
 /** \addtogroup GPIO 
+ *  \brief GPIO drivers for stm32l4xx devices.
  *  @{
  */
  

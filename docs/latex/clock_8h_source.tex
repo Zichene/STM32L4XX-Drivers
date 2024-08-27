@@ -3,164 +3,164 @@
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ CLOCK\_H}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ CLOCK\_H}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}common.h"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}gpio.h"{}}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{comment}{/***}}
-\DoxyCodeLine{00011\ \textcolor{comment}{*}}
-\DoxyCodeLine{00012\ \textcolor{comment}{*\ Clock\ drivers\ for\ stm32l4xx\ devices.}}
-\DoxyCodeLine{00013\ \textcolor{comment}{*\ WARNING:\ These\ drivers\ have\ NOT\ been\ tested\ extensively.\ Use\ at\ own\ risk.}}
-\DoxyCodeLine{00014\ \textcolor{comment}{*\ Reference:\ https://www.youtube.com/playlist?list=PLtVUYRe-\/Z-\/mfKO0lg\_-\/MBvwWl6VjWT8Dt}}
-\DoxyCodeLine{00015\ \textcolor{comment}{*\ STM32\ Reference\ Manual:\ RM0432}}
-\DoxyCodeLine{00016\ \textcolor{comment}{*}}
-\DoxyCodeLine{00017\ \textcolor{comment}{***/}}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00020\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TYPEDEFS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00021\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59abb691cd8ed76e2fc2feee940b9d4469f}{CLOCK\_MCO\_SELECT\_NONE}}\ =\ 0,\ }
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a6db979a2b14fbff8a460b22a4609d547}{CLOCK\_MCO\_SELECT\_SYSCLK}}\ =\ 1,\ }
-\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59afba7110e8b401e1cb1f7505ec4ccef9b}{CLOCK\_MCO\_SELECT\_MSI}}\ =\ 2,\ }
-\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a754c4991d840d4f445b759dbc05af0e4}{CLOCK\_MCO\_SELECT\_HSI16}}\ =\ 3,\ }
-\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59aa3215872772feb32efec07698249f863}{CLOCK\_MCO\_SELECT\_HSE}}\ =\ 4,\ }
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a5e26efa03f5b33e0c1e30914543faacb}{CLOCK\_MCO\_SELECT\_PLL}}\ =\ 5,\ }
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a089bb074feb5756821a02f5bddfe9cd7}{CLOCK\_MCO\_SELECT\_LSI}}\ =\ 6,\ }
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a3cf05f9e87a205b19ed391387c71360e}{CLOCK\_MCO\_SELECT\_LSE}}\ =\ 7,\ }
-\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a850735cd656cc91ad63442e0d0f695a5}{CLOCK\_MCO\_SELECT\_HSI48}}\ =\ 8,\ }
-\DoxyCodeLine{00035\ \}\ \mbox{\hyperlink{group___c_l_o_c_k_ga8fab271b291b83bd742e9099a9f20a59}{CLOCK\_MCO\_SELECT\_State}};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60ad4ef6fde7814d2944a88652d46a6793b}{CLOCK\_MCO\_PRE\_DIV\_1}}\ =\ 0,\ }
-\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60a8bb9e7c5629ffd960898254d902d0a01}{CLOCK\_MCO\_PRE\_DIV\_2}}\ =\ 1,\ }
-\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60a0210de4b012d4b2b456a01b7f0603bc7}{CLOCK\_MCO\_PRE\_DIV\_4}}\ =\ 2,\ }
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60a19ec56b9cdffbd690114783b9ec42fe2}{CLOCK\_MCO\_PRE\_DIV\_8}}\ =\ 3,\ }
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60a1738104963af1cf755a3f48652d69fad}{CLOCK\_MCO\_PRE\_DIV\_16}}\ =\ 4,\ }
-\DoxyCodeLine{00045\ \}\ \mbox{\hyperlink{group___c_l_o_c_k_gaaa0363e0e9775584599d94565f8e0e60}{CLOCK\_MCO\_PRESCALER\_State}};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896}{CLOCK\_MSI}}\ =\ 0,\ }
-\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15}{CLOCK\_LSE}}\ =\ 1,\ }
-\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1}{CLOCK\_HSI}}\ =\ 8,\ }
-\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca}{CLOCK\_HSE}}\ =\ 16,\ }
-\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a14eebc7672bdd5c1225faf6d957fcfc8}{CLOCK\_PLL}}\ =\ 24,\ }
-\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01}{CLOCK\_PLLSAI1}}\ =\ 26,\ }
-\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540}{CLOCK\_PLLSAI2}}\ =\ 28,\ }
-\DoxyCodeLine{00057\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}};}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaceb416b702f94d30e139e49e8e10a76fa7dfb30305b992424089765bb86052116}{CLOCK\_PLL\_SRC\_NONE}}\ =\ 0,\ }
-\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaceb416b702f94d30e139e49e8e10a76faa828be71c3aaab5019d54220bb09da5d}{CLOCK\_PLL\_SRC\_MSI}}\ =\ 1,\ }
-\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaceb416b702f94d30e139e49e8e10a76faf5c7a4f6288463c25804767392272ea2}{CLOCK\_PLL\_SRC\_HSI16}}\ =\ 2,\ }
-\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaceb416b702f94d30e139e49e8e10a76fa4d2de9def651b564adbc2f29261d3828}{CLOCK\_PLL\_SRC\_HSE}}\ =\ 3,\ }
-\DoxyCodeLine{00066\ \}\mbox{\hyperlink{group___c_l_o_c_k_gaceb416b702f94d30e139e49e8e10a76f}{CLOCK\_PLL\_SOURCE\_State}};}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga9b771949ba6bccb42317a3e5e089cdeda30583baa78fd1ccfaa1277d78915d648}{CLOCK\_PLLR\_2}}\ =\ 0,\ }
-\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga9b771949ba6bccb42317a3e5e089cdeda6f54e915fefe249957a8e62298970386}{CLOCK\_PLLR\_4}}\ =\ 1,\ }
-\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga9b771949ba6bccb42317a3e5e089cdeda135545aae67a4cc368f146388860aa57}{CLOCK\_PLLR\_6}}\ =\ 2,\ }
-\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga9b771949ba6bccb42317a3e5e089cdeda57e44ea397f1766898982b78a9fa3bd8}{CLOCK\_PLLR\_8}}\ =\ 3,\ }
-\DoxyCodeLine{00075\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga9b771949ba6bccb42317a3e5e089cded}{CLOCK\_PLLR\_State}};}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00079\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga5aa3fa30a332173aafcc460104d0a159a6a98c64f84a2d901438fd3890e4b6d7f}{CLOCK\_OK}}\ =\ 0,\ }
-\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga5aa3fa30a332173aafcc460104d0a159a2941fc3f1fa884801d4ffed60c7f29ef}{CLOCK\_INVALID\_ARGS}}\ =\ 1,\ }
-\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06}{CLOCK\_ERROR}}\ =\ 2,\ }
-\DoxyCodeLine{00083\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}};}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1}{CLOCK\_SYSCLK\_MSI}}\ =\ 0,\ }
-\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462}{CLOCK\_SYSCLK\_HSI16}}\ =\ 1,\ }
-\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf}{CLOCK\_SYSCLK\_HSE}}\ =\ 2,\ }
-\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d}{CLOCK\_SYSCLK\_PLL}}\ =\ 3,\ }
-\DoxyCodeLine{00092\ \}\mbox{\hyperlink{group___c_l_o_c_k_gab8ea3cd345873e8a031469d82633ee72}{CLOCK\_SYSCLK\_State}};}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00096\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa58ad808e45cfbc4336e1dcc45e0f1173}{CLOCK\_AHB\_PRE\_DIV\_1}}\ =\ 0,\ }
-\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa50ad82ac541766a6e12b20bce8ca7acf}{CLOCK\_AHB\_PRE\_DIV\_2}}\ =\ 8,\ }
-\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa602a58ff3e69e4ed36d26ff5adb5d760}{CLOCK\_AHB\_PRE\_DIV\_4}}\ =\ 9,\ }
-\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa0cbc2960e41a8001055299624718cc98}{CLOCK\_AHB\_PRE\_DIV\_8}}\ =\ 10,\ }
-\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa0b13314034e5155cb712640d6b542036}{CLOCK\_AHB\_PRE\_DIV\_16}}\ =\ 11,\ }
-\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa0224c57455f9a606b2b61b3923fb0b9d}{CLOCK\_AHB\_PRE\_DIV\_64}}\ =\ 12,\ }
-\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa6a0c238180cd5fee437f5563de5f2fee}{CLOCK\_AHB\_PRE\_DIV\_128}}\ =\ 13,\ }
-\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77faa388856e07f32b445c8c131856c20632}{CLOCK\_AHB\_PRE\_DIV\_256}}\ =\ 14,\ }
-\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fafcf53d310322fdcbef5a5d4a480d1f77}{CLOCK\_AHB\_PRE\_DIV\_512}}\ =\ 15,\ }
-\DoxyCodeLine{00106\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga8243c8d8e6717062f9949ee373a4a77f}{CLOCK\_AHB\_PRESCALER\_State}};}
-\DoxyCodeLine{00107\ }
-\DoxyCodeLine{00110\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aae98e6ebb354ed67981f4366c0e549c5f}{CLOCK\_APB1\_PRE\_DIV\_1}}\ =\ 0,\ }
-\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aaa662e0f16bdbd7db338a6e1d1b640e6d}{CLOCK\_APB1\_PRE\_DIV\_2}}\ =\ 4,\ }
-\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aac7682be55a2f8a3b67eb502b8c4fab40}{CLOCK\_APB1\_PRE\_DIV\_4}}\ =\ 5,\ }
-\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aaef86f41b3fc4959331b774e04843fe0b}{CLOCK\_APB1\_PRE\_DIV\_8}}\ =\ 6,\ }
-\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aaa02ab2e6bffcc030c4846389f7941bb3}{CLOCK\_APB1\_PRE\_DIV\_16}}\ =\ 7,\ }
-\DoxyCodeLine{00116\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\_APB1\_PRESCALER\_State}};}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00120\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517a9e2931dd9e0ca08f9e4f77b34c10af4e}{CLOCK\_APB2\_PRE\_DIV\_1}}\ =\ 0,\ }
-\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517adecf06efe3e2eba743be92ac0cd00129}{CLOCK\_APB2\_PRE\_DIV\_2}}\ =\ 4,\ }
-\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517a382a4e5834af901bffce21544ce31f7e}{CLOCK\_APB2\_PRE\_DIV\_4}}\ =\ 5,\ }
-\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517adfe2f4ccfe011fa4eb4c128bf532dc94}{CLOCK\_APB2\_PRE\_DIV\_8}}\ =\ 6,\ }
-\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517a6031959d7feb10ed1f2f66bf25fe3eaf}{CLOCK\_APB2\_PRE\_DIV\_16}}\ =\ 7,\ }
-\DoxyCodeLine{00126\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga95ae2e15b49c96956d53beae3975e517}{CLOCK\_APB2\_PRESCALER\_State}};}
-\DoxyCodeLine{00127\ }
-\DoxyCodeLine{00128\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00129\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00130\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00141\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga625103ea87a9510c347baaf2126d27e3}{CLOCK\_activateMCO}}(\mbox{\hyperlink{group___g_p_i_o_gaf164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ uint8\_t\ pin,\ \mbox{\hyperlink{group___c_l_o_c_k_ga8fab271b291b83bd742e9099a9f20a59}{CLOCK\_MCO\_SELECT\_State}}\ mco\_sel\_state,\ \mbox{\hyperlink{group___c_l_o_c_k_gaaa0363e0e9775584599d94565f8e0e60}{CLOCK\_MCO\_PRESCALER\_State}}\ mco\_pre\_state);}
-\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CLOCK\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CLOCK\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}common.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}gpio.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/***}}
+\DoxyCodeLine{00012\ \textcolor{comment}{*}}
+\DoxyCodeLine{00013\ \textcolor{comment}{*\ Clock\ drivers\ for\ stm32l4xx\ devices.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{*\ WARNING:\ These\ drivers\ have\ NOT\ been\ tested\ extensively.\ Use\ at\ own\ risk.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{*\ Reference:\ https://www.youtube.com/playlist?list=PLtVUYRe-\/Z-\/mfKO0lg\_-\/MBvwWl6VjWT8Dt}}
+\DoxyCodeLine{00016\ \textcolor{comment}{*\ STM32\ Reference\ Manual:\ RM0432}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*}}
+\DoxyCodeLine{00018\ \textcolor{comment}{***/}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TYPEDEFS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59abb691cd8ed76e2fc2feee940b9d4469f}{CLOCK\_MCO\_SELECT\_NONE}}\ =\ 0,\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a6db979a2b14fbff8a460b22a4609d547}{CLOCK\_MCO\_SELECT\_SYSCLK}}\ =\ 1,\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59afba7110e8b401e1cb1f7505ec4ccef9b}{CLOCK\_MCO\_SELECT\_MSI}}\ =\ 2,\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a754c4991d840d4f445b759dbc05af0e4}{CLOCK\_MCO\_SELECT\_HSI16}}\ =\ 3,\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59aa3215872772feb32efec07698249f863}{CLOCK\_MCO\_SELECT\_HSE}}\ =\ 4,\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a5e26efa03f5b33e0c1e30914543faacb}{CLOCK\_MCO\_SELECT\_PLL}}\ =\ 5,\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a089bb074feb5756821a02f5bddfe9cd7}{CLOCK\_MCO\_SELECT\_LSI}}\ =\ 6,\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a3cf05f9e87a205b19ed391387c71360e}{CLOCK\_MCO\_SELECT\_LSE}}\ =\ 7,\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8fab271b291b83bd742e9099a9f20a59a850735cd656cc91ad63442e0d0f695a5}{CLOCK\_MCO\_SELECT\_HSI48}}\ =\ 8,\ }
+\DoxyCodeLine{00036\ \}\ \mbox{\hyperlink{group___c_l_o_c_k_ga8fab271b291b83bd742e9099a9f20a59}{CLOCK\_MCO\_SELECT\_State}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60ad4ef6fde7814d2944a88652d46a6793b}{CLOCK\_MCO\_PRE\_DIV\_1}}\ =\ 0,\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60a8bb9e7c5629ffd960898254d902d0a01}{CLOCK\_MCO\_PRE\_DIV\_2}}\ =\ 1,\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60a0210de4b012d4b2b456a01b7f0603bc7}{CLOCK\_MCO\_PRE\_DIV\_4}}\ =\ 2,\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60a19ec56b9cdffbd690114783b9ec42fe2}{CLOCK\_MCO\_PRE\_DIV\_8}}\ =\ 3,\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaaa0363e0e9775584599d94565f8e0e60a1738104963af1cf755a3f48652d69fad}{CLOCK\_MCO\_PRE\_DIV\_16}}\ =\ 4,\ }
+\DoxyCodeLine{00046\ \}\ \mbox{\hyperlink{group___c_l_o_c_k_gaaa0363e0e9775584599d94565f8e0e60}{CLOCK\_MCO\_PRESCALER\_State}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a66cd7c081b3ab25d840073902528d896}{CLOCK\_MSI}}\ =\ 0,\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36ac5848a535beeb0c4149438bf7a50aa15}{CLOCK\_LSE}}\ =\ 1,\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a76b8dc1cc477ac8d2f04a3241555cfc1}{CLOCK\_HSI}}\ =\ 8,\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a6fd33b4e5910e6cdaeed70ca1bef61ca}{CLOCK\_HSE}}\ =\ 16,\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a14eebc7672bdd5c1225faf6d957fcfc8}{CLOCK\_PLL}}\ =\ 24,\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36ae7093b645551a2df999f8e5ae6867e01}{CLOCK\_PLLSAI1}}\ =\ 26,\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga63d31f75868a8d1e3b998ac5df3f6a36a742846b4fe0b24f6630fe2e466c36540}{CLOCK\_PLLSAI2}}\ =\ 28,\ }
+\DoxyCodeLine{00058\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaceb416b702f94d30e139e49e8e10a76fa7dfb30305b992424089765bb86052116}{CLOCK\_PLL\_SRC\_NONE}}\ =\ 0,\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaceb416b702f94d30e139e49e8e10a76faa828be71c3aaab5019d54220bb09da5d}{CLOCK\_PLL\_SRC\_MSI}}\ =\ 1,\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaceb416b702f94d30e139e49e8e10a76faf5c7a4f6288463c25804767392272ea2}{CLOCK\_PLL\_SRC\_HSI16}}\ =\ 2,\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggaceb416b702f94d30e139e49e8e10a76fa4d2de9def651b564adbc2f29261d3828}{CLOCK\_PLL\_SRC\_HSE}}\ =\ 3,\ }
+\DoxyCodeLine{00067\ \}\mbox{\hyperlink{group___c_l_o_c_k_gaceb416b702f94d30e139e49e8e10a76f}{CLOCK\_PLL\_SOURCE\_State}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga9b771949ba6bccb42317a3e5e089cdeda30583baa78fd1ccfaa1277d78915d648}{CLOCK\_PLLR\_2}}\ =\ 0,\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga9b771949ba6bccb42317a3e5e089cdeda6f54e915fefe249957a8e62298970386}{CLOCK\_PLLR\_4}}\ =\ 1,\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga9b771949ba6bccb42317a3e5e089cdeda135545aae67a4cc368f146388860aa57}{CLOCK\_PLLR\_6}}\ =\ 2,\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga9b771949ba6bccb42317a3e5e089cdeda57e44ea397f1766898982b78a9fa3bd8}{CLOCK\_PLLR\_8}}\ =\ 3,\ }
+\DoxyCodeLine{00076\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga9b771949ba6bccb42317a3e5e089cded}{CLOCK\_PLLR\_State}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga5aa3fa30a332173aafcc460104d0a159a6a98c64f84a2d901438fd3890e4b6d7f}{CLOCK\_OK}}\ =\ 0,\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga5aa3fa30a332173aafcc460104d0a159a2941fc3f1fa884801d4ffed60c7f29ef}{CLOCK\_INVALID\_ARGS}}\ =\ 1,\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga5aa3fa30a332173aafcc460104d0a159a1285888049fde496e9d3cce35a970a06}{CLOCK\_ERROR}}\ =\ 2,\ }
+\DoxyCodeLine{00084\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggab8ea3cd345873e8a031469d82633ee72a5bb4a592f8140ddddf2e1b3633f0b4f1}{CLOCK\_SYSCLK\_MSI}}\ =\ 0,\ }
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggab8ea3cd345873e8a031469d82633ee72aa1c3f051599ec96b3db9e36da6363462}{CLOCK\_SYSCLK\_HSI16}}\ =\ 1,\ }
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggab8ea3cd345873e8a031469d82633ee72ad7f2bf89d66c7444f43e6005013d99cf}{CLOCK\_SYSCLK\_HSE}}\ =\ 2,\ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{group___c_l_o_c_k_ggab8ea3cd345873e8a031469d82633ee72a9c9d2c4a177b0ab1e7153ebc96c6fc0d}{CLOCK\_SYSCLK\_PLL}}\ =\ 3,\ }
+\DoxyCodeLine{00093\ \}\mbox{\hyperlink{group___c_l_o_c_k_gab8ea3cd345873e8a031469d82633ee72}{CLOCK\_SYSCLK\_State}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa58ad808e45cfbc4336e1dcc45e0f1173}{CLOCK\_AHB\_PRE\_DIV\_1}}\ =\ 0,\ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa50ad82ac541766a6e12b20bce8ca7acf}{CLOCK\_AHB\_PRE\_DIV\_2}}\ =\ 8,\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa602a58ff3e69e4ed36d26ff5adb5d760}{CLOCK\_AHB\_PRE\_DIV\_4}}\ =\ 9,\ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa0cbc2960e41a8001055299624718cc98}{CLOCK\_AHB\_PRE\_DIV\_8}}\ =\ 10,\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa0b13314034e5155cb712640d6b542036}{CLOCK\_AHB\_PRE\_DIV\_16}}\ =\ 11,\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa0224c57455f9a606b2b61b3923fb0b9d}{CLOCK\_AHB\_PRE\_DIV\_64}}\ =\ 12,\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fa6a0c238180cd5fee437f5563de5f2fee}{CLOCK\_AHB\_PRE\_DIV\_128}}\ =\ 13,\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77faa388856e07f32b445c8c131856c20632}{CLOCK\_AHB\_PRE\_DIV\_256}}\ =\ 14,\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga8243c8d8e6717062f9949ee373a4a77fafcf53d310322fdcbef5a5d4a480d1f77}{CLOCK\_AHB\_PRE\_DIV\_512}}\ =\ 15,\ }
+\DoxyCodeLine{00107\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga8243c8d8e6717062f9949ee373a4a77f}{CLOCK\_AHB\_PRESCALER\_State}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aae98e6ebb354ed67981f4366c0e549c5f}{CLOCK\_APB1\_PRE\_DIV\_1}}\ =\ 0,\ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aaa662e0f16bdbd7db338a6e1d1b640e6d}{CLOCK\_APB1\_PRE\_DIV\_2}}\ =\ 4,\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aac7682be55a2f8a3b67eb502b8c4fab40}{CLOCK\_APB1\_PRE\_DIV\_4}}\ =\ 5,\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aaef86f41b3fc4959331b774e04843fe0b}{CLOCK\_APB1\_PRE\_DIV\_8}}\ =\ 6,\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga65e4b024aee4244fb32f8c5c4ff05f9aaa02ab2e6bffcc030c4846389f7941bb3}{CLOCK\_APB1\_PRE\_DIV\_16}}\ =\ 7,\ }
+\DoxyCodeLine{00117\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\_APB1\_PRESCALER\_State}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517a9e2931dd9e0ca08f9e4f77b34c10af4e}{CLOCK\_APB2\_PRE\_DIV\_1}}\ =\ 0,\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517adecf06efe3e2eba743be92ac0cd00129}{CLOCK\_APB2\_PRE\_DIV\_2}}\ =\ 4,\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517a382a4e5834af901bffce21544ce31f7e}{CLOCK\_APB2\_PRE\_DIV\_4}}\ =\ 5,\ }
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517adfe2f4ccfe011fa4eb4c128bf532dc94}{CLOCK\_APB2\_PRE\_DIV\_8}}\ =\ 6,\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{group___c_l_o_c_k_gga95ae2e15b49c96956d53beae3975e517a6031959d7feb10ed1f2f66bf25fe3eaf}{CLOCK\_APB2\_PRE\_DIV\_16}}\ =\ 7,\ }
+\DoxyCodeLine{00127\ \}\mbox{\hyperlink{group___c_l_o_c_k_ga95ae2e15b49c96956d53beae3975e517}{CLOCK\_APB2\_PRESCALER\_State}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00130\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00131\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00142\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga625103ea87a9510c347baaf2126d27e3}{CLOCK\_activateMCO}}(\mbox{\hyperlink{group___g_p_i_o_gaf164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ port,\ uint8\_t\ pin,\ \mbox{\hyperlink{group___c_l_o_c_k_ga8fab271b291b83bd742e9099a9f20a59}{CLOCK\_MCO\_SELECT\_State}}\ mco\_sel\_state,\ \mbox{\hyperlink{group___c_l_o_c_k_gaaa0363e0e9775584599d94565f8e0e60}{CLOCK\_MCO\_PRESCALER\_State}}\ mco\_pre\_state);}
 \DoxyCodeLine{00143\ }
 \DoxyCodeLine{00144\ }
-\DoxyCodeLine{00153\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_gaa11ce7252db60000e142bc3ff6aff0be}{CLOCK\_configPLL}}(\mbox{\hyperlink{group___c_l_o_c_k_gaceb416b702f94d30e139e49e8e10a76f}{CLOCK\_PLL\_SOURCE\_State}}\ pll\_src,\ uint8\_t\ PLL\_M,\ uint8\_t\ PLL\_N,\ \mbox{\hyperlink{group___c_l_o_c_k_ga9b771949ba6bccb42317a3e5e089cded}{CLOCK\_PLLR\_State}}\ PLL\_R);}
-\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00154\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_gaa11ce7252db60000e142bc3ff6aff0be}{CLOCK\_configPLL}}(\mbox{\hyperlink{group___c_l_o_c_k_gaceb416b702f94d30e139e49e8e10a76f}{CLOCK\_PLL\_SOURCE\_State}}\ pll\_src,\ uint8\_t\ PLL\_M,\ uint8\_t\ PLL\_N,\ \mbox{\hyperlink{group___c_l_o_c_k_ga9b771949ba6bccb42317a3e5e089cded}{CLOCK\_PLLR\_State}}\ PLL\_R);}
 \DoxyCodeLine{00155\ }
 \DoxyCodeLine{00156\ }
-\DoxyCodeLine{00163\ uint8\_t\ \mbox{\hyperlink{group___c_l_o_c_k_gae9cd115f3011d6546563628b1da16eb4}{CLOCK\_isActivated}}(\mbox{\hyperlink{group___c_l_o_c_k_ga63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
-\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00164\ uint8\_t\ \mbox{\hyperlink{group___c_l_o_c_k_gae9cd115f3011d6546563628b1da16eb4}{CLOCK\_isActivated}}(\mbox{\hyperlink{group___c_l_o_c_k_ga63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
 \DoxyCodeLine{00165\ }
 \DoxyCodeLine{00166\ }
-\DoxyCodeLine{00174\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga08716e6071c93768a4091dc5947e104f}{CLOCK\_activateClk}}(\mbox{\hyperlink{group___c_l_o_c_k_ga63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
-\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00175\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga08716e6071c93768a4091dc5947e104f}{CLOCK\_activateClk}}(\mbox{\hyperlink{group___c_l_o_c_k_ga63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
 \DoxyCodeLine{00176\ }
 \DoxyCodeLine{00177\ }
-\DoxyCodeLine{00183\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga34f1183e02b1e5320ccf45c6e646b918}{CLOCK\_desactivateClk}}(\mbox{\hyperlink{group___c_l_o_c_k_ga63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
-\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00184\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga34f1183e02b1e5320ccf45c6e646b918}{CLOCK\_desactivateClk}}(\mbox{\hyperlink{group___c_l_o_c_k_ga63d31f75868a8d1e3b998ac5df3f6a36}{CLOCK\_State}}\ clk);}
 \DoxyCodeLine{00185\ }
-\DoxyCodeLine{00189\ uint32\_t\ \mbox{\hyperlink{group___c_l_o_c_k_ga50f2307ce6d6b1285d62ba0fc709f680}{CLOCK\_getPLLClockSpeed}}();}
-\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00190\ uint32\_t\ \mbox{\hyperlink{group___c_l_o_c_k_ga50f2307ce6d6b1285d62ba0fc709f680}{CLOCK\_getPLLClockSpeed}}();}
 \DoxyCodeLine{00191\ }
 \DoxyCodeLine{00192\ }
-\DoxyCodeLine{00196\ uint32\_t\ \mbox{\hyperlink{group___c_l_o_c_k_ga353083c3916c8933c43eb0a1c5c94052}{CLOCK\_getMSIClockSpeed}}();}
-\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00197\ uint32\_t\ \mbox{\hyperlink{group___c_l_o_c_k_ga353083c3916c8933c43eb0a1c5c94052}{CLOCK\_getMSIClockSpeed}}();}
 \DoxyCodeLine{00198\ }
-\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_l_o_c_k_ga6da82f8e33ab80367bf38ea54592f240}{CLOCK\_setHSEClockSpeed}}(uint32\_t\ speed);}
-\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___c_l_o_c_k_ga6da82f8e33ab80367bf38ea54592f240}{CLOCK\_setHSEClockSpeed}}(uint32\_t\ speed);}
 \DoxyCodeLine{00204\ }
 \DoxyCodeLine{00205\ }
-\DoxyCodeLine{00209\ uint32\_t\ \mbox{\hyperlink{group___c_l_o_c_k_gab7188c2da80700782ba6b028486e269c}{CLOCK\_getHSEClockSpeed}}();}
-\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00210\ uint32\_t\ \mbox{\hyperlink{group___c_l_o_c_k_gab7188c2da80700782ba6b028486e269c}{CLOCK\_getHSEClockSpeed}}();}
 \DoxyCodeLine{00211\ }
 \DoxyCodeLine{00212\ }
-\DoxyCodeLine{00216\ uint32\_t\ \mbox{\hyperlink{group___c_l_o_c_k_gada0674018763aa72b723804b8d8183eb}{CLOCK\_getSystemClockSpeed}}();}
-\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00217\ uint32\_t\ \mbox{\hyperlink{group___c_l_o_c_k_gada0674018763aa72b723804b8d8183eb}{CLOCK\_getSystemClockSpeed}}();}
 \DoxyCodeLine{00218\ }
 \DoxyCodeLine{00219\ }
-\DoxyCodeLine{00226\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_gad3f9097ce53adfff82cb70ddea07c27d}{CLOCK\_setSystemClock}}(\mbox{\hyperlink{group___c_l_o_c_k_gab8ea3cd345873e8a031469d82633ee72}{CLOCK\_SYSCLK\_State}}\ sysclk);}
-\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00227\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_gad3f9097ce53adfff82cb70ddea07c27d}{CLOCK\_setSystemClock}}(\mbox{\hyperlink{group___c_l_o_c_k_gab8ea3cd345873e8a031469d82633ee72}{CLOCK\_SYSCLK\_State}}\ sysclk);}
 \DoxyCodeLine{00228\ }
 \DoxyCodeLine{00229\ }
-\DoxyCodeLine{00234\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga45f0f137fec72ca25a15471c536353ff}{CLOCK\_setAHBPrescaler}}(\mbox{\hyperlink{group___c_l_o_c_k_ga8243c8d8e6717062f9949ee373a4a77f}{CLOCK\_AHB\_PRESCALER\_State}}\ ahb\_prescaler);}
-\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00235\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga45f0f137fec72ca25a15471c536353ff}{CLOCK\_setAHBPrescaler}}(\mbox{\hyperlink{group___c_l_o_c_k_ga8243c8d8e6717062f9949ee373a4a77f}{CLOCK\_AHB\_PRESCALER\_State}}\ ahb\_prescaler);}
 \DoxyCodeLine{00236\ }
 \DoxyCodeLine{00237\ }
-\DoxyCodeLine{00242\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga7eb6ba8a0c4959ea023982ff86287e5c}{CLOCK\_setAPB1Prescaler}}(\mbox{\hyperlink{group___c_l_o_c_k_ga65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\_APB1\_PRESCALER\_State}}\ apb1\_prescaler);}
-\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00243\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_ga7eb6ba8a0c4959ea023982ff86287e5c}{CLOCK\_setAPB1Prescaler}}(\mbox{\hyperlink{group___c_l_o_c_k_ga65e4b024aee4244fb32f8c5c4ff05f9a}{CLOCK\_APB1\_PRESCALER\_State}}\ apb1\_prescaler);}
 \DoxyCodeLine{00244\ }
 \DoxyCodeLine{00245\ }
-\DoxyCodeLine{00250\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_gaf2d3189cd4e74510c8d2136149148e0c}{CLOCK\_setAPB2Prescaler}}(\mbox{\hyperlink{group___c_l_o_c_k_ga95ae2e15b49c96956d53beae3975e517}{CLOCK\_APB2\_PRESCALER\_State}}\ apb2\_prescaler);}
-\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00251\ \mbox{\hyperlink{group___c_l_o_c_k_ga5aa3fa30a332173aafcc460104d0a159}{CLOCK\_Status\_State}}\ \mbox{\hyperlink{group___c_l_o_c_k_gaf2d3189cd4e74510c8d2136149148e0c}{CLOCK\_setAPB2Prescaler}}(\mbox{\hyperlink{group___c_l_o_c_k_ga95ae2e15b49c96956d53beae3975e517}{CLOCK\_APB2\_PRESCALER\_State}}\ apb2\_prescaler);}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

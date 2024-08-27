@@ -1,4 +1,5 @@
 /** \addtogroup UART
+ * \brief UART drivers for stm32l4xx devices.
  *  @{
  */
 
@@ -79,11 +80,19 @@ typedef struct {
 	GPIO_AF_State tx_pin_af; ///< The Alternate Function (AF) mode number for the TX pin.
 } UART_PinConfig_Typedef;
 
+/**@brief Struct representing interrupt configuration parameters for the U(S)ART.
+*/
+typedef struct {
+	uint8_t is_enabled; ///< Boolean representing whether or not interrupts should be enabled or not.
+	uint8_t priority; ///< Set the priority of the interrupt. Lower numbers are higher priority.
+} UART_ITConfig_Typedef;
+
 /**@brief Struct representing configuration parameters for the U(S)ART. To be used with UART_config().
 */
 typedef struct {
 	UART_DEVICE_State uart; ///< Which UART/USART device is to be configured.
-	UART_PinConfig_Typedef* pin_config; ///< Pin configuration object. See UART_PinConfig_State.
+	UART_PinConfig_Typedef* pin_config; ///< Pin configuration object. See UART_PinConfig_Typedef.
+	UART_ITConfig_Typedef* it_config; ///< Interrupt configuration object. See UART_ITConfig_Typedef.
 	uint32_t baud_rate; ///< Baud rate for the UART/USART.
 	UART_DATABITS_State databits; ///< Number of databits to be sent every word.
 	UART_PARITY_State parity; ///< Parity bit setting.

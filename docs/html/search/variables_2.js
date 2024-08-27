@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['psc_0',['PSC',['../struct_t_i_m___config___typedef.html#a85534f33328d4a0d1c9ef82558e33f78',1,'TIM_Config_Typedef']]]
+  ['databits_0',['databits',['../struct_u_a_r_t___config___typedef.html#a315bf3103ecc032b605b373c605b2c4f',1,'UART_Config_Typedef']]]
 ];

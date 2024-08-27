@@ -1,4 +1,5 @@
 /** \addtogroup CLOCK
+* \brief Clock drivers for stm32l4xx devices.
  *  @{
  */
 

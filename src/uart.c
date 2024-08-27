@@ -16,6 +16,8 @@
 /****************************************************************************************************/
 static UART_Status_State configPeripheralClock(UART_DEVICE_State uart);
 static UART_Status_State configGPIO(UART_PinConfig_Typedef* pin_config);
+static USART_TypeDef* getUSART(UART_DEVICE_State uart);
+static int getUSART_IRQn(UART_DEVICE_State uart);
 
 /*
 * Configures the peripheral clock for the selected UART device.
@@ -74,6 +76,26 @@ static USART_TypeDef* getUSART(UART_DEVICE_State uart) {
 			return UART5;
 	}
 }
+
+
+/*
+* Get the USART_IRQn corresponding to the UART that we want.
+*/
+static int getUSART_IRQn(UART_DEVICE_State uart) {
+	switch(uart) {
+		case UART_USART1:
+			return USART1_IRQn;
+		case UART_USART2:
+			return USART2_IRQn;
+		case UART_USART3:
+			return USART3_IRQn;
+		case UART_UART4:
+			return UART4_IRQn;
+		case UART_UART5:
+			return UART5_IRQn;
+	}
+}
+
 /****************************************************************************************************/
 /*			              EXPORTED FUNCTIONS                                            */
 /****************************************************************************************************/
@@ -141,6 +163,25 @@ UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
 	UARTx->CR2 &= ~(0b11 << 12);
 	UARTx->CR2 |= (stopbits << 12);
 	
+	/* configure interrupt if necessary */
+	if (uart_conf->it_config->is_enabled) {
+		int UARTx_IRQn = getUSART_IRQn(uart);
+		
+		/* set priority */
+		NVIC_SetPriorityGrouping(0);
+		uint32_t uart_pri_encoding = NVIC_EncodePriority( 0, uart_conf->it_config->priority, 0 );
+		NVIC_SetPriority(UARTx_IRQn, uart_pri_encoding);
+		
+		/* enable interrupts with NVIC */
+		__disable_irq();
+		NVIC_EnableIRQ(UARTx_IRQn);
+		__enable_irq();
+		
+		/* generate interrupts when receive data register is not empty */
+		UARTx->CR1 |= (0b1 << 5); // RXNEIE bit
+	}
+	
+
 	/* enable USART and transmit enable (TE) and receive enable (RE) (UARTx->CR1 register) */
 	UARTx->CR1 |= (0b1); // UE bit
 	UARTx->CR1 |= (0b1 << 2); // RE bit

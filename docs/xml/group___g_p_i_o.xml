@@ -1068,6 +1068,7 @@
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>GPIO drivers for stm32l4xx devices. </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

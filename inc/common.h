@@ -21,7 +21,14 @@
  *
  * \section gpio_sec GPIO Drivers
  * 
- * etc...
+ * The General Purpose Input Output (GPIO) drivers currently implement functionalities such as:
+ *	- Pin output
+ *	- Pin input
+ *	- Interrupts
+ *	- Alternate Function (AF)
+ *
+ * All GPIO pins can be set up with specific pull-up pull down mode, speed type and output type. 
+ * See local [documentation](/group___g_p_i_o.html).
  */
  
 

@@ -92,28 +92,32 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">TIM</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Timer drivers for stm32l4xx devices.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct representing configuration parameters for a timer.  <a href="struct_t_i_m___config___typedef.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga5b31ce769abb7de5285cb952034a6629" id="r_ga5b31ce769abb7de5285cb952034a6629"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> { <br />
-&#160;&#160;<b>TIM_TIM1</b> = 11
-, <b>TIM_TIM2</b> = 0
-, <b>TIM_TIM3</b> = 1
-, <b>TIM_TIM4</b> = 2
+&#160;&#160;<a class="el" href="#gga5b31ce769abb7de5285cb952034a6629aa058f5f936744da064a81af7df925c92">TIM_TIM1</a> = 11
+, <a class="el" href="#gga5b31ce769abb7de5285cb952034a6629a5807ac86b40c78f6b47df62191b7abcc">TIM_TIM2</a> = 0
+, <a class="el" href="#gga5b31ce769abb7de5285cb952034a6629a66e8161e3d14c5ed07f702f1dbdb6c8e">TIM_TIM3</a> = 1
+, <a class="el" href="#gga5b31ce769abb7de5285cb952034a6629aeaf4d47a1aa1902c3771b7bca6a76e74">TIM_TIM4</a> = 2
 , <br />
-&#160;&#160;<b>TIM_TIM5</b> = 3
-, <b>TIM_TIM6</b> = 4
-, <b>TIM_TIM7</b> = 5
-, <b>TIM_TIM8</b> = 13
+&#160;&#160;<a class="el" href="#gga5b31ce769abb7de5285cb952034a6629ac20fe35b963078bab3648eb2fdab80af">TIM_TIM5</a> = 3
+, <a class="el" href="#gga5b31ce769abb7de5285cb952034a6629a3d45a91bc8a9a86b6fce37cd36bd0f5d">TIM_TIM6</a> = 4
+, <a class="el" href="#gga5b31ce769abb7de5285cb952034a6629ad57c318b3fa8e9fe76bb1d294fe7f661">TIM_TIM7</a> = 5
+, <a class="el" href="#gga5b31ce769abb7de5285cb952034a6629af19e5251b29a2f329b53e0b4fb07b87f">TIM_TIM8</a> = 13
 , <br />
-&#160;&#160;<b>TIM_TIM15</b> = 16
-, <b>TIM_TIM16</b> = 17
-, <b>TIM_TIM17</b> = 18
+&#160;&#160;<a class="el" href="#gga5b31ce769abb7de5285cb952034a6629a2adfbe01b4734afcb0e5f2286a3dada1">TIM_TIM15</a> = 16
+, <a class="el" href="#gga5b31ce769abb7de5285cb952034a6629afc85b8ba2ee6c08f0bb06fb35bc0d0fa">TIM_TIM16</a> = 17
+, <a class="el" href="#gga5b31ce769abb7de5285cb952034a6629a8e199fe85c08a58bd64d2eb221290ba2">TIM_TIM17</a> = 18
 <br />
  }</td></tr>
 <tr class="memdesc:ga5b31ce769abb7de5285cb952034a6629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different timers on the chip.  <a href="#ga5b31ce769abb7de5285cb952034a6629">More...</a><br /></td></tr>
@@ -133,9 +137,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga51fa45a8ad8271045073f95c61a75574" id="r_ga51fa45a8ad8271045073f95c61a75574"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gaa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga51fa45a8ad8271045073f95c61a75574">TIM_disablePeripheralClk</a> (<a class="el" href="#ga5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer)</td></tr>
 <tr class="memdesc:ga51fa45a8ad8271045073f95c61a75574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the peripheral clock for a timer by changing the bit on the APB1ENR or APB2ENR registers.  <br /></td></tr>
 <tr class="separator:ga51fa45a8ad8271045073f95c61a75574"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3ecfed8e3ce677c6f663d0dbec8219c4" id="r_ga3ecfed8e3ce677c6f663d0dbec8219c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gaa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ecfed8e3ce677c6f663d0dbec8219c4">TIM_config</a> (<a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> *config)</td></tr>
-<tr class="memdesc:ga3ecfed8e3ce677c6f663d0dbec8219c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure a timer with desired config parameters.  <br /></td></tr>
-<tr class="separator:ga3ecfed8e3ce677c6f663d0dbec8219c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5ac01b5462fa3905760ffd8dd9477f5" id="r_gad5ac01b5462fa3905760ffd8dd9477f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gaa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad5ac01b5462fa3905760ffd8dd9477f5">TIM_config</a> (const <a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> *config)</td></tr>
+<tr class="memdesc:gad5ac01b5462fa3905760ffd8dd9477f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure a timer with desired config parameters.  <br /></td></tr>
+<tr class="separator:gad5ac01b5462fa3905760ffd8dd9477f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9b79b449a6bad1fdcd3553cb8ad1787c" id="r_ga9b79b449a6bad1fdcd3553cb8ad1787c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gaa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9b79b449a6bad1fdcd3553cb8ad1787c">TIM_startTimer</a> (<a class="el" href="#ga5b31ce769abb7de5285cb952034a6629">TIM_TIMER_State</a> timer)</td></tr>
 <tr class="memdesc:ga9b79b449a6bad1fdcd3553cb8ad1787c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the timer by setting the CEN bit in the TIMx_CR1 register.  <br /></td></tr>
 <tr class="separator:ga9b79b449a6bad1fdcd3553cb8ad1787c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,6 +154,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga678b5813bb7929232e9346038a6c756d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Timer drivers for stm32l4xx devices. </p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gaa7bb33976f8d2b8535cb20917287e529" name="gaa7bb33976f8d2b8535cb20917287e529"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa7bb33976f8d2b8535cb20917287e529">&#9670;&#160;</a></span>TIM_Status_State</h2>
@@ -189,12 +194,36 @@ Functions</h2></td></tr>
 
 <p>Enum representing different timers on the chip. </p>
 <p>Timers 2-8 inclusive are connected to APB1 bus. Timers 1 and 15-17 inclusive are connected to the APB2 bus. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629aa058f5f936744da064a81af7df925c92" name="gga5b31ce769abb7de5285cb952034a6629aa058f5f936744da064a81af7df925c92"></a>TIM_TIM1&#160;</td><td class="fielddoc"><p>TIM1 (advanced-control) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629a5807ac86b40c78f6b47df62191b7abcc" name="gga5b31ce769abb7de5285cb952034a6629a5807ac86b40c78f6b47df62191b7abcc"></a>TIM_TIM2&#160;</td><td class="fielddoc"><p>TIM2 (general purpose) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629a66e8161e3d14c5ed07f702f1dbdb6c8e" name="gga5b31ce769abb7de5285cb952034a6629a66e8161e3d14c5ed07f702f1dbdb6c8e"></a>TIM_TIM3&#160;</td><td class="fielddoc"><p>TIM3 (general purpose) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629aeaf4d47a1aa1902c3771b7bca6a76e74" name="gga5b31ce769abb7de5285cb952034a6629aeaf4d47a1aa1902c3771b7bca6a76e74"></a>TIM_TIM4&#160;</td><td class="fielddoc"><p>TIM4 (general purpose) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629ac20fe35b963078bab3648eb2fdab80af" name="gga5b31ce769abb7de5285cb952034a6629ac20fe35b963078bab3648eb2fdab80af"></a>TIM_TIM5&#160;</td><td class="fielddoc"><p>TIM5 (general purpose) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629a3d45a91bc8a9a86b6fce37cd36bd0f5d" name="gga5b31ce769abb7de5285cb952034a6629a3d45a91bc8a9a86b6fce37cd36bd0f5d"></a>TIM_TIM6&#160;</td><td class="fielddoc"><p>TIM6 (basic) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629ad57c318b3fa8e9fe76bb1d294fe7f661" name="gga5b31ce769abb7de5285cb952034a6629ad57c318b3fa8e9fe76bb1d294fe7f661"></a>TIM_TIM7&#160;</td><td class="fielddoc"><p>TIM7 (basic) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629af19e5251b29a2f329b53e0b4fb07b87f" name="gga5b31ce769abb7de5285cb952034a6629af19e5251b29a2f329b53e0b4fb07b87f"></a>TIM_TIM8&#160;</td><td class="fielddoc"><p>TIM7 (advanced-control) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629a2adfbe01b4734afcb0e5f2286a3dada1" name="gga5b31ce769abb7de5285cb952034a6629a2adfbe01b4734afcb0e5f2286a3dada1"></a>TIM_TIM15&#160;</td><td class="fielddoc"><p>TIM15 (general purpose) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629afc85b8ba2ee6c08f0bb06fb35bc0d0fa" name="gga5b31ce769abb7de5285cb952034a6629afc85b8ba2ee6c08f0bb06fb35bc0d0fa"></a>TIM_TIM16&#160;</td><td class="fielddoc"><p>TIM16 (general purpose) timer selected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga5b31ce769abb7de5285cb952034a6629a8e199fe85c08a58bd64d2eb221290ba2" name="gga5b31ce769abb7de5285cb952034a6629a8e199fe85c08a58bd64d2eb221290ba2"></a>TIM_TIM17&#160;</td><td class="fielddoc"><p>TIM17 (general purpose) timer selected. </p>
+</td></tr>
+</table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga3ecfed8e3ce677c6f663d0dbec8219c4" name="ga3ecfed8e3ce677c6f663d0dbec8219c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3ecfed8e3ce677c6f663d0dbec8219c4">&#9670;&#160;</a></span>TIM_config()</h2>
+<a id="gad5ac01b5462fa3905760ffd8dd9477f5" name="gad5ac01b5462fa3905760ffd8dd9477f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5ac01b5462fa3905760ffd8dd9477f5">&#9670;&#160;</a></span>TIM_config()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,16 +231,16 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="#gaa7bb33976f8d2b8535cb20917287e529">TIM_Status_State</a> TIM_config </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> *</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> *</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Configure a timer with desired config parameters. </p>
-<p>See <a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> for specific parameters. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>See <a class="el" href="struct_t_i_m___config___typedef.html" title="Struct representing configuration parameters for a timer.">TIM_Config_Typedef</a> for specific parameters. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">config</td><td>pointer to a <a class="el" href="struct_t_i_m___config___typedef.html">TIM_Config_Typedef</a> object that contains the parameter configuration </td></tr>
+    <tr><td class="paramname">config</td><td>pointer to a <a class="el" href="struct_t_i_m___config___typedef.html" title="Struct representing configuration parameters for a timer.">TIM_Config_Typedef</a> object that contains the parameter configuration </td></tr>
   </table>
   </dd>
 </dl>
