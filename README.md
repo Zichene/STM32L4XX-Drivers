@@ -1,7 +1,7 @@
 # STM32L4XX-Drivers 
 Bare-metal implementation of some drivers for the STM32L4 family of devices. 
 These drivers were mostly tested using the B-L4S5I-IOT01A development board from ST.
-See example projects showcasing these drivers: [projects](projects-bl4s5i-iot01a).
+See example projects showcasing these drivers: [projects](projects/bl4s5i-iot01a).
 
 ⚠️ **WARNING** ⚠️ 
 - The code was written for educational purposes.
