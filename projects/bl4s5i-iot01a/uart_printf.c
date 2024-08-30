@@ -18,6 +18,11 @@ DATE: 8/20/2024
 #define LED2_Port GPIO_PORT_B
 #define LED2_Pin 14
 
+/* LED3 (WiFi and Bluetooth) used as error indicator is connected to Pin C9 (Port C, Pin 9) */
+#define LEDError_Port GPIO_PORT_C
+#define LEDError_Pin 9
+
+
 /* 
 The following USART1 internal connections are found in MB1297 
 */
@@ -134,18 +139,24 @@ int main(void)
 		/* Infinite loop so that we don't exit main */
 		if (rxReceivedFlag) {
 			print("Received a bit \r\n");
+			rxReceivedFlag = false;
 		}
 	}	
 }
 
 
-void USART2_IRQn_handler(void) {
-	if (UART_hasData(UART_USART2)) {
+void USART1_IRQHandler(void) {
+	if (UART_hasData(UART_USART1)) {
+		/* Important: Until all the bytes have been received, the USART cannot send data */
+		uint8_t rxb = UART_receiveByte(UART_USART1);
 		rxReceivedFlag = true;
 	}
 }
 
 void ErrorHandler() {
+	/* Light up the yellow LED on board */
+	GPIO_setPinOutput(LEDError_Port, LEDError_Pin);
+	GPIO_togglePin(LEDError_Port, LEDError_Pin);
 	while(1) {
 	/* If you've ended up here, then a problem has occured! */
 	}
