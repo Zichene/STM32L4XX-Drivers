@@ -19,6 +19,11 @@ static UART_Status_State configGPIO(UART_PinConfig_Typedef* pin_config);
 static USART_TypeDef* getUSART(UART_DEVICE_State uart);
 static int getUSART_IRQn(UART_DEVICE_State uart);
 
+static uint8_t UART_INTERNAL_RXBUF[UART_RXBUF_SIZE];
+static uint8_t* rxbuf_head_ptr = UART_INTERNAL_RXBUF;
+static volatile uint8_t rx_read_it = false;
+static UART_DEVICE_State rx_usart_it;
+
 /*
 * Configures the peripheral clock for the selected UART device.
 * Note: USART1 is on the APB2 bus and USART2, USART3, UART4, UART5 are on the APB1 bus.
@@ -164,7 +169,7 @@ UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
 	UARTx->CR2 |= (stopbits << 12);
 	
 	/* configure interrupt if necessary */
-	if (uart_conf->it_config->is_enabled) {
+	if (uart_conf->it_config->RXNEIE_enabled || uart_conf->it_config->TXEIE_enabled || uart_conf->it_config->IDLEIE_enabled) {
 		int UARTx_IRQn = getUSART_IRQn(uart);
 		
 		/* set priority */
@@ -177,8 +182,10 @@ UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
 		NVIC_EnableIRQ(UARTx_IRQn);
 		__enable_irq();
 		
-		/* generate interrupts when receive data register is not empty */
-		UARTx->CR1 |= (0b1 << 5); // RXNEIE bit
+		/* enable interrupts */
+		if (uart_conf->it_config->RXNEIE_enabled) UARTx->CR1 |= (0b1 << 5); // RXNEIE bit
+		if (uart_conf->it_config->TXEIE_enabled) UARTx->CR1 |= (0b1 << 7); // TXEIE bit
+		if (uart_conf->it_config->IDLEIE_enabled) UARTx->CR1 |= (0b1 << 4); // IDLEIE bit
 	}
 	
 
@@ -198,6 +205,9 @@ UART_Status_State UART_transmit(UART_DEVICE_State uart, const uint8_t* tx_buf, u
 	
 	USART_TypeDef* UARTx = getUSART(uart);
 	
+	/* check if UART is currently busy and return error in case */
+	if (UARTx->ISR & USART_ISR_BUSY) return UART_BUSY;
+	
 	for (int i = 0; i<length; i++) {
 		uint8_t currentByte = tx_buf[i];
 		/* wait until the TXE/TXFNF bit is 1, indicating that TDR is empty */
@@ -206,6 +216,20 @@ UART_Status_State UART_transmit(UART_DEVICE_State uart, const uint8_t* tx_buf, u
 	}
 	return UART_OK;
 }
+
+
+UART_Status_State UART_receiveIT_Start(UART_DEVICE_State uart) {
+	rx_read_it = true;
+	rx_usart_it = uart;
+	return UART_OK;
+}
+
+
+UART_Status_State UART_receiveIT_Stop() {
+	rx_read_it = false;
+	return UART_OK;
+}
+
 
 uint8_t UART_receiveByte(UART_DEVICE_State uart) {
 	/* check args */
@@ -225,3 +249,64 @@ uint8_t UART_hasData(UART_DEVICE_State uart) {
 	/* return the RXNE/RXFNE bit in the UARTx->ISR register */
 	return UARTx->ISR & USART_ISR_RXNE_RXFNE;
 }
+
+uint8_t UART_isIdle(UART_DEVICE_State uart) {
+	/* check args */
+	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
+		return UART_INVALID_ARGS;
+	
+	USART_TypeDef* UARTx = getUSART(uart);
+	/* return the IDLE bit in the UARTx->ISR register */
+	return UARTx->ISR & USART_ISR_IDLE;
+}
+
+UART_Status_State UART_read(uint8_t* rx_buf, uint32_t length) {
+	/* check args */
+	if (length >= UART_RXBUF_SIZE) return UART_INVALID_ARGS;
+	
+	/* only read uart has started receiving */
+	if (rxbuf_head_ptr - UART_INTERNAL_RXBUF < length)
+		return UART_ERROR;
+	
+	/* copy into rx_buf and clear rxbuf */
+	for (uint32_t i = 0; i < length; i++) {
+		rx_buf[i] = UART_INTERNAL_RXBUF[i];
+		UART_INTERNAL_RXBUF[i] = 0;
+	}
+	
+	/* reset pointer to head */
+	rxbuf_head_ptr = UART_INTERNAL_RXBUF;
+	return UART_OK;
+}
+
+#ifdef UART_USING_INTERNAL_IT
+void USART1_IRQHandler(void) {
+	if (rx_read_it && UART_hasData(rx_usart_it)) {
+		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+	}
+}
+
+void USART2_IRQHandler(void) {
+	if (rx_read_it && UART_hasData(rx_usart_it)) {
+		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+	}
+}
+
+void USART3_IRQHandler(void) {
+	if (rx_read_it && UART_hasData(rx_usart_it)) {
+		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+	}
+}
+
+void UART4_IRQHandler(void) {
+	if (rx_read_it && UART_hasData(rx_usart_it)) {
+		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+	}
+}
+
+void UART5_IRQHandler(void) {
+	if (rx_read_it && UART_hasData(rx_usart_it)) {
+		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+	}
+}
+#endif

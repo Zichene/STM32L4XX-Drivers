@@ -20,6 +20,8 @@
 ***/
 
 #define UART_MAX_BAUDRATE (120000000/16) ///< Maximum allowed baudrate for USART. TODO: temporary fix, max baudrate actually depends on oversampling and system clock system
+#define UART_RXBUF_SIZE 1000 ///< Internal rxbuf used for UART_receive()
+#define UART_USING_INTERNAL_IT ///< This flag will determine if the USART interrupts are implemented internally (inside of the file uart.c).
 
 /****************************************************************************************************/
 /*			                  TYPEDEFS                                                  */
@@ -32,6 +34,8 @@ typedef enum {
 	UART_OK = 0, ///< Indicates that a function has returned successfully.
 	UART_INVALID_ARGS = 1, ///< Indicates that a function has been given invalid (out of range) arguments.
 	UART_ERROR = 2, ///< Indicates that a general error has occured.
+	UART_BUSY = 3, ///< Indicates that the UART is currently busy receiving or transmitting.
+	UART_BUFFER_OVERFLOW = 4, ///< Indicates that a buffer has overflowed.
 } UART_Status_State;
 
 /**@brief Enum representing which UART/USART device is selected.
@@ -83,7 +87,9 @@ typedef struct {
 /**@brief Struct representing interrupt configuration parameters for the U(S)ART.
 */
 typedef struct {
-	uint8_t is_enabled; ///< Boolean representing whether or not interrupts should be enabled or not.
+	uint8_t RXNEIE_enabled; ///< USART interrupt generated whenever ORE = 1 or RXFNE = 1 in the USART_ISR register
+	uint8_t TXEIE_enabled; ///< USART interrupt generated whenever TXE =1 in the USART_ISR register
+	uint8_t IDLEIE_enabled; ///<  USART interrupt generated whenever IDLE = 1 in the USART_ISR register
 	uint8_t priority; ///< Set the priority of the interrupt. Lower numbers are higher priority.
 } UART_ITConfig_Typedef;
 
@@ -111,7 +117,7 @@ UART_Status_State UART_config(const UART_Config_Typedef* uart_conf);
 
 
 
-/**@brief Transmits data over UART/USART.
+/**@brief Transmits data over UART/USART in blocking mode.
 * @param uart UART/USART device.
 * @param tx_buf pointer to the data transmission buffer.
 * @param length length of tx_buf
@@ -122,11 +128,38 @@ UART_Status_State UART_transmit(UART_DEVICE_State uart, const uint8_t* tx_buf, u
 
 
 
-/**@brief Reads and returns from the UARTx->RDR register.
+/**@brief Reads data from the internal Rx buffer.
+* @note To use this function, one must first enable interrupts during the config state. 
+* @note UART_USING_INTERNAL_IT must also be defined in this file (uart.h)
+* @note UART_receiveIT_Start must have been called before using this function.
+* @param rx_buf pointer to the data reception buffer.
+* @param length to read.
+* @return status
+*/
+UART_Status_State UART_read(uint8_t* rx_buf, uint32_t length);
+
+
+
+/**@brief Reads and returns from the UARTx->RDR register. Use this function to receive data in polling mode.
 * @param uart UART/USART device.
 * @return value read from the RDR register.
 */
 uint8_t UART_receiveByte(UART_DEVICE_State uart);
+
+
+
+/**@brief Enables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte.
+* @param uart UART/USART device
+* @return status
+*/
+UART_Status_State UART_receiveIT_Start(UART_DEVICE_State uart);
+
+
+
+/**@brief Disables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte.
+* @return status
+*/
+UART_Status_State UART_receiveIT_Stop();
 
 
 
@@ -138,5 +171,13 @@ uint8_t UART_receiveByte(UART_DEVICE_State uart);
 */
 uint8_t UART_hasData(UART_DEVICE_State uart);
 
+
+
+/**@brief Reads and returns the IDLE bit in the UARTx->ISR register. This determines whether or not the UART is idle.
+* @param uart UART/USART device.
+* @retval 1 The uart device is idle.
+* @retval 0 The uart device is not idle.
+*/
+uint8_t UART_isIdle(UART_DEVICE_State uart);
 #endif
 /** @}*/

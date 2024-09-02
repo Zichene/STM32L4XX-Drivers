@@ -58,5 +58,6 @@
 /***************************************************************************************************/
 // #define PUSH_LED ///< Project 1: Push Led selected. Main driver(s) used: GPIO
 // #define BLINKY_LED ///< Project 2: Blinky Led selected. Main driver(s) used: GPIO, CLOCK, TIM
-#define UART_PRINTF ///< Project 3: Printing to UART. Main drivers(s) used: TODO
+// #define UART_PRINTF ///< Project 3: Printing to UART. Main drivers(s) used: GPIO, CLOCK, UART
+#define UART_RECEIVE ///< Project 3.5: Receiving from UART. Main drivers(s) used: GPIO, CLOCK, UART
 #endif // COMMON_H
