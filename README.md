@@ -56,3 +56,4 @@ The Universal Asynchronous Receivier Transmitter (UART) drivers currently implem
 - Sending data (blocking mode)
 - Receiving data (blocking mode)
 - Custom configuration of baud rate, parity bit, stop bits, number of bits per word, etc.
+- Receiving data in interrupt mode. Ringbuffer implemented internally.
