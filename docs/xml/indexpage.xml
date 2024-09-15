@@ -25,7 +25,37 @@
 </listitem><listitem><para>Alternate Function (AF)</para>
 </listitem></itemizedlist>
 </para>
-<para>All GPIO pins can be set up with specific pull-up pull down mode, speed type and output type. See local <ulink url="/group___g_p_i_o.html">documentation</ulink>. </para>
+<para>All GPIO pins can be set up with specific pull-up pull down mode, speed type and output type. See local <ulink url="group___g_p_i_o.html">documentation</ulink>.</para>
+</sect1>
+<sect1 id="index_1clock_sec">
+<title>CLOCK Drivers</title><para>The Clock drivers currently implement functionalities such as:<itemizedlist>
+<listitem><para>Activating the MCO (Master Clock Output) for various clock sources.</para>
+</listitem><listitem><para>Configure the PLL (Phased Locked Loop) clock.</para>
+</listitem><listitem><para>Get the clock speeds for various clocks (system clock, HSI, PLL, MSI, etc.)</para>
+</listitem><listitem><para>Configure and set the system clock.</para>
+</listitem><listitem><para>Set various peripheral bus prescalers (AHB, APB1, APB2).</para>
+</listitem></itemizedlist>
+</para>
+<para>See local <ulink url="group___c_l_o_c_k.html">documentation</ulink>.</para>
+</sect1>
+<sect1 id="index_1timer_sec">
+<title>TIMER Drivers</title><para>The Timer (TIM) drivers currently implement functionalities such as:<itemizedlist>
+<listitem><para>Configuring various timers with prescaler and period.</para>
+</listitem><listitem><para>Timer interrupt configuration.</para>
+</listitem><listitem><para>Starting and stopping interrupts.</para>
+</listitem></itemizedlist>
+</para>
+<para>See local <ulink url="group___t_i_m.html">documentation</ulink>.</para>
+</sect1>
+<sect1 id="index_1uart_sec">
+<title>UART Drivers</title><para>The Universal Asynchronous Receivier Transmitter (UART) drivers currently implement functionalities such as:<itemizedlist>
+<listitem><para>Sending data (blocking mode)</para>
+</listitem><listitem><para>Receiving data (blocking mode)</para>
+</listitem><listitem><para>Custom configuration of baud rate, parity bit, stop bits, number of bits per word, etc.</para>
+</listitem><listitem><para>Receiving data in interrupt mode. Ringbuffer implemented internally.</para>
+</listitem></itemizedlist>
+</para>
+<para>See local <ulink url="group___u_a_r_t.html">documentation</ulink>. </para>
 </sect1>
     </detaileddescription>
     <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h"/>

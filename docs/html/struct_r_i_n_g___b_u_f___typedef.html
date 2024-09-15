@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM32L4XX_Drivers: STM32L4XX Drivers Documentation</title>
+<title>STM32L4XX_Drivers: RING_BUF_Typedef Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,8 +56,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="doc-content">
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function(){ initResizable(false); });
@@ -84,58 +82,46 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">STM32L4XX Drivers Documentation </div></div>
+</div><!-- top -->
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">RING_BUF_Typedef Struct Reference<div class="ingroups"><a class="el" href="group___u_a_r_t.html">UART</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="intro_sec"></a>
-Introduction</h1>
-<p>Bare-metal implementation of some drivers for the STM32L4 family of devices. See example projects showcasing these drivers at <a href="https://github.com/Zichene/STM32L4XX-Drivers/tree/main/projects-bl4s5i-iot01a">https://github.com/Zichene/STM32L4XX-Drivers/tree/main/projects-bl4s5i-iot01a</a>. These drivers were mostly tested using the B-L4S5I-IOT01A development board from ST.</p>
-<p>WARNING: These drivers were written for educational purposes. These have not been tested thoroughly, use at own risk. These drivers should only use on STM32L4XX devices.</p>
-<h1><a class="anchor" id="install_sec"></a>
-Installation</h1>
-<ul>
-<li>Clone the repo or download desired files.</li>
-<li>In your embedded project environment, simply add the desired <code>.h</code> and <code>.c</code> files. Make sure that you set up the include paths correctly!</li>
+
+<p>Struct representing a ring buffer object.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ringbuffer_8h_source.html">ringbuffer.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ga00c266cd7ead4c356ea56597f3385eb4" id="r_ga00c266cd7ead4c356ea56597f3385eb4"><td class="memItemLeft" align="right" valign="top">
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>buffer_address</b></td></tr>
+<tr class="separator:ga00c266cd7ead4c356ea56597f3385eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d749e86bf9e5299c1a5af7bcce2397c" id="r_ga5d749e86bf9e5299c1a5af7bcce2397c"><td class="memItemLeft" align="right" valign="top">
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>max_size</b></td></tr>
+<tr class="separator:ga5d749e86bf9e5299c1a5af7bcce2397c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18127565c3676f62ca8ee2804fa50bb0" id="r_ga18127565c3676f62ca8ee2804fa50bb0"><td class="memItemLeft" align="right" valign="top">
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>head_index</b></td></tr>
+<tr class="separator:ga18127565c3676f62ca8ee2804fa50bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1404bb75780e3fc56286a423ccfb45eb" id="r_ga1404bb75780e3fc56286a423ccfb45eb"><td class="memItemLeft" align="right" valign="top">
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>tail_index</b></td></tr>
+<tr class="separator:ga1404bb75780e3fc56286a423ccfb45eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0fb01f46ac8b50002222428d8db8383" id="r_gaf0fb01f46ac8b50002222428d8db8383"><td class="memItemLeft" align="right" valign="top">
+volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>buffer_full</b></td></tr>
+<tr class="separator:gaf0fb01f46ac8b50002222428d8db8383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga040f9f390b8c7b2e8c50ef149b204f10" id="r_ga040f9f390b8c7b2e8c50ef149b204f10"><td class="memItemLeft" align="right" valign="top">
+volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>buffer_empty</b></td></tr>
+<tr class="separator:ga040f9f390b8c7b2e8c50ef149b204f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Struct representing a ring buffer object. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/<a class="el" href="ringbuffer_8h_source.html">ringbuffer.h</a></li>
 </ul>
-<h1><a class="anchor" id="gpio_sec"></a>
-GPIO Drivers</h1>
-<p>The General Purpose Input Output (GPIO) drivers currently implement functionalities such as:</p><ul>
-<li>Pin output</li>
-<li>Pin input</li>
-<li>Interrupts</li>
-<li>Alternate Function (AF)</li>
-</ul>
-<p>All GPIO pins can be set up with specific pull-up pull down mode, speed type and output type. See local <a href="group___g_p_i_o.html">documentation</a>.</p>
-<h1><a class="anchor" id="clock_sec"></a>
-CLOCK Drivers</h1>
-<p>The Clock drivers currently implement functionalities such as:</p><ul>
-<li>Activating the MCO (Master Clock Output) for various clock sources.</li>
-<li>Configure the PLL (Phased Locked Loop) clock.</li>
-<li>Get the clock speeds for various clocks (system clock, HSI, PLL, MSI, etc.)</li>
-<li>Configure and set the system clock.</li>
-<li>Set various peripheral bus prescalers (AHB, APB1, APB2).</li>
-</ul>
-<p>See local <a href="group___c_l_o_c_k.html">documentation</a>.</p>
-<h1><a class="anchor" id="timer_sec"></a>
-TIMER Drivers</h1>
-<p>The Timer (TIM) drivers currently implement functionalities such as:</p><ul>
-<li>Configuring various timers with prescaler and period.</li>
-<li>Timer interrupt configuration.</li>
-<li>Starting and stopping interrupts.</li>
-</ul>
-<p>See local <a href="group___t_i_m.html">documentation</a>.</p>
-<h1><a class="anchor" id="uart_sec"></a>
-UART Drivers</h1>
-<p>The Universal Asynchronous Receivier Transmitter (UART) drivers currently implement functionalities such as:</p><ul>
-<li>Sending data (blocking mode)</li>
-<li>Receiving data (blocking mode)</li>
-<li>Custom configuration of baud rate, parity bit, stop bits, number of bits per word, etc.</li>
-<li>Receiving data in interrupt mode. Ringbuffer implemented internally.</li>
-</ul>
-<p>See local <a href="group___u_a_r_t.html">documentation</a>. </p>
-</div></div><!-- PageDoc -->
-<a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

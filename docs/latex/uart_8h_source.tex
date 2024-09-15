@@ -9,92 +9,121 @@
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}common.h"{}}}
 \DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}gpio.h"{}}}
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}clock.h"{}}}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{comment}{/***}}
-\DoxyCodeLine{00014\ \textcolor{comment}{*}}
-\DoxyCodeLine{00015\ \textcolor{comment}{*\ UART\ drivers\ for\ stm32l4xx\ devices.}}
-\DoxyCodeLine{00016\ \textcolor{comment}{*\ WARNING:\ These\ drivers\ have\ NOT\ been\ tested\ extensively.\ Use\ at\ own\ risk.}}
-\DoxyCodeLine{00017\ \textcolor{comment}{*\ Reference:\ https://www.youtube.com/playlist?list=PLtVUYRe-\/Z-\/mfKO0lg\_-\/MBvwWl6VjWT8Dt}}
-\DoxyCodeLine{00018\ \textcolor{comment}{*\ STM32\ Reference\ Manual:\ RM0432}}
-\DoxyCodeLine{00019\ \textcolor{comment}{*}}
-\DoxyCodeLine{00020\ \textcolor{comment}{***/}}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ UART\_MAX\_BAUDRATE\ (120000000/16)\ }}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00025\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TYPEDEFS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00026\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07}{UART\_OK}}\ =\ 0,\ }
-\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa4859017d795a62459d23227611718e93}{UART\_INVALID\_ARGS}}\ =\ 1,\ }
-\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46}{UART\_ERROR}}\ =\ 2,\ }
-\DoxyCodeLine{00035\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda1e0fa1b7139a6572f637b5d1aed5d6c1}{UART\_USART1}}\ =\ 14,\ }
-\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda48f1b5041ad4267bdf6c8fcea335d238}{UART\_USART2}}\ =\ 17,\ }
-\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda0f0abdebd712e8c48e6eaef1b15902fd}{UART\_USART3}}\ =\ 18,\ }
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda01e59c9a6d3a5d099e1b6f7e2f0e7881}{UART\_UART4}}\ =\ 19,\ }
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccdad8ea1417ed2bc43b10f5f7fdc5e8339d}{UART\_UART5}}\ =\ 20,\ }
-\DoxyCodeLine{00045\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1fa941f53895de35cb17c5b5ae5e57a02b9}{UART\_DATABITS\_7}}\ =\ 2,\ }
-\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1faf080420d870f7b3917bd59107ac4c153}{UART\_DATABITS\_8}}\ =\ 0,\ }
-\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1fad0522fb6d585f1a6b651fd999184b672}{UART\_DATABITS\_9}}\ =\ 1,\ }
-\DoxyCodeLine{00053\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f}{UART\_DATABITS\_State}};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbaa80d2d8ea61454045ebe71d155e85b3d}{UART\_PARITY\_NONE}}\ =\ 2,\ }
-\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbad908a637b1dd23f93b149dd2d8bdfdb8}{UART\_PARITY\_EVEN}}\ =\ 0,\ }
-\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbad90cc425f5ba447773a44a75be6593e2}{UART\_PARITY\_ODD}}\ =\ 1,\ }
-\DoxyCodeLine{00061\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb}{UART\_PARITY\_State}};}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
-\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bdab1c6c3da76951f5a1817859f83ddd9fa}{UART\_STOPBITS\_1}}\ =\ 0,\ }
-\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bda67e7e8ef061d033e8e187f6d49c36a89}{UART\_STOPBITS\_0\_5}}\ =\ 1,\ }
-\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bdaf4b730b061af3ef2004c360c158ffef8}{UART\_STOPBITS\_2}}\ =\ 2,\ }
-\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bda41e0cb55a333db41b71dcd08b2bf3ef9}{UART\_STOPBITS\_1\_5}}\ =\ 3,\ }
-\DoxyCodeLine{00070\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}{UART\_STOPBITS\_State}};}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o_gaf164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_adb17e776641603651b87dedf99c8e805}{rx\_port}};\ }
-\DoxyCodeLine{00076\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_ae2ba88cb5105ffa09eb6cadbc18aa582}{rx\_pin}};\ }
-\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o_ga50a2f4df54586ff8414f27fcb3f827db}{GPIO\_AF\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_af72041a9713daf64187a51d261add70b}{rx\_pin\_af}};\ }
-\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o_gaf164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_a6ccaff491344249ebe73de98fc826d61}{tx\_port}};\ }
-\DoxyCodeLine{00079\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_ada3050a6e56b1b15acbb7f22f487a9bc}{tx\_pin}};\ }
-\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o_ga50a2f4df54586ff8414f27fcb3f827db}{GPIO\_AF\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_a5a2c3649a23ac06fa5c06cf01d1e9f66}{tx\_pin\_af}};\ }
-\DoxyCodeLine{00081\ \}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef}{UART\_PinConfig\_Typedef}};}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00085\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
-\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a0b183f651dadb6b3a4072e5cb9c43815}{uart}};\ }
-\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef}{UART\_PinConfig\_Typedef}}*\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_ad85ea381d8e16378f4a02fd18a8ce0c2}{pin\_config}};\ }
-\DoxyCodeLine{00088\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a148f33bbcda8087a77d8ba30f7e3c502}{baud\_rate}};\ }
-\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f}{UART\_DATABITS\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a315bf3103ecc032b605b373c605b2c4f}{databits}};\ }
-\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb}{UART\_PARITY\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a8d480bf0c817b49987861c27891ee634}{parity}};\ }
-\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}{UART\_STOPBITS\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_afc496bd0ade7d4abd9ee2afb75b38536}{stopbits}};\ }
-\DoxyCodeLine{00092\ \}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\_Config\_Typedef}};}
-\DoxyCodeLine{00093\ }
-\DoxyCodeLine{00094\ \textcolor{comment}{/****************************************************************************************************/}}
-\DoxyCodeLine{00095\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
-\DoxyCodeLine{00096\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}ringbuffer.h"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{/***}}
+\DoxyCodeLine{00015\ \textcolor{comment}{*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{*\ UART\ drivers\ for\ stm32l4xx\ devices.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*\ WARNING:\ These\ drivers\ have\ NOT\ been\ tested\ extensively.\ Use\ at\ own\ risk.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*\ Reference:\ https://www.youtube.com/playlist?list=PLtVUYRe-\/Z-\/mfKO0lg\_-\/MBvwWl6VjWT8Dt}}
+\DoxyCodeLine{00019\ \textcolor{comment}{*\ STM32\ Reference\ Manual:\ RM0432}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*}}
+\DoxyCodeLine{00021\ \textcolor{comment}{***/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ UART\_MAX\_BAUDRATE\ (120000000/16)\ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ UART\_RXBUF\_SIZE\ 1000\ }}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ UART\_USING\_INTERNAL\_IT\ }}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00028\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TYPEDEFS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00029\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07}{UART\_OK}}\ =\ 0,\ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa4859017d795a62459d23227611718e93}{UART\_INVALID\_ARGS}}\ =\ 1,\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46}{UART\_ERROR}}\ =\ 2,\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa108080dd41fe4f3c5e1813a3fc0b33df}{UART\_BUSY}}\ =\ 3,\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa99c498b47a40517c76e3bf02dd45be1e}{UART\_BUFFER\_OVERFLOW}}\ =\ 4,\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1faab5d538e6b6d65ebc0475fd9174d0ad0}{UART\_BUFFER\_EMPTY}}\ =\ 5,\ }
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda1e0fa1b7139a6572f637b5d1aed5d6c1}{UART\_USART1}}\ =\ 14,\ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda48f1b5041ad4267bdf6c8fcea335d238}{UART\_USART2}}\ =\ 17,\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda0f0abdebd712e8c48e6eaef1b15902fd}{UART\_USART3}}\ =\ 18,\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccda01e59c9a6d3a5d099e1b6f7e2f0e7881}{UART\_UART4}}\ =\ 19,\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga3c45a624ab1ddfcc7e54110b4142cccdad8ea1417ed2bc43b10f5f7fdc5e8339d}{UART\_UART5}}\ =\ 20,\ }
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1fa941f53895de35cb17c5b5ae5e57a02b9}{UART\_DATABITS\_7}}\ =\ 2,\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1faf080420d870f7b3917bd59107ac4c153}{UART\_DATABITS\_8}}\ =\ 0,\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga99c036598920115caa02fec9ae349c1fad0522fb6d585f1a6b651fd999184b672}{UART\_DATABITS\_9}}\ =\ 1,\ }
+\DoxyCodeLine{00059\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f}{UART\_DATABITS\_State}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbaa80d2d8ea61454045ebe71d155e85b3d}{UART\_PARITY\_NONE}}\ =\ 2,\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbad908a637b1dd23f93b149dd2d8bdfdb8}{UART\_PARITY\_EVEN}}\ =\ 0,\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga7f73ca52a8ffc7da6e5a87e947ad9cbbad90cc425f5ba447773a44a75be6593e2}{UART\_PARITY\_ODD}}\ =\ 1,\ }
+\DoxyCodeLine{00067\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb}{UART\_PARITY\_State}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bdab1c6c3da76951f5a1817859f83ddd9fa}{UART\_STOPBITS\_1}}\ =\ 0,\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bda67e7e8ef061d033e8e187f6d49c36a89}{UART\_STOPBITS\_0\_5}}\ =\ 1,\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bdaf4b730b061af3ef2004c360c158ffef8}{UART\_STOPBITS\_2}}\ =\ 2,\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga8edefddeb4a1c18c9b9d5d70bd06c6bda41e0cb55a333db41b71dcd08b2bf3ef9}{UART\_STOPBITS\_1\_5}}\ =\ 3,\ }
+\DoxyCodeLine{00076\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}{UART\_STOPBITS\_State}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o_gaf164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_adb17e776641603651b87dedf99c8e805}{rx\_port}};\ }
+\DoxyCodeLine{00082\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_ae2ba88cb5105ffa09eb6cadbc18aa582}{rx\_pin}};\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o_ga50a2f4df54586ff8414f27fcb3f827db}{GPIO\_AF\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_af72041a9713daf64187a51d261add70b}{rx\_pin\_af}};\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o_gaf164c756418dde00ac07fd47d0962150}{GPIO\_Port}}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_a6ccaff491344249ebe73de98fc826d61}{tx\_port}};\ }
+\DoxyCodeLine{00085\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_ada3050a6e56b1b15acbb7f22f487a9bc}{tx\_pin}};\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o_ga50a2f4df54586ff8414f27fcb3f827db}{GPIO\_AF\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef_a5a2c3649a23ac06fa5c06cf01d1e9f66}{tx\_pin\_af}};\ }
+\DoxyCodeLine{00087\ \}\ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef}{UART\_PinConfig\_Typedef}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_u_a_r_t___i_t_config___typedef_a405857fbd1160c21e7f98eb14a188a20}{RXNEIE\_enabled}};\ }
+\DoxyCodeLine{00093\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_u_a_r_t___i_t_config___typedef_a38b69f5fd6d2add57a73f4c96dd9ffee}{TXEIE\_enabled}};\ }
+\DoxyCodeLine{00094\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_u_a_r_t___i_t_config___typedef_a53990bb725e16a1fc61a66abe95e9dc1}{IDLEIE\_enabled}};\ }
+\DoxyCodeLine{00095\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_u_a_r_t___i_t_config___typedef_a0ad043071ccc7a261d79a759dc9c6f0c}{priority}};\ }
+\DoxyCodeLine{00096\ \}\ \mbox{\hyperlink{struct_u_a_r_t___i_t_config___typedef}{UART\_ITConfig\_Typedef}};}
 \DoxyCodeLine{00097\ }
-\DoxyCodeLine{00102\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_gae70286f4e3e5f5b94e3075f7b075bcf5}{UART\_config}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\_Config\_Typedef}}*\ uart\_conf);}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00113\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_gae176760e197ac5d770d79655f0272988}{UART\_transmit}}(\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ uart,\ \textcolor{keyword}{const}\ uint8\_t*\ tx\_buf,\ uint16\_t\ length);}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ }
-\DoxyCodeLine{00121\ uint8\_t\ \mbox{\hyperlink{group___u_a_r_t_gabde57d72e032c159438a6000ea7463f5}{UART\_receiveByte}}(\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ uart);}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00131\ uint8\_t\ \mbox{\hyperlink{group___u_a_r_t_ga78064a945132939c843e5aa9f09704e5}{UART\_hasData}}(\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ uart);}
+\DoxyCodeLine{00100\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a0b183f651dadb6b3a4072e5cb9c43815}{uart}};\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef}{UART\_PinConfig\_Typedef}}*\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_ad85ea381d8e16378f4a02fd18a8ce0c2}{pin\_config}};\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{struct_u_a_r_t___i_t_config___typedef}{UART\_ITConfig\_Typedef}}*\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a76a106c5afb438a5cd4c68e0f3dadefd}{it\_config}};\ }
+\DoxyCodeLine{00104\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a148f33bbcda8087a77d8ba30f7e3c502}{baud\_rate}};\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f}{UART\_DATABITS\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a315bf3103ecc032b605b373c605b2c4f}{databits}};\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_ga7f73ca52a8ffc7da6e5a87e947ad9cbb}{UART\_PARITY\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_a8d480bf0c817b49987861c27891ee634}{parity}};\ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}{UART\_STOPBITS\_State}}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef_afc496bd0ade7d4abd9ee2afb75b38536}{stopbits}};\ }
+\DoxyCodeLine{00108\ \}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\_Config\_Typedef}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00111\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00112\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00118\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_gae70286f4e3e5f5b94e3075f7b075bcf5}{UART\_config}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\_Config\_Typedef}}*\ uart\_conf);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00129\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_gae176760e197ac5d770d79655f0272988}{UART\_transmit}}(\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ uart,\ \textcolor{keyword}{const}\ uint8\_t*\ tx\_buf,\ uint16\_t\ length);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ }
 \DoxyCodeLine{00132\ }
-\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00141\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_gab8bb63e447da31b17524e31bf9db55d7}{UART\_read}}(uint8\_t*\ rx\_buf,\ uint32\_t\ length);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00149\ uint8\_t\ \mbox{\hyperlink{group___u_a_r_t_gabde57d72e032c159438a6000ea7463f5}{UART\_receiveByte}}(\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ uart);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_ga9b2296208af63cbfc1a0d73fc4047b2a}{UART\_receiveIT\_Start}}(\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ uart);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00164\ \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_ga2d9affea53a5e7e305b1e1e5ecac91dc}{UART\_receiveIT\_Stop}}();}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00174\ uint8\_t\ \mbox{\hyperlink{group___u_a_r_t_ga78064a945132939c843e5aa9f09704e5}{UART\_hasData}}(\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ uart);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00183\ uint8\_t\ \mbox{\hyperlink{group___u_a_r_t_ga6b0b416752c69c3e60103b6cf5a96b6e}{UART\_isIdle}}(\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\_DEVICE\_State}}\ uart);}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

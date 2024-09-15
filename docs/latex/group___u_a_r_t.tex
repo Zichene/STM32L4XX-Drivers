@@ -8,8 +8,12 @@ UART drivers for stm32l4xx devices.
 \doxysubsubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
+struct \mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}}
+\begin{DoxyCompactList}\small\item\em Struct representing a ring buffer object. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_u_a_r_t___pin_config___typedef}{UART\+\_\+\+Pin\+Config\+\_\+\+Typedef}}
 \begin{DoxyCompactList}\small\item\em Struct representing the pin configuration parameters for the U(\+S)ART. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_u_a_r_t___i_t_config___typedef}{UART\+\_\+\+ITConfig\+\_\+\+Typedef}}
+\begin{DoxyCompactList}\small\item\em Struct representing interrupt configuration parameters for the U(\+S)ART. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\+\_\+\+Config\+\_\+\+Typedef}}
 \begin{DoxyCompactList}\small\item\em Struct representing configuration parameters for the U(\+S)ART. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Macros}
@@ -17,13 +21,29 @@ struct \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\+\_\+\+Config\+\
 \item 
 \Hypertarget{group___u_a_r_t_gae796743d12ed283734a7df1d505fb2c1}\label{group___u_a_r_t_gae796743d12ed283734a7df1d505fb2c1} 
 \#define {\bfseries UART\+\_\+\+MAX\+\_\+\+BAUDRATE}~(120000000/16)
-\begin{DoxyCompactList}\small\item\em Maximum allowed baudrate for USART. TODO\+: temporary fix, max baudrate actually depends on oversampling and system clock system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Maximum allowed baudrate for USART. TODO\+: temporary fix, max baudrate actually depends on oversampling and system clock system. \end{DoxyCompactList}\item 
+\Hypertarget{group___u_a_r_t_gad1f0f31ed8578a4eb4f68262618571e2}\label{group___u_a_r_t_gad1f0f31ed8578a4eb4f68262618571e2} 
+\#define {\bfseries UART\+\_\+\+RXBUF\+\_\+\+SIZE}~1000
+\begin{DoxyCompactList}\small\item\em Internal rxbuf used for UART\+\_\+receive() \end{DoxyCompactList}\item 
+\Hypertarget{group___u_a_r_t_ga29a9ff57c9ee1dbcb925d6d1ad94b30a}\label{group___u_a_r_t_ga29a9ff57c9ee1dbcb925d6d1ad94b30a} 
+\#define {\bfseries UART\+\_\+\+USING\+\_\+\+INTERNAL\+\_\+\+IT}
+\begin{DoxyCompactList}\small\item\em This flag will determine if the USART interrupts are implemented internally (inside of the file uart.\+c). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \{ \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07}{UART\+\_\+\+OK}} = 0
+enum \mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\+\_\+\+BUF\+\_\+\+Status\+\_\+\+State}} \{ \mbox{\hyperlink{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9}{RING\+\_\+\+BUF\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8}{RING\+\_\+\+BUF\+\_\+\+READ\+\_\+\+ERROR}} = 1
+, \mbox{\hyperlink{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470}{RING\+\_\+\+BUF\+\_\+\+WRITE\+\_\+\+ERROR}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing various statuses associated with the ring buffer functions. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \{ \newline
+\mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07}{UART\+\_\+\+OK}} = 0
 , \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa4859017d795a62459d23227611718e93}{UART\+\_\+\+INVALID\+\_\+\+ARGS}} = 1
 , \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46}{UART\+\_\+\+ERROR}} = 2
+, \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa108080dd41fe4f3c5e1813a3fc0b33df}{UART\+\_\+\+BUSY}} = 3
+, \newline
+\mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa99c498b47a40517c76e3bf02dd45be1e}{UART\+\_\+\+BUFFER\+\_\+\+OVERFLOW}} = 4
+, \mbox{\hyperlink{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1faab5d538e6b6d65ebc0475fd9174d0ad0}{UART\+\_\+\+BUFFER\+\_\+\+EMPTY}} = 5
  \}
 \begin{DoxyCompactList}\small\item\em Enum representing different function return statuses. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} \{ \newline
@@ -54,22 +74,86 @@ enum \mbox{\hyperlink{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}{UART\+
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} \mbox{\hyperlink{group___u_a_r_t_ga9ba584b7360a52879f2bbf707bfa00a9}{RING\+\_\+\+BUF\+\_\+init}} (void \texorpdfstring{$\ast$}{*}buffer\+\_\+address, uint32\+\_\+t max\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Initializes the ring buffer object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\+\_\+\+BUF\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_gac300bb56cfd3bf8857fe17eae49ac33c}{RING\+\_\+\+BUF\+\_\+write\+Byte\+To\+Head}} (\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}ring\+\_\+buf, uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Write one byte to the head of the ring buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\+\_\+\+BUF\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_ga613ac2aefab9b7a481a7480cce84ef0b}{RING\+\_\+\+BUF\+\_\+read\+Byte\+From\+Tail}} (\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}ring\+\_\+buf, uint8\+\_\+t \texorpdfstring{$\ast$}{*}byte)
+\begin{DoxyCompactList}\small\item\em Read one byte from the tail of the ring buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___u_a_r_t_ga5cfa369389f1083eab5e848ca45ed413}{RING\+\_\+\+BUF\+\_\+is\+Empty}} (\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}ring\+\_\+buf)
+\begin{DoxyCompactList}\small\item\em Returns whether or not the ring buffer is empty. \end{DoxyCompactList}\item 
+\Hypertarget{group___u_a_r_t_ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb}\label{group___u_a_r_t_ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb} 
+uint32\+\_\+t {\bfseries RING\+\_\+\+BUF\+\_\+size} (\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}ring\+\_\+buf)
+\item 
 \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_gae70286f4e3e5f5b94e3075f7b075bcf5}{UART\+\_\+config}} (const \mbox{\hyperlink{struct_u_a_r_t___config___typedef}{UART\+\_\+\+Config\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}uart\+\_\+conf)
 \begin{DoxyCompactList}\small\item\em Configures the desired UART/\+USART peripheral and activates it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_gae176760e197ac5d770d79655f0272988}{UART\+\_\+transmit}} (\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} uart, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}tx\+\_\+buf, uint16\+\_\+t length)
-\begin{DoxyCompactList}\small\item\em Transmits data over UART/\+USART. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Transmits data over UART/\+USART in blocking mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_gab8bb63e447da31b17524e31bf9db55d7}{UART\+\_\+read}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}rx\+\_\+buf, uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Reads data from the internal Rx buffer. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{group___u_a_r_t_gabde57d72e032c159438a6000ea7463f5}{UART\+\_\+receive\+Byte}} (\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} uart)
 \begin{DoxyCompactList}\small\item\em Reads and returns from the UARTx-\/\texorpdfstring{$>$}{>}RDR register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_ga9b2296208af63cbfc1a0d73fc4047b2a}{UART\+\_\+receive\+IT\+\_\+\+Start}} (\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} uart)
+\begin{DoxyCompactList}\small\item\em Enables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} \mbox{\hyperlink{group___u_a_r_t_ga2d9affea53a5e7e305b1e1e5ecac91dc}{UART\+\_\+receive\+IT\+\_\+\+Stop}} ()
+\begin{DoxyCompactList}\small\item\em Disables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{group___u_a_r_t_ga78064a945132939c843e5aa9f09704e5}{UART\+\_\+has\+Data}} (\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} uart)
-\begin{DoxyCompactList}\small\item\em Reads and returns the RXNE/\+RXFNE bit in the UARTx-\/\texorpdfstring{$>$}{>}ISR register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reads and returns the RXNE/\+RXFNE bit in the UARTx-\/\texorpdfstring{$>$}{>}ISR register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___u_a_r_t_ga6b0b416752c69c3e60103b6cf5a96b6e}{UART\+\_\+is\+Idle}} (\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}} uart)
+\begin{DoxyCompactList}\small\item\em Reads and returns the IDLE bit in the UARTx-\/\texorpdfstring{$>$}{>}ISR register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___u_a_r_t_ga00c266cd7ead4c356ea56597f3385eb4}\label{group___u_a_r_t_ga00c266cd7ead4c356ea56597f3385eb4} 
+void \texorpdfstring{$\ast$}{*} {\bfseries buffer\+\_\+address}
+\item 
+\Hypertarget{group___u_a_r_t_ga5d749e86bf9e5299c1a5af7bcce2397c}\label{group___u_a_r_t_ga5d749e86bf9e5299c1a5af7bcce2397c} 
+uint32\+\_\+t {\bfseries max\+\_\+size}
+\item 
+\Hypertarget{group___u_a_r_t_ga18127565c3676f62ca8ee2804fa50bb0}\label{group___u_a_r_t_ga18127565c3676f62ca8ee2804fa50bb0} 
+uint32\+\_\+t {\bfseries head\+\_\+index}
+\item 
+\Hypertarget{group___u_a_r_t_ga1404bb75780e3fc56286a423ccfb45eb}\label{group___u_a_r_t_ga1404bb75780e3fc56286a423ccfb45eb} 
+uint32\+\_\+t {\bfseries tail\+\_\+index}
+\item 
+\Hypertarget{group___u_a_r_t_gaf0fb01f46ac8b50002222428d8db8383}\label{group___u_a_r_t_gaf0fb01f46ac8b50002222428d8db8383} 
+volatile uint8\+\_\+t {\bfseries buffer\+\_\+full}
+\item 
+\Hypertarget{group___u_a_r_t_ga040f9f390b8c7b2e8c50ef149b204f10}\label{group___u_a_r_t_ga040f9f390b8c7b2e8c50ef149b204f10} 
+volatile uint8\+\_\+t {\bfseries buffer\+\_\+empty}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 UART drivers for stm32l4xx devices. 
 
-
+UART drivers for stm32l4xx devices.
 
 \doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}\index{UART@{UART}!RING\_BUF\_Status\_State@{RING\_BUF\_Status\_State}}
+\index{RING\_BUF\_Status\_State@{RING\_BUF\_Status\_State}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{RING\_BUF\_Status\_State}{RING\_BUF\_Status\_State}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad} 
+enum \mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\+\_\+\+BUF\+\_\+\+Status\+\_\+\+State}}}
+
+
+
+Enum representing various statuses associated with the ring buffer functions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RING\_BUF\_OK@{RING\_BUF\_OK}!UART@{UART}}\index{UART@{UART}!RING\_BUF\_OK@{RING\_BUF\_OK}}}\Hypertarget{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9}\label{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad} 
+RING\+\_\+\+BUF\+\_\+\+OK&Indicates that a function has returned successfully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RING\_BUF\_READ\_ERROR@{RING\_BUF\_READ\_ERROR}!UART@{UART}}\index{UART@{UART}!RING\_BUF\_READ\_ERROR@{RING\_BUF\_READ\_ERROR}}}\Hypertarget{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8}\label{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad} 
+RING\+\_\+\+BUF\+\_\+\+READ\+\_\+\+ERROR&Indicates that there has been a read error (e.\+g. the buffer contains nothing to be read). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RING\_BUF\_WRITE\_ERROR@{RING\_BUF\_WRITE\_ERROR}!UART@{UART}}\index{UART@{UART}!RING\_BUF\_WRITE\_ERROR@{RING\_BUF\_WRITE\_ERROR}}}\Hypertarget{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470}\label{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad} 
+RING\+\_\+\+BUF\+\_\+\+WRITE\+\_\+\+ERROR&Indicates that there has been a write error (e.\+g. the buffer is full). \\
+\hline
+
+\end{DoxyEnumFields}
 \Hypertarget{group___u_a_r_t_ga99c036598920115caa02fec9ae349c1f}\index{UART@{UART}!UART\_DATABITS\_State@{UART\_DATABITS\_State}}
 \index{UART\_DATABITS\_State@{UART\_DATABITS\_State}!UART@{UART}}
 \doxysubsubsection{\texorpdfstring{UART\_DATABITS\_State}{UART\_DATABITS\_State}}
@@ -173,6 +257,18 @@ UART\+\_\+\+INVALID\+\_\+\+ARGS&Indicates that a function has been given invalid
 UART\+\_\+\+ERROR&Indicates that a general error has occured. \\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_BUSY@{UART\_BUSY}!UART@{UART}}\index{UART@{UART}!UART\_BUSY@{UART\_BUSY}}}\Hypertarget{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa108080dd41fe4f3c5e1813a3fc0b33df}\label{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f} 
+UART\+\_\+\+BUSY&Indicates that the UART is currently busy receiving or transmitting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_BUFFER\_OVERFLOW@{UART\_BUFFER\_OVERFLOW}!UART@{UART}}\index{UART@{UART}!UART\_BUFFER\_OVERFLOW@{UART\_BUFFER\_OVERFLOW}}}\Hypertarget{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1fa99c498b47a40517c76e3bf02dd45be1e}\label{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f} 
+UART\+\_\+\+BUFFER\+\_\+\+OVERFLOW&Indicates that a buffer has overflowed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UART\_BUFFER\_EMPTY@{UART\_BUFFER\_EMPTY}!UART@{UART}}\index{UART@{UART}!UART\_BUFFER\_EMPTY@{UART\_BUFFER\_EMPTY}}}\Hypertarget{group___u_a_r_t_gga4d81a9babaa8d2b9190e34c1da4eee1faab5d538e6b6d65ebc0475fd9174d0ad0}\label{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f} 
+UART\+\_\+\+BUFFER\+\_\+\+EMPTY&Indicates that a buffer is empty. \\
+\hline
+
 \end{DoxyEnumFields}
 \Hypertarget{group___u_a_r_t_ga8edefddeb4a1c18c9b9d5d70bd06c6bd}\index{UART@{UART}!UART\_STOPBITS\_State@{UART\_STOPBITS\_State}}
 \index{UART\_STOPBITS\_State@{UART\_STOPBITS\_State}!UART@{UART}}
@@ -205,6 +301,92 @@ UART\+\_\+\+STOPBITS\+\_\+1\+\_\+5&1.\+5 stop bits. \\
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{group___u_a_r_t_ga9ba584b7360a52879f2bbf707bfa00a9}\index{UART@{UART}!RING\_BUF\_init@{RING\_BUF\_init}}
+\index{RING\_BUF\_init@{RING\_BUF\_init}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{RING\_BUF\_init()}{RING\_BUF\_init()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga9ba584b7360a52879f2bbf707bfa00a9} 
+\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} RING\+\_\+\+BUF\+\_\+init (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{buffer\+\_\+address}{, }\item[{uint32\+\_\+t}]{max\+\_\+size}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the ring buffer object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+\_\+address} & Pointer to the buffer that is used internally for the ring buffer. \\
+\hline
+{\em max\+\_\+size} & size of the buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ring buffer object. 
+\end{DoxyReturn}
+\Hypertarget{group___u_a_r_t_ga5cfa369389f1083eab5e848ca45ed413}\index{UART@{UART}!RING\_BUF\_isEmpty@{RING\_BUF\_isEmpty}}
+\index{RING\_BUF\_isEmpty@{RING\_BUF\_isEmpty}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{RING\_BUF\_isEmpty()}{RING\_BUF\_isEmpty()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga5cfa369389f1083eab5e848ca45ed413} 
+uint8\+\_\+t RING\+\_\+\+BUF\+\_\+is\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}}]{ring\+\_\+buf}{}\end{DoxyParamCaption})}
+
+
+
+Returns whether or not the ring buffer is empty. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring\+\_\+buf} & pointer to the ring buffer object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean describing if the ring buffer is empty. 
+\end{DoxyReturn}
+\Hypertarget{group___u_a_r_t_ga613ac2aefab9b7a481a7480cce84ef0b}\index{UART@{UART}!RING\_BUF\_readByteFromTail@{RING\_BUF\_readByteFromTail}}
+\index{RING\_BUF\_readByteFromTail@{RING\_BUF\_readByteFromTail}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{RING\_BUF\_readByteFromTail()}{RING\_BUF\_readByteFromTail()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga613ac2aefab9b7a481a7480cce84ef0b} 
+\mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\+\_\+\+BUF\+\_\+\+Status\+\_\+\+State}} RING\+\_\+\+BUF\+\_\+read\+Byte\+From\+Tail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}}]{ring\+\_\+buf}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{byte}{}\end{DoxyParamCaption})}
+
+
+
+Read one byte from the tail of the ring buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring\+\_\+buf} & pointer to the ring buffer object. \\
+\hline
+{\em byte} & byte to be written \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em RING\+\_\+\+BUF\+\_\+\+READ\+\_\+\+ERROR} & The buffer is empty and cannot be read from. \\
+\hline
+{\em RING\+\_\+\+BUF\+\_\+\+OK} & OK \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_a_r_t_gac300bb56cfd3bf8857fe17eae49ac33c}\index{UART@{UART}!RING\_BUF\_writeByteToHead@{RING\_BUF\_writeByteToHead}}
+\index{RING\_BUF\_writeByteToHead@{RING\_BUF\_writeByteToHead}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{RING\_BUF\_writeByteToHead()}{RING\_BUF\_writeByteToHead()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_gac300bb56cfd3bf8857fe17eae49ac33c} 
+\mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\+\_\+\+BUF\+\_\+\+Status\+\_\+\+State}} RING\+\_\+\+BUF\+\_\+write\+Byte\+To\+Head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\+\_\+\+BUF\+\_\+\+Typedef}} \texorpdfstring{$\ast$}{*}}]{ring\+\_\+buf}{, }\item[{uint8\+\_\+t}]{byte}{}\end{DoxyParamCaption})}
+
+
+
+Write one byte to the head of the ring buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring\+\_\+buf} & pointer to the ring buffer object. \\
+\hline
+{\em byte} & byte to be written \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em RING\+\_\+\+BUF\+\_\+\+WRITE\+\_\+\+ERROR} & The buffer is full and cannot be written to. \\
+\hline
+{\em RING\+\_\+\+BUF\+\_\+\+OK} & OK \\
+\hline
+\end{DoxyRetVals}
 \Hypertarget{group___u_a_r_t_gae70286f4e3e5f5b94e3075f7b075bcf5}\index{UART@{UART}!UART\_config@{UART\_config}}
 \index{UART\_config@{UART\_config}!UART@{UART}}
 \doxysubsubsection{\texorpdfstring{UART\_config()}{UART\_config()}}
@@ -245,6 +427,55 @@ This determines whether or not data has been received and is ready to be read fr
 {\em 0} & Data has not been received. \\
 \hline
 \end{DoxyRetVals}
+\Hypertarget{group___u_a_r_t_ga6b0b416752c69c3e60103b6cf5a96b6e}\index{UART@{UART}!UART\_isIdle@{UART\_isIdle}}
+\index{UART\_isIdle@{UART\_isIdle}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_isIdle()}{UART\_isIdle()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga6b0b416752c69c3e60103b6cf5a96b6e} 
+uint8\+\_\+t UART\+\_\+is\+Idle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}}}]{uart}{}\end{DoxyParamCaption})}
+
+
+
+Reads and returns the IDLE bit in the UARTx-\/\texorpdfstring{$>$}{>}ISR register. 
+
+This determines whether or not the UART is idle. 
+\begin{DoxyParams}{Parameters}
+{\em uart} & UART/\+USART device. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em 1} & The uart device is idle. \\
+\hline
+{\em 0} & The uart device is not idle. \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group___u_a_r_t_gab8bb63e447da31b17524e31bf9db55d7}\index{UART@{UART}!UART\_read@{UART\_read}}
+\index{UART\_read@{UART\_read}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_read()}{UART\_read()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_gab8bb63e447da31b17524e31bf9db55d7} 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} UART\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buf}{, }\item[{uint32\+\_\+t}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Reads data from the internal Rx buffer. 
+
+\begin{DoxyNote}{Note}
+To use this function, one must first enable interrupts during the config state. 
+
+UART\+\_\+\+USING\+\_\+\+INTERNAL\+\_\+\+IT must also be defined in this file (\doxylink{uart_8h_source}{uart.\+h}) 
+
+UART\+\_\+receive\+IT\+\_\+\+Start must have been called before using this function. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em rx\+\_\+buf} & pointer to the data reception buffer. \\
+\hline
+{\em length} & to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
 \Hypertarget{group___u_a_r_t_gabde57d72e032c159438a6000ea7463f5}\index{UART@{UART}!UART\_receiveByte@{UART\_receiveByte}}
 \index{UART\_receiveByte@{UART\_receiveByte}!UART@{UART}}
 \doxysubsubsection{\texorpdfstring{UART\_receiveByte()}{UART\_receiveByte()}}
@@ -255,13 +486,44 @@ uint8\+\_\+t UART\+\_\+receive\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hype
 
 Reads and returns from the UARTx-\/\texorpdfstring{$>$}{>}RDR register. 
 
-
+Use this function to receive data in polling mode. 
 \begin{DoxyParams}{Parameters}
 {\em uart} & UART/\+USART device. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 value read from the RDR register. 
+\end{DoxyReturn}
+\Hypertarget{group___u_a_r_t_ga9b2296208af63cbfc1a0d73fc4047b2a}\index{UART@{UART}!UART\_receiveIT\_Start@{UART\_receiveIT\_Start}}
+\index{UART\_receiveIT\_Start@{UART\_receiveIT\_Start}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_receiveIT\_Start()}{UART\_receiveIT\_Start()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga9b2296208af63cbfc1a0d73fc4047b2a} 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} UART\+\_\+receive\+IT\+\_\+\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___u_a_r_t_ga3c45a624ab1ddfcc7e54110b4142cccd}{UART\+\_\+\+DEVICE\+\_\+\+State}}}]{uart}{}\end{DoxyParamCaption})}
+
+
+
+Enables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uart} & UART/\+USART device \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+status 
+\end{DoxyReturn}
+\Hypertarget{group___u_a_r_t_ga2d9affea53a5e7e305b1e1e5ecac91dc}\index{UART@{UART}!UART\_receiveIT\_Stop@{UART\_receiveIT\_Stop}}
+\index{UART\_receiveIT\_Stop@{UART\_receiveIT\_Stop}!UART@{UART}}
+\doxysubsubsection{\texorpdfstring{UART\_receiveIT\_Stop()}{UART\_receiveIT\_Stop()}}
+{\footnotesize\ttfamily \label{group___u_a_r_t_ga2d9affea53a5e7e305b1e1e5ecac91dc} 
+\mbox{\hyperlink{group___u_a_r_t_ga4d81a9babaa8d2b9190e34c1da4eee1f}{UART\+\_\+\+Status\+\_\+\+State}} UART\+\_\+receive\+IT\+\_\+\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Disables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte. 
+
+\begin{DoxyReturn}{Returns}
+status 
 \end{DoxyReturn}
 \Hypertarget{group___u_a_r_t_gae176760e197ac5d770d79655f0272988}\index{UART@{UART}!UART\_transmit@{UART\_transmit}}
 \index{UART\_transmit@{UART\_transmit}!UART@{UART}}
@@ -271,7 +533,7 @@ value read from the RDR register.
 
 
 
-Transmits data over UART/\+USART. 
+Transmits data over UART/\+USART in blocking mode. 
 
 
 \begin{DoxyParams}{Parameters}

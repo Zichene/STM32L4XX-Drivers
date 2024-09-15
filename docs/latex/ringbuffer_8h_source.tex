@@ -1,0 +1,60 @@
+\doxysection{ringbuffer.\+h}
+\hypertarget{ringbuffer_8h_source}{}\label{ringbuffer_8h_source}\index{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/ringbuffer.h@{C:/Users/Administrator/Desktop/STM32L4XX-\/Drivers/inc/ringbuffer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ RINGBUF\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ RINGBUF\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}common.h"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/***}}
+\DoxyCodeLine{00012\ \textcolor{comment}{*}}
+\DoxyCodeLine{00013\ \textcolor{comment}{*\ Ringbuffer\ implementation.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{*\ WARNING:\ These\ drivers\ have\ NOT\ been\ tested\ extensively.\ Use\ at\ own\ risk.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{*\ Reference:\ https://www.youtube.com/playlist?list=PLtVUYRe-\/Z-\/mfKO0lg\_-\/MBvwWl6VjWT8Dt}}
+\DoxyCodeLine{00016\ \textcolor{comment}{*\ STM32\ Reference\ Manual:\ RM0432}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*}}
+\DoxyCodeLine{00018\ \textcolor{comment}{***/}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TYPEDEFS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9}{RING\_BUF\_OK}}\ =\ 0,\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8}{RING\_BUF\_READ\_ERROR}}\ =\ 1,\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{group___u_a_r_t_gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470}{RING\_BUF\_WRITE\_ERROR}}\ =\ 2,\ }
+\DoxyCodeLine{00030\ \}\ \mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\_BUF\_Status\_State}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}*\ buffer\_address;}
+\DoxyCodeLine{00036\ \ \ \ \ uint32\_t\ max\_size;}
+\DoxyCodeLine{00037\ \ \ \ \ uint32\_t\ head\_index;}
+\DoxyCodeLine{00038\ \ \ \ \ uint32\_t\ tail\_index;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ buffer\_full;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ buffer\_empty;}
+\DoxyCodeLine{00041\ \}\ \mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\_BUF\_Typedef}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00045\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FUNCTION\ PROTOTYPES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00046\ \textcolor{comment}{/****************************************************************************************************/}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\_BUF\_Typedef}}\ \mbox{\hyperlink{group___u_a_r_t_ga9ba584b7360a52879f2bbf707bfa00a9}{RING\_BUF\_init}}(\textcolor{keywordtype}{void}*\ buffer\_address,\ uint32\_t\ max\_size);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\_BUF\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_gac300bb56cfd3bf8857fe17eae49ac33c}{RING\_BUF\_writeByteToHead}}(\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\_BUF\_Typedef}}*\ ring\_buf,\ uint8\_t\ \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \mbox{\hyperlink{group___u_a_r_t_ga727f4915d3dea77195159b5b680153ad}{RING\_BUF\_Status\_State}}\ \mbox{\hyperlink{group___u_a_r_t_ga613ac2aefab9b7a481a7480cce84ef0b}{RING\_BUF\_readByteFromTail}}(\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\_BUF\_Typedef}}*\ ring\_buf,\ uint8\_t*\ \textcolor{keywordtype}{byte});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ uint8\_t\ \mbox{\hyperlink{group___u_a_r_t_ga5cfa369389f1083eab5e848ca45ed413}{RING\_BUF\_isEmpty}}(\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\_BUF\_Typedef}}*\ ring\_buf);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ uint32\_t\ RING\_BUF\_size(\mbox{\hyperlink{struct_r_i_n_g___b_u_f___typedef}{RING\_BUF\_Typedef}}*\ ring\_buf);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

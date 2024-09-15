@@ -26,7 +26,9 @@ var searchData=
   ['tim_5ftim8_23',['TIM_TIM8',['../group___t_i_m.html#gga5b31ce769abb7de5285cb952034a6629af19e5251b29a2f329b53e0b4fb07b87f',1,'tim.h']]],
   ['tim_5ftimer_5fstate_24',['TIM_TIMER_State',['../group___t_i_m.html#ga5b31ce769abb7de5285cb952034a6629',1,'tim.h']]],
   ['timer_25',['timer',['../struct_t_i_m___config___typedef.html#ad9c393e32df95af2f6d18030bf82df98',1,'TIM_Config_Typedef']]],
-  ['tx_5fpin_26',['tx_pin',['../struct_u_a_r_t___pin_config___typedef.html#ada3050a6e56b1b15acbb7f22f487a9bc',1,'UART_PinConfig_Typedef']]],
-  ['tx_5fpin_5faf_27',['tx_pin_af',['../struct_u_a_r_t___pin_config___typedef.html#a5a2c3649a23ac06fa5c06cf01d1e9f66',1,'UART_PinConfig_Typedef']]],
-  ['tx_5fport_28',['tx_port',['../struct_u_a_r_t___pin_config___typedef.html#a6ccaff491344249ebe73de98fc826d61',1,'UART_PinConfig_Typedef']]]
+  ['timer_20drivers_26',['TIMER Drivers',['../index.html#timer_sec',1,'']]],
+  ['tx_5fpin_27',['tx_pin',['../struct_u_a_r_t___pin_config___typedef.html#ada3050a6e56b1b15acbb7f22f487a9bc',1,'UART_PinConfig_Typedef']]],
+  ['tx_5fpin_5faf_28',['tx_pin_af',['../struct_u_a_r_t___pin_config___typedef.html#a5a2c3649a23ac06fa5c06cf01d1e9f66',1,'UART_PinConfig_Typedef']]],
+  ['tx_5fport_29',['tx_port',['../struct_u_a_r_t___pin_config___typedef.html#a6ccaff491344249ebe73de98fc826d61',1,'UART_PinConfig_Typedef']]],
+  ['txeie_5fenabled_30',['TXEIE_enabled',['../struct_u_a_r_t___i_t_config___typedef.html#a38b69f5fd6d2add57a73f4c96dd9ffee',1,'UART_ITConfig_Typedef']]]
 ];

@@ -5,6 +5,7 @@
     <includes local="yes">stm32l4xx.h</includes>
     <includedby refid="clock_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/clock.h</includedby>
     <includedby refid="gpio_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/gpio.h</includedby>
+    <includedby refid="ringbuffer_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h</includedby>
     <includedby refid="tim_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/tim.h</includedby>
     <includedby refid="uart_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h</includedby>
     <incdepgraph>
@@ -34,6 +35,8 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
@@ -44,6 +47,12 @@
         <link refid="gpio_8h_source"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h</label>
+        <link refid="ringbuffer_8h_source"/>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
@@ -67,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" line="51" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" bodystart="51" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" line="80" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="common_8h_1a65e9886d74aaee76545e83dd09011727" prot="public" static="no">
         <name>false</name>
@@ -79,18 +88,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" line="52" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" bodystart="52" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" line="81" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" bodystart="81" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="common_8h_1a2c563d8e23d1455d03b749adf86939f3" prot="public" static="no">
-        <name>UART_PRINTF</name>
+      <memberdef kind="define" id="common_8h_1a5e869c8cffbd89e3d2c7168a5d140497" prot="public" static="no">
+        <name>UART_RECEIVE</name>
         <briefdescription>
-<para>Project 3: Printing to UART. Main drivers(s) used: TODO. </para>
+<para>Project 3.5: Receiving from UART. Main drivers(s) used: GPIO, CLOCK, UART. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" line="61" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" bodystart="61" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" line="91" column="10" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h" bodystart="91" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -101,34 +110,36 @@
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>COMMON_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COMMON_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/***</highlight></codeline>
-<codeline lineno="36"><highlight class="comment">*</highlight></codeline>
-<codeline lineno="37"><highlight class="comment">*<sp/>Common<sp/>defines<sp/>and<sp/>includes<sp/>that<sp/>are<sp/>shared<sp/>between<sp/>all<sp/>driver<sp/>files.</highlight></codeline>
-<codeline lineno="38"><highlight class="comment">*<sp/>STM32<sp/>Reference<sp/>Manual:<sp/>RM0432</highlight></codeline>
-<codeline lineno="39"><highlight class="comment">***/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>INCLUDES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stm32l4xx.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFINES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>true<sp/>1<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>false<sp/>0<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTIVE<sp/>MAIN<sp/>FILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>ATTENTION:<sp/>Only<sp/>uncomment<sp/>one<sp/>of<sp/>the<sp/>following<sp/>defines<sp/>to<sp/>select<sp/>which<sp/>project<sp/>to<sp/>run.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>PUSH_LED<sp/>///&lt;<sp/>Project<sp/>1:<sp/>Push<sp/>Led<sp/>selected.<sp/>Main<sp/>driver(s)<sp/>used:<sp/>GPIO</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>BLINKY_LED<sp/>///&lt;<sp/>Project<sp/>2:<sp/>Blinky<sp/>Led<sp/>selected.<sp/>Main<sp/>driver(s)<sp/>used:<sp/>GPIO,<sp/>CLOCK,<sp/>TIM</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UART_PRINTF<sp/></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>COMMON_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">/***</highlight></codeline>
+<codeline lineno="65"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="66"><highlight class="comment">*<sp/>Common<sp/>defines<sp/>and<sp/>includes<sp/>that<sp/>are<sp/>shared<sp/>between<sp/>all<sp/>driver<sp/>files.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">*<sp/>STM32<sp/>Reference<sp/>Manual:<sp/>RM0432</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">***/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>INCLUDES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stm32l4xx.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DEFINES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>true<sp/>1<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>false<sp/>0<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ACTIVE<sp/>MAIN<sp/>FILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>ATTENTION:<sp/>Only<sp/>uncomment<sp/>one<sp/>of<sp/>the<sp/>following<sp/>defines<sp/>to<sp/>select<sp/>which<sp/>project<sp/>to<sp/>run.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>PUSH_LED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>///&lt;<sp/>Project<sp/>1:<sp/>Push<sp/>Led<sp/>selected.<sp/>Main<sp/>driver(s)<sp/>used:<sp/>GPIO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>BLINKY_LED<sp/><sp/><sp/><sp/><sp/><sp/><sp/>///&lt;<sp/>Project<sp/>2:<sp/>Blinky<sp/>Led<sp/>selected.<sp/>Main<sp/>driver(s)<sp/>used:<sp/>GPIO,<sp/>CLOCK,<sp/>TIM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>UART_PRINTF<sp/><sp/><sp/><sp/><sp/><sp/>///&lt;<sp/>Project<sp/>3:<sp/>Printing<sp/>to<sp/>UART.<sp/>Main<sp/>drivers(s)<sp/>used:<sp/>GPIO,<sp/>CLOCK,<sp/>UART</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#define<sp/>UART_RECEIVE<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>RINGBUF_TEST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>///&lt;<sp/>Project<sp/>4:<sp/>Ring<sp/>Buffer.<sp/>Main<sp/>drivers(s)<sp/>used:<sp/>GPIO,<sp/>CLOCK,<sp/>UART</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>COMMON_H</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/common.h"/>
   </compounddef>

@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="ringbuffer_8h" kind="file" language="C++">
+    <compoundname>ringbuffer.h</compoundname>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includedby refid="uart_8h" local="yes">C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>common.h</label>
+        <link refid="common_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h</label>
+        <link refid="ringbuffer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stm32l4xx.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h</label>
+        <link refid="ringbuffer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h</label>
+        <link refid="uart_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_r_i_n_g___b_u_f___typedef" prot="public">RING_BUF_Typedef</innerclass>
+    <sectiondef kind="enum">
+      <member refid="group___u_a_r_t_1ga727f4915d3dea77195159b5b680153ad" kind="enum"><name>RING_BUF_Status_State</name></member>
+    </sectiondef>
+    <sectiondef kind="func">
+      <member refid="group___u_a_r_t_1ga9ba584b7360a52879f2bbf707bfa00a9" kind="function"><name>RING_BUF_init</name></member>
+      <member refid="group___u_a_r_t_1gac300bb56cfd3bf8857fe17eae49ac33c" kind="function"><name>RING_BUF_writeByteToHead</name></member>
+      <member refid="group___u_a_r_t_1ga613ac2aefab9b7a481a7480cce84ef0b" kind="function"><name>RING_BUF_readByteFromTail</name></member>
+      <member refid="group___u_a_r_t_1ga5cfa369389f1083eab5e848ca45ed413" kind="function"><name>RING_BUF_isEmpty</name></member>
+      <member refid="group___u_a_r_t_1ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb" kind="function"><name>RING_BUF_size</name></member>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>RINGBUF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RINGBUF_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/***</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/>Ringbuffer<sp/>implementation.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/>WARNING:<sp/>These<sp/>drivers<sp/>have<sp/>NOT<sp/>been<sp/>tested<sp/>extensively.<sp/>Use<sp/>at<sp/>own<sp/>risk.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/>Reference:<sp/>https://www.youtube.com/playlist?list=PLtVUYRe-Z-mfKO0lg_-MBvwWl6VjWT8Dt</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/>STM32<sp/>Reference<sp/>Manual:<sp/>RM0432</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">***/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPEDEFS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="group___u_a_r_t_1ga727f4915d3dea77195159b5b680153ad" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="27" refid="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9" kindref="member">RING_BUF_OK</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="28" refid="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8" kindref="member">RING_BUF_READ_ERROR</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="29" refid="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470" kindref="member">RING_BUF_WRITE_ERROR</ref><sp/>=<sp/>2,<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}<sp/><ref refid="group___u_a_r_t_1ga727f4915d3dea77195159b5b680153ad" kindref="member">RING_BUF_Status_State</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="struct_r_i_n_g___b_u_f___typedef" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buffer_address;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>max_size;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>head_index;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>tail_index;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint8_t<sp/>buffer_full;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint8_t<sp/>buffer_empty;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/><ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FUNCTION<sp/>PROTOTYPES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/****************************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="group___u_a_r_t_1ga9ba584b7360a52879f2bbf707bfa00a9" refkind="member"><highlight class="normal"><ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref><sp/><ref refid="group___u_a_r_t_1ga9ba584b7360a52879f2bbf707bfa00a9" kindref="member">RING_BUF_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>buffer_address,<sp/>uint32_t<sp/>max_size);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="group___u_a_r_t_1gac300bb56cfd3bf8857fe17eae49ac33c" refkind="member"><highlight class="normal"><ref refid="group___u_a_r_t_1ga727f4915d3dea77195159b5b680153ad" kindref="member">RING_BUF_Status_State</ref><sp/><ref refid="group___u_a_r_t_1gac300bb56cfd3bf8857fe17eae49ac33c" kindref="member">RING_BUF_writeByteToHead</ref>(<ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref>*<sp/>ring_buf,<sp/>uint8_t<sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="group___u_a_r_t_1ga613ac2aefab9b7a481a7480cce84ef0b" refkind="member"><highlight class="normal"><ref refid="group___u_a_r_t_1ga727f4915d3dea77195159b5b680153ad" kindref="member">RING_BUF_Status_State</ref><sp/><ref refid="group___u_a_r_t_1ga613ac2aefab9b7a481a7480cce84ef0b" kindref="member">RING_BUF_readByteFromTail</ref>(<ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref>*<sp/>ring_buf,<sp/>uint8_t*<sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="group___u_a_r_t_1ga5cfa369389f1083eab5e848ca45ed413" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="group___u_a_r_t_1ga5cfa369389f1083eab5e848ca45ed413" kindref="member">RING_BUF_isEmpty</ref>(<ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref>*<sp/>ring_buf);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">uint32_t<sp/>RING_BUF_size(<ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref>*<sp/>ring_buf);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h"/>
+  </compounddef>
+</doxygen>

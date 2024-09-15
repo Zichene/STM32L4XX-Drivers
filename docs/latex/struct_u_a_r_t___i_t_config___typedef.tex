@@ -1,0 +1,34 @@
+\doxysection{UART\+\_\+\+ITConfig\+\_\+\+Typedef Struct Reference}
+\hypertarget{struct_u_a_r_t___i_t_config___typedef}{}\label{struct_u_a_r_t___i_t_config___typedef}\index{UART\_ITConfig\_Typedef@{UART\_ITConfig\_Typedef}}
+
+
+Struct representing interrupt configuration parameters for the U(\+S)ART.  
+
+
+
+
+{\ttfamily \#include $<$uart.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_u_a_r_t___i_t_config___typedef_a405857fbd1160c21e7f98eb14a188a20}\label{struct_u_a_r_t___i_t_config___typedef_a405857fbd1160c21e7f98eb14a188a20} 
+uint8\+\_\+t {\bfseries RXNEIE\+\_\+enabled}
+\begin{DoxyCompactList}\small\item\em USART interrupt generated whenever ORE = 1 or RXFNE = 1 in the USART\+\_\+\+ISR register. \end{DoxyCompactList}\item 
+\Hypertarget{struct_u_a_r_t___i_t_config___typedef_a38b69f5fd6d2add57a73f4c96dd9ffee}\label{struct_u_a_r_t___i_t_config___typedef_a38b69f5fd6d2add57a73f4c96dd9ffee} 
+uint8\+\_\+t {\bfseries TXEIE\+\_\+enabled}
+\begin{DoxyCompactList}\small\item\em USART interrupt generated whenever TXE =1 in the USART\+\_\+\+ISR register. \end{DoxyCompactList}\item 
+\Hypertarget{struct_u_a_r_t___i_t_config___typedef_a53990bb725e16a1fc61a66abe95e9dc1}\label{struct_u_a_r_t___i_t_config___typedef_a53990bb725e16a1fc61a66abe95e9dc1} 
+uint8\+\_\+t {\bfseries IDLEIE\+\_\+enabled}
+\begin{DoxyCompactList}\small\item\em USART interrupt generated whenever IDLE = 1 in the USART\+\_\+\+ISR register. \end{DoxyCompactList}\item 
+\Hypertarget{struct_u_a_r_t___i_t_config___typedef_a0ad043071ccc7a261d79a759dc9c6f0c}\label{struct_u_a_r_t___i_t_config___typedef_a0ad043071ccc7a261d79a759dc9c6f0c} 
+uint8\+\_\+t {\bfseries priority}
+\begin{DoxyCompactList}\small\item\em Set the priority of the interrupt. Lower numbers are higher priority. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct representing interrupt configuration parameters for the U(\+S)ART. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Administrator/\+Desktop/\+STM32\+L4\+XX-\/\+Drivers/inc/uart.\+h\end{DoxyCompactItemize}

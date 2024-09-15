@@ -28,8 +28,37 @@
  *	- Alternate Function (AF)
  *
  * All GPIO pins can be set up with specific pull-up pull down mode, speed type and output type. 
- * See local [documentation](/group___g_p_i_o.html).
+ * See local [documentation](group___g_p_i_o.html).
+ *
+ * \section clock_sec CLOCK Drivers
+ *
+ * The Clock drivers currently implement functionalities such as:
+ * - Activating the MCO (Master Clock Output) for various clock sources.
+ * - Configure the PLL (Phased Locked Loop) clock.
+ * - Get the clock speeds for various clocks (system clock, HSI, PLL, MSI, etc.)
+ * - Configure and set the system clock.
+ * - Set various peripheral bus prescalers (AHB, APB1, APB2).
+ 
+ * See local [documentation](group___c_l_o_c_k.html).
+ *
+ * \section timer_sec TIMER Drivers
+ * The Timer (TIM) drivers currently implement functionalities such as:
+ * - Configuring various timers with prescaler and period.
+ * - Timer interrupt configuration.
+ * - Starting and stopping interrupts.
+ * 
+ * See local [documentation](group___t_i_m.html).
+ * 
+ * \section uart_sec UART Drivers
+ * The Universal Asynchronous Receivier Transmitter (UART) drivers currently implement functionalities such as:
+ * - Sending data (blocking mode)
+ * - Receiving data (blocking mode)
+ * - Custom configuration of baud rate, parity bit, stop bits, number of bits per word, etc.
+ * - Receiving data in interrupt mode. Ringbuffer implemented internally.
+ *
+ * See local [documentation](group___u_a_r_t.html).
  */
+
  
 
 /***

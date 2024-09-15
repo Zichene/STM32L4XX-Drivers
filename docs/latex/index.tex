@@ -17,4 +17,31 @@ The General Purpose Input Output (GPIO) drivers currently implement functionalit
 \item Alternate Function (AF)
 \end{DoxyItemize}
 
-All GPIO pins can be set up with specific pull-\/up pull down mode, speed type and output type. See local \href{/group___g_p_i_o.html}{\texttt{ documentation}}. 
+All GPIO pins can be set up with specific pull-\/up pull down mode, speed type and output type. See local \href{group___g_p_i_o.html}{\texttt{ documentation}}.\hypertarget{index_clock_sec}{}\doxysection{\texorpdfstring{CLOCK Drivers}{CLOCK Drivers}}\label{index_clock_sec}
+The Clock drivers currently implement functionalities such as\+:
+\begin{DoxyItemize}
+\item Activating the MCO (Master Clock Output) for various clock sources.
+\item Configure the PLL (Phased Locked Loop) clock.
+\item Get the clock speeds for various clocks (system clock, HSI, PLL, MSI, etc.)
+\item Configure and set the system clock.
+\item Set various peripheral bus prescalers (AHB, APB1, APB2).
+\end{DoxyItemize}
+
+See local \href{group___c_l_o_c_k.html}{\texttt{ documentation}}.\hypertarget{index_timer_sec}{}\doxysection{\texorpdfstring{TIMER Drivers}{TIMER Drivers}}\label{index_timer_sec}
+The Timer (TIM) drivers currently implement functionalities such as\+:
+\begin{DoxyItemize}
+\item Configuring various timers with prescaler and period.
+\item Timer interrupt configuration.
+\item Starting and stopping interrupts.
+\end{DoxyItemize}
+
+See local \href{group___t_i_m.html}{\texttt{ documentation}}.\hypertarget{index_uart_sec}{}\doxysection{\texorpdfstring{UART Drivers}{UART Drivers}}\label{index_uart_sec}
+The Universal Asynchronous Receivier Transmitter (UART) drivers currently implement functionalities such as\+:
+\begin{DoxyItemize}
+\item Sending data (blocking mode)
+\item Receiving data (blocking mode)
+\item Custom configuration of baud rate, parity bit, stop bits, number of bits per word, etc.
+\item Receiving data in interrupt mode. Ringbuffer implemented internally.
+\end{DoxyItemize}
+
+See local \href{group___u_a_r_t.html}{\texttt{ documentation}}. 

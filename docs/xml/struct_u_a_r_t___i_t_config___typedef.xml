@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="struct_u_a_r_t___i_t_config___typedef" kind="struct" language="C++" prot="public">
+    <compoundname>UART_ITConfig_Typedef</compoundname>
+    <includes refid="uart_8h" local="no">uart.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_u_a_r_t___i_t_config___typedef_1a405857fbd1160c21e7f98eb14a188a20" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t RXNEIE_enabled</definition>
+        <argsstring></argsstring>
+        <name>RXNEIE_enabled</name>
+        <qualifiedname>UART_ITConfig_Typedef::RXNEIE_enabled</qualifiedname>
+        <briefdescription>
+<para>USART interrupt generated whenever ORE = 1 or RXFNE = 1 in the USART_ISR register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="92" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___i_t_config___typedef_1a38b69f5fd6d2add57a73f4c96dd9ffee" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TXEIE_enabled</definition>
+        <argsstring></argsstring>
+        <name>TXEIE_enabled</name>
+        <qualifiedname>UART_ITConfig_Typedef::TXEIE_enabled</qualifiedname>
+        <briefdescription>
+<para>USART interrupt generated whenever TXE =1 in the USART_ISR register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="93" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___i_t_config___typedef_1a53990bb725e16a1fc61a66abe95e9dc1" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t IDLEIE_enabled</definition>
+        <argsstring></argsstring>
+        <name>IDLEIE_enabled</name>
+        <qualifiedname>UART_ITConfig_Typedef::IDLEIE_enabled</qualifiedname>
+        <briefdescription>
+<para>USART interrupt generated whenever IDLE = 1 in the USART_ISR register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="94" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___i_t_config___typedef_1a0ad043071ccc7a261d79a759dc9c6f0c" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t priority</definition>
+        <argsstring></argsstring>
+        <name>priority</name>
+        <qualifiedname>UART_ITConfig_Typedef::priority</qualifiedname>
+        <briefdescription>
+<para>Set the priority of the interrupt. Lower numbers are higher priority. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="95" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Struct representing interrupt configuration parameters for the U(S)ART. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="91" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="91" bodyend="96"/>
+    <listofallmembers>
+      <member refid="struct_u_a_r_t___i_t_config___typedef_1a53990bb725e16a1fc61a66abe95e9dc1" prot="public" virt="non-virtual"><scope>UART_ITConfig_Typedef</scope><name>IDLEIE_enabled</name></member>
+      <member refid="struct_u_a_r_t___i_t_config___typedef_1a0ad043071ccc7a261d79a759dc9c6f0c" prot="public" virt="non-virtual"><scope>UART_ITConfig_Typedef</scope><name>priority</name></member>
+      <member refid="struct_u_a_r_t___i_t_config___typedef_1a405857fbd1160c21e7f98eb14a188a20" prot="public" virt="non-virtual"><scope>UART_ITConfig_Typedef</scope><name>RXNEIE_enabled</name></member>
+      <member refid="struct_u_a_r_t___i_t_config___typedef_1a38b69f5fd6d2add57a73f4c96dd9ffee" prot="public" virt="non-virtual"><scope>UART_ITConfig_Typedef</scope><name>TXEIE_enabled</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

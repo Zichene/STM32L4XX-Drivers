@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="86" column="19" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="86" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="101" column="19" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_u_a_r_t___config___typedef_1ad85ea381d8e16378f4a02fd18a8ce0c2" prot="public" static="no" mutable="no">
         <type><ref refid="struct_u_a_r_t___pin_config___typedef" kindref="compound">UART_PinConfig_Typedef</ref> *</type>
@@ -26,13 +26,28 @@
         <name>pin_config</name>
         <qualifiedname>UART_Config_Typedef::pin_config</qualifiedname>
         <briefdescription>
-<para>Pin configuration object. See UART_PinConfig_State. </para>
+<para>Pin configuration object. See <ref refid="struct_u_a_r_t___pin_config___typedef" kindref="compound">UART_PinConfig_Typedef</ref>. </para>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="87" column="24" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="87" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="102" column="24" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_u_a_r_t___config___typedef_1a76a106c5afb438a5cd4c68e0f3dadefd" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_u_a_r_t___i_t_config___typedef" kindref="compound">UART_ITConfig_Typedef</ref> *</type>
+        <definition>UART_ITConfig_Typedef* it_config</definition>
+        <argsstring></argsstring>
+        <name>it_config</name>
+        <qualifiedname>UART_Config_Typedef::it_config</qualifiedname>
+        <briefdescription>
+<para>Interrupt configuration object. See <ref refid="struct_u_a_r_t___i_t_config___typedef" kindref="compound">UART_ITConfig_Typedef</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="103" column="23" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_u_a_r_t___config___typedef_1a148f33bbcda8087a77d8ba30f7e3c502" prot="public" static="no" mutable="no">
         <type>uint32_t</type>
@@ -47,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="88" column="10" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="88" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="104" column="10" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_u_a_r_t___config___typedef_1a315bf3103ecc032b605b373c605b2c4f" prot="public" static="no" mutable="no">
         <type><ref refid="group___u_a_r_t_1ga99c036598920115caa02fec9ae349c1f" kindref="member">UART_DATABITS_State</ref></type>
@@ -62,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="89" column="21" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="89" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="105" column="21" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_u_a_r_t___config___typedef_1a8d480bf0c817b49987861c27891ee634" prot="public" static="no" mutable="no">
         <type><ref refid="group___u_a_r_t_1ga7f73ca52a8ffc7da6e5a87e947ad9cbb" kindref="member">UART_PARITY_State</ref></type>
@@ -77,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="90" column="19" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="90" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="106" column="19" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_u_a_r_t___config___typedef_1afc496bd0ade7d4abd9ee2afb75b38536" prot="public" static="no" mutable="no">
         <type><ref refid="group___u_a_r_t_1ga8edefddeb4a1c18c9b9d5d70bd06c6bd" kindref="member">UART_STOPBITS_State</ref></type>
@@ -92,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="91" column="21" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="91" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="107" column="21" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="107" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -108,16 +123,24 @@
         <childnode refid="2" relation="usage">
           <edgelabel>pin_config</edgelabel>
         </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>it_config</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>UART_ITConfig_Typedef</label>
+        <link refid="struct_u_a_r_t___i_t_config___typedef"/>
       </node>
       <node id="2">
         <label>UART_PinConfig_Typedef</label>
         <link refid="struct_u_a_r_t___pin_config___typedef"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="85" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="85" bodyend="92"/>
+    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="100" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="100" bodyend="108"/>
     <listofallmembers>
       <member refid="struct_u_a_r_t___config___typedef_1a148f33bbcda8087a77d8ba30f7e3c502" prot="public" virt="non-virtual"><scope>UART_Config_Typedef</scope><name>baud_rate</name></member>
       <member refid="struct_u_a_r_t___config___typedef_1a315bf3103ecc032b605b373c605b2c4f" prot="public" virt="non-virtual"><scope>UART_Config_Typedef</scope><name>databits</name></member>
+      <member refid="struct_u_a_r_t___config___typedef_1a76a106c5afb438a5cd4c68e0f3dadefd" prot="public" virt="non-virtual"><scope>UART_Config_Typedef</scope><name>it_config</name></member>
       <member refid="struct_u_a_r_t___config___typedef_1a8d480bf0c817b49987861c27891ee634" prot="public" virt="non-virtual"><scope>UART_Config_Typedef</scope><name>parity</name></member>
       <member refid="struct_u_a_r_t___config___typedef_1ad85ea381d8e16378f4a02fd18a8ce0c2" prot="public" virt="non-virtual"><scope>UART_Config_Typedef</scope><name>pin_config</name></member>
       <member refid="struct_u_a_r_t___config___typedef_1afc496bd0ade7d4abd9ee2afb75b38536" prot="public" virt="non-virtual"><scope>UART_Config_Typedef</scope><name>stopbits</name></member>

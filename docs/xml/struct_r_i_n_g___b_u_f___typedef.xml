@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.11.0" xml:lang="en-US">
+  <compounddef id="struct_r_i_n_g___b_u_f___typedef" kind="struct" language="C++" prot="public">
+    <compoundname>RING_BUF_Typedef</compoundname>
+    <includes refid="ringbuffer_8h" local="no">ringbuffer.h</includes>
+    <sectiondef kind="public-attrib">
+      <member refid="group___u_a_r_t_1ga00c266cd7ead4c356ea56597f3385eb4" kind="variable"><name>buffer_address</name></member>
+      <member refid="group___u_a_r_t_1ga5d749e86bf9e5299c1a5af7bcce2397c" kind="variable"><name>max_size</name></member>
+      <member refid="group___u_a_r_t_1ga18127565c3676f62ca8ee2804fa50bb0" kind="variable"><name>head_index</name></member>
+      <member refid="group___u_a_r_t_1ga1404bb75780e3fc56286a423ccfb45eb" kind="variable"><name>tail_index</name></member>
+      <member refid="group___u_a_r_t_1gaf0fb01f46ac8b50002222428d8db8383" kind="variable"><name>buffer_full</name></member>
+      <member refid="group___u_a_r_t_1ga040f9f390b8c7b2e8c50ef149b204f10" kind="variable"><name>buffer_empty</name></member>
+    </sectiondef>
+    <briefdescription>
+<para>Struct representing a ring buffer object. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="34" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" bodystart="34" bodyend="41"/>
+    <listofallmembers>
+      <member refid="group___u_a_r_t_1ga00c266cd7ead4c356ea56597f3385eb4" prot="public" virt="non-virtual"><scope>RING_BUF_Typedef</scope><name>buffer_address</name></member>
+      <member refid="group___u_a_r_t_1ga040f9f390b8c7b2e8c50ef149b204f10" prot="public" virt="non-virtual"><scope>RING_BUF_Typedef</scope><name>buffer_empty</name></member>
+      <member refid="group___u_a_r_t_1gaf0fb01f46ac8b50002222428d8db8383" prot="public" virt="non-virtual"><scope>RING_BUF_Typedef</scope><name>buffer_full</name></member>
+      <member refid="group___u_a_r_t_1ga18127565c3676f62ca8ee2804fa50bb0" prot="public" virt="non-virtual"><scope>RING_BUF_Typedef</scope><name>head_index</name></member>
+      <member refid="group___u_a_r_t_1ga5d749e86bf9e5299c1a5af7bcce2397c" prot="public" virt="non-virtual"><scope>RING_BUF_Typedef</scope><name>max_size</name></member>
+      <member refid="group___u_a_r_t_1ga1404bb75780e3fc56286a423ccfb45eb" prot="public" virt="non-virtual"><scope>RING_BUF_Typedef</scope><name>tail_index</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

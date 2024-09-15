@@ -89,7 +89,9 @@ $(function(){ initResizable(false); });
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#enumval-members">Enumerator</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">UART</div></div>
 </div><!--header-->
 <div class="contents">
@@ -99,8 +101,14 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct representing a ring buffer object.  <a href="struct_r_i_n_g___b_u_f___typedef.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_a_r_t___pin_config___typedef.html">UART_PinConfig_Typedef</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct representing the pin configuration parameters for the U(S)ART.  <a href="struct_u_a_r_t___pin_config___typedef.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_a_r_t___i_t_config___typedef.html">UART_ITConfig_Typedef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct representing interrupt configuration parameters for the U(S)ART.  <a href="struct_u_a_r_t___i_t_config___typedef.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_a_r_t___config___typedef.html">UART_Config_Typedef</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct representing configuration parameters for the U(S)ART.  <a href="struct_u_a_r_t___config___typedef.html#details">More...</a><br /></td></tr>
@@ -112,12 +120,32 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>UART_MAX_BAUDRATE</b>&#160;&#160;&#160;(120000000/16)</td></tr>
 <tr class="memdesc:gae796743d12ed283734a7df1d505fb2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum allowed baudrate for USART. TODO: temporary fix, max baudrate actually depends on oversampling and system clock system. <br /></td></tr>
 <tr class="separator:gae796743d12ed283734a7df1d505fb2c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1f0f31ed8578a4eb4f68262618571e2" id="r_gad1f0f31ed8578a4eb4f68262618571e2"><td class="memItemLeft" align="right" valign="top"><a id="gad1f0f31ed8578a4eb4f68262618571e2" name="gad1f0f31ed8578a4eb4f68262618571e2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UART_RXBUF_SIZE</b>&#160;&#160;&#160;1000</td></tr>
+<tr class="memdesc:gad1f0f31ed8578a4eb4f68262618571e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal rxbuf used for UART_receive() <br /></td></tr>
+<tr class="separator:gad1f0f31ed8578a4eb4f68262618571e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29a9ff57c9ee1dbcb925d6d1ad94b30a" id="r_ga29a9ff57c9ee1dbcb925d6d1ad94b30a"><td class="memItemLeft" align="right" valign="top"><a id="ga29a9ff57c9ee1dbcb925d6d1ad94b30a" name="ga29a9ff57c9ee1dbcb925d6d1ad94b30a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UART_USING_INTERNAL_IT</b></td></tr>
+<tr class="memdesc:ga29a9ff57c9ee1dbcb925d6d1ad94b30a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This flag will determine if the USART interrupts are implemented internally (inside of the file uart.c). <br /></td></tr>
+<tr class="separator:ga29a9ff57c9ee1dbcb925d6d1ad94b30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga4d81a9babaa8d2b9190e34c1da4eee1f" id="r_ga4d81a9babaa8d2b9190e34c1da4eee1f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a> { <a class="el" href="#gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07">UART_OK</a> = 0
+<tr class="memitem:ga727f4915d3dea77195159b5b680153ad" id="r_ga727f4915d3dea77195159b5b680153ad"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga727f4915d3dea77195159b5b680153ad">RING_BUF_Status_State</a> { <a class="el" href="#gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9">RING_BUF_OK</a> = 0
+, <a class="el" href="#gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8">RING_BUF_READ_ERROR</a> = 1
+, <a class="el" href="#gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470">RING_BUF_WRITE_ERROR</a> = 2
+ }</td></tr>
+<tr class="memdesc:ga727f4915d3dea77195159b5b680153ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing various statuses associated with the ring buffer functions.  <a href="#ga727f4915d3dea77195159b5b680153ad">More...</a><br /></td></tr>
+<tr class="separator:ga727f4915d3dea77195159b5b680153ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d81a9babaa8d2b9190e34c1da4eee1f" id="r_ga4d81a9babaa8d2b9190e34c1da4eee1f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a> { <br />
+&#160;&#160;<a class="el" href="#gga4d81a9babaa8d2b9190e34c1da4eee1fa525187963c0aaa465f2a35b30b894d07">UART_OK</a> = 0
 , <a class="el" href="#gga4d81a9babaa8d2b9190e34c1da4eee1fa4859017d795a62459d23227611718e93">UART_INVALID_ARGS</a> = 1
 , <a class="el" href="#gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46">UART_ERROR</a> = 2
+, <a class="el" href="#gga4d81a9babaa8d2b9190e34c1da4eee1fa108080dd41fe4f3c5e1813a3fc0b33df">UART_BUSY</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="#gga4d81a9babaa8d2b9190e34c1da4eee1fa99c498b47a40517c76e3bf02dd45be1e">UART_BUFFER_OVERFLOW</a> = 4
+, <a class="el" href="#gga4d81a9babaa8d2b9190e34c1da4eee1faab5d538e6b6d65ebc0475fd9174d0ad0">UART_BUFFER_EMPTY</a> = 5
+<br />
  }</td></tr>
 <tr class="memdesc:ga4d81a9babaa8d2b9190e34c1da4eee1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing different function return statuses.  <a href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">More...</a><br /></td></tr>
 <tr class="separator:ga4d81a9babaa8d2b9190e34c1da4eee1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,22 +182,95 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga9ba584b7360a52879f2bbf707bfa00a9" id="r_ga9ba584b7360a52879f2bbf707bfa00a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9ba584b7360a52879f2bbf707bfa00a9">RING_BUF_init</a> (void *buffer_address, uint32_t max_size)</td></tr>
+<tr class="memdesc:ga9ba584b7360a52879f2bbf707bfa00a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the ring buffer object.  <br /></td></tr>
+<tr class="separator:ga9ba584b7360a52879f2bbf707bfa00a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac300bb56cfd3bf8857fe17eae49ac33c" id="r_gac300bb56cfd3bf8857fe17eae49ac33c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga727f4915d3dea77195159b5b680153ad">RING_BUF_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac300bb56cfd3bf8857fe17eae49ac33c">RING_BUF_writeByteToHead</a> (<a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a> *ring_buf, uint8_t byte)</td></tr>
+<tr class="memdesc:gac300bb56cfd3bf8857fe17eae49ac33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write one byte to the head of the ring buffer.  <br /></td></tr>
+<tr class="separator:gac300bb56cfd3bf8857fe17eae49ac33c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga613ac2aefab9b7a481a7480cce84ef0b" id="r_ga613ac2aefab9b7a481a7480cce84ef0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga727f4915d3dea77195159b5b680153ad">RING_BUF_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga613ac2aefab9b7a481a7480cce84ef0b">RING_BUF_readByteFromTail</a> (<a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a> *ring_buf, uint8_t *byte)</td></tr>
+<tr class="memdesc:ga613ac2aefab9b7a481a7480cce84ef0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one byte from the tail of the ring buffer.  <br /></td></tr>
+<tr class="separator:ga613ac2aefab9b7a481a7480cce84ef0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5cfa369389f1083eab5e848ca45ed413" id="r_ga5cfa369389f1083eab5e848ca45ed413"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5cfa369389f1083eab5e848ca45ed413">RING_BUF_isEmpty</a> (<a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a> *ring_buf)</td></tr>
+<tr class="memdesc:ga5cfa369389f1083eab5e848ca45ed413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether or not the ring buffer is empty.  <br /></td></tr>
+<tr class="separator:ga5cfa369389f1083eab5e848ca45ed413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb" id="r_ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb"><td class="memItemLeft" align="right" valign="top"><a id="ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb" name="ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>RING_BUF_size</b> (<a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a> *ring_buf)</td></tr>
+<tr class="separator:ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae70286f4e3e5f5b94e3075f7b075bcf5" id="r_gae70286f4e3e5f5b94e3075f7b075bcf5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae70286f4e3e5f5b94e3075f7b075bcf5">UART_config</a> (const <a class="el" href="struct_u_a_r_t___config___typedef.html">UART_Config_Typedef</a> *uart_conf)</td></tr>
 <tr class="memdesc:gae70286f4e3e5f5b94e3075f7b075bcf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the desired UART/USART peripheral and activates it.  <br /></td></tr>
 <tr class="separator:gae70286f4e3e5f5b94e3075f7b075bcf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae176760e197ac5d770d79655f0272988" id="r_gae176760e197ac5d770d79655f0272988"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae176760e197ac5d770d79655f0272988">UART_transmit</a> (<a class="el" href="#ga3c45a624ab1ddfcc7e54110b4142cccd">UART_DEVICE_State</a> uart, const uint8_t *tx_buf, uint16_t length)</td></tr>
-<tr class="memdesc:gae176760e197ac5d770d79655f0272988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits data over UART/USART.  <br /></td></tr>
+<tr class="memdesc:gae176760e197ac5d770d79655f0272988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmits data over UART/USART in blocking mode.  <br /></td></tr>
 <tr class="separator:gae176760e197ac5d770d79655f0272988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8bb63e447da31b17524e31bf9db55d7" id="r_gab8bb63e447da31b17524e31bf9db55d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab8bb63e447da31b17524e31bf9db55d7">UART_read</a> (uint8_t *rx_buf, uint32_t length)</td></tr>
+<tr class="memdesc:gab8bb63e447da31b17524e31bf9db55d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the internal Rx buffer.  <br /></td></tr>
+<tr class="separator:gab8bb63e447da31b17524e31bf9db55d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabde57d72e032c159438a6000ea7463f5" id="r_gabde57d72e032c159438a6000ea7463f5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabde57d72e032c159438a6000ea7463f5">UART_receiveByte</a> (<a class="el" href="#ga3c45a624ab1ddfcc7e54110b4142cccd">UART_DEVICE_State</a> uart)</td></tr>
 <tr class="memdesc:gabde57d72e032c159438a6000ea7463f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns from the UARTx-&gt;RDR register.  <br /></td></tr>
 <tr class="separator:gabde57d72e032c159438a6000ea7463f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b2296208af63cbfc1a0d73fc4047b2a" id="r_ga9b2296208af63cbfc1a0d73fc4047b2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9b2296208af63cbfc1a0d73fc4047b2a">UART_receiveIT_Start</a> (<a class="el" href="#ga3c45a624ab1ddfcc7e54110b4142cccd">UART_DEVICE_State</a> uart)</td></tr>
+<tr class="memdesc:ga9b2296208af63cbfc1a0d73fc4047b2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte.  <br /></td></tr>
+<tr class="separator:ga9b2296208af63cbfc1a0d73fc4047b2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d9affea53a5e7e305b1e1e5ecac91dc" id="r_ga2d9affea53a5e7e305b1e1e5ecac91dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga2d9affea53a5e7e305b1e1e5ecac91dc">UART_receiveIT_Stop</a> ()</td></tr>
+<tr class="memdesc:ga2d9affea53a5e7e305b1e1e5ecac91dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte.  <br /></td></tr>
+<tr class="separator:ga2d9affea53a5e7e305b1e1e5ecac91dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga78064a945132939c843e5aa9f09704e5" id="r_ga78064a945132939c843e5aa9f09704e5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga78064a945132939c843e5aa9f09704e5">UART_hasData</a> (<a class="el" href="#ga3c45a624ab1ddfcc7e54110b4142cccd">UART_DEVICE_State</a> uart)</td></tr>
 <tr class="memdesc:ga78064a945132939c843e5aa9f09704e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns the RXNE/RXFNE bit in the UARTx-&gt;ISR register.  <br /></td></tr>
 <tr class="separator:ga78064a945132939c843e5aa9f09704e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b0b416752c69c3e60103b6cf5a96b6e" id="r_ga6b0b416752c69c3e60103b6cf5a96b6e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6b0b416752c69c3e60103b6cf5a96b6e">UART_isIdle</a> (<a class="el" href="#ga3c45a624ab1ddfcc7e54110b4142cccd">UART_DEVICE_State</a> uart)</td></tr>
+<tr class="memdesc:ga6b0b416752c69c3e60103b6cf5a96b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and returns the IDLE bit in the UARTx-&gt;ISR register.  <br /></td></tr>
+<tr class="separator:ga6b0b416752c69c3e60103b6cf5a96b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga00c266cd7ead4c356ea56597f3385eb4" id="r_ga00c266cd7ead4c356ea56597f3385eb4"><td class="memItemLeft" align="right" valign="top"><a id="ga00c266cd7ead4c356ea56597f3385eb4" name="ga00c266cd7ead4c356ea56597f3385eb4"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><b>buffer_address</b></td></tr>
+<tr class="separator:ga00c266cd7ead4c356ea56597f3385eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d749e86bf9e5299c1a5af7bcce2397c" id="r_ga5d749e86bf9e5299c1a5af7bcce2397c"><td class="memItemLeft" align="right" valign="top"><a id="ga5d749e86bf9e5299c1a5af7bcce2397c" name="ga5d749e86bf9e5299c1a5af7bcce2397c"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>max_size</b></td></tr>
+<tr class="separator:ga5d749e86bf9e5299c1a5af7bcce2397c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18127565c3676f62ca8ee2804fa50bb0" id="r_ga18127565c3676f62ca8ee2804fa50bb0"><td class="memItemLeft" align="right" valign="top"><a id="ga18127565c3676f62ca8ee2804fa50bb0" name="ga18127565c3676f62ca8ee2804fa50bb0"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>head_index</b></td></tr>
+<tr class="separator:ga18127565c3676f62ca8ee2804fa50bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1404bb75780e3fc56286a423ccfb45eb" id="r_ga1404bb75780e3fc56286a423ccfb45eb"><td class="memItemLeft" align="right" valign="top"><a id="ga1404bb75780e3fc56286a423ccfb45eb" name="ga1404bb75780e3fc56286a423ccfb45eb"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>tail_index</b></td></tr>
+<tr class="separator:ga1404bb75780e3fc56286a423ccfb45eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0fb01f46ac8b50002222428d8db8383" id="r_gaf0fb01f46ac8b50002222428d8db8383"><td class="memItemLeft" align="right" valign="top"><a id="gaf0fb01f46ac8b50002222428d8db8383" name="gaf0fb01f46ac8b50002222428d8db8383"></a>
+volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>buffer_full</b></td></tr>
+<tr class="separator:gaf0fb01f46ac8b50002222428d8db8383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga040f9f390b8c7b2e8c50ef149b204f10" id="r_ga040f9f390b8c7b2e8c50ef149b204f10"><td class="memItemLeft" align="right" valign="top"><a id="ga040f9f390b8c7b2e8c50ef149b204f10" name="ga040f9f390b8c7b2e8c50ef149b204f10"></a>
+volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>buffer_empty</b></td></tr>
+<tr class="separator:ga040f9f390b8c7b2e8c50ef149b204f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>UART drivers for stm32l4xx devices. </p>
+<p>UART drivers for stm32l4xx devices.</p>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga727f4915d3dea77195159b5b680153ad" name="ga727f4915d3dea77195159b5b680153ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga727f4915d3dea77195159b5b680153ad">&#9670;&#160;</a></span>RING_BUF_Status_State</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ga727f4915d3dea77195159b5b680153ad">RING_BUF_Status_State</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum representing various statuses associated with the ring buffer functions. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9" name="gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9"></a>RING_BUF_OK&#160;</td><td class="fielddoc"><p>Indicates that a function has returned successfully. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8" name="gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8"></a>RING_BUF_READ_ERROR&#160;</td><td class="fielddoc"><p>Indicates that there has been a read error (e.g. the buffer contains nothing to be read). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470" name="gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470"></a>RING_BUF_WRITE_ERROR&#160;</td><td class="fielddoc"><p>Indicates that there has been a write error (e.g. the buffer is full). </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="ga99c036598920115caa02fec9ae349c1f" name="ga99c036598920115caa02fec9ae349c1f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga99c036598920115caa02fec9ae349c1f">&#9670;&#160;</a></span>UART_DATABITS_State</h2>
 
@@ -266,6 +367,12 @@ Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46" name="gga4d81a9babaa8d2b9190e34c1da4eee1fa8d985e4627498f56f5ab06caa7405b46"></a>UART_ERROR&#160;</td><td class="fielddoc"><p>Indicates that a general error has occured. </p>
 </td></tr>
+<tr><td class="fieldname"><a id="gga4d81a9babaa8d2b9190e34c1da4eee1fa108080dd41fe4f3c5e1813a3fc0b33df" name="gga4d81a9babaa8d2b9190e34c1da4eee1fa108080dd41fe4f3c5e1813a3fc0b33df"></a>UART_BUSY&#160;</td><td class="fielddoc"><p>Indicates that the UART is currently busy receiving or transmitting. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga4d81a9babaa8d2b9190e34c1da4eee1fa99c498b47a40517c76e3bf02dd45be1e" name="gga4d81a9babaa8d2b9190e34c1da4eee1fa99c498b47a40517c76e3bf02dd45be1e"></a>UART_BUFFER_OVERFLOW&#160;</td><td class="fielddoc"><p>Indicates that a buffer has overflowed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga4d81a9babaa8d2b9190e34c1da4eee1faab5d538e6b6d65ebc0475fd9174d0ad0" name="gga4d81a9babaa8d2b9190e34c1da4eee1faab5d538e6b6d65ebc0475fd9174d0ad0"></a>UART_BUFFER_EMPTY&#160;</td><td class="fielddoc"><p>Indicates that a buffer is empty. </p>
+</td></tr>
 </table>
 
 </div>
@@ -297,6 +404,137 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga9ba584b7360a52879f2bbf707bfa00a9" name="ga9ba584b7360a52879f2bbf707bfa00a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9ba584b7360a52879f2bbf707bfa00a9">&#9670;&#160;</a></span>RING_BUF_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a> RING_BUF_init </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buffer_address</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>max_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the ring buffer object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer_address</td><td>Pointer to the buffer that is used internally for the ring buffer. </td></tr>
+    <tr><td class="paramname">max_size</td><td>size of the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Ring buffer object. </dd></dl>
+
+</div>
+</div>
+<a id="ga5cfa369389f1083eab5e848ca45ed413" name="ga5cfa369389f1083eab5e848ca45ed413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5cfa369389f1083eab5e848ca45ed413">&#9670;&#160;</a></span>RING_BUF_isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t RING_BUF_isEmpty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a> *</td>          <td class="paramname"><span class="paramname"><em>ring_buf</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether or not the ring buffer is empty. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ring_buf</td><td>pointer to the ring buffer object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean describing if the ring buffer is empty. </dd></dl>
+
+</div>
+</div>
+<a id="ga613ac2aefab9b7a481a7480cce84ef0b" name="ga613ac2aefab9b7a481a7480cce84ef0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga613ac2aefab9b7a481a7480cce84ef0b">&#9670;&#160;</a></span>RING_BUF_readByteFromTail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ga727f4915d3dea77195159b5b680153ad">RING_BUF_Status_State</a> RING_BUF_readByteFromTail </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a> *</td>          <td class="paramname"><span class="paramname"><em>ring_buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>byte</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read one byte from the tail of the ring buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ring_buf</td><td>pointer to the ring buffer object. </td></tr>
+    <tr><td class="paramname">byte</td><td>byte to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">RING_BUF_READ_ERROR</td><td>The buffer is empty and cannot be read from. </td></tr>
+    <tr><td class="paramname">RING_BUF_OK</td><td>OK </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac300bb56cfd3bf8857fe17eae49ac33c" name="gac300bb56cfd3bf8857fe17eae49ac33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac300bb56cfd3bf8857fe17eae49ac33c">&#9670;&#160;</a></span>RING_BUF_writeByteToHead()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ga727f4915d3dea77195159b5b680153ad">RING_BUF_Status_State</a> RING_BUF_writeByteToHead </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_i_n_g___b_u_f___typedef.html">RING_BUF_Typedef</a> *</td>          <td class="paramname"><span class="paramname"><em>ring_buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>byte</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write one byte to the head of the ring buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ring_buf</td><td>pointer to the ring buffer object. </td></tr>
+    <tr><td class="paramname">byte</td><td>byte to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">RING_BUF_WRITE_ERROR</td><td>The buffer is full and cannot be written to. </td></tr>
+    <tr><td class="paramname">RING_BUF_OK</td><td>OK </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="gae70286f4e3e5f5b94e3075f7b075bcf5" name="gae70286f4e3e5f5b94e3075f7b075bcf5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae70286f4e3e5f5b94e3075f7b075bcf5">&#9670;&#160;</a></span>UART_config()</h2>
 
@@ -355,6 +593,74 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga6b0b416752c69c3e60103b6cf5a96b6e" name="ga6b0b416752c69c3e60103b6cf5a96b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b0b416752c69c3e60103b6cf5a96b6e">&#9670;&#160;</a></span>UART_isIdle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t UART_isIdle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga3c45a624ab1ddfcc7e54110b4142cccd">UART_DEVICE_State</a></td>          <td class="paramname"><span class="paramname"><em>uart</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads and returns the IDLE bit in the UARTx-&gt;ISR register. </p>
+<p>This determines whether or not the UART is idle. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uart</td><td>UART/USART device. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">1</td><td>The uart device is idle. </td></tr>
+    <tr><td class="paramname">0</td><td>The uart device is not idle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab8bb63e447da31b17524e31bf9db55d7" name="gab8bb63e447da31b17524e31bf9db55d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab8bb63e447da31b17524e31bf9db55d7">&#9670;&#160;</a></span>UART_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a> UART_read </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>rx_buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads data from the internal Rx buffer. </p>
+<dl class="section note"><dt>Note</dt><dd>To use this function, one must first enable interrupts during the config state. </dd>
+<dd>
+UART_USING_INTERNAL_IT must also be defined in this file (<a class="el" href="uart_8h_source.html">uart.h</a>) </dd>
+<dd>
+UART_receiveIT_Start must have been called before using this function. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rx_buf</td><td>pointer to the data reception buffer. </td></tr>
+    <tr><td class="paramname">length</td><td>to read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
+
+</div>
+</div>
 <a id="gabde57d72e032c159438a6000ea7463f5" name="gabde57d72e032c159438a6000ea7463f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gabde57d72e032c159438a6000ea7463f5">&#9670;&#160;</a></span>UART_receiveByte()</h2>
 
@@ -371,13 +677,59 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Reads and returns from the UARTx-&gt;RDR register. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Use this function to receive data in polling mode. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">uart</td><td>UART/USART device. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value read from the RDR register. </dd></dl>
+
+</div>
+</div>
+<a id="ga9b2296208af63cbfc1a0d73fc4047b2a" name="ga9b2296208af63cbfc1a0d73fc4047b2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b2296208af63cbfc1a0d73fc4047b2a">&#9670;&#160;</a></span>UART_receiveIT_Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a> UART_receiveIT_Start </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ga3c45a624ab1ddfcc7e54110b4142cccd">UART_DEVICE_State</a></td>          <td class="paramname"><span class="paramname"><em>uart</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uart</td><td>UART/USART device </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
+
+</div>
+</div>
+<a id="ga2d9affea53a5e7e305b1e1e5ecac91dc" name="ga2d9affea53a5e7e305b1e1e5ecac91dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2d9affea53a5e7e305b1e1e5ecac91dc">&#9670;&#160;</a></span>UART_receiveIT_Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ga4d81a9babaa8d2b9190e34c1da4eee1f">UART_Status_State</a> UART_receiveIT_Stop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte. </p>
+<dl class="section return"><dt>Returns</dt><dd>status </dd></dl>
 
 </div>
 </div>
@@ -405,7 +757,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Transmits data over UART/USART. </p>
+<p>Transmits data over UART/USART in blocking mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">uart</td><td>UART/USART device. </td></tr>

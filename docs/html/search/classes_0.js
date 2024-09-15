@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tim_5fconfig_5ftypedef_0',['TIM_Config_Typedef',['../struct_t_i_m___config___typedef.html',1,'']]]
+  ['ring_5fbuf_5ftypedef_0',['RING_BUF_Typedef',['../struct_r_i_n_g___b_u_f___typedef.html',1,'']]]
 ];

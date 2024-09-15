@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['rx_5fpin_0',['rx_pin',['../struct_u_a_r_t___pin_config___typedef.html#ae2ba88cb5105ffa09eb6cadbc18aa582',1,'UART_PinConfig_Typedef']]],
-  ['rx_5fpin_5faf_1',['rx_pin_af',['../struct_u_a_r_t___pin_config___typedef.html#af72041a9713daf64187a51d261add70b',1,'UART_PinConfig_Typedef']]],
-  ['rx_5fport_2',['rx_port',['../struct_u_a_r_t___pin_config___typedef.html#adb17e776641603651b87dedf99c8e805',1,'UART_PinConfig_Typedef']]]
+  ['parity_0',['parity',['../struct_u_a_r_t___config___typedef.html#a8d480bf0c817b49987861c27891ee634',1,'UART_Config_Typedef']]],
+  ['pin_5fconfig_1',['pin_config',['../struct_u_a_r_t___config___typedef.html#ad85ea381d8e16378f4a02fd18a8ce0c2',1,'UART_Config_Typedef']]],
+  ['priority_2',['priority',['../struct_u_a_r_t___i_t_config___typedef.html#a0ad043071ccc7a261d79a759dc9c6f0c',1,'UART_ITConfig_Typedef']]],
+  ['psc_3',['PSC',['../struct_t_i_m___config___typedef.html#a85534f33328d4a0d1c9ef82558e33f78',1,'TIM_Config_Typedef']]]
 ];

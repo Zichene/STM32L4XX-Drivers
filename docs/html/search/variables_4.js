@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['parity_0',['parity',['../struct_u_a_r_t___config___typedef.html#a8d480bf0c817b49987861c27891ee634',1,'UART_Config_Typedef']]],
-  ['pin_5fconfig_1',['pin_config',['../struct_u_a_r_t___config___typedef.html#ad85ea381d8e16378f4a02fd18a8ce0c2',1,'UART_Config_Typedef']]],
-  ['psc_2',['PSC',['../struct_t_i_m___config___typedef.html#a85534f33328d4a0d1c9ef82558e33f78',1,'TIM_Config_Typedef']]]
+  ['idleie_5fenabled_0',['IDLEIE_enabled',['../struct_u_a_r_t___i_t_config___typedef.html#a53990bb725e16a1fc61a66abe95e9dc1',1,'UART_ITConfig_Typedef']]],
+  ['it_5fconfig_1',['it_config',['../struct_u_a_r_t___config___typedef.html#a76a106c5afb438a5cd4c68e0f3dadefd',1,'UART_Config_Typedef']]]
 ];

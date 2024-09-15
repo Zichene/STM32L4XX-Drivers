@@ -3,9 +3,50 @@
   <compounddef id="group___u_a_r_t" kind="group">
     <compoundname>UART</compoundname>
     <title>UART</title>
+    <innerclass refid="struct_r_i_n_g___b_u_f___typedef" prot="public">RING_BUF_Typedef</innerclass>
     <innerclass refid="struct_u_a_r_t___pin_config___typedef" prot="public">UART_PinConfig_Typedef</innerclass>
+    <innerclass refid="struct_u_a_r_t___i_t_config___typedef" prot="public">UART_ITConfig_Typedef</innerclass>
     <innerclass refid="struct_u_a_r_t___config___typedef" prot="public">UART_Config_Typedef</innerclass>
     <sectiondef kind="enum">
+      <memberdef kind="enum" id="group___u_a_r_t_1ga727f4915d3dea77195159b5b680153ad" prot="public" static="no" strong="no">
+        <type></type>
+        <name>RING_BUF_Status_State</name>
+        <enumvalue id="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada0f2278bdf82d59c6c6ef583d6c68ffc9" prot="public">
+          <name>RING_BUF_OK</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Indicates that a function has returned successfully. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada4ae4eb95e61953b947ec98e303a0a3b8" prot="public">
+          <name>RING_BUF_READ_ERROR</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Indicates that there has been a read error (e.g. the buffer contains nothing to be read). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___u_a_r_t_1gga727f4915d3dea77195159b5b680153ada3ca339fb3667cd11bfc297573f55a470" prot="public">
+          <name>RING_BUF_WRITE_ERROR</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Indicates that there has been a write error (e.g. the buffer is full). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum representing various statuses associated with the ring buffer functions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="26" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" bodystart="26" bodyend="30"/>
+      </memberdef>
       <memberdef kind="enum" id="group___u_a_r_t_1ga4d81a9babaa8d2b9190e34c1da4eee1f" prot="public" static="no" strong="no">
         <type></type>
         <name>UART_Status_State</name>
@@ -36,6 +77,33 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group___u_a_r_t_1gga4d81a9babaa8d2b9190e34c1da4eee1fa108080dd41fe4f3c5e1813a3fc0b33df" prot="public">
+          <name>UART_BUSY</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Indicates that the UART is currently busy receiving or transmitting. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___u_a_r_t_1gga4d81a9babaa8d2b9190e34c1da4eee1fa99c498b47a40517c76e3bf02dd45be1e" prot="public">
+          <name>UART_BUFFER_OVERFLOW</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>Indicates that a buffer has overflowed. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___u_a_r_t_1gga4d81a9babaa8d2b9190e34c1da4eee1faab5d538e6b6d65ebc0475fd9174d0ad0" prot="public">
+          <name>UART_BUFFER_EMPTY</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>Indicates that a buffer is empty. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>Enum representing different function return statuses. </para>
         </briefdescription>
@@ -43,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="31" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="31" bodyend="35"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="34" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="34" bodyend="41"/>
       </memberdef>
       <memberdef kind="enum" id="group___u_a_r_t_1ga3c45a624ab1ddfcc7e54110b4142cccd" prot="public" static="no" strong="no">
         <type></type>
@@ -100,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="39" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="39" bodyend="45"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="45" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="45" bodyend="51"/>
       </memberdef>
       <memberdef kind="enum" id="group___u_a_r_t_1ga99c036598920115caa02fec9ae349c1f" prot="public" static="no" strong="no">
         <type></type>
@@ -139,7 +207,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="49" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="49" bodyend="53"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="55" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="55" bodyend="59"/>
       </memberdef>
       <memberdef kind="enum" id="group___u_a_r_t_1ga7f73ca52a8ffc7da6e5a87e947ad9cbb" prot="public" static="no" strong="no">
         <type></type>
@@ -178,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="57" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="57" bodyend="61"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="63" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="63" bodyend="67"/>
       </memberdef>
       <memberdef kind="enum" id="group___u_a_r_t_1ga8edefddeb4a1c18c9b9d5d70bd06c6bd" prot="public" static="no" strong="no">
         <type></type>
@@ -226,10 +294,299 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="65" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="65" bodyend="70"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="71" column="1" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="71" bodyend="76"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="group___u_a_r_t_1ga00c266cd7ead4c356ea56597f3385eb4" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* buffer_address</definition>
+        <argsstring></argsstring>
+        <name>buffer_address</name>
+        <qualifiedname>RING_BUF_Typedef::buffer_address</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="35" column="6" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___u_a_r_t_1ga5d749e86bf9e5299c1a5af7bcce2397c" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t max_size</definition>
+        <argsstring></argsstring>
+        <name>max_size</name>
+        <qualifiedname>RING_BUF_Typedef::max_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="36" column="10" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___u_a_r_t_1ga18127565c3676f62ca8ee2804fa50bb0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t head_index</definition>
+        <argsstring></argsstring>
+        <name>head_index</name>
+        <qualifiedname>RING_BUF_Typedef::head_index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="37" column="10" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___u_a_r_t_1ga1404bb75780e3fc56286a423ccfb45eb" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t tail_index</definition>
+        <argsstring></argsstring>
+        <name>tail_index</name>
+        <qualifiedname>RING_BUF_Typedef::tail_index</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="38" column="10" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___u_a_r_t_1gaf0fb01f46ac8b50002222428d8db8383" prot="public" static="no" mutable="no">
+        <type>volatile uint8_t</type>
+        <definition>volatile uint8_t buffer_full</definition>
+        <argsstring></argsstring>
+        <name>buffer_full</name>
+        <qualifiedname>RING_BUF_Typedef::buffer_full</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="39" column="18" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___u_a_r_t_1ga040f9f390b8c7b2e8c50ef149b204f10" prot="public" static="no" mutable="no">
+        <type>volatile uint8_t</type>
+        <definition>volatile uint8_t buffer_empty</definition>
+        <argsstring></argsstring>
+        <name>buffer_empty</name>
+        <qualifiedname>RING_BUF_Typedef::buffer_empty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="40" column="18" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" bodystart="40" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="func">
+      <memberdef kind="function" id="group___u_a_r_t_1ga9ba584b7360a52879f2bbf707bfa00a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref></type>
+        <definition>RING_BUF_Typedef RING_BUF_init</definition>
+        <argsstring>(void *buffer_address, uint32_t max_size)</argsstring>
+        <name>RING_BUF_init</name>
+        <param>
+          <type>void *</type>
+          <declname>buffer_address</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>max_size</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the ring buffer object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer_address</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the buffer that is used internally for the ring buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>size of the buffer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Ring buffer object. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="53" column="18" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" declline="53" declcolumn="18"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_a_r_t_1gac300bb56cfd3bf8857fe17eae49ac33c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___u_a_r_t_1ga727f4915d3dea77195159b5b680153ad" kindref="member">RING_BUF_Status_State</ref></type>
+        <definition>RING_BUF_Status_State RING_BUF_writeByteToHead</definition>
+        <argsstring>(RING_BUF_Typedef *ring_buf, uint8_t byte)</argsstring>
+        <name>RING_BUF_writeByteToHead</name>
+        <param>
+          <type><ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref> *</type>
+          <declname>ring_buf</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>byte</declname>
+        </param>
+        <briefdescription>
+<para>Write one byte to the head of the ring buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ring_buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the ring buffer object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte to be written </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>RING_BUF_WRITE_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer is full and cannot be written to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RING_BUF_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OK </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="62" column="23" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" declline="62" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_a_r_t_1ga613ac2aefab9b7a481a7480cce84ef0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___u_a_r_t_1ga727f4915d3dea77195159b5b680153ad" kindref="member">RING_BUF_Status_State</ref></type>
+        <definition>RING_BUF_Status_State RING_BUF_readByteFromTail</definition>
+        <argsstring>(RING_BUF_Typedef *ring_buf, uint8_t *byte)</argsstring>
+        <name>RING_BUF_readByteFromTail</name>
+        <param>
+          <type><ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref> *</type>
+          <declname>ring_buf</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>byte</declname>
+        </param>
+        <briefdescription>
+<para>Read one byte from the tail of the ring buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ring_buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the ring buffer object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>byte</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>byte to be written </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>RING_BUF_READ_ERROR</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The buffer is empty and cannot be read from. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>RING_BUF_OK</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OK </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="71" column="23" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" declline="71" declcolumn="23"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_a_r_t_1ga5cfa369389f1083eab5e848ca45ed413" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t RING_BUF_isEmpty</definition>
+        <argsstring>(RING_BUF_Typedef *ring_buf)</argsstring>
+        <name>RING_BUF_isEmpty</name>
+        <param>
+          <type><ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref> *</type>
+          <declname>ring_buf</declname>
+        </param>
+        <briefdescription>
+<para>Returns whether or not the ring buffer is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ring_buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the ring buffer object. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean describing if the ring buffer is empty. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="78" column="9" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" declline="78" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_a_r_t_1ga50d7b74ebc5b7f0c37a84fb6b8d8e3bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t RING_BUF_size</definition>
+        <argsstring>(RING_BUF_Typedef *ring_buf)</argsstring>
+        <name>RING_BUF_size</name>
+        <param>
+          <type><ref refid="struct_r_i_n_g___b_u_f___typedef" kindref="compound">RING_BUF_Typedef</ref> *</type>
+          <declname>ring_buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" line="81" column="10" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/ringbuffer.h" declline="81" declcolumn="10"/>
+      </memberdef>
       <memberdef kind="function" id="group___u_a_r_t_1gae70286f4e3e5f5b94e3075f7b075bcf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___u_a_r_t_1ga4d81a9babaa8d2b9190e34c1da4eee1f" kindref="member">UART_Status_State</ref></type>
         <definition>UART_Status_State UART_config</definition>
@@ -258,7 +615,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="102" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="102" declcolumn="19"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="118" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="118" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="group___u_a_r_t_1gae176760e197ac5d770d79655f0272988" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___u_a_r_t_1ga4d81a9babaa8d2b9190e34c1da4eee1f" kindref="member">UART_Status_State</ref></type>
@@ -278,7 +635,7 @@
           <declname>length</declname>
         </param>
         <briefdescription>
-<para>Transmits data over UART/USART. </para>
+<para>Transmits data over UART/USART in blocking mode. </para>
         </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
@@ -314,7 +671,55 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="113" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="113" declcolumn="19"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="129" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="129" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_a_r_t_1gab8bb63e447da31b17524e31bf9db55d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___u_a_r_t_1ga4d81a9babaa8d2b9190e34c1da4eee1f" kindref="member">UART_Status_State</ref></type>
+        <definition>UART_Status_State UART_read</definition>
+        <argsstring>(uint8_t *rx_buf, uint32_t length)</argsstring>
+        <name>UART_read</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>rx_buf</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Reads data from the internal Rx buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>To use this function, one must first enable interrupts during the config state. </para>
+</simplesect>
+<simplesect kind="note"><para>UART_USING_INTERNAL_IT must also be defined in this file (<ref refid="uart_8h_source" kindref="compound">uart.h</ref>) </para>
+</simplesect>
+<simplesect kind="note"><para>UART_receiveIT_Start must have been called before using this function. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rx_buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to the data reception buffer. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to read. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="141" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="141" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="group___u_a_r_t_1gabde57d72e032c159438a6000ea7463f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint8_t</type>
@@ -329,7 +734,7 @@
 <para>Reads and returns from the UARTx-&gt;RDR register. </para>
         </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
+<para>Use this function to receive data in polling mode. <parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>uart</parametername>
 </parameternamelist>
@@ -344,7 +749,54 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="121" column="9" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="121" declcolumn="9"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="149" column="9" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="149" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_a_r_t_1ga9b2296208af63cbfc1a0d73fc4047b2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___u_a_r_t_1ga4d81a9babaa8d2b9190e34c1da4eee1f" kindref="member">UART_Status_State</ref></type>
+        <definition>UART_Status_State UART_receiveIT_Start</definition>
+        <argsstring>(UART_DEVICE_State uart)</argsstring>
+        <name>UART_receiveIT_Start</name>
+        <param>
+          <type><ref refid="group___u_a_r_t_1ga3c45a624ab1ddfcc7e54110b4142cccd" kindref="member">UART_DEVICE_State</ref></type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>Enables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>UART/USART device </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="157" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="157" declcolumn="19"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_a_r_t_1ga2d9affea53a5e7e305b1e1e5ecac91dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___u_a_r_t_1ga4d81a9babaa8d2b9190e34c1da4eee1f" kindref="member">UART_Status_State</ref></type>
+        <definition>UART_Status_State UART_receiveIT_Stop</definition>
+        <argsstring>()</argsstring>
+        <name>UART_receiveIT_Stop</name>
+        <briefdescription>
+<para>Disables the internal Rx buffer to be filled through interrupt whenever the UART receives a byte. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>status </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="164" column="19" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="164" declcolumn="19"/>
       </memberdef>
       <memberdef kind="function" id="group___u_a_r_t_1ga78064a945132939c843e5aa9f09704e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>uint8_t</type>
@@ -389,7 +841,52 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="131" column="9" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="131" declcolumn="9"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="174" column="9" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="174" declcolumn="9"/>
+      </memberdef>
+      <memberdef kind="function" id="group___u_a_r_t_1ga6b0b416752c69c3e60103b6cf5a96b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t UART_isIdle</definition>
+        <argsstring>(UART_DEVICE_State uart)</argsstring>
+        <name>UART_isIdle</name>
+        <param>
+          <type><ref refid="group___u_a_r_t_1ga3c45a624ab1ddfcc7e54110b4142cccd" kindref="member">UART_DEVICE_State</ref></type>
+          <declname>uart</declname>
+        </param>
+        <briefdescription>
+<para>Reads and returns the IDLE bit in the UARTx-&gt;ISR register. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This determines whether or not the UART is idle. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>UART/USART device. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uart device is idle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The uart device is not idle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="183" column="9" declfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" declline="183" declcolumn="9"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="define">
@@ -403,13 +900,37 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="22" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="22" bodyend="-1"/>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="23" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___u_a_r_t_1gad1f0f31ed8578a4eb4f68262618571e2" prot="public" static="no">
+        <name>UART_RXBUF_SIZE</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+<para>Internal rxbuf used for UART_receive() </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="24" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___u_a_r_t_1ga29a9ff57c9ee1dbcb925d6d1ad94b30a" prot="public" static="no">
+        <name>UART_USING_INTERNAL_IT</name>
+        <briefdescription>
+<para>This flag will determine if the USART interrupts are implemented internally (inside of the file uart.c). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" line="25" column="9" bodyfile="C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/uart.h" bodystart="25" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
 <para>UART drivers for stm32l4xx devices. </para>
     </briefdescription>
     <detaileddescription>
+<para>UART drivers for stm32l4xx devices.</para>
     </detaileddescription>
   </compounddef>
 </doxygen>

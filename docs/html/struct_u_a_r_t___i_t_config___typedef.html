@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>STM32L4XX_Drivers: C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc Directory Reference</title>
+<title>STM32L4XX_Drivers: UART_ITConfig_Typedef Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,32 +82,44 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">inc Directory Reference</div></div>
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">UART_ITConfig_Typedef Struct Reference<div class="ingroups"><a class="el" href="group___u_a_r_t.html">UART</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Struct representing interrupt configuration parameters for the U(S)ART.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="uart_8h_source.html">uart.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="clock_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><b>clock.h</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="common_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><b>common.h</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="gpio_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><b>gpio.h</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="ringbuffer_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><b>ringbuffer.h</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="tim_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><b>tim.h</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="uart_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><b>uart.h</b></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a405857fbd1160c21e7f98eb14a188a20" id="r_a405857fbd1160c21e7f98eb14a188a20"><td class="memItemLeft" align="right" valign="top"><a id="a405857fbd1160c21e7f98eb14a188a20" name="a405857fbd1160c21e7f98eb14a188a20"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>RXNEIE_enabled</b></td></tr>
+<tr class="memdesc:a405857fbd1160c21e7f98eb14a188a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART interrupt generated whenever ORE = 1 or RXFNE = 1 in the USART_ISR register. <br /></td></tr>
+<tr class="separator:a405857fbd1160c21e7f98eb14a188a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b69f5fd6d2add57a73f4c96dd9ffee" id="r_a38b69f5fd6d2add57a73f4c96dd9ffee"><td class="memItemLeft" align="right" valign="top"><a id="a38b69f5fd6d2add57a73f4c96dd9ffee" name="a38b69f5fd6d2add57a73f4c96dd9ffee"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>TXEIE_enabled</b></td></tr>
+<tr class="memdesc:a38b69f5fd6d2add57a73f4c96dd9ffee"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART interrupt generated whenever TXE =1 in the USART_ISR register. <br /></td></tr>
+<tr class="separator:a38b69f5fd6d2add57a73f4c96dd9ffee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53990bb725e16a1fc61a66abe95e9dc1" id="r_a53990bb725e16a1fc61a66abe95e9dc1"><td class="memItemLeft" align="right" valign="top"><a id="a53990bb725e16a1fc61a66abe95e9dc1" name="a53990bb725e16a1fc61a66abe95e9dc1"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>IDLEIE_enabled</b></td></tr>
+<tr class="memdesc:a53990bb725e16a1fc61a66abe95e9dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">USART interrupt generated whenever IDLE = 1 in the USART_ISR register. <br /></td></tr>
+<tr class="separator:a53990bb725e16a1fc61a66abe95e9dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad043071ccc7a261d79a759dc9c6f0c" id="r_a0ad043071ccc7a261d79a759dc9c6f0c"><td class="memItemLeft" align="right" valign="top"><a id="a0ad043071ccc7a261d79a759dc9c6f0c" name="a0ad043071ccc7a261d79a759dc9c6f0c"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>priority</b></td></tr>
+<tr class="memdesc:a0ad043071ccc7a261d79a759dc9c6f0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the priority of the interrupt. Lower numbers are higher priority. <br /></td></tr>
+<tr class="separator:a0ad043071ccc7a261d79a759dc9c6f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Struct representing interrupt configuration parameters for the U(S)ART. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>C:/Users/Administrator/Desktop/STM32L4XX-Drivers/inc/<a class="el" href="uart_8h_source.html">uart.h</a></li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
