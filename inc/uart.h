@@ -9,6 +9,7 @@
 #include "common.h"
 #include "gpio.h"
 #include "clock.h"
+#include "ringbuffer.h"
 
 /***
 *
@@ -36,6 +37,7 @@ typedef enum {
 	UART_ERROR = 2, ///< Indicates that a general error has occured.
 	UART_BUSY = 3, ///< Indicates that the UART is currently busy receiving or transmitting.
 	UART_BUFFER_OVERFLOW = 4, ///< Indicates that a buffer has overflowed.
+	UART_BUFFER_EMPTY = 5, ///< Indicates that a buffer is empty.
 } UART_Status_State;
 
 /**@brief Enum representing which UART/USART device is selected.

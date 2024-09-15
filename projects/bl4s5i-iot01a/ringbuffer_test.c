@@ -1,21 +1,17 @@
 #include "common.h"
 #include "uart.h"
 #include "string.h"
+#include "ringbuffer.h"
 
-#ifdef UART_RECEIVE
+#ifdef RINGBUF_TEST
 /*
-DESCRIPTION: Configure an USART peripheral to receive input!
+DESCRIPTION: Test out an implementation of a ring buffer!
 BOARD USED: B-L4S5I-IOT01A board
 INTERNAL CONNECTIONS: The ST-Link virtual COM port for this board is connected to USART1. PB7->USART1_RX, PB6 -> USART1_TX
 REFERENCES: ST MB1297 (Internal Board Connections), ST UM2708 (User Manual),  STM32L4S5xx, STM32L4S7xx and STM32L4S9xx Datasheet.
 AUTHOR: Zichene
 DATE: 8/20/2024
 */
-
-
-/* On the board used for this example, LED2 (green) is connected to Pin B14 (Port B, Pin 14) */
-#define LED2_Port GPIO_PORT_B
-#define LED2_Pin 14
 
 /* LED3 (WiFi and Bluetooth) used as error indicator is connected to Pin C9 (Port C, Pin 9) */
 #define LEDError_Port GPIO_PORT_C
@@ -41,11 +37,6 @@ The following USART1 internal connections are found in MB1297
 static void ErrorHandler();
 static void configUART();
 static void configureSystemClock120MHz();
-
-
-/* global variables */
-uint32_t RX_BUF_SIZE = 1000;
-volatile uint8_t usartIsIdle = true;
 
 /*
 * Configure the UART peripheral with its usual settings: 
@@ -87,9 +78,6 @@ static void configUART() {
 	
 	if (UART_config(&uart_conf) != UART_OK)
 		ErrorHandler();
-	
-	/* Enable the internal rx buffer to be filled by interrupt */
-	UART_receiveIT_Start(uart_conf.uart);
 }
 
 
@@ -125,7 +113,7 @@ static void configureSystemClock120MHz() {
 }
 
 /*
-* Use the UART_transmit() function and the string.h library to print a message!
+* Use the UART_transmit() function and the string.h library to print a message! Only use with strings.
 */
 static void print(const char* message) {
 	UART_transmit(UART_USART1, (uint8_t*) message, strlen(message));
@@ -137,20 +125,62 @@ int main(void)
 	configureSystemClock120MHz();
 	configUART();
 	
-	/* rx buffer */
-	uint8_t rxBuf[RX_BUF_SIZE];
+	/* txBuf will be written to and we will read from txBuf and transfer into rxBuf */
+	uint8_t rxBuf[10];
+	uint8_t txBuf[10];
+	RING_BUF_Typedef ringBuffer = RING_BUF_init(txBuf, 10);
+	
+	
+	print("Writing '0' to '9' into txBuf \r\n");
+	for (int i = 0; i < 10; i++) {
+		if (RING_BUF_writeByteToHead(&ringBuffer, '0' + i) == RING_BUF_WRITE_ERROR) {
+			print("Buffer has overflowed! \r\n");
+			break;
+		}
+	}
+	print("Contents of txBuf: ");
+	UART_transmit(UART_USART1, txBuf, 10);
+	print("\r\n");
+	
+	
+	print("Reading 5 bytes from txBuf into rxBuf \r\n");
+	for (int j = 0; j < 5; j++) {
+		if (RING_BUF_readByteFromTail(&ringBuffer, rxBuf+j) == RING_BUF_READ_ERROR) {
+			print("Buffer is empty! \r\n");
+			break;
+		}
+	}
+	print("Contents of rxBuf: ");
+	UART_transmit(UART_USART1, rxBuf, 10);
+	print("\r\n");
+	
+	
+	print("Writing 'a' to 'j' into txBuf \r\n");
+	for (int i = 0; i < 11; i++) {
+		if (RING_BUF_writeByteToHead(&ringBuffer, 'a'+ i) == RING_BUF_WRITE_ERROR) {
+			print("Buffer has overflowed! \r\n");
+			break;
+		}
+	}
+	print("Contents of txBuf: ");
+	UART_transmit(UART_USART1, txBuf, 10);
+	print("\r\n");
+	
+	
+	print("Reading 10 bytes from txBuf into rxBuf \r\n");
+	for (int j = 0; j < 11; j++) {
+		if (RING_BUF_readByteFromTail(&ringBuffer, rxBuf+j) == RING_BUF_READ_ERROR) {
+			print("Buffer is empty! \r\n");
+			break;
+		}
+	}
+	print("Contents of rxBuf: ");
+	UART_transmit(UART_USART1, rxBuf, 10);
+	print("\r\n");
 
-	/* printing using UART! */
-	print("Hello World \r\n");
 	
 	while(1) {
 	/* Infinite loop so that we don't exit main */
-		
-	/* Reading one byte at a time and retransmitting to UART */
-	if (UART_read(rxBuf, 1) == UART_OK) {
-		UART_transmit(UART_USART1, rxBuf, 1);
-	}
-		
 	}	
 }
 

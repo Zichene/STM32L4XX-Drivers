@@ -20,7 +20,7 @@ static USART_TypeDef* getUSART(UART_DEVICE_State uart);
 static int getUSART_IRQn(UART_DEVICE_State uart);
 
 static uint8_t UART_INTERNAL_RXBUF[UART_RXBUF_SIZE];
-static uint8_t* rxbuf_head_ptr = UART_INTERNAL_RXBUF;
+static RING_BUF_Typedef ringbuf;
 static volatile uint8_t rx_read_it = false;
 static UART_DEVICE_State rx_usart_it;
 
@@ -186,6 +186,9 @@ UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
 		if (uart_conf->it_config->RXNEIE_enabled) UARTx->CR1 |= (0b1 << 5); // RXNEIE bit
 		if (uart_conf->it_config->TXEIE_enabled) UARTx->CR1 |= (0b1 << 7); // TXEIE bit
 		if (uart_conf->it_config->IDLEIE_enabled) UARTx->CR1 |= (0b1 << 4); // IDLEIE bit
+		
+		/* setup ring buffer */
+		ringbuf = RING_BUF_init(UART_INTERNAL_RXBUF, UART_RXBUF_SIZE);
 	}
 	
 
@@ -264,49 +267,43 @@ UART_Status_State UART_read(uint8_t* rx_buf, uint32_t length) {
 	/* check args */
 	if (length >= UART_RXBUF_SIZE) return UART_INVALID_ARGS;
 	
-	/* only read uart has started receiving */
-	if (rxbuf_head_ptr - UART_INTERNAL_RXBUF < length)
-		return UART_ERROR;
-	
-	/* copy into rx_buf and clear rxbuf */
-	for (uint32_t i = 0; i < length; i++) {
-		rx_buf[i] = UART_INTERNAL_RXBUF[i];
-		UART_INTERNAL_RXBUF[i] = 0;
+	for (uint32_t i = 0; i<length; i++) {
+		if (RING_BUF_readByteFromTail(&ringbuf, &rx_buf[i]) != RING_BUF_OK) {
+			return UART_BUFFER_EMPTY;
+		}
 	}
-	
-	/* reset pointer to head */
-	rxbuf_head_ptr = UART_INTERNAL_RXBUF;
+
 	return UART_OK;
 }
 
 #ifdef UART_USING_INTERNAL_IT
 void USART1_IRQHandler(void) {
 	if (rx_read_it && UART_hasData(rx_usart_it)) {
-		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+		RING_BUF_writeByteToHead(&ringbuf, UART_receiveByte(rx_usart_it));
 	}
 }
 
 void USART2_IRQHandler(void) {
 	if (rx_read_it && UART_hasData(rx_usart_it)) {
-		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+		RING_BUF_writeByteToHead(&ringbuf, UART_receiveByte(rx_usart_it));
 	}
 }
 
 void USART3_IRQHandler(void) {
 	if (rx_read_it && UART_hasData(rx_usart_it)) {
-		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+		RING_BUF_writeByteToHead(&ringbuf, UART_receiveByte(rx_usart_it));
 	}
 }
 
 void UART4_IRQHandler(void) {
 	if (rx_read_it && UART_hasData(rx_usart_it)) {
-		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+		RING_BUF_writeByteToHead(&ringbuf, UART_receiveByte(rx_usart_it));
 	}
 }
 
 void UART5_IRQHandler(void) {
 	if (rx_read_it && UART_hasData(rx_usart_it)) {
-		*(rxbuf_head_ptr++) = UART_receiveByte(rx_usart_it);
+		RING_BUF_writeByteToHead(&ringbuf, UART_receiveByte(rx_usart_it));
 	}
 }
 #endif
