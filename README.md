@@ -48,6 +48,7 @@ The Timer (TIM) drivers currently implement functionalities such as:
 - Configuring various timers with prescaler and period.
 - Timer interrupt configuration.
 - Starting and stopping interrupts.
+- PWM & Other Modes (WIP)
 
 See local [documentation](docs/tim).
 
@@ -57,3 +58,7 @@ The Universal Asynchronous Receivier Transmitter (UART) drivers currently implem
 - Receiving data (blocking mode)
 - Custom configuration of baud rate, parity bit, stop bits, number of bits per word, etc.
 - Receiving data in interrupt mode. Ringbuffer implemented internally.
+- DMA Mode (WIP)
+
+## SPI
+- WIP
