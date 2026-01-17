@@ -10,6 +10,7 @@
 #include "gpio.h"
 #include "clock.h"
 #include "ringbuffer.h"
+#include "rcc.h"
 
 /***
 *
@@ -23,9 +24,8 @@
 #define UART_MAX_BAUDRATE (120000000/16) ///< Maximum allowed baudrate for USART. TODO: temporary fix, max baudrate actually depends on oversampling and system clock system
 #define UART_RXBUF_SIZE 1000 ///< Internal rxbuf used for UART_receive()
 #define UART_USING_INTERNAL_IT ///< This flag will determine if the USART interrupts are implemented internally (inside of the file uart.c).
-
 /****************************************************************************************************/
-/*			                  TYPEDEFS                                                  */
+/*			                  TYPEDEFS                                                              */
 /****************************************************************************************************/
 
 

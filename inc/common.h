@@ -79,6 +79,7 @@
 /****************************************************************************************************/
 #define true 1 ///< boolean true
 #define false 0 ///< boolean false
+#define NULL ((void*)0) ///< null pointer
 	
 /***************************************************************************************************/
 /*                            ACTIVE MAIN FILE                                                     */
@@ -86,8 +87,8 @@
 /* ATTENTION: Only uncomment one of the following defines to select which project to run.          */
 /***************************************************************************************************/
 // #define PUSH_LED 			///< Project 1: Push Led selected. Main driver(s) used: GPIO
-// #define BLINKY_LED 		///< Project 2: Blinky Led selected. Main driver(s) used: GPIO, CLOCK, TIM
-// #define UART_PRINTF  	///< Project 3: Printing to UART. Main drivers(s) used: GPIO, CLOCK, UART
- #define UART_RECEIVE 	///< Project 3.5: Receiving from UART. Main drivers(s) used: GPIO, CLOCK, UART
-// #define RINGBUF_TEST 			///< Project 4: Ring Buffer. Main drivers(s) used: GPIO, CLOCK, UART
+// #define BLINKY_LED 		    ///< Project 2: Blinky Led selected. Main driver(s) used: GPIO, CLOCK, TIM
+// #define UART_PRINTF  	    ///< Project 3: Printing to UART. Main drivers(s) used: GPIO, CLOCK, UART
+// #define UART_RECEIVE 	    ///< Project 3.5: Receiving from UART. Main drivers(s) used: GPIO, CLOCK, UART
+// #define RINGBUF_TEST 	    ///< Project 4: Ring Buffer. Main drivers(s) used: GPIO, CLOCK, UART
 #endif // COMMON_H

@@ -43,6 +43,7 @@ static GPIO_TypeDef* getGPIO(GPIO_Port port) {
 		case GPIO_PORT_I:
 			return GPIOI;
 	}
+    return 0;
 }
 
 /* 

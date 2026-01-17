@@ -2,7 +2,6 @@
 #include "uart.h"
 #include "string.h"
 
-
 #ifdef UART_PRINTF
 /*
 DESCRIPTION: Configure an USART peripheral to print some text!
@@ -23,8 +22,8 @@ DATE: 8/20/2024
 #define LEDError_Pin 9
 
 
-/* 
-The following USART1 internal connections are found in MB1297 
+/*
+The following USART1 internal connections are found in MB1297
 */
 
 /* USART1_TX -> PB6 */
@@ -48,7 +47,7 @@ static void print(const char* message);
 volatile uint8_t rxReceivedFlag = false;
 
 /*
-* Configure the UART peripheral with its usual settings: 
+* Configure the UART peripheral with its usual settings:
 *		- 115200 baud rate
 *		- 8 bit data
 *		- no parity
@@ -58,10 +57,10 @@ volatile uint8_t rxReceivedFlag = false;
 static void configUART() {
 	/* Interrupts */
 	UART_ITConfig_Typedef it_conf = {
-		.is_enabled = true,
+	    .RXNEIE_enabled = true,
 		.priority = 1,
 	};
-	
+
 	/* Setup pin configuration as defined above (internal connections) */
 	UART_PinConfig_Typedef pin_conf = {
 		.rx_port = USART1_RX_Port,
@@ -82,17 +81,17 @@ static void configUART() {
 		.parity = UART_PARITY_NONE,
 		.stopbits = UART_STOPBITS_1,
 	};
-	
+
 	if (UART_config(&uart_conf) != UART_OK)
 		ErrorHandler();
 }
 
 
-/* 
+/*
 * Configure the system clock to its maximum speed (120 MHz).
 *
 *  We will be using the PLL clock as the system clock. In order to use this clock, we need to choose one of four clock sources for the PLL.
-*  The source clock for the PLL will be the MSI (Multi Speed Internal) clock, which has a default speed of 4 MHz. 
+*  The source clock for the PLL will be the MSI (Multi Speed Internal) clock, which has a default speed of 4 MHz.
 *  The speed of the MSI is modified by PLL_M, PLL_N and PLL_R, which are positive integers. The modification is as follows:
 *
 *  			output = input * PLL_N / (PLL_M * PLL_R)
@@ -104,15 +103,15 @@ static void configureSystemClock120MHz() {
 
 	/* Configure PLL with required parameters (PLL_M, PLL_N and PLL_R) */
 	CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 60, CLOCK_PLLR_2);
-	
+
 	/* Activate and set the PLLCLK as the system clock */
 	CLOCK_activateClk(CLOCK_PLL);
-	CLOCK_setSystemClock(CLOCK_SYSCLK_PLL); 
-	
+	CLOCK_setSystemClock(CLOCK_SYSCLK_PLL);
+
 	/* Check that the system clock is indeed 120 MHz */
 	if (CLOCK_getSystemClockSpeed() != 120000000)
 		ErrorHandler();
-	
+
 	/* Make sure that bus prescalers are set to 1. These prescalers control the speed of the clock that is passed to the timers and other peripherals. */
 	CLOCK_setAHBPrescaler(CLOCK_AHB_PRE_DIV_1);
 	CLOCK_setAPB1Prescaler(CLOCK_APB1_PRE_DIV_1);
@@ -131,22 +130,22 @@ int main(void)
 	/* configure clock and uart */
 	configureSystemClock120MHz();
 	configUART();
-	
+
 	/* printing using UART! */
 	print("Hello World \r\n");
-	
+
 	while(1) {
 		/* Infinite loop so that we don't exit main */
 		if (rxReceivedFlag) {
 			print("Received a bit \r\n");
 			rxReceivedFlag = false;
 		}
-	}	
+	}
 }
 
 
 void USART1_IRQHandler(void) {
-	if (UART_hasData(UART_USART1)) {
+ 	if (UART_hasData(UART_USART1)) {
 		/* Important: Until all the bytes have been received, the USART cannot send data */
 		uint8_t rxb = UART_receiveByte(UART_USART1);
 		rxReceivedFlag = true;

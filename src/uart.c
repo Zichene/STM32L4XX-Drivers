@@ -12,10 +12,10 @@
 ***/
 
 /****************************************************************************************************/
-/*			              PRIVATE FUNCTIONS                                             */
+/*			              PRIVATE FUNCTIONS                                                         */
 /****************************************************************************************************/
 static UART_Status_State configPeripheralClock(UART_DEVICE_State uart);
-static UART_Status_State configGPIO(UART_PinConfig_Typedef* pin_config);
+static UART_Status_State configGPIO(const UART_PinConfig_Typedef* pin_config);
 static USART_TypeDef* getUSART(UART_DEVICE_State uart);
 static int getUSART_IRQn(UART_DEVICE_State uart);
 
@@ -28,26 +28,38 @@ static UART_DEVICE_State rx_usart_it;
 * Configures the peripheral clock for the selected UART device.
 * Note: USART1 is on the APB2 bus and USART2, USART3, UART4, UART5 are on the APB1 bus.
 */
-static UART_Status_State configPeripheralClock(UART_DEVICE_State uart) {
-	if (uart >= 17) {
-		/* devices on the APB1 bus */
-		RCC->APB1ENR1 |= (0b1 << uart);
-	} else {
-		/*  for USART1 */
-		RCC->APB2ENR |= (0b1 << uart);
-	}
+static UART_Status_State configPeripheralClock(const UART_DEVICE_State uart) {
+    switch (uart) {
+        case UART_USART1:
+            RCC_CLK_EN_USART1();
+            break;
+        case UART_USART2:
+            RCC_CLK_EN_USART2();
+            break;
+        case UART_USART3:
+            RCC_CLK_EN_USART3();
+            break;
+        case UART_UART4:
+            RCC_CLK_EN_UART4();
+            break;
+        case UART_UART5:
+            RCC_CLK_EN_UART5();
+            break;
+        default:
+            return UART_INVALID_ARGS;
+    }
 	return UART_OK;
 }
 
 /*
 * Configures the GPIO to the correct AF state for the selected UART device.
 */
-static UART_Status_State configGPIO(UART_PinConfig_Typedef* pin_config) {
+static UART_Status_State configGPIO(const UART_PinConfig_Typedef* pin_config) {
 	
-	GPIO_Port rx_port = pin_config->rx_port;
-	GPIO_Port rx_pin = pin_config->rx_pin;
-	GPIO_Port tx_port = pin_config->tx_port;
-	GPIO_Port tx_pin = pin_config->tx_pin;
+	const GPIO_Port rx_port = pin_config->rx_port;
+	const GPIO_Port rx_pin = pin_config->rx_pin;
+	const GPIO_Port tx_port = pin_config->tx_port;
+	const GPIO_Port tx_pin = pin_config->tx_pin;
 	
 	/* setup RX pin to the correct AF state */
 	if (GPIO_setPinAF_Mode(rx_port, rx_pin, GPIO_PUPD_NO_PULL_UP_PULL_DOWN, GPIO_SPEED_VERY_HIGH, GPIO_OUTPUT_PUSH_PULL) != GPIO_OK)
@@ -67,7 +79,7 @@ static UART_Status_State configGPIO(UART_PinConfig_Typedef* pin_config) {
 /*
 * Get the USART_Typedef pointer corresponding to the UART that we want.
 */
-static USART_TypeDef* getUSART(UART_DEVICE_State uart) {
+static USART_TypeDef* getUSART(const UART_DEVICE_State uart) {
 	switch(uart) {
 		case UART_USART1:
 			return USART1;
@@ -80,13 +92,14 @@ static USART_TypeDef* getUSART(UART_DEVICE_State uart) {
 		case UART_UART5:
 			return UART5;
 	}
+    return NULL;
 }
 
 
 /*
 * Get the USART_IRQn corresponding to the UART that we want.
 */
-static int getUSART_IRQn(UART_DEVICE_State uart) {
+static int getUSART_IRQn(const UART_DEVICE_State uart) {
 	switch(uart) {
 		case UART_USART1:
 			return USART1_IRQn;
@@ -99,6 +112,7 @@ static int getUSART_IRQn(UART_DEVICE_State uart) {
 		case UART_UART5:
 			return UART5_IRQn;
 	}
+    return 0;
 }
 
 /****************************************************************************************************/
@@ -106,13 +120,14 @@ static int getUSART_IRQn(UART_DEVICE_State uart) {
 /****************************************************************************************************/
 
 UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
-	/* check args */
-	UART_DEVICE_State uart = uart_conf->uart;
-	uint32_t baud_rate = uart_conf->baud_rate;
-	UART_DATABITS_State databits = uart_conf->databits;
-	UART_PARITY_State parity = uart_conf->parity;
-	UART_STOPBITS_State stopbits = uart_conf->stopbits;
-	
+	const UART_DEVICE_State uart = uart_conf->uart;
+	const uint32_t baud_rate = uart_conf->baud_rate;
+	const UART_DATABITS_State databits = uart_conf->databits;
+	const UART_PARITY_State parity = uart_conf->parity;
+	const UART_STOPBITS_State stopbits = uart_conf->stopbits;
+
+#ifdef UART_CHECK_ARGS
+    /* check args */
 	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
 		return UART_INVALID_ARGS;
 	if(!(baud_rate <= UART_MAX_BAUDRATE))
@@ -123,11 +138,10 @@ UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
 		return UART_INVALID_ARGS;
 	if(!(stopbits <= 3 && stopbits >= 0))
 		return UART_INVALID_ARGS;
-	
-	
+#endif /* UART_CHECK_ARGS */
+
 	/* enable peripheral clock */
- 	if (configPeripheralClock(uart_conf->uart) != UART_OK)
-		return UART_INVALID_ARGS;
+    configPeripheralClock(uart_conf->uart);
 	
 	/* setup GPIO pins */
 	if (configGPIO(uart_conf->pin_config) != UART_OK)
@@ -135,39 +149,43 @@ UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
 	
 	/* setup other UART params */
 	USART_TypeDef* UARTx = getUSART(uart);
-	UARTx->CR1 &= ~(0b1); // make sure the UART is disabled
+    if (UARTx == NULL) {
+        return UART_INVALID_ARGS;
+    }
+
+    /* disable the UART: set UE bit to 0 */
+    CLEAR_BIT(UARTx->CR1, USART_CR1_UE_Msk);
 	
 	/* baud rate (UARTx->BRR register) */
-	uint16_t brrDivisor = CLOCK_getSystemClockSpeed() / uart_conf->baud_rate; // assumes that the clocks fed to USART are the same speed as the sys clk 
+	const uint16_t brrDivisor = CLOCK_getSystemClockSpeed() / baud_rate; // assumes that the clocks fed to USART are the same speed as the sys clk
 	UARTx->BRR = brrDivisor;
 	
 	/* data bits (UARTx->CR1 register) */
 	if (databits == UART_DATABITS_7) {
 		/* M[1:0] = '10' */
-		UARTx->CR1 |= (0b1 << 28);
-		UARTx->CR1 &= ~(0b1 << 12);
+	    SET_BIT(UARTx->CR1, USART_CR1_M1_Msk);
+	    CLEAR_BIT(UARTx->CR1, USART_CR1_M0_Msk);
 	} else if (databits == UART_DATABITS_8) {
 		/* M[1:0] = '00' */
-		UARTx->CR1 &= ~(0b1 << 28);
-		UARTx->CR1 &= ~(0b1 << 12);
+	    CLEAR_BIT(UARTx->CR1, USART_CR1_M1_Msk);
+	    CLEAR_BIT(UARTx->CR1, USART_CR1_M0_Msk);
 	} else {
-		/* M[0:1] == '01' */
-		UARTx->CR1 &= ~(0b1 << 28);
-		UARTx->CR1 |= (0b1 << 12);
+		/* M[1:0] == '01' */
+	    CLEAR_BIT(UARTx->CR1, USART_CR1_M1_Msk);
+	    SET_BIT(UARTx->CR1, USART_CR1_M0_Msk);
 	}
 	
 	/* parity bit selection (UARTx->CR1 register) */
 	if (parity == UART_PARITY_NONE) {
-		UARTx->CR1 &= ~(0b1 << 10); // disable PCE bit
+	    CLEAR_BIT(UARTx->CR1, USART_CR1_PCE_Msk);
 	} else {
-		UARTx->CR1 |= (0b1 << 10); // enable PCE bit
-		UARTx->CR1 |= (parity << 9); // set PS bit
+	    SET_BIT(UARTx->CR1, USART_CR1_PCE_Msk); // enable PCE bit
+	    SET_BIT(UARTx->CR1, USART_CR1_PS_Msk);  // set PS bit
 	}
 	
 	/* stop bits (UARTx->CR2 register) */
-	UARTx->CR2 &= ~(0b11 << 12);
-	UARTx->CR2 |= (stopbits << 12);
-	
+    MODIFY_REG(UARTx->CR2, USART_CR2_STOP_Msk, stopbits << USART_CR2_STOP_Pos);
+
 	/* configure interrupt if necessary */
 	if (uart_conf->it_config->RXNEIE_enabled || uart_conf->it_config->TXEIE_enabled || uart_conf->it_config->IDLEIE_enabled) {
 		int UARTx_IRQn = getUSART_IRQn(uart);
@@ -182,46 +200,60 @@ UART_Status_State UART_config(const UART_Config_Typedef* uart_conf) {
 		NVIC_EnableIRQ(UARTx_IRQn);
 		__enable_irq();
 		
-		/* enable interrupts */
-		if (uart_conf->it_config->RXNEIE_enabled) UARTx->CR1 |= (0b1 << 5); // RXNEIE bit
-		if (uart_conf->it_config->TXEIE_enabled) UARTx->CR1 |= (0b1 << 7); // TXEIE bit
-		if (uart_conf->it_config->IDLEIE_enabled) UARTx->CR1 |= (0b1 << 4); // IDLEIE bit
-		
+		/* enable requested interrupts */
+		if (uart_conf->it_config->RXNEIE_enabled) {
+		    SET_BIT(UARTx->CR1, USART_CR1_RXNEIE_RXFNEIE_Msk);
+		}
+
+		if (uart_conf->it_config->TXEIE_enabled) {
+		    SET_BIT(UARTx->CR1, USART_CR1_TXEIE_TXFNFIE_Msk);
+		}
+
+		if (uart_conf->it_config->IDLEIE_enabled) {
+		    SET_BIT(UARTx->CR1, USART_CR1_IDLEIE_Msk);
+		}
+
 		/* setup ring buffer */
 		ringbuf = RING_BUF_init(UART_INTERNAL_RXBUF, UART_RXBUF_SIZE);
 	}
-	
 
 	/* enable USART and transmit enable (TE) and receive enable (RE) (UARTx->CR1 register) */
-	UARTx->CR1 |= (0b1); // UE bit
-	UARTx->CR1 |= (0b1 << 2); // RE bit
-	UARTx->CR1 |= (0b1 << 3); // TE bit
-	
+    SET_BIT(UARTx->CR1, USART_CR1_UE_Msk);
+    SET_BIT(UARTx->CR1, USART_CR1_RE_Msk);
+    SET_BIT(UARTx->CR1, USART_CR1_TE_Msk);
+
 	return UART_OK;
 }
 
 
-UART_Status_State UART_transmit(UART_DEVICE_State uart, const uint8_t* tx_buf, uint16_t length) {
-	/* check args */
+UART_Status_State UART_transmit(const UART_DEVICE_State uart, const uint8_t* tx_buf, const uint16_t length) {
+
+#ifdef UART_CHECK_ARGS
+    /* check args */
 	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
 		return UART_INVALID_ARGS;
+#endif /* UART_CHECK_ARGS */
 	
 	USART_TypeDef* UARTx = getUSART(uart);
+
+    if (UARTx == NULL) {
+        return UART_INVALID_ARGS;
+    }
 	
 	/* check if UART is currently busy and return error in case */
 	if (UARTx->ISR & USART_ISR_BUSY) return UART_BUSY;
 	
 	for (int i = 0; i<length; i++) {
-		uint8_t currentByte = tx_buf[i];
+		const uint8_t currentByte = tx_buf[i];
 		/* wait until the TXE/TXFNF bit is 1, indicating that TDR is empty */
-		while( !( UARTx->ISR & USART_ISR_TXE_TXFNF));
+		while(!(UARTx->ISR & USART_ISR_TXE_TXFNF)) {}
 		UARTx->TDR = currentByte;
 	}
 	return UART_OK;
 }
 
 
-UART_Status_State UART_receiveIT_Start(UART_DEVICE_State uart) {
+UART_Status_State UART_receiveIT_Start(const UART_DEVICE_State uart) {
 	rx_read_it = true;
 	rx_usart_it = uart;
 	return UART_OK;
@@ -234,21 +266,29 @@ UART_Status_State UART_receiveIT_Stop() {
 }
 
 
-uint8_t UART_receiveByte(UART_DEVICE_State uart) {
+uint8_t UART_receiveByte(const UART_DEVICE_State uart) {
+#ifdef UART_CHECK_ARGS
 	/* check args */
 	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
 		return UART_INVALID_ARGS;
+#endif /* UART_CHECK_ARGS */
 	
 	USART_TypeDef* UARTx = getUSART(uart);
 	return UARTx->RDR;
 }
 
-uint8_t UART_hasData(UART_DEVICE_State uart) {
+uint8_t UART_hasData(const UART_DEVICE_State uart) {
+#ifdef UART_CHECK_ARGS
 	/* check args */
 	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
 		return UART_INVALID_ARGS;
-	
-	USART_TypeDef* UARTx = getUSART(uart);
+#endif /* UART_CHECK_ARGS */
+	const USART_TypeDef* UARTx = getUSART(uart);
+
+    if (UARTx == NULL) {
+        return UART_INVALID_ARGS;
+    }
+
 	/* return the RXNE/RXFNE bit in the UARTx->ISR register */
 	return UARTx->ISR & USART_ISR_RXNE_RXFNE;
 }
@@ -257,8 +297,13 @@ uint8_t UART_isIdle(UART_DEVICE_State uart) {
 	/* check args */
 	if (!(uart == 14 || (uart <= 20 && uart >= 17)))
 		return UART_INVALID_ARGS;
-	
-	USART_TypeDef* UARTx = getUSART(uart);
+
+	const USART_TypeDef* UARTx = getUSART(uart);
+
+    if (UARTx == NULL) {
+        return UART_INVALID_ARGS;
+    }
+
 	/* return the IDLE bit in the UARTx->ISR register */
 	return UARTx->ISR & USART_ISR_IDLE;
 }

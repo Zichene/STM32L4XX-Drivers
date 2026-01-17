@@ -17,7 +17,7 @@
 ***/
 
 /****************************************************************************************************/
-/*															          TYPEDEFS                                                  */
+/*					                        TYPEDEFS                                                */
 /****************************************************************************************************/
 
 /**@brief Enum representing the port of a GPIO pin. For this family of devices, ports A-I inclusive are supported.
@@ -103,7 +103,7 @@ typedef enum {
 }GPIO_Status_State;
 
 /****************************************************************************************************/
-/*																			FUNCTION PROTOTYPES                                         */
+/*						             FUNCTION PROTOTYPES                                            */
 /****************************************************************************************************/
 
 /**@brief Sets a pin to output mode. By default, output mode is set to PP, speed to very high and no pull up, pull down.

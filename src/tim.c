@@ -56,6 +56,7 @@ static TIM_TypeDef* getTIM(TIM_TIMER_State timer) {
 		case TIM_TIM17:
 			return TIM17;
 	}
+    return 0;
 }
 
 /** Get the IRQn number associated with the input timer.
@@ -95,6 +96,7 @@ static int32_t getTIM_IRQn(TIM_TIMER_State timer) {
 		case TIM_TIM17:
 			return TIM1_TRG_COM_TIM17_IRQn;
 	}
+    return -1;
 }
 
 
