@@ -34,7 +34,7 @@ enable_language(C ASM)
 # Add compile options
 add_compile_definitions(
         STM32L4S5xx
-        UART_RECEIVE
+        SPI_WIFI
 )
 
 # STM minimum includes
@@ -79,6 +79,7 @@ add_executable(${CMAKE_PROJECT_NAME}
         projects/bl4s5i-iot01a/ringbuffer_test.c
         projects/bl4s5i-iot01a/push_button_led.c
         projects/bl4s5i-iot01a/blinky_led.c
+        projects/bl4s5i-iot01a/spi_wifi.c
 )
 
 # Add STM sources to our project
