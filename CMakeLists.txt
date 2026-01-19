@@ -80,6 +80,8 @@ add_executable(${CMAKE_PROJECT_NAME}
         projects/bl4s5i-iot01a/push_button_led.c
         projects/bl4s5i-iot01a/blinky_led.c
         projects/bl4s5i-iot01a/spi_wifi.c
+        inc/system.h
+        src/system.c
 )
 
 # Add STM sources to our project

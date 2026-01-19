@@ -4,6 +4,7 @@
 #include "string.h"
 #include "gpio.h"
 #include "tim.h"
+#include "system.h"
 
 #ifdef SPI_WIFI
 /*
@@ -70,18 +71,15 @@ The following USART1 internal connections are found in MB1297
 
 #define RX_BUF_SIZE 1000
 #define CMD_BUF_SIZE 100
+#define WIFI_TIMEOUT 1000
 static void ErrorHandler();
 static void configUART();
-static void configSystemClock120MHz();
 static void configSPI();
-static void configTimer();
-static void sleepBlockingMs(uint32_t ms);
 static void wifiInit();
 static void wifiSendATCommand(char* command, uint32_t command_size);
 
 /* global variables */
 volatile uint8_t usartIsIdle = true;
-volatile uint32_t currentMs = 0;
 volatile uint8_t wifiDrdyFlag = false;
 uint8_t rxBuf[RX_BUF_SIZE];
 uint8_t commandBuf[CMD_BUF_SIZE];
@@ -133,70 +131,11 @@ static void configUART() {
 	UART_receiveIT_Start(uart_conf.uart);
 }
 
-
-/* 
-* Configure the system clock to its maximum speed (120 MHz).
-*
-*  We will be using the PLL clock as the system clock. In order to use this clock, we need to choose one of four clock sources for the PLL.
-*  The source clock for the PLL will be the MSI (Multi Speed Internal) clock, which has a default speed of 4 MHz. 
-*  The speed of the MSI is modified by PLL_M, PLL_N and PLL_R, which are positive integers. The modification is as follows:
-*
-*  			output = input * PLL_N / (PLL_M * PLL_R)
-*
-*   MSI (default 4 MHz) -> divided by PLL_M = 1 -> multiplied by PLL_N = 60 -> divided by PLL_R = 2 -> 120 MHz
-*
-*/
-static void configSystemClock120MHz() {
-
-	/* Configure PLL with required parameters (PLL_M, PLL_N and PLL_R) */
-	CLOCK_configPLL(CLOCK_PLL_SRC_MSI, 1, 60, CLOCK_PLLR_2);
-	
-	/* Activate and set the PLLCLK as the system clock */
-	CLOCK_activateClk(CLOCK_PLL);
-	CLOCK_setSystemClock(CLOCK_SYSCLK_PLL); 
-	
-	/* Check that the system clock is indeed 120 MHz */
-	if (CLOCK_getSystemClockSpeed() != 120000000)
-		ErrorHandler();
-	
-	/* Make sure that bus prescalers are set to 1. These prescalers control the speed of the clock that is passed to the timers and other peripherals. */
-	CLOCK_setAHBPrescaler(CLOCK_AHB_PRE_DIV_1);
-	CLOCK_setAPB1Prescaler(CLOCK_APB1_PRE_DIV_1);
-	CLOCK_setAPB2Prescaler(CLOCK_APB2_PRE_DIV_1);
-}
-
 /*
 * Use the UART_transmit() function and the string.h library to print a message!
 */
 static void print(const char* message) {
 	UART_transmit(UART_USART1, (uint8_t*) message, strlen(message));
-}
-
-/* Setup timer using TIM2 to trigger an interrupt every 1 ms
-*
-* The prescaler (PSC) determines how many clock cycles pass before the counter goes up by one.
-* The period (ARR) determines how many times the counter needs to increment before an event (interrupt) is triggered.
-*
-* Since the clock reaching the TIM2 timer is at 120 MHz,
-* we can set our PSC and ARR to 40 and 3000 respectively so that an event is triggered every 1 ms.
-*
-*/
-static void configTimer() {
-    const TIM_Config_Typedef tim2_config = {
-        .ARR=3000, // Period of 3000
-        .PSC=40, // Prescaler of 40
-        .timer = TIM_TIM2,
-        .enableInterrupt = true,
-    };
-
-    TIM_config(&tim2_config);
-}
-
-static void sleepBlockingMs(const uint32_t ms) {
-    currentMs = 0;
-    TIM_startTimer(TIM_TIM2);
-    while (currentMs < ms) {};
-    TIM_stopTimer(TIM_TIM2);
 }
 
 static void configSPI() {
@@ -270,24 +209,23 @@ static void wifiInit() {
 
     /* Initiating the Wi-Fi module */
     GPIO_writePin(WIFI_RESET_Port, WIFI_RESET_Pin, GPIO_LOW);
-    sleepBlockingMs(10);
+    SYST_sleepMs(10);
     GPIO_writePin(WIFI_RESET_Port, WIFI_RESET_Pin, GPIO_HIGH);
-    sleepBlockingMs(500);
+    SYST_sleepMs(500);
 
     /* Pull NSS Low */
     GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_LOW);
-    sleepBlockingMs(10);
+    SYST_sleepMs(10);
 
     /* Wait for Drdy to be set by Wi-Fi module */
     while (!wifiDrdyFlag) {}
     wifiDrdyFlag = false;
 
-    uint16_t data = 7820;
-    SPI_transmitReceive(SPI_SPI3, 1, rxBuf, 6);
+    SPI_transmitReceive(SPI_SPI3, 1, rxBuf, 6, WIFI_TIMEOUT);
 
     /* Pull NSS High */
     GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_HIGH);
-    sleepBlockingMs(10);
+    SYST_sleepMs(10);
 
     /* Messages from the Wi-Fi module are padded with two bytes of useless information */
     if (strcmp((char*) (rxBuf + 2), "\r\n> ") != 0) {
@@ -314,29 +252,29 @@ static void wifiSendATCommand(char* command, const uint32_t command_size) {
 
     /* Pull NSS Low */
     GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_LOW);
-    sleepBlockingMs(10);
+    SYST_sleepMs(10);
 
     /* Send command */
-    if (SPI_transmitReceive(SPI_SPI3, 0, (uint8_t*) command, command_size) != SPI_OK) {
+    if (SPI_transmitReceive(SPI_SPI3, 0, (uint8_t*) command, command_size, WIFI_TIMEOUT) != SPI_OK) {
         ErrorHandler();
     }
 
     /* Pull NSS High */
     GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_HIGH);
-    sleepBlockingMs(10);
+    SYST_sleepMs(10);
 
     /*!> End of SPI Command Phase, Beginning of Data Phase */
 
     /* Pull NSS Low */
     GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_LOW);
-    sleepBlockingMs(10);
+    SYST_sleepMs(10);
 
     /* Wait for Drdy to be set by Wi-Fi module */
     while (!wifiDrdyFlag) {}
     wifiDrdyFlag = false;
 
     while (GPIO_readPin(WIFI_DRDY_Port, WIFI_DRDY_Pin) == GPIO_HIGH) {
-        if (SPI_transmitReceive(SPI_SPI3, 1, rxBuf + numBytes, 2) != SPI_OK) {
+        if (SPI_transmitReceive(SPI_SPI3, 1, rxBuf + numBytes, 2, WIFI_TIMEOUT) != SPI_OK) {
             ErrorHandler();
         }
         numBytes += 2;
@@ -344,7 +282,7 @@ static void wifiSendATCommand(char* command, const uint32_t command_size) {
 
     /* Pull NSS High */
     GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_HIGH);
-    sleepBlockingMs(10);
+    SYST_sleepMs(10);
 
     print("Received from Wi-Fi module: \r\n");
     UART_transmit(UART_USART1, rxBuf, numBytes);
@@ -352,11 +290,10 @@ static void wifiSendATCommand(char* command, const uint32_t command_size) {
 
 int main(void)
 {
-	/* configure clock, uart and spi and timer */
-	configSystemClock120MHz();
+	/* configure system, uart and spi */
+	SYST_init();
 	configUART();
     configSPI();
-    configTimer();
 
     /* Initiating the Wi-Fi module */
     wifiInit();
@@ -382,15 +319,6 @@ int main(void)
 	        }
 	    }
 	}	
-}
-
-/*
-* Interrupt handler for the TIM2 timer. Whenever a timer event occurs, this interrupt is triggered and this function is called.
-*/
-void TIM2_IRQHandler() {
-    /* Reset the event flag and increment ms */
-    TIM_resetEventFlag(TIM_TIM2);
-    currentMs++;
 }
 
 /*

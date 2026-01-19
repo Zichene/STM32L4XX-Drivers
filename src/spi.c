@@ -13,7 +13,7 @@
 
 
 /****************************************************************************************************/
-/*			              PRIVATE FUNCTIONS                                             */
+/*			              PRIVATE FUNCTIONS                                                         */
 /****************************************************************************************************/
 static SPI_Status_State configPeripheralClock(SPI_Device spi);
 static SPI_Status_State configGPIO(const SPI_PinConfig_Typedef* pin_config);
@@ -269,10 +269,13 @@ SPI_Status_State SPI_transmit(const SPI_Device spi, const uint16_t data) {
     return status;
 }
 
-SPI_Status_State SPI_transmitReceive(const SPI_Device spi, const uint8_t rw, uint8_t *data, const uint16_t size) {
+SPI_Status_State SPI_transmitReceive(const SPI_Device spi, const uint8_t rw, uint8_t *data, const uint16_t size, const uint32_t timeout) {
     const SPI_TypeDef* SPIx = getSPI(spi);
     SPI_Status_State status = SPI_OK;
     uint32_t numBytes = 0;
+
+    /* Reset global timer for timeout usage */
+    SYST_resetGlobalTimer();
 
     if (SPIx == NULL) {
         return SPI_INVALID_ARGS;
@@ -280,7 +283,7 @@ SPI_Status_State SPI_transmitReceive(const SPI_Device spi, const uint8_t rw, uin
 
     /* We are reading. Assume we need to transmit dummy data */
     if (rw == true) {
-        /* Blocking until we read the correct number of bytes. TODO: This is dangerous, we should add a timeout here. */
+        /* Blocking until we read the correct number of bytes or timeout.  */
         // Dummy transmit to initiate next clock cycle.
         status = SPI_transmit(SPI_SPI3, 0xFFFF);
         if (status != SPI_OK) {
@@ -300,6 +303,12 @@ SPI_Status_State SPI_transmitReceive(const SPI_Device spi, const uint8_t rw, uin
                     return status;
                 }
             }
+            if (SYST_getCurrentMs() > timeout) {
+                /* Timeout has occurred. Reset timer clear the ring buffer and return SPI_TIMEOUT */
+                SYST_stopGlobalTimer();
+                RING_BUF_clear(&ringbuf);
+                return SPI_ERROR_TIMEOUT;
+            }
         }
     } else {
         /* We are writing */
@@ -308,6 +317,12 @@ SPI_Status_State SPI_transmitReceive(const SPI_Device spi, const uint8_t rw, uin
             const SPI_Status_State result = SPI_transmit(spi, *(uint16_t*)(data + numBytes));
             if (result == SPI_OK) {
                 numBytes += 2;
+            }
+            if (SYST_getCurrentMs() > timeout) {
+                /* Timeout has occurred. Reset timer clear the ring buffer and return SPI_TIMEOUT */
+                SYST_stopGlobalTimer();
+                RING_BUF_clear(&ringbuf);
+                return SPI_ERROR_TIMEOUT;
             }
         }
     }
