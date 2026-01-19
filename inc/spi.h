@@ -31,6 +31,7 @@ typedef enum {
 	SPI_INVALID_ARGS = 1, ///< Indicates that a function has been given invalid (out of range) arguments.
 	SPI_ERROR = 2, ///< Indicates that a general error has occured.
     SPI_ERROR_READ_EMPTY_BUFFER = 3, ///< Indicates that we tried to read when the RXFIFO was empty.
+    SPI_ERROR_WRITE_NON_EMPTY_BUFFER = 4 ///< Indicates that we tried to write when the TXFIFO was non-empty.
 } SPI_Status_State;
 
 
@@ -152,7 +153,17 @@ typedef struct {
 */
 SPI_Status_State SPI_config(const SPI_Config_Typedef* spi_conf);
 
-SPI_Status_State SPI_read(SPI_Device spi, uint16_t *data);
+// Directly read from the SPI->DR register.
+SPI_Status_State SPI_receive(SPI_Device spi, uint16_t *data);
+
+// Directly write to the SPI->DR register.
+SPI_Status_State SPI_transmit(SPI_Device spi, uint16_t data);
+
+// Read from the ring buffer. Will only be populated if interrupts are activated.
+SPI_Status_State SPI_read(uint8_t* rx_buf, uint32_t length);
+
+// Read multiple bytes or write multiple bytes. Assume that we need to send dummy data to keep clock active.
+SPI_Status_State SPI_transmitReceive(SPI_Device spi, uint8_t rw, uint8_t *data, uint16_t size);
 
 #endif
 /** @}*/

@@ -68,18 +68,25 @@ The following USART1 internal connections are found in MB1297
 #define WIFI_RESET_Port GPIO_PORT_E
 #define WIFI_RESET_Pin 8
 
+#define RX_BUF_SIZE 1000
+#define CMD_BUF_SIZE 100
 static void ErrorHandler();
 static void configUART();
 static void configSystemClock120MHz();
 static void configSPI();
 static void configTimer();
 static void sleepBlockingMs(uint32_t ms);
+static void wifiInit();
+static void wifiSendATCommand(char* command, uint32_t command_size);
 
 /* global variables */
-uint32_t RX_BUF_SIZE = 1000;
 volatile uint8_t usartIsIdle = true;
 volatile uint32_t currentMs = 0;
 volatile uint8_t wifiDrdyFlag = false;
+uint8_t rxBuf[RX_BUF_SIZE];
+uint8_t commandBuf[CMD_BUF_SIZE];
+uint16_t numBytes = 0;
+
 
 /*
 * Configure the UART peripheral with its usual settings: 
@@ -211,7 +218,7 @@ static void configSPI() {
 
     SPI_ITConfig_Typedef it_conf = {
         .ERRIE_enabled = false,
-        .RXNEIE_enabled = false,
+        .RXNEIE_enabled = true,
         .TXEIE_enabled = false,
         .priority = 1,
     };
@@ -257,19 +264,9 @@ static void configSPI() {
     GPIO_setPinInterrupt(WIFI_DRDY_Port,WIFI_DRDY_Pin, GPIO_IT_TRIGGER_RISING);
 }
 
-int main(void)
-{
-	/* configure clock, uart and spi and timer */
-	configSystemClock120MHz();
-	configUART();
-    configSPI();
-    configTimer();
-
-	/* rx buffer */
-	uint8_t rxBuf[RX_BUF_SIZE];
-
-	/* printing using UART! */
-	print("Hello World \r\n");
+static void wifiInit() {
+    /* reset rx buffer */
+    memset(rxBuf, 0, RX_BUF_SIZE);
 
     /* Initiating the Wi-Fi module */
     GPIO_writePin(WIFI_RESET_Port, WIFI_RESET_Pin, GPIO_LOW);
@@ -286,20 +283,109 @@ int main(void)
     wifiDrdyFlag = false;
 
     uint16_t data = 7820;
-    SPI3->DR = data; /* dummy write to initiate clock */
-	
+    SPI_transmitReceive(SPI_SPI3, 1, rxBuf, 6);
+
+    /* Pull NSS High */
+    GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_HIGH);
+    sleepBlockingMs(10);
+
+    /* Messages from the Wi-Fi module are padded with two bytes of useless information */
+    if (strcmp((char*) (rxBuf + 2), "\r\n> ") != 0) {
+        print("Could not obtain correct power up sequence from WiFi module!\r\n");
+    } else {
+        print("Wi-Fi successfully powered up!\r\n");
+    }
+}
+
+static void wifiSendATCommand(char* command, const uint32_t command_size) {
+    /* Print info message */
+    print("Sending command to Wi-Fi module: ");
+    print(command);
+
+    /* Try to send an AT command to the Wi-Fi module */
+    memset(rxBuf, 0, RX_BUF_SIZE);
+    numBytes = 0;
+
+    /* Wait for Drdy to be set by Wi-Fi module */
+    while (!wifiDrdyFlag) {}
+    wifiDrdyFlag = false;
+
+    /*!> SPI Command Phase */
+
+    /* Pull NSS Low */
+    GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_LOW);
+    sleepBlockingMs(10);
+
+    /* Send command */
+    if (SPI_transmitReceive(SPI_SPI3, 0, (uint8_t*) command, command_size) != SPI_OK) {
+        ErrorHandler();
+    }
+
+    /* Pull NSS High */
+    GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_HIGH);
+    sleepBlockingMs(10);
+
+    /*!> End of SPI Command Phase, Beginning of Data Phase */
+
+    /* Pull NSS Low */
+    GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_LOW);
+    sleepBlockingMs(10);
+
+    /* Wait for Drdy to be set by Wi-Fi module */
+    while (!wifiDrdyFlag) {}
+    wifiDrdyFlag = false;
+
+    while (GPIO_readPin(WIFI_DRDY_Port, WIFI_DRDY_Pin) == GPIO_HIGH) {
+        if (SPI_transmitReceive(SPI_SPI3, 1, rxBuf + numBytes, 2) != SPI_OK) {
+            ErrorHandler();
+        }
+        numBytes += 2;
+    }
+
+    /* Pull NSS High */
+    GPIO_writePin(SPI3_NSS_Port, SPI3_NSS_Pin, GPIO_HIGH);
+    sleepBlockingMs(10);
+
+    print("Received from Wi-Fi module: \r\n");
+    UART_transmit(UART_USART1, rxBuf, numBytes);
+}
+
+int main(void)
+{
+	/* configure clock, uart and spi and timer */
+	configSystemClock120MHz();
+	configUART();
+    configSPI();
+    configTimer();
+
+    /* Initiating the Wi-Fi module */
+    wifiInit();
+
+    /* Try to send an AT command to the Wi-Fi module */
+    wifiSendATCommand("I?\r\n", 4);
+
+    /* Set up buffer to store user input */
+    uint32_t commandBufBytes = 0;
+    memset(commandBuf, 0, CMD_BUF_SIZE);
+
 	while(1) {
 	    /* Infinite loop so that we don't exit main */
-	    const SPI_Status_State result = SPI_read(SPI_SPI3, &data);
-	    if (result == SPI_OK) {
-	        print("Received something\r\n");
-	        SPI3->DR = data; /* dummy write to initiate clock */
+	    if (UART_read(commandBuf + commandBufBytes, 1) == UART_OK) {
+	        commandBufBytes += 1;
+
+	        if (strstr((char*) commandBuf, "\r\n") != NULL) {
+	            /* The user input has terminated with \r\n. Assume this is a command to be sent */
+	            wifiSendATCommand((char*) commandBuf, commandBufBytes);
+	            // Reset
+	            commandBufBytes = 0;
+	            memset(commandBuf, 0, CMD_BUF_SIZE);
+	        }
 	    }
 	}	
 }
 
 /*
-* Interrupt handler for the TIM2 timer. Whenver a timer event occurs, this interrupt is triggered and this function is called.
+* Interrupt handler for the TIM2 timer. Whenever a timer event occurs, this interrupt is triggered and this function is called.
 */
 void TIM2_IRQHandler() {
     /* Reset the event flag and increment ms */
@@ -321,7 +407,7 @@ void ErrorHandler() {
 	GPIO_setPinOutput(LEDError_Port, LEDError_Pin);
 	GPIO_togglePin(LEDError_Port, LEDError_Pin);
 	while(1) {
-	/* If you've ended up here, then a problem has occured! */
+	/* If you've ended up here, then a problem has occurred! */
 	}
 }
 

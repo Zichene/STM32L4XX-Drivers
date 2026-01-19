@@ -80,4 +80,6 @@ uint8_t RING_BUF_isEmpty(RING_BUF_Typedef* ring_buf);
 
 uint32_t RING_BUF_size(RING_BUF_Typedef* ring_buf);
 
+
+RING_BUF_Status_State RING_BUF_clear(RING_BUF_Typedef* ring_buf);
 #endif

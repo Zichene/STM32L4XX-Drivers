@@ -236,12 +236,12 @@ SPI_Status_State SPI_config(const SPI_Config_Typedef* spi_conf) {
 }
 
 
-SPI_Status_State SPI_read(const SPI_Device spi, uint16_t *data) {
+SPI_Status_State SPI_receive(const SPI_Device spi, uint16_t *data) {
     *data = 0;
     SPI_Status_State status = SPI_OK;
     const SPI_TypeDef* SPIx = getSPI(spi);
     if (SPIx == NULL) {
-        return SPI_ERROR;
+        return SPI_INVALID_ARGS;
     }
     /* Check if RXNE event exists */
     if (READ_BIT(SPIx->SR, SPI_SR_RXNE_Msk)) {
@@ -251,4 +251,115 @@ SPI_Status_State SPI_read(const SPI_Device spi, uint16_t *data) {
         status = SPI_ERROR_READ_EMPTY_BUFFER;
     }
     return status;
+}
+
+SPI_Status_State SPI_transmit(const SPI_Device spi, const uint16_t data) {
+    SPI_Status_State status = SPI_OK;
+    SPI_TypeDef* SPIx = getSPI(spi);
+    if (SPIx == NULL) {
+        return SPI_INVALID_ARGS;
+    }
+    /* Check if TXNE event exists */
+    if (READ_BIT(SPIx->SR, SPI_SR_TXE_Msk)) {
+        SPIx->DR = data;
+        status = SPI_OK;
+    } else {
+        status = SPI_ERROR_WRITE_NON_EMPTY_BUFFER;
+    }
+    return status;
+}
+
+SPI_Status_State SPI_transmitReceive(const SPI_Device spi, const uint8_t rw, uint8_t *data, const uint16_t size) {
+    const SPI_TypeDef* SPIx = getSPI(spi);
+    SPI_Status_State status = SPI_OK;
+    uint32_t numBytes = 0;
+
+    if (SPIx == NULL) {
+        return SPI_INVALID_ARGS;
+    }
+
+    /* We are reading. Assume we need to transmit dummy data */
+    if (rw == true) {
+        /* Blocking until we read the correct number of bytes. TODO: This is dangerous, we should add a timeout here. */
+        // Dummy transmit to initiate next clock cycle.
+        status = SPI_transmit(SPI_SPI3, 0xFFFF);
+        if (status != SPI_OK) {
+            return status;
+        }
+        while (numBytes < size) {
+            const SPI_Status_State result = SPI_read(data + numBytes, 2);
+            if (result == SPI_OK) {
+                numBytes += 2;
+                /* Break out of while early if we reached size */
+                if (numBytes == size) {
+                    break;
+                }
+                // Dummy transmit to initiate next clock cycle.
+                status = SPI_transmit(SPI_SPI3, 0xFFFF);
+                if (status != SPI_OK) {
+                    return status;
+                }
+            }
+        }
+    } else {
+        /* We are writing */
+        while (numBytes < size) {
+            /* Send data */
+            const SPI_Status_State result = SPI_transmit(spi, *(uint16_t*)(data + numBytes));
+            if (result == SPI_OK) {
+                numBytes += 2;
+            }
+        }
+    }
+    const uint32_t ring_buf_size = RING_BUF_size(&ringbuf);
+    if (ring_buf_size != 0) {
+        // Need to clear the ring buffer for data that was unread.
+        RING_BUF_clear(&ringbuf);
+    }
+    return status;
+}
+
+SPI_Status_State SPI_read(uint8_t* rx_buf, const uint32_t length) {
+    /* check args */
+    if (length >= SPI_RXBUF_SIZE) return SPI_INVALID_ARGS;
+
+    /* only put data if the number of requested bytes are present in the buffer */
+    if (RING_BUF_size(&ringbuf) < length) {
+        return SPI_ERROR_READ_EMPTY_BUFFER;
+    }
+
+    for (uint32_t i = 0; i<length; i++) {
+        if (RING_BUF_readByteFromTail(&ringbuf, &rx_buf[i]) != RING_BUF_OK) {
+            return SPI_ERROR_READ_EMPTY_BUFFER;
+        }
+    }
+
+    return SPI_OK;
+}
+
+void SPI1_IRQHandler(void) {
+    if (READ_BIT(SPI1->SR, SPI_SR_RXNE_Msk)) {
+        /* RX FIFO is not empty. We are ready to read. */
+        const uint16_t data = SPI1->DR;
+        RING_BUF_writeByteToHead(&ringbuf, (uint8_t) (data & 0xFF));
+        RING_BUF_writeByteToHead(&ringbuf, (uint8_t) ((data >> 8) & 0xFF));
+    }
+}
+
+void SPI2_IRQHandler(void) {
+    if (READ_BIT(SPI2->SR, SPI_SR_RXNE_Msk)) {
+        /* RX FIFO is not empty. We are ready to read. */
+        const uint16_t data = SPI2->DR;
+        RING_BUF_writeByteToHead(&ringbuf, (uint8_t) (data & 0xFF));
+        RING_BUF_writeByteToHead(&ringbuf, (uint8_t) ((data >> 8) & 0xFF));
+    }
+}
+
+void SPI3_IRQHandler(void) {
+    if (READ_BIT(SPI3->SR, SPI_SR_RXNE_Msk)) {
+        /* RX FIFO is not empty. We are ready to read. */
+        const uint16_t data = SPI3->DR;
+        RING_BUF_writeByteToHead(&ringbuf, (uint8_t) (data & 0xFF));
+        RING_BUF_writeByteToHead(&ringbuf, (uint8_t) ((data >> 8) & 0xFF));
+    }
 }

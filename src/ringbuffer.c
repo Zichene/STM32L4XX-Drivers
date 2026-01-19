@@ -65,3 +65,8 @@ uint32_t RING_BUF_size(RING_BUF_Typedef* ring_buf) {
 	if (head >= tail) return head-tail;
 	else return (ring_buf->max_size - (tail-head));
 }
+
+// Clear the ring buffer by moving the tail index to the head index.
+RING_BUF_Status_State RING_BUF_clear(RING_BUF_Typedef* ring_buf) {
+    ring_buf->tail_index = ring_buf->head_index;
+}
